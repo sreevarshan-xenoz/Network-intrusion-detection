@@ -47,3 +47,27 @@
 2025-07-27 08:40:09,601 - nids.data.mock_network_loader - WARNING - Dataset has 20.00% duplicate records
 2025-07-27 08:40:09,601 - nids.data.mock_network_loader - WARNING - Found 1 constant columns: ['constant_col']
 2025-07-27 08:40:09,604 - nids.data.mock_network_loader - INFO - Standardized 2 feature names
+2025-07-27 08:45:54,022 - nids.data.mock_loader - WARNING - chardet not available, using utf-8 encoding
+2025-07-27 08:45:54,025 - nids.data.mock_loader - WARNING - chardet not available, using utf-8 encoding
+2025-07-27 08:45:54,028 - nids.data.mock_loader - WARNING - chardet not available, using utf-8 encoding
+2025-07-27 08:45:54,030 - nids.data.mock_loader - ERROR - Failed to load data from test.csv: No data
+2025-07-27 08:45:54,034 - nids.data.mock_loader - INFO - Loaded 3 records from test.csv
+2025-07-27 08:45:54,034 - nids.data.mock_loader - INFO - Dataset shape: (3, 2), File size: 1.00 MB
+2025-07-27 08:45:54,036 - nids.data.mock_loader - INFO - Memory usage: 0.00 MB
+2025-07-27 08:45:54,040 - nids.data.mock_loader - INFO - Loading data from C:\Users\theja\AppData\Local\Temp\tmp6rtj89wn.csv
+2025-07-27 08:45:54,041 - nids.data.mock_loader - INFO - Loaded 3 records from C:\Users\theja\AppData\Local\Temp\tmp6rtj89wn.csv
+2025-07-27 08:45:54,041 - nids.data.mock_loader - INFO - Dataset shape: (3, 4), File size: 0.00 MB
+2025-07-27 08:45:54,042 - nids.data.mock_loader - INFO - Memory usage: 0.00 MB
+2025-07-27 08:45:54,048 - nids.data.mock_network_loader - ERROR - Missing required columns: ['dst_ip']
+2025-07-27 08:45:54,052 - nids.data.mock_network_loader - INFO - Cleaned column names for consistency
+2025-07-27 08:45:54,054 - nids.data.mock_network_loader - INFO - Found 2 missing values across 2 columns
+2025-07-27 08:45:54,055 - nids.data.mock_network_loader - WARNING - Column 'col1': 1 missing values (33.33%)
+2025-07-27 08:45:54,055 - nids.data.mock_network_loader - WARNING - Column 'col2': 1 missing values (33.33%)
+2025-07-27 08:45:54,058 - nids.data.mock_network_loader - INFO - Found 2 missing values across 2 columns
+2025-07-27 08:45:54,058 - nids.data.mock_network_loader - INFO - Dropped 2 rows with missing values
+2025-07-27 08:45:54,061 - nids.data.mock_network_loader - INFO - Found 2 missing values across 2 columns
+2025-07-27 08:45:54,062 - nids.data.mock_network_loader - INFO - Filled missing values with appropriate defaults
+2025-07-27 08:45:54,067 - nids.data.mock_network_loader - INFO - Data quality report: {'total_records': 5, 'total_features': 4, 'missing_values': np.int64(0), 'duplicate_records': np.int64(1), 'memory_usage_mb': np.float64(0.0004787445068359375), 'constant_columns': ['constant_col'], 'high_cardinality_columns': [('high_cardinality', 4)]}
+2025-07-27 08:45:54,068 - nids.data.mock_network_loader - WARNING - Dataset has 20.00% duplicate records
+2025-07-27 08:45:54,068 - nids.data.mock_network_loader - WARNING - Found 1 constant columns: ['constant_col']
+2025-07-27 08:45:54,070 - nids.data.mock_network_loader - INFO - Standardized 2 feature names
