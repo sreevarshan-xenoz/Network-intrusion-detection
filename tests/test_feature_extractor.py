@@ -144,4 +144,23 @@ class TestRealTimeFeatureExtractor:
         assert features['flag_fin'] == 0.0
         assert features['flag_rst'] == 0.0
         assert features['flag_psh'] == 0.0
-        assert features['flag_urg'] == 0.
+        assert features['flag_urg'] == 0.0
+    
+    def test_extract_port_features(self, feature_extractor, sample_packet):
+        """Test port-based feature extraction."""
+        features = feature_extractor._extract_port_features(sample_packet)
+        
+        assert features['src_port_category'] == 2.0  # Registered port (12345)
+        assert features['dst_port_category'] == 1.0  # Well-known port (80)
+    
+    def test_extract_time_features(self, feature_extractor, sample_packet):
+        """Test time-based feature extraction."""
+        features = feature_extractor._extract_time_features(sample_packet)
+        
+        assert 'hour_of_day' in features
+        assert 'day_of_week' in features
+        assert 0 <= features['hour_of_day'] <= 23
+        assert 0 <= features['day_of_week'] <= 6
+    
+    def test_update_flow_stats(self, feature_extractor, sample_packet):
+        """Test flow statistics
