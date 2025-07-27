@@ -66,29 +66,29 @@ class RealTimeFeatureExtractor(FeatureExtractorInterface):
         self.feature_encoder: Optional[FeatureEncoder] = None
         self.feature_scaler: Optional[FeatureScaler] = None
         
-        # Known feature names for consistency
+        # Known feature names for consistency (25 features total)
         self.feature_names = [
-            # Basic packet features
+            # Basic packet features (3)
             'packet_size', 'duration', 'protocol_encoded',
             
-            # Flow-based features
+            # Flow-based features (5)
             'flow_duration', 'flow_packet_count', 'flow_bytes_total',
             'flow_bytes_per_second', 'flow_packets_per_second',
             
-            # Statistical features
+            # Statistical features (8)
             'packet_size_mean', 'packet_size_std', 'packet_size_min', 'packet_size_max',
             'inter_arrival_mean', 'inter_arrival_std', 'inter_arrival_min', 'inter_arrival_max',
             
-            # Flag-based features
+            # Flag-based features (6)
             'flag_syn', 'flag_ack', 'flag_fin', 'flag_rst', 'flag_psh', 'flag_urg',
             
-            # Port-based features
+            # Port-based features (2)
             'src_port_category', 'dst_port_category',
             
-            # Time-based features
+            # Time-based features (2)
             'hour_of_day', 'day_of_week',
             
-            # Global statistics
+            # Global statistics (3)
             'protocol_frequency', 'port_frequency_src', 'port_frequency_dst'
         ]
     
