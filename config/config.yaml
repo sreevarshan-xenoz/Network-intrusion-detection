@@ -1,0 +1,71 @@
+# Network Intrusion Detection System Configuration
+
+data:
+  datasets_path: "data/datasets"
+  processed_data_path: "data/processed"
+  models_path: "data/models"
+
+model:
+  algorithms:
+    - "random_forest"
+    - "xgboost"
+    - "svm"
+    - "neural_network"
+  cross_validation_folds: 5
+  test_size: 0.2
+  random_state: 42
+
+preprocessing:
+  scaling_method: "standard"  # standard, minmax
+  encoding_method: "label"    # label, onehot
+  balance_classes: true
+  remove_duplicates: true
+
+api:
+  host: "0.0.0.0"
+  port: 8000
+  workers: 4
+  timeout: 30
+
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "logs/nids.log"
+
+alerts:
+  confidence_threshold: 0.8
+  channels:
+    - "email"
+    - "webhook"
+  email:
+    smtp_server: "localhost"
+    smtp_port: 587
+    recipients: []
+  webhook:
+    url: ""
+    timeout: 10
+
+monitoring:
+  metrics_enabled: true
+  health_check_interval: 60
+  performance_tracking: true
+
+# Network capture settings
+network:
+  interface: "eth0"
+  capture_filter: ""
+  buffer_size: 1000
+  timeout: 1.0
+
+# Model training settings
+training:
+  batch_size: 1000
+  epochs: 100
+  early_stopping_patience: 10
+  validation_split: 0.2
+
+# Real-time processing
+realtime:
+  prediction_cache_size: 10000
+  prediction_cache_ttl: 300  # seconds
+  max_concurrent_requests: 100
