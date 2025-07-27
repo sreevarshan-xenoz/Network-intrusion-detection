@@ -412,3 +412,571 @@
 2025-07-27 08:57:36,726 - nids.data.cicids - WARNING - chardet not available, using utf-8 encoding
 2025-07-27 08:57:36,728 - nids.data.cicids - INFO - Cleaned column names for consistency
 2025-07-27 08:57:36,730 - nids.data.cicids - INFO - Successfully loaded 5 records with 28 columns
+2025-07-27 09:01:14,588 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:01:14,812 - nids.preprocessing.encoder - INFO - Using label encoding for test_col (15 categories)
+2025-07-27 09:01:14,816 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:01:14,817 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:01:14,822 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 14
+2025-07-27 09:01:14,827 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:01:14,828 - nids.preprocessing.encoder - INFO - Detected 0 categorical and 2 numerical columns
+2025-07-27 09:01:14,828 - nids.preprocessing.encoder - WARNING - No categorical columns detected
+2025-07-27 09:01:14,830 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:01:14,830 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:01:14,835 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 14
+2025-07-27 09:01:14,838 - nids.preprocessing.encoder - INFO - Transformed data shape: (5, 14)
+2025-07-27 09:01:14,842 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:01:14,843 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:01:14,849 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 14
+2025-07-27 09:01:14,852 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:01:14,852 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:01:14,857 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 14
+2025-07-27 09:01:14,860 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:01:14,860 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:01:14,866 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 14
+2025-07-27 09:01:14,870 - nids.preprocessing.encoder - INFO - Transformed data shape: (5, 14)
+2025-07-27 09:01:14,872 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:01:14,873 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:01:14,967 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:01:14,968 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:01:14,972 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 14
+2025-07-27 09:01:14,975 - nids.preprocessing.encoder - INFO - Transformed data shape: (5, 14)
+2025-07-27 09:01:14,977 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:01:14,978 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:01:14,982 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 14
+2025-07-27 09:01:14,986 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:01:14,987 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:01:14,991 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 14
+2025-07-27 09:01:14,995 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:01:14,995 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:01:15,076 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:01:15,077 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:01:15,081 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 14
+2025-07-27 09:01:15,084 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:01:15,084 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:01:15,089 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 14
+2025-07-27 09:01:15,091 - nids.preprocessing.encoder - INFO - Transformed data shape: (5, 14)
+2025-07-27 09:01:15,092 - nids.preprocessing.encoder - INFO - Encoder saved to C:\Users\theja\AppData\Local\Temp\tmpibo3jnxz.pkl
+2025-07-27 09:01:15,103 - nids.preprocessing.encoder - INFO - Encoder loaded from C:\Users\theja\AppData\Local\Temp\tmpibo3jnxz.pkl
+2025-07-27 09:01:15,107 - nids.preprocessing.encoder - INFO - Transformed data shape: (5, 14)
+2025-07-27 09:01:15,124 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:01:15,124 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:01:15,129 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 14
+2025-07-27 09:01:15,131 - nids.preprocessing.encoder - INFO - Transformed data shape: (5, 14)
+2025-07-27 09:01:15,134 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:01:15,135 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:01:15,139 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 11
+2025-07-27 09:01:15,139 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:01:15,140 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:01:15,144 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 14
+2025-07-27 09:01:15,146 - nids.preprocessing.encoder - INFO - Transformed data shape: (5, 11)
+2025-07-27 09:01:15,149 - nids.preprocessing.encoder - INFO - Transformed data shape: (5, 14)
+2025-07-27 09:01:15,152 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:01:15,153 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 2 numerical columns
+2025-07-27 09:01:15,157 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 10
+2025-07-27 09:01:15,160 - nids.preprocessing.encoder - INFO - Transformed data shape: (5, 10)
+2025-07-27 09:01:15,162 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:01:15,163 - nids.preprocessing.encoder - INFO - Detected 1 categorical and 1 numerical columns
+2025-07-27 09:01:15,163 - nids.preprocessing.encoder - INFO - Using label encoding for large_cat (42 categories)
+2025-07-27 09:01:15,248 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:01:15,249 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:01:15,253 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 14
+2025-07-27 09:01:15,256 - nids.preprocessing.encoder - INFO - Transformed data shape: (5, 14)
+2025-07-27 09:01:15,259 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:01:15,259 - nids.preprocessing.encoder - INFO - Detected 0 categorical and 3 numerical columns
+2025-07-27 09:01:15,259 - nids.preprocessing.encoder - WARNING - No categorical columns detected
+2025-07-27 09:01:15,260 - nids.preprocessing.encoder - INFO - No categorical columns to encode, returning original data
+2025-07-27 09:02:13,987 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:02:41,770 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:02:41,771 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:02:41,777 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 7
+2025-07-27 09:02:41,779 - nids.preprocessing.encoder - INFO - Transformed data shape: (5, 7)
+2025-07-27 09:02:56,395 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:02:56,396 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:02:56,400 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 7
+2025-07-27 09:02:56,403 - nids.preprocessing.encoder - INFO - Transformed data shape: (5, 7)
+2025-07-27 09:03:07,059 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:03:07,061 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:03:07,065 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 7
+2025-07-27 09:03:07,068 - nids.preprocessing.encoder - INFO - Transformed data shape: (5, 7)
+2025-07-27 09:03:23,074 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:03:23,301 - nids.preprocessing.encoder - INFO - Using label encoding for test_col (15 categories)
+2025-07-27 09:03:23,305 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:03:23,305 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:03:23,311 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 14
+2025-07-27 09:03:23,317 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:03:23,317 - nids.preprocessing.encoder - INFO - Detected 0 categorical and 2 numerical columns
+2025-07-27 09:03:23,317 - nids.preprocessing.encoder - WARNING - No categorical columns detected
+2025-07-27 09:03:23,319 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:03:23,320 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:03:23,324 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 14
+2025-07-27 09:03:23,327 - nids.preprocessing.encoder - INFO - Transformed data shape: (5, 14)
+2025-07-27 09:03:23,331 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:03:23,332 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:03:23,336 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 14
+2025-07-27 09:03:23,339 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:03:23,340 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:03:23,344 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 14
+2025-07-27 09:03:23,346 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:03:23,347 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:03:23,351 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 14
+2025-07-27 09:03:23,354 - nids.preprocessing.encoder - INFO - Transformed data shape: (5, 14)
+2025-07-27 09:03:23,356 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:03:23,357 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:03:23,360 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 7
+2025-07-27 09:03:23,362 - nids.preprocessing.encoder - INFO - Transformed data shape: (5, 7)
+2025-07-27 09:03:23,365 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:03:23,366 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:03:23,370 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 14
+2025-07-27 09:03:23,373 - nids.preprocessing.encoder - INFO - Transformed data shape: (5, 14)
+2025-07-27 09:03:23,375 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:03:23,376 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:03:23,381 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 14
+2025-07-27 09:03:23,383 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:03:23,384 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:03:23,388 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 14
+2025-07-27 09:03:23,392 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:03:23,393 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:03:23,396 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 7
+2025-07-27 09:03:23,399 - nids.preprocessing.encoder - INFO - Transformed data shape: (5, 7)
+2025-07-27 09:03:23,445 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:03:23,446 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:03:23,452 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 14
+2025-07-27 09:03:23,456 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:03:23,457 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:03:23,462 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 14
+2025-07-27 09:03:23,465 - nids.preprocessing.encoder - INFO - Transformed data shape: (5, 14)
+2025-07-27 09:03:23,467 - nids.preprocessing.encoder - INFO - Encoder saved to C:\Users\theja\AppData\Local\Temp\tmpolmnyn_2.pkl
+2025-07-27 09:03:23,469 - nids.preprocessing.encoder - INFO - Encoder loaded from C:\Users\theja\AppData\Local\Temp\tmpolmnyn_2.pkl
+2025-07-27 09:03:23,473 - nids.preprocessing.encoder - INFO - Transformed data shape: (5, 14)
+2025-07-27 09:03:23,480 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:03:23,480 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:03:23,485 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 14
+2025-07-27 09:03:23,487 - nids.preprocessing.encoder - INFO - Transformed data shape: (5, 14)
+2025-07-27 09:03:23,490 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:03:23,491 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:03:23,495 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 11
+2025-07-27 09:03:23,496 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:03:23,496 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:03:23,500 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 14
+2025-07-27 09:03:23,503 - nids.preprocessing.encoder - INFO - Transformed data shape: (5, 11)
+2025-07-27 09:03:23,506 - nids.preprocessing.encoder - INFO - Transformed data shape: (5, 14)
+2025-07-27 09:03:23,509 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:03:23,510 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 2 numerical columns
+2025-07-27 09:03:23,515 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 10
+2025-07-27 09:03:23,517 - nids.preprocessing.encoder - INFO - Transformed data shape: (5, 10)
+2025-07-27 09:03:23,520 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:03:23,520 - nids.preprocessing.encoder - INFO - Detected 1 categorical and 1 numerical columns
+2025-07-27 09:03:23,521 - nids.preprocessing.encoder - INFO - Using label encoding for large_cat (46 categories)
+2025-07-27 09:03:23,523 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 2
+2025-07-27 09:03:23,524 - nids.preprocessing.encoder - INFO - Transformed data shape: (100, 2)
+2025-07-27 09:03:23,536 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:03:23,537 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:03:23,541 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 14
+2025-07-27 09:03:23,544 - nids.preprocessing.encoder - INFO - Transformed data shape: (5, 14)
+2025-07-27 09:03:23,546 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:03:23,547 - nids.preprocessing.encoder - INFO - Detected 0 categorical and 3 numerical columns
+2025-07-27 09:03:23,547 - nids.preprocessing.encoder - WARNING - No categorical columns detected
+2025-07-27 09:03:23,547 - nids.preprocessing.encoder - INFO - No categorical columns to encode, returning original data
+2025-07-27 09:04:19,478 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:04:19,479 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:04:19,484 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 7
+2025-07-27 09:04:19,486 - nids.preprocessing.encoder - INFO - Transformed data shape: (5, 7)
+2025-07-27 09:04:35,056 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:04:35,058 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:04:35,063 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 7
+2025-07-27 09:04:35,066 - nids.preprocessing.encoder - INFO - Transformed data shape: (5, 7)
+2025-07-27 09:04:42,363 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:04:42,365 - nids.preprocessing.encoder - INFO - Using label encoding for test_col (15 categories)
+2025-07-27 09:04:42,368 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:04:42,369 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:04:42,376 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 14
+2025-07-27 09:04:42,384 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:04:42,385 - nids.preprocessing.encoder - INFO - Detected 0 categorical and 2 numerical columns
+2025-07-27 09:04:42,385 - nids.preprocessing.encoder - WARNING - No categorical columns detected
+2025-07-27 09:04:42,388 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:04:42,390 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:04:42,396 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 14
+2025-07-27 09:04:42,400 - nids.preprocessing.encoder - INFO - Transformed data shape: (5, 14)
+2025-07-27 09:04:42,404 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:04:42,405 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:04:42,410 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 14
+2025-07-27 09:04:42,413 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:04:42,413 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:04:42,418 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 14
+2025-07-27 09:04:42,421 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:04:42,422 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:04:42,427 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 14
+2025-07-27 09:04:42,431 - nids.preprocessing.encoder - INFO - Transformed data shape: (5, 14)
+2025-07-27 09:04:42,434 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:04:42,435 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:04:42,439 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 7
+2025-07-27 09:04:42,443 - nids.preprocessing.encoder - INFO - Transformed data shape: (5, 7)
+2025-07-27 09:04:42,447 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:04:42,448 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:04:42,452 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 14
+2025-07-27 09:04:42,456 - nids.preprocessing.encoder - INFO - Transformed data shape: (5, 14)
+2025-07-27 09:04:42,460 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:04:42,461 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:04:42,468 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 14
+2025-07-27 09:04:42,473 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:04:42,474 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:04:42,479 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 14
+2025-07-27 09:04:42,484 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:04:42,485 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:04:42,488 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 7
+2025-07-27 09:04:42,492 - nids.preprocessing.encoder - INFO - Transformed data shape: (5, 7)
+2025-07-27 09:04:42,497 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:04:42,498 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:04:42,502 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 14
+2025-07-27 09:04:42,505 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:04:42,506 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:04:42,512 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 14
+2025-07-27 09:04:42,516 - nids.preprocessing.encoder - INFO - Transformed data shape: (5, 14)
+2025-07-27 09:04:42,517 - nids.preprocessing.encoder - INFO - Encoder saved to C:\Users\theja\AppData\Local\Temp\tmpx9vwxk09.pkl
+2025-07-27 09:04:42,532 - nids.preprocessing.encoder - INFO - Encoder loaded from C:\Users\theja\AppData\Local\Temp\tmpx9vwxk09.pkl
+2025-07-27 09:04:42,537 - nids.preprocessing.encoder - INFO - Transformed data shape: (5, 14)
+2025-07-27 09:04:42,545 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:04:42,547 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:04:42,554 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 14
+2025-07-27 09:04:42,559 - nids.preprocessing.encoder - INFO - Transformed data shape: (5, 14)
+2025-07-27 09:04:42,562 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:04:42,563 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:04:42,569 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 11
+2025-07-27 09:04:42,569 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:04:42,571 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:04:42,576 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 14
+2025-07-27 09:04:42,579 - nids.preprocessing.encoder - INFO - Transformed data shape: (5, 11)
+2025-07-27 09:04:42,582 - nids.preprocessing.encoder - INFO - Transformed data shape: (5, 14)
+2025-07-27 09:04:42,586 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:04:42,586 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 2 numerical columns
+2025-07-27 09:04:42,593 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 10
+2025-07-27 09:04:42,596 - nids.preprocessing.encoder - INFO - Transformed data shape: (5, 10)
+2025-07-27 09:04:42,599 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:04:42,599 - nids.preprocessing.encoder - INFO - Detected 1 categorical and 1 numerical columns
+2025-07-27 09:04:42,599 - nids.preprocessing.encoder - INFO - Using label encoding for large_cat (44 categories)
+2025-07-27 09:04:42,602 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 2
+2025-07-27 09:04:42,603 - nids.preprocessing.encoder - INFO - Transformed data shape: (100, 2)
+2025-07-27 09:04:42,617 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:04:42,618 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:04:42,623 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 14
+2025-07-27 09:04:42,627 - nids.preprocessing.encoder - INFO - Transformed data shape: (5, 14)
+2025-07-27 09:04:42,630 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:04:42,631 - nids.preprocessing.encoder - INFO - Detected 0 categorical and 3 numerical columns
+2025-07-27 09:04:42,631 - nids.preprocessing.encoder - WARNING - No categorical columns detected
+2025-07-27 09:04:42,632 - nids.preprocessing.encoder - INFO - No categorical columns to encode, returning original data
+2025-07-27 09:07:26,639 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:07:26,641 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(98.44230223908859), 'feature2': np.float64(486.20618511478364), 'feature3': np.float64(2.124182218886775), 'feature4': np.float64(0.01204670591850439)}
+2025-07-27 09:07:26,641 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(13.554242649669444), 'feature2': np.float64(286.6995846116388), 'feature3': np.float64(1.9119162447993294), 'feature4': np.float64(0.8950784195666535)}
+2025-07-27 09:07:26,642 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:07:26,644 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:07:26,645 - nids.preprocessing.scaler - INFO - Found 6 missing values
+2025-07-27 09:07:26,646 - nids.preprocessing.scaler - WARNING - Dropped 3 rows with missing values
+2025-07-27 09:07:26,651 - nids.preprocessing.scaler - INFO - Found 11 missing values
+2025-07-27 09:07:26,652 - nids.preprocessing.scaler - WARNING - Dropped 11 rows with missing values
+2025-07-27 09:07:26,656 - nids.preprocessing.scaler - INFO - Found 11 missing values
+2025-07-27 09:07:26,660 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:07:26,661 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(98.44230223908859), 'feature2': np.float64(486.20618511478364), 'feature3': np.float64(2.124182218886775), 'feature4': np.float64(0.01204670591850439)}
+2025-07-27 09:07:26,661 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(13.554242649669444), 'feature2': np.float64(286.6995846116388), 'feature3': np.float64(1.9119162447993294), 'feature4': np.float64(0.8950784195666535)}
+2025-07-27 09:07:26,661 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:07:26,663 - nids.preprocessing.scaler - INFO - Transformed data shape: (100, 4)
+2025-07-27 09:07:26,667 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:07:26,668 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(98.44230223908859), 'feature2': np.float64(486.20618511478364), 'feature3': np.float64(2.124182218886775), 'feature4': np.float64(0.01204670591850439)}
+2025-07-27 09:07:26,669 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(13.554242649669444), 'feature2': np.float64(286.6995846116388), 'feature3': np.float64(1.9119162447993294), 'feature4': np.float64(0.8950784195666535)}
+2025-07-27 09:07:26,669 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:07:26,671 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:07:26,672 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(98.44230223908859), 'feature2': np.float64(486.20618511478364), 'feature3': np.float64(2.124182218886775), 'feature4': np.float64(0.01204670591850439)}
+2025-07-27 09:07:26,673 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(13.554242649669444), 'feature2': np.float64(286.6995846116388), 'feature3': np.float64(1.9119162447993294), 'feature4': np.float64(0.8950784195666535)}
+2025-07-27 09:07:26,673 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:07:26,674 - nids.preprocessing.scaler - INFO - Transformed data shape: (100, 4)
+2025-07-27 09:07:26,910 - nids.preprocessing.scaler - INFO - Fitting minmax scaler...
+2025-07-27 09:07:26,911 - nids.preprocessing.scaler - INFO - Feature mins: {'feature1': np.float64(60.703823438653835), 'feature2': np.float64(5.061583846218687), 'feature3': np.float64(0.031154630743888766), 'feature4': np.float64(-3.2412673400690726)}
+2025-07-27 09:07:26,911 - nids.preprocessing.scaler - INFO - Feature maxs: {'feature1': np.float64(127.78417276763406), 'feature2': np.float64(985.6504541106007), 'feature3': np.float64(9.221139495692634), 'feature4': np.float64(2.1330333746562666)}
+2025-07-27 09:07:26,911 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:07:26,913 - nids.preprocessing.scaler - INFO - Transformed data shape: (100, 4)
+2025-07-27 09:07:26,931 - nids.preprocessing.scaler - INFO - Fitting robust scaler...
+2025-07-27 09:07:26,933 - nids.preprocessing.scaler - INFO - Feature medians: {'feature1': np.float64(98.09565562330431), 'feature2': np.float64(507.38604076407125), 'feature3': np.float64(1.5790852340004404), 'feature4': np.float64(0.015618451326173049)}
+2025-07-27 09:07:26,934 - nids.preprocessing.scaler - INFO - Feature scales: {'feature1': np.float64(15.102865837627732), 'feature2': np.float64(453.39644715123256), 'feature3': np.float64(2.3062260804548984), 'feature4': np.float64(1.2223991033456842)}
+2025-07-27 09:07:26,934 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:07:26,936 - nids.preprocessing.scaler - INFO - Transformed data shape: (100, 4)
+2025-07-27 09:07:26,938 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:07:26,939 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(98.44230223908859), 'feature2': np.float64(486.20618511478364), 'feature3': np.float64(2.124182218886775), 'feature4': np.float64(0.01204670591850439)}
+2025-07-27 09:07:26,939 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(13.554242649669444), 'feature2': np.float64(286.6995846116388), 'feature3': np.float64(1.9119162447993294), 'feature4': np.float64(0.8950784195666535)}
+2025-07-27 09:07:26,940 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:07:26,941 - nids.preprocessing.scaler - INFO - Transformed data shape: (100, 4)
+2025-07-27 09:07:26,942 - nids.preprocessing.scaler - INFO - Inverse transformed data shape: (100, 4)
+2025-07-27 09:07:26,946 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:07:26,948 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(98.44230223908859), 'feature2': np.float64(486.20618511478364), 'feature3': np.float64(2.124182218886775), 'feature4': np.float64(0.01204670591850439)}
+2025-07-27 09:07:26,948 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(13.554242649669444), 'feature2': np.float64(286.6995846116388), 'feature3': np.float64(1.9119162447993294), 'feature4': np.float64(0.8950784195666535)}
+2025-07-27 09:07:26,948 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:07:26,950 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:07:26,952 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(98.44230223908859), 'feature2': np.float64(486.20618511478364), 'feature3': np.float64(2.124182218886775), 'feature4': np.float64(0.01204670591850439)}
+2025-07-27 09:07:26,952 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(13.554242649669444), 'feature2': np.float64(286.6995846116388), 'feature3': np.float64(1.9119162447993294), 'feature4': np.float64(0.8950784195666535)}
+2025-07-27 09:07:26,952 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:07:26,953 - nids.preprocessing.scaler - INFO - Transformed data shape: (100, 4)
+2025-07-27 09:07:26,955 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:07:26,957 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(98.44230223908859), 'feature2': np.float64(486.20618511478364), 'feature3': np.float64(2.124182218886775), 'feature4': np.float64(0.01204670591850439)}
+2025-07-27 09:07:26,957 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(13.554242649669444), 'feature2': np.float64(286.6995846116388), 'feature3': np.float64(1.9119162447993294), 'feature4': np.float64(0.8950784195666535)}
+2025-07-27 09:07:26,957 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:07:26,960 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:07:26,962 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(98.44230223908859), 'feature2': np.float64(486.20618511478364), 'feature3': np.float64(2.124182218886775), 'feature4': np.float64(0.01204670591850439)}
+2025-07-27 09:07:26,962 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(13.554242649669444), 'feature2': np.float64(286.6995846116388), 'feature3': np.float64(1.9119162447993294), 'feature4': np.float64(0.8950784195666535)}
+2025-07-27 09:07:26,962 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:07:26,965 - nids.preprocessing.scaler - INFO - Fitting minmax scaler...
+2025-07-27 09:07:26,966 - nids.preprocessing.scaler - INFO - Feature mins: {'feature1': np.float64(60.703823438653835), 'feature2': np.float64(5.061583846218687), 'feature3': np.float64(0.031154630743888766), 'feature4': np.float64(-3.2412673400690726)}
+2025-07-27 09:07:26,966 - nids.preprocessing.scaler - INFO - Feature maxs: {'feature1': np.float64(127.78417276763406), 'feature2': np.float64(985.6504541106007), 'feature3': np.float64(9.221139495692634), 'feature4': np.float64(2.1330333746562666)}
+2025-07-27 09:07:26,967 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:07:26,969 - nids.preprocessing.scaler - INFO - Fitting robust scaler...
+2025-07-27 09:07:26,970 - nids.preprocessing.scaler - INFO - Feature medians: {'feature1': np.float64(98.09565562330431), 'feature2': np.float64(507.38604076407125), 'feature3': np.float64(1.5790852340004404), 'feature4': np.float64(0.015618451326173049)}
+2025-07-27 09:07:26,970 - nids.preprocessing.scaler - INFO - Feature scales: {'feature1': np.float64(15.102865837627732), 'feature2': np.float64(453.39644715123256), 'feature3': np.float64(2.3062260804548984), 'feature4': np.float64(1.2223991033456842)}
+2025-07-27 09:07:26,971 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:07:26,974 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:07:26,975 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(98.44230223908859), 'feature2': np.float64(486.20618511478364), 'feature3': np.float64(2.124182218886775), 'feature4': np.float64(0.01204670591850439)}
+2025-07-27 09:07:26,975 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(13.554242649669444), 'feature2': np.float64(286.6995846116388), 'feature3': np.float64(1.9119162447993294), 'feature4': np.float64(0.8950784195666535)}
+2025-07-27 09:07:26,975 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:07:26,977 - nids.preprocessing.scaler - INFO - Transformed data shape: (100, 4)
+2025-07-27 09:07:26,978 - nids.preprocessing.scaler - INFO - Scaler saved to C:\Users\theja\AppData\Local\Temp\tmp584mf43m.pkl
+2025-07-27 09:07:26,986 - nids.preprocessing.scaler - INFO - Scaler loaded from C:\Users\theja\AppData\Local\Temp\tmp584mf43m.pkl
+2025-07-27 09:07:26,988 - nids.preprocessing.scaler - INFO - Transformed data shape: (100, 4)
+2025-07-27 09:07:26,993 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:07:26,995 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(98.44230223908859), 'feature2': np.float64(486.20618511478364), 'feature3': np.float64(2.124182218886775), 'feature4': np.float64(0.01204670591850439)}
+2025-07-27 09:07:26,995 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(13.554242649669444), 'feature2': np.float64(286.6995846116388), 'feature3': np.float64(1.9119162447993294), 'feature4': np.float64(0.8950784195666535)}
+2025-07-27 09:07:26,995 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:07:26,998 - nids.preprocessing.scaler - INFO - Transformed data shape: (100, 4)
+2025-07-27 09:07:27,003 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:07:27,004 - nids.preprocessing.scaler - INFO - Found 11 missing values
+2025-07-27 09:07:27,006 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(95.56958847203748), 'feature2': np.float64(495.285561548117), 'feature3': np.float64(1.99988519498951)}
+2025-07-27 09:07:27,007 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(12.999274221529214), 'feature2': np.float64(289.51000341550986), 'feature3': np.float64(1.9440726891137585)}
+2025-07-27 09:07:27,007 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 50 samples
+2025-07-27 09:07:27,008 - nids.preprocessing.scaler - INFO - Found 11 missing values
+2025-07-27 09:07:27,009 - nids.preprocessing.scaler - INFO - Transformed data shape: (50, 3)
+2025-07-27 09:07:27,011 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:07:27,012 - nids.preprocessing.scaler - INFO - Found 11 missing values
+2025-07-27 09:07:27,015 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(95.62797544332803), 'feature2': np.float64(496.91485744613567), 'feature3': np.float64(1.9873938622282739)}
+2025-07-27 09:07:27,015 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(13.00023576330707), 'feature2': np.float64(289.5627221114045), 'feature3': np.float64(1.9460380923485145)}
+2025-07-27 09:07:27,015 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 50 samples
+2025-07-27 09:07:27,016 - nids.preprocessing.scaler - INFO - Found 11 missing values
+2025-07-27 09:07:27,018 - nids.preprocessing.scaler - INFO - Transformed data shape: (50, 3)
+2025-07-27 09:07:27,020 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:07:27,021 - nids.preprocessing.scaler - INFO - Found 11 missing values
+2025-07-27 09:07:27,022 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(-35.778762144607), 'feature2': np.float64(375.7427166242677), 'feature3': np.float64(-18.02011250891028)}
+2025-07-27 09:07:27,024 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(355.9304735499828), 'feature2': np.float64(498.1532871127669), 'feature3': np.float64(140.15346771936842)}
+2025-07-27 09:07:27,024 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 50 samples
+2025-07-27 09:07:27,025 - nids.preprocessing.scaler - INFO - Found 11 missing values
+2025-07-27 09:07:27,026 - nids.preprocessing.scaler - INFO - Transformed data shape: (50, 3)
+2025-07-27 09:07:27,028 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:07:27,030 - nids.preprocessing.scaler - INFO - Found 11 missing values
+2025-07-27 09:07:27,031 - nids.preprocessing.scaler - WARNING - Dropped 11 rows with missing values
+2025-07-27 09:07:27,032 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(95.79311499516723), 'feature2': np.float64(483.15530662315985), 'feature3': np.float64(2.054367700180133)}
+2025-07-27 09:07:27,032 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(14.420466966910249), 'feature2': np.float64(300.9245061864296), 'feature3': np.float64(1.9761212968274804)}
+2025-07-27 09:07:27,032 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 39 samples
+2025-07-27 09:07:27,033 - nids.preprocessing.scaler - INFO - Found 11 missing values
+2025-07-27 09:07:27,033 - nids.preprocessing.scaler - WARNING - Dropped 11 rows with missing values
+2025-07-27 09:07:27,034 - nids.preprocessing.scaler - INFO - Transformed data shape: (39, 3)
+2025-07-27 09:07:27,037 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:07:27,038 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(98.44230223908859), 'feature2': np.float64(486.20618511478364), 'feature3': np.float64(2.124182218886775), 'feature4': np.float64(0.01204670591850439)}
+2025-07-27 09:07:27,038 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(13.554242649669444), 'feature2': np.float64(286.6995846116388), 'feature3': np.float64(1.9119162447993294), 'feature4': np.float64(0.8950784195666535)}
+2025-07-27 09:07:27,038 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:07:27,040 - nids.preprocessing.scaler - INFO - Transformed data shape: (100, 4)
+2025-07-27 09:07:27,042 - nids.preprocessing.scaler - INFO - Fitting minmax scaler...
+2025-07-27 09:07:27,043 - nids.preprocessing.scaler - INFO - Feature mins: {'feature1': np.float64(60.703823438653835), 'feature2': np.float64(5.061583846218687), 'feature3': np.float64(0.031154630743888766), 'feature4': np.float64(-3.2412673400690726)}
+2025-07-27 09:07:27,043 - nids.preprocessing.scaler - INFO - Feature maxs: {'feature1': np.float64(127.78417276763406), 'feature2': np.float64(985.6504541106007), 'feature3': np.float64(9.221139495692634), 'feature4': np.float64(2.1330333746562666)}
+2025-07-27 09:07:27,043 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:07:27,045 - nids.preprocessing.scaler - INFO - Transformed data shape: (100, 4)
+2025-07-27 09:07:27,046 - nids.preprocessing.scaler - INFO - Fitting minmax scaler...
+2025-07-27 09:07:27,047 - nids.preprocessing.scaler - INFO - Feature mins: {'feature1': np.float64(60.703823438653835), 'feature2': np.float64(5.061583846218687), 'feature3': np.float64(0.031154630743888766), 'feature4': np.float64(-3.2412673400690726)}
+2025-07-27 09:07:27,047 - nids.preprocessing.scaler - INFO - Feature maxs: {'feature1': np.float64(127.78417276763406), 'feature2': np.float64(985.6504541106007), 'feature3': np.float64(9.221139495692634), 'feature4': np.float64(2.1330333746562666)}
+2025-07-27 09:07:27,047 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:07:27,049 - nids.preprocessing.scaler - INFO - Transformed data shape: (100, 4)
+2025-07-27 09:07:27,050 - nids.preprocessing.scaler - INFO - Fitting minmax scaler...
+2025-07-27 09:07:27,051 - nids.preprocessing.scaler - INFO - Feature mins: {'feature1': np.float64(60.703823438653835), 'feature2': np.float64(5.061583846218687), 'feature3': np.float64(0.031154630743888766), 'feature4': np.float64(-3.2412673400690726)}
+2025-07-27 09:07:27,051 - nids.preprocessing.scaler - INFO - Feature maxs: {'feature1': np.float64(127.78417276763406), 'feature2': np.float64(985.6504541106007), 'feature3': np.float64(9.221139495692634), 'feature4': np.float64(2.1330333746562666)}
+2025-07-27 09:07:27,051 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:07:27,053 - nids.preprocessing.scaler - INFO - Transformed data shape: (100, 4)
+2025-07-27 09:07:27,053 - nids.preprocessing.scaler - INFO - Fitting minmax scaler...
+2025-07-27 09:07:27,054 - nids.preprocessing.scaler - INFO - Feature mins: {'feature1': np.float64(60.703823438653835), 'feature2': np.float64(5.061583846218687), 'feature3': np.float64(0.031154630743888766), 'feature4': np.float64(-3.2412673400690726)}
+2025-07-27 09:07:27,055 - nids.preprocessing.scaler - INFO - Feature maxs: {'feature1': np.float64(127.78417276763406), 'feature2': np.float64(985.6504541106007), 'feature3': np.float64(9.221139495692634), 'feature4': np.float64(2.1330333746562666)}
+2025-07-27 09:07:27,055 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:07:27,056 - nids.preprocessing.scaler - INFO - Transformed data shape: (100, 4)
+2025-07-27 09:07:27,058 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:07:27,059 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(98.44230223908859), 'feature2': np.float64(486.20618511478364), 'feature3': np.float64(2.124182218886775), 'feature4': np.float64(0.01204670591850439)}
+2025-07-27 09:07:27,060 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(13.554242649669444), 'feature2': np.float64(286.6995846116388), 'feature3': np.float64(1.9119162447993294), 'feature4': np.float64(0.8950784195666535)}
+2025-07-27 09:07:27,060 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:07:27,061 - nids.preprocessing.scaler - INFO - Transformed data shape: (100, 4)
+2025-07-27 09:07:27,062 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:07:27,063 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(98.44230223908859), 'feature2': np.float64(486.20618511478364), 'feature3': np.float64(2.124182218886775), 'feature4': np.float64(0.01204670591850439)}
+2025-07-27 09:07:27,063 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(13.554242649669444), 'feature2': np.float64(286.6995846116388), 'feature3': np.float64(1.9119162447993294), 'feature4': np.float64(0.8950784195666535)}
+2025-07-27 09:07:27,063 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:07:27,064 - nids.preprocessing.scaler - INFO - Transformed data shape: (100, 4)
+2025-07-27 09:07:27,073 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:07:27,074 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(5.5)}
+2025-07-27 09:07:27,074 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(2.8722813232690143)}
+2025-07-27 09:07:27,074 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 10 samples
+2025-07-27 09:07:27,075 - nids.preprocessing.scaler - INFO - Transformed data shape: (10, 1)
+2025-07-27 09:07:27,077 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:07:27,079 - nids.preprocessing.scaler - INFO - Feature means: {'constant': np.float64(5.0), 'variable': np.float64(5.5)}
+2025-07-27 09:07:27,079 - nids.preprocessing.scaler - INFO - Feature stds: {'constant': np.float64(1.0), 'variable': np.float64(2.8722813232690143)}
+2025-07-27 09:07:27,079 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 10 samples
+2025-07-27 09:07:27,080 - nids.preprocessing.scaler - INFO - Transformed data shape: (10, 2)
+2025-07-27 09:07:57,707 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:07:57,709 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(98.44230223908859), 'feature2': np.float64(486.20618511478364), 'feature3': np.float64(2.124182218886775), 'feature4': np.float64(0.01204670591850439)}
+2025-07-27 09:07:57,710 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(13.554242649669444), 'feature2': np.float64(286.6995846116388), 'feature3': np.float64(1.9119162447993294), 'feature4': np.float64(0.8950784195666535)}
+2025-07-27 09:07:57,710 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:07:57,712 - nids.preprocessing.scaler - INFO - Transformed data shape: (100, 4)
+2025-07-27 09:07:57,715 - nids.preprocessing.scaler - INFO - Fitting minmax scaler...
+2025-07-27 09:07:57,717 - nids.preprocessing.scaler - INFO - Feature mins: {'feature1': np.float64(60.703823438653835), 'feature2': np.float64(5.061583846218687), 'feature3': np.float64(0.031154630743888766), 'feature4': np.float64(-3.2412673400690726)}
+2025-07-27 09:07:57,717 - nids.preprocessing.scaler - INFO - Feature maxs: {'feature1': np.float64(127.78417276763406), 'feature2': np.float64(985.6504541106007), 'feature3': np.float64(9.221139495692634), 'feature4': np.float64(2.1330333746562666)}
+2025-07-27 09:07:57,717 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:07:57,719 - nids.preprocessing.scaler - INFO - Transformed data shape: (100, 4)
+2025-07-27 09:08:05,677 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:08:05,679 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(98.44230223908859), 'feature2': np.float64(486.20618511478364), 'feature3': np.float64(2.124182218886775), 'feature4': np.float64(0.01204670591850439)}
+2025-07-27 09:08:05,679 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(13.554242649669444), 'feature2': np.float64(286.6995846116388), 'feature3': np.float64(1.9119162447993294), 'feature4': np.float64(0.8950784195666535)}
+2025-07-27 09:08:05,679 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:08:05,682 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:08:05,683 - nids.preprocessing.scaler - INFO - Found 6 missing values
+2025-07-27 09:08:05,684 - nids.preprocessing.scaler - WARNING - Dropped 3 rows with missing values
+2025-07-27 09:08:05,690 - nids.preprocessing.scaler - INFO - Found 11 missing values
+2025-07-27 09:08:05,691 - nids.preprocessing.scaler - WARNING - Dropped 11 rows with missing values
+2025-07-27 09:08:05,694 - nids.preprocessing.scaler - INFO - Found 11 missing values
+2025-07-27 09:08:05,698 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:08:05,700 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(98.44230223908859), 'feature2': np.float64(486.20618511478364), 'feature3': np.float64(2.124182218886775), 'feature4': np.float64(0.01204670591850439)}
+2025-07-27 09:08:05,700 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(13.554242649669444), 'feature2': np.float64(286.6995846116388), 'feature3': np.float64(1.9119162447993294), 'feature4': np.float64(0.8950784195666535)}
+2025-07-27 09:08:05,700 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:08:05,702 - nids.preprocessing.scaler - INFO - Transformed data shape: (100, 4)
+2025-07-27 09:08:05,706 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:08:05,708 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(98.44230223908859), 'feature2': np.float64(486.20618511478364), 'feature3': np.float64(2.124182218886775), 'feature4': np.float64(0.01204670591850439)}
+2025-07-27 09:08:05,708 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(13.554242649669444), 'feature2': np.float64(286.6995846116388), 'feature3': np.float64(1.9119162447993294), 'feature4': np.float64(0.8950784195666535)}
+2025-07-27 09:08:05,708 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:08:05,710 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:08:05,711 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(98.44230223908859), 'feature2': np.float64(486.20618511478364), 'feature3': np.float64(2.124182218886775), 'feature4': np.float64(0.01204670591850439)}
+2025-07-27 09:08:05,711 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(13.554242649669444), 'feature2': np.float64(286.6995846116388), 'feature3': np.float64(1.9119162447993294), 'feature4': np.float64(0.8950784195666535)}
+2025-07-27 09:08:05,711 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:08:05,713 - nids.preprocessing.scaler - INFO - Transformed data shape: (100, 4)
+2025-07-27 09:08:05,716 - nids.preprocessing.scaler - INFO - Fitting minmax scaler...
+2025-07-27 09:08:05,717 - nids.preprocessing.scaler - INFO - Feature mins: {'feature1': np.float64(60.703823438653835), 'feature2': np.float64(5.061583846218687), 'feature3': np.float64(0.031154630743888766), 'feature4': np.float64(-3.2412673400690726)}
+2025-07-27 09:08:05,717 - nids.preprocessing.scaler - INFO - Feature maxs: {'feature1': np.float64(127.78417276763406), 'feature2': np.float64(985.6504541106007), 'feature3': np.float64(9.221139495692634), 'feature4': np.float64(2.1330333746562666)}
+2025-07-27 09:08:05,717 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:08:05,719 - nids.preprocessing.scaler - INFO - Transformed data shape: (100, 4)
+2025-07-27 09:08:05,722 - nids.preprocessing.scaler - INFO - Fitting robust scaler...
+2025-07-27 09:08:05,724 - nids.preprocessing.scaler - INFO - Feature medians: {'feature1': np.float64(98.09565562330431), 'feature2': np.float64(507.38604076407125), 'feature3': np.float64(1.5790852340004404), 'feature4': np.float64(0.015618451326173049)}
+2025-07-27 09:08:05,724 - nids.preprocessing.scaler - INFO - Feature scales: {'feature1': np.float64(15.102865837627732), 'feature2': np.float64(453.39644715123256), 'feature3': np.float64(2.3062260804548984), 'feature4': np.float64(1.2223991033456842)}
+2025-07-27 09:08:05,725 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:08:05,726 - nids.preprocessing.scaler - INFO - Transformed data shape: (100, 4)
+2025-07-27 09:08:05,728 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:08:05,729 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(98.44230223908859), 'feature2': np.float64(486.20618511478364), 'feature3': np.float64(2.124182218886775), 'feature4': np.float64(0.01204670591850439)}
+2025-07-27 09:08:05,729 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(13.554242649669444), 'feature2': np.float64(286.6995846116388), 'feature3': np.float64(1.9119162447993294), 'feature4': np.float64(0.8950784195666535)}
+2025-07-27 09:08:05,730 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:08:05,731 - nids.preprocessing.scaler - INFO - Transformed data shape: (100, 4)
+2025-07-27 09:08:05,732 - nids.preprocessing.scaler - INFO - Inverse transformed data shape: (100, 4)
+2025-07-27 09:08:05,737 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:08:05,738 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(98.44230223908859), 'feature2': np.float64(486.20618511478364), 'feature3': np.float64(2.124182218886775), 'feature4': np.float64(0.01204670591850439)}
+2025-07-27 09:08:05,738 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(13.554242649669444), 'feature2': np.float64(286.6995846116388), 'feature3': np.float64(1.9119162447993294), 'feature4': np.float64(0.8950784195666535)}
+2025-07-27 09:08:05,738 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:08:05,740 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:08:05,741 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(98.44230223908859), 'feature2': np.float64(486.20618511478364), 'feature3': np.float64(2.124182218886775), 'feature4': np.float64(0.01204670591850439)}
+2025-07-27 09:08:05,742 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(13.554242649669444), 'feature2': np.float64(286.6995846116388), 'feature3': np.float64(1.9119162447993294), 'feature4': np.float64(0.8950784195666535)}
+2025-07-27 09:08:05,742 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:08:05,743 - nids.preprocessing.scaler - INFO - Transformed data shape: (100, 4)
+2025-07-27 09:08:05,745 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:08:05,746 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(98.44230223908859), 'feature2': np.float64(486.20618511478364), 'feature3': np.float64(2.124182218886775), 'feature4': np.float64(0.01204670591850439)}
+2025-07-27 09:08:05,746 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(13.554242649669444), 'feature2': np.float64(286.6995846116388), 'feature3': np.float64(1.9119162447993294), 'feature4': np.float64(0.8950784195666535)}
+2025-07-27 09:08:05,746 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:08:05,750 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:08:05,753 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(98.44230223908859), 'feature2': np.float64(486.20618511478364), 'feature3': np.float64(2.124182218886775), 'feature4': np.float64(0.01204670591850439)}
+2025-07-27 09:08:05,753 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(13.554242649669444), 'feature2': np.float64(286.6995846116388), 'feature3': np.float64(1.9119162447993294), 'feature4': np.float64(0.8950784195666535)}
+2025-07-27 09:08:05,754 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:08:05,757 - nids.preprocessing.scaler - INFO - Fitting minmax scaler...
+2025-07-27 09:08:05,759 - nids.preprocessing.scaler - INFO - Feature mins: {'feature1': np.float64(60.703823438653835), 'feature2': np.float64(5.061583846218687), 'feature3': np.float64(0.031154630743888766), 'feature4': np.float64(-3.2412673400690726)}
+2025-07-27 09:08:05,759 - nids.preprocessing.scaler - INFO - Feature maxs: {'feature1': np.float64(127.78417276763406), 'feature2': np.float64(985.6504541106007), 'feature3': np.float64(9.221139495692634), 'feature4': np.float64(2.1330333746562666)}
+2025-07-27 09:08:05,759 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:08:05,762 - nids.preprocessing.scaler - INFO - Fitting robust scaler...
+2025-07-27 09:08:05,764 - nids.preprocessing.scaler - INFO - Feature medians: {'feature1': np.float64(98.09565562330431), 'feature2': np.float64(507.38604076407125), 'feature3': np.float64(1.5790852340004404), 'feature4': np.float64(0.015618451326173049)}
+2025-07-27 09:08:05,765 - nids.preprocessing.scaler - INFO - Feature scales: {'feature1': np.float64(15.102865837627732), 'feature2': np.float64(453.39644715123256), 'feature3': np.float64(2.3062260804548984), 'feature4': np.float64(1.2223991033456842)}
+2025-07-27 09:08:05,765 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:08:05,770 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:08:05,772 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(98.44230223908859), 'feature2': np.float64(486.20618511478364), 'feature3': np.float64(2.124182218886775), 'feature4': np.float64(0.01204670591850439)}
+2025-07-27 09:08:05,773 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(13.554242649669444), 'feature2': np.float64(286.6995846116388), 'feature3': np.float64(1.9119162447993294), 'feature4': np.float64(0.8950784195666535)}
+2025-07-27 09:08:05,773 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:08:05,775 - nids.preprocessing.scaler - INFO - Transformed data shape: (100, 4)
+2025-07-27 09:08:05,776 - nids.preprocessing.scaler - INFO - Scaler saved to C:\Users\theja\AppData\Local\Temp\tmpgcxdiw0n.pkl
+2025-07-27 09:08:05,778 - nids.preprocessing.scaler - INFO - Scaler loaded from C:\Users\theja\AppData\Local\Temp\tmpgcxdiw0n.pkl
+2025-07-27 09:08:05,780 - nids.preprocessing.scaler - INFO - Transformed data shape: (100, 4)
+2025-07-27 09:08:05,789 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:08:05,790 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(98.44230223908859), 'feature2': np.float64(486.20618511478364), 'feature3': np.float64(2.124182218886775), 'feature4': np.float64(0.01204670591850439)}
+2025-07-27 09:08:05,791 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(13.554242649669444), 'feature2': np.float64(286.6995846116388), 'feature3': np.float64(1.9119162447993294), 'feature4': np.float64(0.8950784195666535)}
+2025-07-27 09:08:05,791 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:08:05,793 - nids.preprocessing.scaler - INFO - Transformed data shape: (100, 4)
+2025-07-27 09:08:05,801 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:08:05,802 - nids.preprocessing.scaler - INFO - Found 11 missing values
+2025-07-27 09:08:05,804 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(95.56958847203748), 'feature2': np.float64(495.285561548117), 'feature3': np.float64(1.99988519498951)}
+2025-07-27 09:08:05,804 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(12.999274221529214), 'feature2': np.float64(289.51000341550986), 'feature3': np.float64(1.9440726891137585)}
+2025-07-27 09:08:05,805 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 50 samples
+2025-07-27 09:08:05,806 - nids.preprocessing.scaler - INFO - Found 11 missing values
+2025-07-27 09:08:05,807 - nids.preprocessing.scaler - INFO - Transformed data shape: (50, 3)
+2025-07-27 09:08:05,810 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:08:05,810 - nids.preprocessing.scaler - INFO - Found 11 missing values
+2025-07-27 09:08:05,813 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(95.62797544332803), 'feature2': np.float64(496.91485744613567), 'feature3': np.float64(1.9873938622282739)}
+2025-07-27 09:08:05,813 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(13.00023576330707), 'feature2': np.float64(289.5627221114045), 'feature3': np.float64(1.9460380923485145)}
+2025-07-27 09:08:05,813 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 50 samples
+2025-07-27 09:08:05,814 - nids.preprocessing.scaler - INFO - Found 11 missing values
+2025-07-27 09:08:05,816 - nids.preprocessing.scaler - INFO - Transformed data shape: (50, 3)
+2025-07-27 09:08:05,819 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:08:05,820 - nids.preprocessing.scaler - INFO - Found 11 missing values
+2025-07-27 09:08:05,822 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(-35.778762144607), 'feature2': np.float64(375.7427166242677), 'feature3': np.float64(-18.02011250891028)}
+2025-07-27 09:08:05,822 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(355.9304735499828), 'feature2': np.float64(498.1532871127669), 'feature3': np.float64(140.15346771936842)}
+2025-07-27 09:08:05,822 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 50 samples
+2025-07-27 09:08:05,823 - nids.preprocessing.scaler - INFO - Found 11 missing values
+2025-07-27 09:08:05,825 - nids.preprocessing.scaler - INFO - Transformed data shape: (50, 3)
+2025-07-27 09:08:05,827 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:08:05,828 - nids.preprocessing.scaler - INFO - Found 11 missing values
+2025-07-27 09:08:05,828 - nids.preprocessing.scaler - WARNING - Dropped 11 rows with missing values
+2025-07-27 09:08:05,829 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(95.79311499516723), 'feature2': np.float64(483.15530662315985), 'feature3': np.float64(2.054367700180133)}
+2025-07-27 09:08:05,829 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(14.420466966910249), 'feature2': np.float64(300.9245061864296), 'feature3': np.float64(1.9761212968274804)}
+2025-07-27 09:08:05,830 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 39 samples
+2025-07-27 09:08:05,831 - nids.preprocessing.scaler - INFO - Found 11 missing values
+2025-07-27 09:08:05,831 - nids.preprocessing.scaler - WARNING - Dropped 11 rows with missing values
+2025-07-27 09:08:05,832 - nids.preprocessing.scaler - INFO - Transformed data shape: (39, 3)
+2025-07-27 09:08:05,835 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:08:05,836 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(98.44230223908859), 'feature2': np.float64(486.20618511478364), 'feature3': np.float64(2.124182218886775), 'feature4': np.float64(0.01204670591850439)}
+2025-07-27 09:08:05,837 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(13.554242649669444), 'feature2': np.float64(286.6995846116388), 'feature3': np.float64(1.9119162447993294), 'feature4': np.float64(0.8950784195666535)}
+2025-07-27 09:08:05,837 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:08:05,838 - nids.preprocessing.scaler - INFO - Transformed data shape: (100, 4)
+2025-07-27 09:08:05,840 - nids.preprocessing.scaler - INFO - Fitting minmax scaler...
+2025-07-27 09:08:05,841 - nids.preprocessing.scaler - INFO - Feature mins: {'feature1': np.float64(60.703823438653835), 'feature2': np.float64(5.061583846218687), 'feature3': np.float64(0.031154630743888766), 'feature4': np.float64(-3.2412673400690726)}
+2025-07-27 09:08:05,842 - nids.preprocessing.scaler - INFO - Feature maxs: {'feature1': np.float64(127.78417276763406), 'feature2': np.float64(985.6504541106007), 'feature3': np.float64(9.221139495692634), 'feature4': np.float64(2.1330333746562666)}
+2025-07-27 09:08:05,842 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:08:05,843 - nids.preprocessing.scaler - INFO - Transformed data shape: (100, 4)
+2025-07-27 09:08:05,844 - nids.preprocessing.scaler - INFO - Fitting minmax scaler...
+2025-07-27 09:08:05,845 - nids.preprocessing.scaler - INFO - Feature mins: {'feature1': np.float64(60.703823438653835), 'feature2': np.float64(5.061583846218687), 'feature3': np.float64(0.031154630743888766), 'feature4': np.float64(-3.2412673400690726)}
+2025-07-27 09:08:05,846 - nids.preprocessing.scaler - INFO - Feature maxs: {'feature1': np.float64(127.78417276763406), 'feature2': np.float64(985.6504541106007), 'feature3': np.float64(9.221139495692634), 'feature4': np.float64(2.1330333746562666)}
+2025-07-27 09:08:05,846 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:08:05,847 - nids.preprocessing.scaler - INFO - Transformed data shape: (100, 4)
+2025-07-27 09:08:05,848 - nids.preprocessing.scaler - INFO - Fitting minmax scaler...
+2025-07-27 09:08:05,849 - nids.preprocessing.scaler - INFO - Feature mins: {'feature1': np.float64(60.703823438653835), 'feature2': np.float64(5.061583846218687), 'feature3': np.float64(0.031154630743888766), 'feature4': np.float64(-3.2412673400690726)}
+2025-07-27 09:08:05,849 - nids.preprocessing.scaler - INFO - Feature maxs: {'feature1': np.float64(127.78417276763406), 'feature2': np.float64(985.6504541106007), 'feature3': np.float64(9.221139495692634), 'feature4': np.float64(2.1330333746562666)}
+2025-07-27 09:08:05,850 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:08:05,851 - nids.preprocessing.scaler - INFO - Transformed data shape: (100, 4)
+2025-07-27 09:08:05,852 - nids.preprocessing.scaler - INFO - Fitting minmax scaler...
+2025-07-27 09:08:05,853 - nids.preprocessing.scaler - INFO - Feature mins: {'feature1': np.float64(60.703823438653835), 'feature2': np.float64(5.061583846218687), 'feature3': np.float64(0.031154630743888766), 'feature4': np.float64(-3.2412673400690726)}
+2025-07-27 09:08:05,853 - nids.preprocessing.scaler - INFO - Feature maxs: {'feature1': np.float64(127.78417276763406), 'feature2': np.float64(985.6504541106007), 'feature3': np.float64(9.221139495692634), 'feature4': np.float64(2.1330333746562666)}
+2025-07-27 09:08:05,853 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:08:05,854 - nids.preprocessing.scaler - INFO - Transformed data shape: (100, 4)
+2025-07-27 09:08:05,857 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:08:05,858 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(98.44230223908859), 'feature2': np.float64(486.20618511478364), 'feature3': np.float64(2.124182218886775), 'feature4': np.float64(0.01204670591850439)}
+2025-07-27 09:08:05,858 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(13.554242649669444), 'feature2': np.float64(286.6995846116388), 'feature3': np.float64(1.9119162447993294), 'feature4': np.float64(0.8950784195666535)}
+2025-07-27 09:08:05,859 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:08:05,860 - nids.preprocessing.scaler - INFO - Transformed data shape: (100, 4)
+2025-07-27 09:08:05,860 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:08:05,861 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(98.44230223908859), 'feature2': np.float64(486.20618511478364), 'feature3': np.float64(2.124182218886775), 'feature4': np.float64(0.01204670591850439)}
+2025-07-27 09:08:05,862 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(13.554242649669444), 'feature2': np.float64(286.6995846116388), 'feature3': np.float64(1.9119162447993294), 'feature4': np.float64(0.8950784195666535)}
+2025-07-27 09:08:05,862 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:08:05,863 - nids.preprocessing.scaler - INFO - Transformed data shape: (100, 4)
+2025-07-27 09:08:05,871 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:08:05,872 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(5.5)}
+2025-07-27 09:08:05,872 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(2.8722813232690143)}
+2025-07-27 09:08:05,872 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 10 samples
+2025-07-27 09:08:05,873 - nids.preprocessing.scaler - INFO - Transformed data shape: (10, 1)
+2025-07-27 09:08:05,875 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:08:05,877 - nids.preprocessing.scaler - INFO - Feature means: {'constant': np.float64(5.0), 'variable': np.float64(5.5)}
+2025-07-27 09:08:05,877 - nids.preprocessing.scaler - INFO - Feature stds: {'constant': np.float64(1.0), 'variable': np.float64(2.8722813232690143)}
+2025-07-27 09:08:05,877 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 10 samples
+2025-07-27 09:08:05,878 - nids.preprocessing.scaler - INFO - Transformed data shape: (10, 2)
