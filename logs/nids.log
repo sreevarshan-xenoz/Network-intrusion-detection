@@ -1888,3 +1888,1342 @@
 2025-07-27 09:16:27,270 - nids.preprocessing.balancer - INFO -   Class 2: 800 samples (33.3%)
 2025-07-27 09:16:27,270 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
 2025-07-27 09:16:27,270 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (2400, 3)
+2025-07-27 09:17:04,822 - nids.preprocessing.cleaner - INFO - Fitting feature cleaner...
+2025-07-27 09:17:04,822 - nids.preprocessing.cleaner - INFO - Input data shape: (300, 7)
+2025-07-27 09:17:04,825 - nids.preprocessing.cleaner - INFO - Constant numerical feature: constant_feature (single value: 1.0)
+2025-07-27 09:17:04,829 - nids.preprocessing.cleaner - INFO - Found 1 low variance features
+2025-07-27 09:17:04,829 - nids.preprocessing.cleaner - INFO -   constant_feature: variance = 0.000000
+2025-07-27 09:17:04,831 - nids.preprocessing.cleaner - INFO - High correlation (1.000) between correlated_1 and correlated_2
+2025-07-27 09:17:04,832 - nids.preprocessing.cleaner - INFO -   Removing correlated_2 (variance: 0.956209)
+2025-07-27 09:17:04,832 - nids.preprocessing.cleaner - INFO - Features to remove (high_correlation): ['correlated_2']
+2025-07-27 09:17:04,832 - nids.preprocessing.cleaner - INFO - Features to remove (low_variance): ['constant_feature']
+2025-07-27 09:17:04,832 - nids.preprocessing.cleaner - INFO - Features to remove (constant): ['constant_feature']
+2025-07-27 09:17:04,833 - nids.preprocessing.cleaner - INFO - Features to keep: 5 out of 7
+2025-07-27 09:17:04,833 - nids.preprocessing.cleaner - INFO - Features to remove: 2
+2025-07-27 09:17:04,833 - nids.preprocessing.cleaner - INFO - Cleaning data with shape: (300, 7)
+2025-07-27 09:17:04,835 - nids.preprocessing.cleaner - INFO - Removed 3 features
+2025-07-27 09:17:04,836 - nids.preprocessing.cleaner - INFO - Found 2 outliers in duration using Z-score
+2025-07-27 09:17:04,837 - nids.preprocessing.cleaner - INFO - Found 4 outliers in bytes_sent using Z-score
+2025-07-27 09:17:04,838 - nids.preprocessing.cleaner - INFO - Removed 6 rows containing outliers
+2025-07-27 09:17:04,838 - nids.preprocessing.cleaner - INFO - Cleaned data shape: (294, 5)
+2025-07-27 09:17:04,839 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:17:04,839 - nids.preprocessing.encoder - INFO - Detected 2 categorical and 3 numerical columns
+2025-07-27 09:17:04,844 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 9
+2025-07-27 09:17:04,846 - nids.preprocessing.encoder - INFO - Transformed data shape: (294, 9)
+2025-07-27 09:17:04,846 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:17:04,848 - nids.preprocessing.scaler - INFO - Feature means: {'protocol_ICMP': np.float64(0.3299319727891156), 'protocol_TCP': np.float64(0.3401360544217687), 'protocol_UDP': np.float64(0.3299319727891156), 'flag_REJ': np.float64(0.3299319727891156), 'flag_S0': np.float64(0.3299319727891156), 'flag_SF': np.float64(0.3401360544217687), 'duration': np.float64(0.9964285406560432), 'bytes_sent': np.float64(997.6107057364833), 'correlated_1': np.float64(-0.020029167286346083)}
+2025-07-27 09:17:04,848 - nids.preprocessing.scaler - INFO - Feature stds: {'protocol_ICMP': np.float64(0.47018811780031056), 'protocol_TCP': np.float64(0.47375470330558306), 'protocol_UDP': np.float64(0.4701881178003105), 'flag_REJ': np.float64(0.4701881178003105), 'flag_S0': np.float64(0.47018811780031056), 'flag_SF': np.float64(0.47375470330558306), 'duration': np.float64(0.47183229868564286), 'bytes_sent': np.float64(985.0835088878146), 'correlated_1': np.float64(0.9896832282500398)}
+2025-07-27 09:17:04,849 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 294 samples
+2025-07-27 09:17:04,850 - nids.preprocessing.scaler - INFO - Transformed data shape: (294, 9)
+2025-07-27 09:17:19,147 - nids.preprocessing.cleaner - INFO - Fitting feature cleaner...
+2025-07-27 09:17:19,148 - nids.preprocessing.cleaner - INFO - Input data shape: (300, 7)
+2025-07-27 09:17:19,150 - nids.preprocessing.cleaner - INFO - Constant numerical feature: constant_feature (single value: 1.0)
+2025-07-27 09:17:19,155 - nids.preprocessing.cleaner - INFO - Found 1 low variance features
+2025-07-27 09:17:19,155 - nids.preprocessing.cleaner - INFO -   constant_feature: variance = 0.000000
+2025-07-27 09:17:19,158 - nids.preprocessing.cleaner - INFO - High correlation (1.000) between correlated_1 and correlated_2
+2025-07-27 09:17:19,158 - nids.preprocessing.cleaner - INFO -   Removing correlated_2 (variance: 0.956209)
+2025-07-27 09:17:19,158 - nids.preprocessing.cleaner - INFO - Features to remove (high_correlation): ['correlated_2']
+2025-07-27 09:17:19,159 - nids.preprocessing.cleaner - INFO - Features to remove (low_variance): ['constant_feature']
+2025-07-27 09:17:19,159 - nids.preprocessing.cleaner - INFO - Features to remove (constant): ['constant_feature']
+2025-07-27 09:17:19,159 - nids.preprocessing.cleaner - INFO - Features to keep: 5 out of 7
+2025-07-27 09:17:19,159 - nids.preprocessing.cleaner - INFO - Features to remove: 2
+2025-07-27 09:17:19,160 - nids.preprocessing.cleaner - INFO - Cleaning data with shape: (300, 7)
+2025-07-27 09:17:19,161 - nids.preprocessing.cleaner - INFO - Removed 3 features
+2025-07-27 09:17:19,162 - nids.preprocessing.cleaner - INFO - Found 2 outliers in duration using Z-score
+2025-07-27 09:17:19,163 - nids.preprocessing.cleaner - INFO - Found 4 outliers in bytes_sent using Z-score
+2025-07-27 09:17:19,163 - nids.preprocessing.cleaner - INFO - Removed 6 rows containing outliers
+2025-07-27 09:17:19,164 - nids.preprocessing.cleaner - INFO - Cleaned data shape: (294, 5)
+2025-07-27 09:17:19,164 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:17:19,165 - nids.preprocessing.encoder - INFO - Detected 2 categorical and 3 numerical columns
+2025-07-27 09:17:19,169 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 9
+2025-07-27 09:17:19,172 - nids.preprocessing.encoder - INFO - Transformed data shape: (294, 9)
+2025-07-27 09:17:19,173 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:17:19,174 - nids.preprocessing.scaler - INFO - Feature means: {'protocol_ICMP': np.float64(0.3299319727891156), 'protocol_TCP': np.float64(0.3401360544217687), 'protocol_UDP': np.float64(0.3299319727891156), 'flag_REJ': np.float64(0.3299319727891156), 'flag_S0': np.float64(0.3299319727891156), 'flag_SF': np.float64(0.3401360544217687), 'duration': np.float64(0.9964285406560432), 'bytes_sent': np.float64(997.6107057364833), 'correlated_1': np.float64(-0.020029167286346083)}
+2025-07-27 09:17:19,175 - nids.preprocessing.scaler - INFO - Feature stds: {'protocol_ICMP': np.float64(0.47018811780031056), 'protocol_TCP': np.float64(0.47375470330558306), 'protocol_UDP': np.float64(0.4701881178003105), 'flag_REJ': np.float64(0.4701881178003105), 'flag_S0': np.float64(0.47018811780031056), 'flag_SF': np.float64(0.47375470330558306), 'duration': np.float64(0.47183229868564286), 'bytes_sent': np.float64(985.0835088878146), 'correlated_1': np.float64(0.9896832282500398)}
+2025-07-27 09:17:19,175 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 294 samples
+2025-07-27 09:17:19,177 - nids.preprocessing.scaler - INFO - Transformed data shape: (294, 9)
+2025-07-27 09:17:19,177 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:17:19,178 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:17:19,178 - nids.preprocessing.balancer - INFO -   Class 0: 196 samples (66.7%)
+2025-07-27 09:17:19,178 - nids.preprocessing.balancer - INFO -   Class 1: 78 samples (26.5%)
+2025-07-27 09:17:19,178 - nids.preprocessing.balancer - INFO -   Class 2: 20 samples (6.8%)
+2025-07-27 09:17:19,179 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:17:19,179 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:17:19,180 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:17:19,180 - nids.preprocessing.balancer - INFO -   Class 0: 196 samples (33.3%)
+2025-07-27 09:17:19,181 - nids.preprocessing.balancer - INFO -   Class 1: 196 samples (33.3%)
+2025-07-27 09:17:19,181 - nids.preprocessing.balancer - INFO -   Class 2: 196 samples (33.3%)
+2025-07-27 09:17:19,181 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:17:19,181 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (294, 9) -> (588, 9)
+2025-07-27 09:17:28,323 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:17:28,324 - nids.preprocessing.encoder - INFO - Using label encoding for test_col (15 categories)
+2025-07-27 09:17:28,327 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:17:28,328 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:17:28,333 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 14
+2025-07-27 09:17:28,339 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:17:28,340 - nids.preprocessing.encoder - INFO - Detected 0 categorical and 2 numerical columns
+2025-07-27 09:17:28,340 - nids.preprocessing.encoder - WARNING - No categorical columns detected
+2025-07-27 09:17:28,342 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:17:28,342 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:17:28,347 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 14
+2025-07-27 09:17:28,349 - nids.preprocessing.encoder - INFO - Transformed data shape: (5, 14)
+2025-07-27 09:17:28,353 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:17:28,354 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:17:28,358 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 14
+2025-07-27 09:17:28,360 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:17:28,361 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:17:28,365 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 14
+2025-07-27 09:17:28,367 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:17:28,368 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:17:28,372 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 14
+2025-07-27 09:17:28,374 - nids.preprocessing.encoder - INFO - Transformed data shape: (5, 14)
+2025-07-27 09:17:28,377 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:17:28,377 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:17:28,381 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 7
+2025-07-27 09:17:28,384 - nids.preprocessing.encoder - INFO - Transformed data shape: (5, 7)
+2025-07-27 09:17:28,387 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:17:28,388 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:17:28,392 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 14
+2025-07-27 09:17:28,394 - nids.preprocessing.encoder - INFO - Transformed data shape: (5, 14)
+2025-07-27 09:17:28,396 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:17:28,397 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:17:28,401 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 14
+2025-07-27 09:17:28,404 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:17:28,405 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:17:28,409 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 14
+2025-07-27 09:17:28,412 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:17:28,413 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:17:28,417 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 7
+2025-07-27 09:17:28,419 - nids.preprocessing.encoder - INFO - Transformed data shape: (5, 7)
+2025-07-27 09:17:28,423 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:17:28,424 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:17:28,428 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 14
+2025-07-27 09:17:28,431 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:17:28,431 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:17:28,436 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 14
+2025-07-27 09:17:28,439 - nids.preprocessing.encoder - INFO - Transformed data shape: (5, 14)
+2025-07-27 09:17:28,440 - nids.preprocessing.encoder - INFO - Encoder saved to C:\Users\theja\AppData\Local\Temp\tmp16a4z1qh.pkl
+2025-07-27 09:17:28,442 - nids.preprocessing.encoder - INFO - Encoder loaded from C:\Users\theja\AppData\Local\Temp\tmp16a4z1qh.pkl
+2025-07-27 09:17:28,445 - nids.preprocessing.encoder - INFO - Transformed data shape: (5, 14)
+2025-07-27 09:17:28,451 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:17:28,451 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:17:28,456 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 14
+2025-07-27 09:17:28,459 - nids.preprocessing.encoder - INFO - Transformed data shape: (5, 14)
+2025-07-27 09:17:28,461 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:17:28,462 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:17:28,466 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 11
+2025-07-27 09:17:28,466 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:17:28,466 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:17:28,471 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 14
+2025-07-27 09:17:28,474 - nids.preprocessing.encoder - INFO - Transformed data shape: (5, 11)
+2025-07-27 09:17:28,476 - nids.preprocessing.encoder - INFO - Transformed data shape: (5, 14)
+2025-07-27 09:17:28,479 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:17:28,479 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 2 numerical columns
+2025-07-27 09:17:28,483 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 10
+2025-07-27 09:17:28,486 - nids.preprocessing.encoder - INFO - Transformed data shape: (5, 10)
+2025-07-27 09:17:28,489 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:17:28,489 - nids.preprocessing.encoder - INFO - Detected 1 categorical and 1 numerical columns
+2025-07-27 09:17:28,489 - nids.preprocessing.encoder - INFO - Using label encoding for large_cat (43 categories)
+2025-07-27 09:17:28,492 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 2
+2025-07-27 09:17:28,493 - nids.preprocessing.encoder - INFO - Transformed data shape: (100, 2)
+2025-07-27 09:17:28,504 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:17:28,505 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 4 numerical columns
+2025-07-27 09:17:28,509 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 14
+2025-07-27 09:17:28,512 - nids.preprocessing.encoder - INFO - Transformed data shape: (5, 14)
+2025-07-27 09:17:28,514 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-27 09:17:28,514 - nids.preprocessing.encoder - INFO - Detected 0 categorical and 3 numerical columns
+2025-07-27 09:17:28,515 - nids.preprocessing.encoder - WARNING - No categorical columns detected
+2025-07-27 09:17:28,515 - nids.preprocessing.encoder - INFO - No categorical columns to encode, returning original data
+2025-07-27 09:17:28,533 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:17:28,535 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(98.44230223908859), 'feature2': np.float64(486.20618511478364), 'feature3': np.float64(2.124182218886775), 'feature4': np.float64(0.01204670591850439)}
+2025-07-27 09:17:28,535 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(13.554242649669444), 'feature2': np.float64(286.6995846116388), 'feature3': np.float64(1.9119162447993294), 'feature4': np.float64(0.8950784195666535)}
+2025-07-27 09:17:28,535 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:17:28,537 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:17:28,538 - nids.preprocessing.scaler - INFO - Found 6 missing values
+2025-07-27 09:17:28,539 - nids.preprocessing.scaler - WARNING - Dropped 3 rows with missing values
+2025-07-27 09:17:28,543 - nids.preprocessing.scaler - INFO - Found 11 missing values
+2025-07-27 09:17:28,544 - nids.preprocessing.scaler - WARNING - Dropped 11 rows with missing values
+2025-07-27 09:17:28,546 - nids.preprocessing.scaler - INFO - Found 11 missing values
+2025-07-27 09:17:28,549 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:17:28,550 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(98.44230223908859), 'feature2': np.float64(486.20618511478364), 'feature3': np.float64(2.124182218886775), 'feature4': np.float64(0.01204670591850439)}
+2025-07-27 09:17:28,551 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(13.554242649669444), 'feature2': np.float64(286.6995846116388), 'feature3': np.float64(1.9119162447993294), 'feature4': np.float64(0.8950784195666535)}
+2025-07-27 09:17:28,551 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:17:28,553 - nids.preprocessing.scaler - INFO - Transformed data shape: (100, 4)
+2025-07-27 09:17:28,556 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:17:28,558 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(98.44230223908859), 'feature2': np.float64(486.20618511478364), 'feature3': np.float64(2.124182218886775), 'feature4': np.float64(0.01204670591850439)}
+2025-07-27 09:17:28,558 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(13.554242649669444), 'feature2': np.float64(286.6995846116388), 'feature3': np.float64(1.9119162447993294), 'feature4': np.float64(0.8950784195666535)}
+2025-07-27 09:17:28,558 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:17:28,560 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:17:28,561 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(98.44230223908859), 'feature2': np.float64(486.20618511478364), 'feature3': np.float64(2.124182218886775), 'feature4': np.float64(0.01204670591850439)}
+2025-07-27 09:17:28,561 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(13.554242649669444), 'feature2': np.float64(286.6995846116388), 'feature3': np.float64(1.9119162447993294), 'feature4': np.float64(0.8950784195666535)}
+2025-07-27 09:17:28,561 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:17:28,562 - nids.preprocessing.scaler - INFO - Transformed data shape: (100, 4)
+2025-07-27 09:17:28,565 - nids.preprocessing.scaler - INFO - Fitting minmax scaler...
+2025-07-27 09:17:28,566 - nids.preprocessing.scaler - INFO - Feature mins: {'feature1': np.float64(60.703823438653835), 'feature2': np.float64(5.061583846218687), 'feature3': np.float64(0.031154630743888766), 'feature4': np.float64(-3.2412673400690726)}
+2025-07-27 09:17:28,566 - nids.preprocessing.scaler - INFO - Feature maxs: {'feature1': np.float64(127.78417276763406), 'feature2': np.float64(985.6504541106007), 'feature3': np.float64(9.221139495692634), 'feature4': np.float64(2.1330333746562666)}
+2025-07-27 09:17:28,566 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:17:28,568 - nids.preprocessing.scaler - INFO - Transformed data shape: (100, 4)
+2025-07-27 09:17:28,571 - nids.preprocessing.scaler - INFO - Fitting robust scaler...
+2025-07-27 09:17:28,572 - nids.preprocessing.scaler - INFO - Feature medians: {'feature1': np.float64(98.09565562330431), 'feature2': np.float64(507.38604076407125), 'feature3': np.float64(1.5790852340004404), 'feature4': np.float64(0.015618451326173049)}
+2025-07-27 09:17:28,573 - nids.preprocessing.scaler - INFO - Feature scales: {'feature1': np.float64(15.102865837627732), 'feature2': np.float64(453.39644715123256), 'feature3': np.float64(2.3062260804548984), 'feature4': np.float64(1.2223991033456842)}
+2025-07-27 09:17:28,573 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:17:28,574 - nids.preprocessing.scaler - INFO - Transformed data shape: (100, 4)
+2025-07-27 09:17:28,576 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:17:28,577 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(98.44230223908859), 'feature2': np.float64(486.20618511478364), 'feature3': np.float64(2.124182218886775), 'feature4': np.float64(0.01204670591850439)}
+2025-07-27 09:17:28,578 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(13.554242649669444), 'feature2': np.float64(286.6995846116388), 'feature3': np.float64(1.9119162447993294), 'feature4': np.float64(0.8950784195666535)}
+2025-07-27 09:17:28,578 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:17:28,579 - nids.preprocessing.scaler - INFO - Transformed data shape: (100, 4)
+2025-07-27 09:17:28,580 - nids.preprocessing.scaler - INFO - Inverse transformed data shape: (100, 4)
+2025-07-27 09:17:28,583 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:17:28,585 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(98.44230223908859), 'feature2': np.float64(486.20618511478364), 'feature3': np.float64(2.124182218886775), 'feature4': np.float64(0.01204670591850439)}
+2025-07-27 09:17:28,585 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(13.554242649669444), 'feature2': np.float64(286.6995846116388), 'feature3': np.float64(1.9119162447993294), 'feature4': np.float64(0.8950784195666535)}
+2025-07-27 09:17:28,586 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:17:28,588 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:17:28,589 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(98.44230223908859), 'feature2': np.float64(486.20618511478364), 'feature3': np.float64(2.124182218886775), 'feature4': np.float64(0.01204670591850439)}
+2025-07-27 09:17:28,589 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(13.554242649669444), 'feature2': np.float64(286.6995846116388), 'feature3': np.float64(1.9119162447993294), 'feature4': np.float64(0.8950784195666535)}
+2025-07-27 09:17:28,589 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:17:28,591 - nids.preprocessing.scaler - INFO - Transformed data shape: (100, 4)
+2025-07-27 09:17:28,592 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:17:28,594 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(98.44230223908859), 'feature2': np.float64(486.20618511478364), 'feature3': np.float64(2.124182218886775), 'feature4': np.float64(0.01204670591850439)}
+2025-07-27 09:17:28,594 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(13.554242649669444), 'feature2': np.float64(286.6995846116388), 'feature3': np.float64(1.9119162447993294), 'feature4': np.float64(0.8950784195666535)}
+2025-07-27 09:17:28,594 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:17:28,596 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:17:28,598 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(98.44230223908859), 'feature2': np.float64(486.20618511478364), 'feature3': np.float64(2.124182218886775), 'feature4': np.float64(0.01204670591850439)}
+2025-07-27 09:17:28,598 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(13.554242649669444), 'feature2': np.float64(286.6995846116388), 'feature3': np.float64(1.9119162447993294), 'feature4': np.float64(0.8950784195666535)}
+2025-07-27 09:17:28,598 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:17:28,599 - nids.preprocessing.scaler - INFO - Fitting minmax scaler...
+2025-07-27 09:17:28,601 - nids.preprocessing.scaler - INFO - Feature mins: {'feature1': np.float64(60.703823438653835), 'feature2': np.float64(5.061583846218687), 'feature3': np.float64(0.031154630743888766), 'feature4': np.float64(-3.2412673400690726)}
+2025-07-27 09:17:28,602 - nids.preprocessing.scaler - INFO - Feature maxs: {'feature1': np.float64(127.78417276763406), 'feature2': np.float64(985.6504541106007), 'feature3': np.float64(9.221139495692634), 'feature4': np.float64(2.1330333746562666)}
+2025-07-27 09:17:28,602 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:17:28,604 - nids.preprocessing.scaler - INFO - Fitting robust scaler...
+2025-07-27 09:17:28,606 - nids.preprocessing.scaler - INFO - Feature medians: {'feature1': np.float64(98.09565562330431), 'feature2': np.float64(507.38604076407125), 'feature3': np.float64(1.5790852340004404), 'feature4': np.float64(0.015618451326173049)}
+2025-07-27 09:17:28,606 - nids.preprocessing.scaler - INFO - Feature scales: {'feature1': np.float64(15.102865837627732), 'feature2': np.float64(453.39644715123256), 'feature3': np.float64(2.3062260804548984), 'feature4': np.float64(1.2223991033456842)}
+2025-07-27 09:17:28,606 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:17:28,609 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:17:28,610 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(98.44230223908859), 'feature2': np.float64(486.20618511478364), 'feature3': np.float64(2.124182218886775), 'feature4': np.float64(0.01204670591850439)}
+2025-07-27 09:17:28,610 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(13.554242649669444), 'feature2': np.float64(286.6995846116388), 'feature3': np.float64(1.9119162447993294), 'feature4': np.float64(0.8950784195666535)}
+2025-07-27 09:17:28,611 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:17:28,612 - nids.preprocessing.scaler - INFO - Transformed data shape: (100, 4)
+2025-07-27 09:17:28,613 - nids.preprocessing.scaler - INFO - Scaler saved to C:\Users\theja\AppData\Local\Temp\tmpl4dzvpyt.pkl
+2025-07-27 09:17:28,614 - nids.preprocessing.scaler - INFO - Scaler loaded from C:\Users\theja\AppData\Local\Temp\tmpl4dzvpyt.pkl
+2025-07-27 09:17:28,616 - nids.preprocessing.scaler - INFO - Transformed data shape: (100, 4)
+2025-07-27 09:17:28,621 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:17:28,622 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(98.44230223908859), 'feature2': np.float64(486.20618511478364), 'feature3': np.float64(2.124182218886775), 'feature4': np.float64(0.01204670591850439)}
+2025-07-27 09:17:28,622 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(13.554242649669444), 'feature2': np.float64(286.6995846116388), 'feature3': np.float64(1.9119162447993294), 'feature4': np.float64(0.8950784195666535)}
+2025-07-27 09:17:28,623 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:17:28,625 - nids.preprocessing.scaler - INFO - Transformed data shape: (100, 4)
+2025-07-27 09:17:28,629 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:17:28,630 - nids.preprocessing.scaler - INFO - Found 11 missing values
+2025-07-27 09:17:28,633 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(95.56958847203748), 'feature2': np.float64(495.285561548117), 'feature3': np.float64(1.99988519498951)}
+2025-07-27 09:17:28,633 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(12.999274221529214), 'feature2': np.float64(289.51000341550986), 'feature3': np.float64(1.9440726891137585)}
+2025-07-27 09:17:28,633 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 50 samples
+2025-07-27 09:17:28,634 - nids.preprocessing.scaler - INFO - Found 11 missing values
+2025-07-27 09:17:28,636 - nids.preprocessing.scaler - INFO - Transformed data shape: (50, 3)
+2025-07-27 09:17:28,638 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:17:28,639 - nids.preprocessing.scaler - INFO - Found 11 missing values
+2025-07-27 09:17:28,641 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(95.62797544332803), 'feature2': np.float64(496.91485744613567), 'feature3': np.float64(1.9873938622282739)}
+2025-07-27 09:17:28,642 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(13.00023576330707), 'feature2': np.float64(289.5627221114045), 'feature3': np.float64(1.9460380923485145)}
+2025-07-27 09:17:28,642 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 50 samples
+2025-07-27 09:17:28,643 - nids.preprocessing.scaler - INFO - Found 11 missing values
+2025-07-27 09:17:28,644 - nids.preprocessing.scaler - INFO - Transformed data shape: (50, 3)
+2025-07-27 09:17:28,646 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:17:28,647 - nids.preprocessing.scaler - INFO - Found 11 missing values
+2025-07-27 09:17:28,649 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(-35.778762144607), 'feature2': np.float64(375.7427166242677), 'feature3': np.float64(-18.02011250891028)}
+2025-07-27 09:17:28,649 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(355.9304735499828), 'feature2': np.float64(498.1532871127669), 'feature3': np.float64(140.15346771936842)}
+2025-07-27 09:17:28,649 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 50 samples
+2025-07-27 09:17:28,650 - nids.preprocessing.scaler - INFO - Found 11 missing values
+2025-07-27 09:17:28,651 - nids.preprocessing.scaler - INFO - Transformed data shape: (50, 3)
+2025-07-27 09:17:28,654 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:17:28,655 - nids.preprocessing.scaler - INFO - Found 11 missing values
+2025-07-27 09:17:28,656 - nids.preprocessing.scaler - WARNING - Dropped 11 rows with missing values
+2025-07-27 09:17:28,657 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(95.79311499516723), 'feature2': np.float64(483.15530662315985), 'feature3': np.float64(2.054367700180133)}
+2025-07-27 09:17:28,657 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(14.420466966910249), 'feature2': np.float64(300.9245061864296), 'feature3': np.float64(1.9761212968274804)}
+2025-07-27 09:17:28,657 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 39 samples
+2025-07-27 09:17:28,658 - nids.preprocessing.scaler - INFO - Found 11 missing values
+2025-07-27 09:17:28,658 - nids.preprocessing.scaler - WARNING - Dropped 11 rows with missing values
+2025-07-27 09:17:28,659 - nids.preprocessing.scaler - INFO - Transformed data shape: (39, 3)
+2025-07-27 09:17:28,661 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:17:28,662 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(98.44230223908859), 'feature2': np.float64(486.20618511478364), 'feature3': np.float64(2.124182218886775), 'feature4': np.float64(0.01204670591850439)}
+2025-07-27 09:17:28,663 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(13.554242649669444), 'feature2': np.float64(286.6995846116388), 'feature3': np.float64(1.9119162447993294), 'feature4': np.float64(0.8950784195666535)}
+2025-07-27 09:17:28,663 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:17:28,664 - nids.preprocessing.scaler - INFO - Transformed data shape: (100, 4)
+2025-07-27 09:17:28,666 - nids.preprocessing.scaler - INFO - Fitting minmax scaler...
+2025-07-27 09:17:28,667 - nids.preprocessing.scaler - INFO - Feature mins: {'feature1': np.float64(60.703823438653835), 'feature2': np.float64(5.061583846218687), 'feature3': np.float64(0.031154630743888766), 'feature4': np.float64(-3.2412673400690726)}
+2025-07-27 09:17:28,667 - nids.preprocessing.scaler - INFO - Feature maxs: {'feature1': np.float64(127.78417276763406), 'feature2': np.float64(985.6504541106007), 'feature3': np.float64(9.221139495692634), 'feature4': np.float64(2.1330333746562666)}
+2025-07-27 09:17:28,667 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:17:28,669 - nids.preprocessing.scaler - INFO - Transformed data shape: (100, 4)
+2025-07-27 09:17:28,670 - nids.preprocessing.scaler - INFO - Fitting minmax scaler...
+2025-07-27 09:17:28,671 - nids.preprocessing.scaler - INFO - Feature mins: {'feature1': np.float64(60.703823438653835), 'feature2': np.float64(5.061583846218687), 'feature3': np.float64(0.031154630743888766), 'feature4': np.float64(-3.2412673400690726)}
+2025-07-27 09:17:28,671 - nids.preprocessing.scaler - INFO - Feature maxs: {'feature1': np.float64(127.78417276763406), 'feature2': np.float64(985.6504541106007), 'feature3': np.float64(9.221139495692634), 'feature4': np.float64(2.1330333746562666)}
+2025-07-27 09:17:28,671 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:17:28,673 - nids.preprocessing.scaler - INFO - Transformed data shape: (100, 4)
+2025-07-27 09:17:28,674 - nids.preprocessing.scaler - INFO - Fitting minmax scaler...
+2025-07-27 09:17:28,675 - nids.preprocessing.scaler - INFO - Feature mins: {'feature1': np.float64(60.703823438653835), 'feature2': np.float64(5.061583846218687), 'feature3': np.float64(0.031154630743888766), 'feature4': np.float64(-3.2412673400690726)}
+2025-07-27 09:17:28,675 - nids.preprocessing.scaler - INFO - Feature maxs: {'feature1': np.float64(127.78417276763406), 'feature2': np.float64(985.6504541106007), 'feature3': np.float64(9.221139495692634), 'feature4': np.float64(2.1330333746562666)}
+2025-07-27 09:17:28,675 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:17:28,676 - nids.preprocessing.scaler - INFO - Transformed data shape: (100, 4)
+2025-07-27 09:17:28,677 - nids.preprocessing.scaler - INFO - Fitting minmax scaler...
+2025-07-27 09:17:28,678 - nids.preprocessing.scaler - INFO - Feature mins: {'feature1': np.float64(60.703823438653835), 'feature2': np.float64(5.061583846218687), 'feature3': np.float64(0.031154630743888766), 'feature4': np.float64(-3.2412673400690726)}
+2025-07-27 09:17:28,678 - nids.preprocessing.scaler - INFO - Feature maxs: {'feature1': np.float64(127.78417276763406), 'feature2': np.float64(985.6504541106007), 'feature3': np.float64(9.221139495692634), 'feature4': np.float64(2.1330333746562666)}
+2025-07-27 09:17:28,679 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:17:28,680 - nids.preprocessing.scaler - INFO - Transformed data shape: (100, 4)
+2025-07-27 09:17:28,682 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:17:28,683 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(98.44230223908859), 'feature2': np.float64(486.20618511478364), 'feature3': np.float64(2.124182218886775), 'feature4': np.float64(0.01204670591850439)}
+2025-07-27 09:17:28,683 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(13.554242649669444), 'feature2': np.float64(286.6995846116388), 'feature3': np.float64(1.9119162447993294), 'feature4': np.float64(0.8950784195666535)}
+2025-07-27 09:17:28,683 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:17:28,685 - nids.preprocessing.scaler - INFO - Transformed data shape: (100, 4)
+2025-07-27 09:17:28,686 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:17:28,687 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(98.44230223908859), 'feature2': np.float64(486.20618511478364), 'feature3': np.float64(2.124182218886775), 'feature4': np.float64(0.01204670591850439)}
+2025-07-27 09:17:28,687 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(13.554242649669444), 'feature2': np.float64(286.6995846116388), 'feature3': np.float64(1.9119162447993294), 'feature4': np.float64(0.8950784195666535)}
+2025-07-27 09:17:28,687 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 100 samples
+2025-07-27 09:17:28,688 - nids.preprocessing.scaler - INFO - Transformed data shape: (100, 4)
+2025-07-27 09:17:28,695 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:17:28,696 - nids.preprocessing.scaler - INFO - Feature means: {'feature1': np.float64(5.5)}
+2025-07-27 09:17:28,696 - nids.preprocessing.scaler - INFO - Feature stds: {'feature1': np.float64(2.8722813232690143)}
+2025-07-27 09:17:28,696 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 10 samples
+2025-07-27 09:17:28,698 - nids.preprocessing.scaler - INFO - Transformed data shape: (10, 1)
+2025-07-27 09:17:28,699 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-27 09:17:28,701 - nids.preprocessing.scaler - INFO - Feature means: {'constant': np.float64(5.0), 'variable': np.float64(5.5)}
+2025-07-27 09:17:28,701 - nids.preprocessing.scaler - INFO - Feature stds: {'constant': np.float64(1.0), 'variable': np.float64(2.8722813232690143)}
+2025-07-27 09:17:28,701 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 10 samples
+2025-07-27 09:17:28,703 - nids.preprocessing.scaler - INFO - Transformed data shape: (10, 2)
+2025-07-27 09:17:28,713 - nids.preprocessing.cleaner - INFO - Removed 5 duplicate rows
+2025-07-27 09:17:28,718 - nids.preprocessing.cleaner - INFO - Found 1 features with >=50.0% missing values
+2025-07-27 09:17:28,719 - nids.preprocessing.cleaner - INFO -   high_missing: 66.67% missing
+2025-07-27 09:17:28,722 - nids.preprocessing.cleaner - INFO - Constant numerical feature: constant_feature (single value: 5.0)
+2025-07-27 09:17:28,722 - nids.preprocessing.cleaner - INFO - Near-constant feature: near_constant (most common value frequency: 95.24%)
+2025-07-27 09:17:28,723 - nids.preprocessing.cleaner - INFO - Constant numerical feature: high_missing (single value: 1.0)
+2025-07-27 09:17:28,729 - nids.preprocessing.cleaner - INFO - Found 3 low variance features
+2025-07-27 09:17:28,729 - nids.preprocessing.cleaner - INFO -   constant_feature: variance = 0.000000
+2025-07-27 09:17:28,729 - nids.preprocessing.cleaner - INFO -   high_missing: variance = 0.000000
+2025-07-27 09:17:28,730 - nids.preprocessing.cleaner - INFO -   low_variance: variance = 0.000001
+2025-07-27 09:17:28,734 - nids.preprocessing.cleaner - INFO - High correlation (1.000) between correlated_1 and correlated_2
+2025-07-27 09:17:28,735 - nids.preprocessing.cleaner - INFO -   Removing correlated_2 (variance: 0.608906)
+2025-07-27 09:17:28,739 - nids.preprocessing.cleaner - INFO - Found 5 outliers in near_constant using Z-score
+2025-07-27 09:17:28,740 - nids.preprocessing.cleaner - INFO - Found 1 outliers in low_variance using Z-score
+2025-07-27 09:17:28,741 - nids.preprocessing.cleaner - INFO - Found 4 outliers in outlier_feature using Z-score
+2025-07-27 09:17:28,747 - nids.preprocessing.cleaner - INFO - Found 5 outliers in near_constant using IQR
+2025-07-27 09:17:28,748 - nids.preprocessing.cleaner - INFO -   Bounds: [1.000, 1.000]
+2025-07-27 09:17:28,750 - nids.preprocessing.cleaner - INFO - Found 5 outliers in outlier_feature using IQR
+2025-07-27 09:17:28,751 - nids.preprocessing.cleaner - INFO -   Bounds: [-5.386, 5.295]
+2025-07-27 09:17:28,755 - nids.preprocessing.cleaner - INFO - Found 5 outliers in good_feature1 using Z-score
+2025-07-27 09:17:28,756 - nids.preprocessing.cleaner - INFO - Found 5 outliers in near_constant using Z-score
+2025-07-27 09:17:28,757 - nids.preprocessing.cleaner - INFO - Found 5 outliers in low_variance using Z-score
+2025-07-27 09:17:28,757 - nids.preprocessing.cleaner - INFO - Found 4 outliers in correlated_1 using Z-score
+2025-07-27 09:17:28,758 - nids.preprocessing.cleaner - INFO - Found 5 outliers in outlier_feature using Z-score
+2025-07-27 09:17:28,758 - nids.preprocessing.cleaner - INFO - Found 4 outliers in correlated_2 using Z-score
+2025-07-27 09:17:28,759 - nids.preprocessing.cleaner - INFO - Removed 18 rows containing outliers
+2025-07-27 09:17:28,763 - nids.preprocessing.cleaner - INFO - Found 1 outliers in good_feature1 using IQR
+2025-07-27 09:17:28,763 - nids.preprocessing.cleaner - INFO -   Bounds: [-2.151, 2.085]
+2025-07-27 09:17:28,765 - nids.preprocessing.cleaner - INFO - Found 5 outliers in near_constant using IQR
+2025-07-27 09:17:28,765 - nids.preprocessing.cleaner - INFO -   Bounds: [1.000, 1.000]
+2025-07-27 09:17:28,767 - nids.preprocessing.cleaner - INFO - Found 2 outliers in low_variance using IQR
+2025-07-27 09:17:28,767 - nids.preprocessing.cleaner - INFO -   Bounds: [-0.003, 0.003]
+2025-07-27 09:17:28,769 - nids.preprocessing.cleaner - INFO - Found 5 outliers in outlier_feature using IQR
+2025-07-27 09:17:28,769 - nids.preprocessing.cleaner - INFO -   Bounds: [-3.097, 3.006]
+2025-07-27 09:17:28,770 - nids.preprocessing.cleaner - INFO - Removed 8 rows containing outliers
+2025-07-27 09:17:28,776 - nids.preprocessing.cleaner - INFO - Fitting feature cleaner...
+2025-07-27 09:17:28,776 - nids.preprocessing.cleaner - INFO - Input data shape: (105, 9)
+2025-07-27 09:17:28,777 - nids.preprocessing.cleaner - INFO - Found 1 features with >=50.0% missing values
+2025-07-27 09:17:28,777 - nids.preprocessing.cleaner - INFO -   high_missing: 66.67% missing
+2025-07-27 09:17:28,778 - nids.preprocessing.cleaner - INFO - Constant numerical feature: constant_feature (single value: 5.0)
+2025-07-27 09:17:28,778 - nids.preprocessing.cleaner - INFO - Near-constant feature: near_constant (most common value frequency: 95.24%)
+2025-07-27 09:17:28,779 - nids.preprocessing.cleaner - INFO - Constant numerical feature: high_missing (single value: 1.0)
+2025-07-27 09:17:28,783 - nids.preprocessing.cleaner - INFO - Found 2 low variance features
+2025-07-27 09:17:28,783 - nids.preprocessing.cleaner - INFO -   constant_feature: variance = 0.000000
+2025-07-27 09:17:28,783 - nids.preprocessing.cleaner - INFO -   high_missing: variance = 0.000000
+2025-07-27 09:17:28,786 - nids.preprocessing.cleaner - INFO - High correlation (1.000) between correlated_1 and correlated_2
+2025-07-27 09:17:28,787 - nids.preprocessing.cleaner - INFO -   Removing correlated_2 (variance: 0.608906)
+2025-07-27 09:17:28,787 - nids.preprocessing.cleaner - INFO - Features to remove (high_correlation): ['correlated_2']
+2025-07-27 09:17:28,787 - nids.preprocessing.cleaner - INFO - Features to remove (low_variance): ['constant_feature', 'high_missing']
+2025-07-27 09:17:28,787 - nids.preprocessing.cleaner - INFO - Features to remove (high_missing): ['high_missing']
+2025-07-27 09:17:28,787 - nids.preprocessing.cleaner - INFO - Features to remove (constant): ['constant_feature', 'near_constant', 'high_missing']
+2025-07-27 09:17:28,787 - nids.preprocessing.cleaner - INFO - Features to keep: 5 out of 9
+2025-07-27 09:17:28,788 - nids.preprocessing.cleaner - INFO - Features to remove: 4
+2025-07-27 09:17:28,790 - nids.preprocessing.cleaner - INFO - Fitting feature cleaner...
+2025-07-27 09:17:28,790 - nids.preprocessing.cleaner - INFO - Input data shape: (105, 9)
+2025-07-27 09:17:28,791 - nids.preprocessing.cleaner - INFO - Found 1 features with >=50.0% missing values
+2025-07-27 09:17:28,792 - nids.preprocessing.cleaner - INFO -   high_missing: 66.67% missing
+2025-07-27 09:17:28,792 - nids.preprocessing.cleaner - INFO - Constant numerical feature: constant_feature (single value: 5.0)
+2025-07-27 09:17:28,793 - nids.preprocessing.cleaner - INFO - Near-constant feature: near_constant (most common value frequency: 95.24%)
+2025-07-27 09:17:28,793 - nids.preprocessing.cleaner - INFO - Constant numerical feature: high_missing (single value: 1.0)
+2025-07-27 09:17:28,797 - nids.preprocessing.cleaner - INFO - Found 2 low variance features
+2025-07-27 09:17:28,798 - nids.preprocessing.cleaner - INFO -   constant_feature: variance = 0.000000
+2025-07-27 09:17:28,798 - nids.preprocessing.cleaner - INFO -   high_missing: variance = 0.000000
+2025-07-27 09:17:28,800 - nids.preprocessing.cleaner - INFO - High correlation (1.000) between correlated_1 and correlated_2
+2025-07-27 09:17:28,801 - nids.preprocessing.cleaner - INFO -   Removing correlated_2 (variance: 0.608906)
+2025-07-27 09:17:28,801 - nids.preprocessing.cleaner - INFO - Features to remove (high_correlation): ['correlated_2']
+2025-07-27 09:17:28,801 - nids.preprocessing.cleaner - INFO - Features to remove (low_variance): ['constant_feature', 'high_missing']
+2025-07-27 09:17:28,801 - nids.preprocessing.cleaner - INFO - Features to remove (high_missing): ['high_missing']
+2025-07-27 09:17:28,801 - nids.preprocessing.cleaner - INFO - Features to remove (constant): ['constant_feature', 'near_constant', 'high_missing']
+2025-07-27 09:17:28,802 - nids.preprocessing.cleaner - INFO - Features to keep: 5 out of 9
+2025-07-27 09:17:28,802 - nids.preprocessing.cleaner - INFO - Features to remove: 4
+2025-07-27 09:17:28,802 - nids.preprocessing.cleaner - INFO - Cleaning data with shape: (105, 9)
+2025-07-27 09:17:28,803 - nids.preprocessing.cleaner - INFO - Removed 5 duplicate rows
+2025-07-27 09:17:28,804 - nids.preprocessing.cleaner - INFO - Removed 7 features
+2025-07-27 09:17:28,805 - nids.preprocessing.cleaner - INFO - Found 2 outliers in low_variance using Z-score
+2025-07-27 09:17:28,806 - nids.preprocessing.cleaner - INFO - Found 4 outliers in outlier_feature using Z-score
+2025-07-27 09:17:28,806 - nids.preprocessing.cleaner - INFO - Removed 6 rows containing outliers
+2025-07-27 09:17:28,806 - nids.preprocessing.cleaner - INFO - Cleaned data shape: (94, 5)
+2025-07-27 09:17:28,810 - nids.preprocessing.cleaner - INFO - Fitting feature cleaner...
+2025-07-27 09:17:28,810 - nids.preprocessing.cleaner - INFO - Input data shape: (105, 9)
+2025-07-27 09:17:28,811 - nids.preprocessing.cleaner - INFO - Found 1 features with >=50.0% missing values
+2025-07-27 09:17:28,811 - nids.preprocessing.cleaner - INFO -   high_missing: 66.67% missing
+2025-07-27 09:17:28,812 - nids.preprocessing.cleaner - INFO - Constant numerical feature: constant_feature (single value: 5.0)
+2025-07-27 09:17:28,813 - nids.preprocessing.cleaner - INFO - Near-constant feature: near_constant (most common value frequency: 95.24%)
+2025-07-27 09:17:28,813 - nids.preprocessing.cleaner - INFO - Constant numerical feature: high_missing (single value: 1.0)
+2025-07-27 09:17:28,817 - nids.preprocessing.cleaner - INFO - Found 2 low variance features
+2025-07-27 09:17:28,818 - nids.preprocessing.cleaner - INFO -   constant_feature: variance = 0.000000
+2025-07-27 09:17:28,818 - nids.preprocessing.cleaner - INFO -   high_missing: variance = 0.000000
+2025-07-27 09:17:28,821 - nids.preprocessing.cleaner - INFO - High correlation (1.000) between correlated_1 and correlated_2
+2025-07-27 09:17:28,821 - nids.preprocessing.cleaner - INFO -   Removing correlated_2 (variance: 0.608906)
+2025-07-27 09:17:28,821 - nids.preprocessing.cleaner - INFO - Features to remove (high_correlation): ['correlated_2']
+2025-07-27 09:17:28,822 - nids.preprocessing.cleaner - INFO - Features to remove (low_variance): ['constant_feature', 'high_missing']
+2025-07-27 09:17:28,822 - nids.preprocessing.cleaner - INFO - Features to remove (high_missing): ['high_missing']
+2025-07-27 09:17:28,822 - nids.preprocessing.cleaner - INFO - Features to remove (constant): ['constant_feature', 'near_constant', 'high_missing']
+2025-07-27 09:17:28,822 - nids.preprocessing.cleaner - INFO - Features to keep: 5 out of 9
+2025-07-27 09:17:28,822 - nids.preprocessing.cleaner - INFO - Features to remove: 4
+2025-07-27 09:17:28,823 - nids.preprocessing.cleaner - INFO - Cleaning data with shape: (105, 9)
+2025-07-27 09:17:28,824 - nids.preprocessing.cleaner - INFO - Removed 5 duplicate rows
+2025-07-27 09:17:28,824 - nids.preprocessing.cleaner - INFO - Removed 7 features
+2025-07-27 09:17:28,825 - nids.preprocessing.cleaner - INFO - Found 2 outliers in low_variance using Z-score
+2025-07-27 09:17:28,826 - nids.preprocessing.cleaner - INFO - Found 4 outliers in outlier_feature using Z-score
+2025-07-27 09:17:28,827 - nids.preprocessing.cleaner - INFO - Removed 6 rows containing outliers
+2025-07-27 09:17:28,827 - nids.preprocessing.cleaner - INFO - Cleaned data shape: (94, 5)
+2025-07-27 09:17:28,829 - nids.preprocessing.cleaner - INFO - Fitting feature cleaner...
+2025-07-27 09:17:28,830 - nids.preprocessing.cleaner - INFO - Input data shape: (105, 9)
+2025-07-27 09:17:28,831 - nids.preprocessing.cleaner - INFO - Found 1 features with >=50.0% missing values
+2025-07-27 09:17:28,831 - nids.preprocessing.cleaner - INFO -   high_missing: 66.67% missing
+2025-07-27 09:17:28,832 - nids.preprocessing.cleaner - INFO - Constant numerical feature: constant_feature (single value: 5.0)
+2025-07-27 09:17:28,832 - nids.preprocessing.cleaner - INFO - Near-constant feature: near_constant (most common value frequency: 95.24%)
+2025-07-27 09:17:28,832 - nids.preprocessing.cleaner - INFO - Constant numerical feature: high_missing (single value: 1.0)
+2025-07-27 09:17:28,837 - nids.preprocessing.cleaner - INFO - Found 2 low variance features
+2025-07-27 09:17:28,837 - nids.preprocessing.cleaner - INFO -   constant_feature: variance = 0.000000
+2025-07-27 09:17:28,838 - nids.preprocessing.cleaner - INFO -   high_missing: variance = 0.000000
+2025-07-27 09:17:28,841 - nids.preprocessing.cleaner - INFO - High correlation (1.000) between correlated_1 and correlated_2
+2025-07-27 09:17:28,841 - nids.preprocessing.cleaner - INFO -   Removing correlated_2 (variance: 0.608906)
+2025-07-27 09:17:28,841 - nids.preprocessing.cleaner - INFO - Features to remove (high_correlation): ['correlated_2']
+2025-07-27 09:17:28,841 - nids.preprocessing.cleaner - INFO - Features to remove (low_variance): ['constant_feature', 'high_missing']
+2025-07-27 09:17:28,842 - nids.preprocessing.cleaner - INFO - Features to remove (high_missing): ['high_missing']
+2025-07-27 09:17:28,842 - nids.preprocessing.cleaner - INFO - Features to remove (constant): ['constant_feature', 'near_constant', 'high_missing']
+2025-07-27 09:17:28,842 - nids.preprocessing.cleaner - INFO - Features to keep: 5 out of 9
+2025-07-27 09:17:28,842 - nids.preprocessing.cleaner - INFO - Features to remove: 4
+2025-07-27 09:17:28,846 - nids.preprocessing.cleaner - INFO - Fitting feature cleaner...
+2025-07-27 09:17:28,846 - nids.preprocessing.cleaner - INFO - Input data shape: (105, 9)
+2025-07-27 09:17:28,847 - nids.preprocessing.cleaner - INFO - Found 1 features with >=50.0% missing values
+2025-07-27 09:17:28,847 - nids.preprocessing.cleaner - INFO -   high_missing: 66.67% missing
+2025-07-27 09:17:28,848 - nids.preprocessing.cleaner - INFO - Constant numerical feature: constant_feature (single value: 5.0)
+2025-07-27 09:17:28,848 - nids.preprocessing.cleaner - INFO - Near-constant feature: near_constant (most common value frequency: 95.24%)
+2025-07-27 09:17:28,848 - nids.preprocessing.cleaner - INFO - Constant numerical feature: high_missing (single value: 1.0)
+2025-07-27 09:17:28,853 - nids.preprocessing.cleaner - INFO - Found 2 low variance features
+2025-07-27 09:17:28,853 - nids.preprocessing.cleaner - INFO -   constant_feature: variance = 0.000000
+2025-07-27 09:17:28,853 - nids.preprocessing.cleaner - INFO -   high_missing: variance = 0.000000
+2025-07-27 09:17:28,856 - nids.preprocessing.cleaner - INFO - High correlation (1.000) between correlated_1 and correlated_2
+2025-07-27 09:17:28,857 - nids.preprocessing.cleaner - INFO -   Removing correlated_2 (variance: 0.608906)
+2025-07-27 09:17:28,857 - nids.preprocessing.cleaner - INFO - Features to remove (high_correlation): ['correlated_2']
+2025-07-27 09:17:28,857 - nids.preprocessing.cleaner - INFO - Features to remove (low_variance): ['constant_feature', 'high_missing']
+2025-07-27 09:17:28,857 - nids.preprocessing.cleaner - INFO - Features to remove (high_missing): ['high_missing']
+2025-07-27 09:17:28,857 - nids.preprocessing.cleaner - INFO - Features to remove (constant): ['constant_feature', 'near_constant', 'high_missing']
+2025-07-27 09:17:28,858 - nids.preprocessing.cleaner - INFO - Features to keep: 5 out of 9
+2025-07-27 09:17:28,858 - nids.preprocessing.cleaner - INFO - Features to remove: 4
+2025-07-27 09:17:28,860 - nids.preprocessing.cleaner - INFO - Fitting feature cleaner...
+2025-07-27 09:17:28,860 - nids.preprocessing.cleaner - INFO - Input data shape: (105, 9)
+2025-07-27 09:17:28,861 - nids.preprocessing.cleaner - INFO - Found 1 features with >=50.0% missing values
+2025-07-27 09:17:28,861 - nids.preprocessing.cleaner - INFO -   high_missing: 66.67% missing
+2025-07-27 09:17:28,862 - nids.preprocessing.cleaner - INFO - Constant numerical feature: constant_feature (single value: 5.0)
+2025-07-27 09:17:28,863 - nids.preprocessing.cleaner - INFO - Near-constant feature: near_constant (most common value frequency: 95.24%)
+2025-07-27 09:17:28,863 - nids.preprocessing.cleaner - INFO - Constant numerical feature: high_missing (single value: 1.0)
+2025-07-27 09:17:28,867 - nids.preprocessing.cleaner - INFO - Found 2 low variance features
+2025-07-27 09:17:28,867 - nids.preprocessing.cleaner - INFO -   constant_feature: variance = 0.000000
+2025-07-27 09:17:28,868 - nids.preprocessing.cleaner - INFO -   high_missing: variance = 0.000000
+2025-07-27 09:17:28,871 - nids.preprocessing.cleaner - INFO - High correlation (1.000) between correlated_1 and correlated_2
+2025-07-27 09:17:28,871 - nids.preprocessing.cleaner - INFO -   Removing correlated_2 (variance: 0.608906)
+2025-07-27 09:17:28,871 - nids.preprocessing.cleaner - INFO - Features to remove (high_correlation): ['correlated_2']
+2025-07-27 09:17:28,871 - nids.preprocessing.cleaner - INFO - Features to remove (low_variance): ['constant_feature', 'high_missing']
+2025-07-27 09:17:28,871 - nids.preprocessing.cleaner - INFO - Features to remove (high_missing): ['high_missing']
+2025-07-27 09:17:28,871 - nids.preprocessing.cleaner - INFO - Features to remove (constant): ['constant_feature', 'near_constant', 'high_missing']
+2025-07-27 09:17:28,872 - nids.preprocessing.cleaner - INFO - Features to keep: 5 out of 9
+2025-07-27 09:17:28,873 - nids.preprocessing.cleaner - INFO - Features to remove: 4
+2025-07-27 09:17:28,873 - nids.preprocessing.cleaner - INFO - Cleaning data with shape: (105, 9)
+2025-07-27 09:17:28,873 - nids.preprocessing.cleaner - INFO - Removed 5 duplicate rows
+2025-07-27 09:17:28,874 - nids.preprocessing.cleaner - INFO - Removed 7 features
+2025-07-27 09:17:28,875 - nids.preprocessing.cleaner - INFO - Found 2 outliers in low_variance using Z-score
+2025-07-27 09:17:28,876 - nids.preprocessing.cleaner - INFO - Found 4 outliers in outlier_feature using Z-score
+2025-07-27 09:17:28,876 - nids.preprocessing.cleaner - INFO - Removed 6 rows containing outliers
+2025-07-27 09:17:28,876 - nids.preprocessing.cleaner - INFO - Cleaned data shape: (94, 5)
+2025-07-27 09:17:28,879 - nids.preprocessing.cleaner - INFO - Fitting feature cleaner...
+2025-07-27 09:17:28,879 - nids.preprocessing.cleaner - INFO - Input data shape: (105, 9)
+2025-07-27 09:17:28,880 - nids.preprocessing.cleaner - INFO - Found 1 features with >=50.0% missing values
+2025-07-27 09:17:28,880 - nids.preprocessing.cleaner - INFO -   high_missing: 66.67% missing
+2025-07-27 09:17:28,881 - nids.preprocessing.cleaner - INFO - Constant numerical feature: constant_feature (single value: 5.0)
+2025-07-27 09:17:28,881 - nids.preprocessing.cleaner - INFO - Near-constant feature: near_constant (most common value frequency: 95.24%)
+2025-07-27 09:17:28,882 - nids.preprocessing.cleaner - INFO - Constant numerical feature: high_missing (single value: 1.0)
+2025-07-27 09:17:28,887 - nids.preprocessing.cleaner - INFO - Found 2 low variance features
+2025-07-27 09:17:28,888 - nids.preprocessing.cleaner - INFO -   constant_feature: variance = 0.000000
+2025-07-27 09:17:28,888 - nids.preprocessing.cleaner - INFO -   high_missing: variance = 0.000000
+2025-07-27 09:17:28,891 - nids.preprocessing.cleaner - INFO - High correlation (1.000) between correlated_1 and correlated_2
+2025-07-27 09:17:28,891 - nids.preprocessing.cleaner - INFO -   Removing correlated_2 (variance: 0.608906)
+2025-07-27 09:17:28,891 - nids.preprocessing.cleaner - INFO - Features to remove (high_correlation): ['correlated_2']
+2025-07-27 09:17:28,892 - nids.preprocessing.cleaner - INFO - Features to remove (low_variance): ['constant_feature', 'high_missing']
+2025-07-27 09:17:28,892 - nids.preprocessing.cleaner - INFO - Features to remove (high_missing): ['high_missing']
+2025-07-27 09:17:28,892 - nids.preprocessing.cleaner - INFO - Features to remove (constant): ['constant_feature', 'near_constant', 'high_missing']
+2025-07-27 09:17:28,892 - nids.preprocessing.cleaner - INFO - Features to keep: 5 out of 9
+2025-07-27 09:17:28,892 - nids.preprocessing.cleaner - INFO - Features to remove: 4
+2025-07-27 09:17:28,892 - nids.preprocessing.cleaner - INFO - Cleaning data with shape: (105, 9)
+2025-07-27 09:17:28,893 - nids.preprocessing.cleaner - INFO - Removed 5 duplicate rows
+2025-07-27 09:17:28,894 - nids.preprocessing.cleaner - INFO - Removed 7 features
+2025-07-27 09:17:28,895 - nids.preprocessing.cleaner - INFO - Found 2 outliers in low_variance using Z-score
+2025-07-27 09:17:28,896 - nids.preprocessing.cleaner - INFO - Found 4 outliers in outlier_feature using Z-score
+2025-07-27 09:17:28,896 - nids.preprocessing.cleaner - INFO - Removed 6 rows containing outliers
+2025-07-27 09:17:28,896 - nids.preprocessing.cleaner - INFO - Cleaned data shape: (94, 5)
+2025-07-27 09:17:28,898 - nids.preprocessing.cleaner - INFO - Cleaner saved to C:\Users\theja\AppData\Local\Temp\tmpefoe5hsz.pkl
+2025-07-27 09:17:28,899 - nids.preprocessing.cleaner - INFO - Cleaner loaded from C:\Users\theja\AppData\Local\Temp\tmpefoe5hsz.pkl
+2025-07-27 09:17:28,899 - nids.preprocessing.cleaner - INFO - Cleaning data with shape: (105, 9)
+2025-07-27 09:17:28,900 - nids.preprocessing.cleaner - INFO - Removed 5 duplicate rows
+2025-07-27 09:17:28,901 - nids.preprocessing.cleaner - INFO - Removed 7 features
+2025-07-27 09:17:28,902 - nids.preprocessing.cleaner - INFO - Found 2 outliers in low_variance using Z-score
+2025-07-27 09:17:28,903 - nids.preprocessing.cleaner - INFO - Found 4 outliers in outlier_feature using Z-score
+2025-07-27 09:17:28,903 - nids.preprocessing.cleaner - INFO - Removed 6 rows containing outliers
+2025-07-27 09:17:28,904 - nids.preprocessing.cleaner - INFO - Cleaned data shape: (94, 5)
+2025-07-27 09:17:28,909 - nids.preprocessing.cleaner - INFO - Fitting feature cleaner...
+2025-07-27 09:17:28,909 - nids.preprocessing.cleaner - INFO - Input data shape: (105, 9)
+2025-07-27 09:17:28,910 - nids.preprocessing.cleaner - INFO - Found 1 features with >=50.0% missing values
+2025-07-27 09:17:28,910 - nids.preprocessing.cleaner - INFO -   high_missing: 66.67% missing
+2025-07-27 09:17:28,911 - nids.preprocessing.cleaner - INFO - Constant numerical feature: constant_feature (single value: 5.0)
+2025-07-27 09:17:28,911 - nids.preprocessing.cleaner - INFO - Near-constant feature: near_constant (most common value frequency: 95.24%)
+2025-07-27 09:17:28,911 - nids.preprocessing.cleaner - INFO - Constant numerical feature: high_missing (single value: 1.0)
+2025-07-27 09:17:28,916 - nids.preprocessing.cleaner - INFO - Found 2 low variance features
+2025-07-27 09:17:28,916 - nids.preprocessing.cleaner - INFO -   constant_feature: variance = 0.000000
+2025-07-27 09:17:28,917 - nids.preprocessing.cleaner - INFO -   high_missing: variance = 0.000000
+2025-07-27 09:17:28,920 - nids.preprocessing.cleaner - INFO - High correlation (1.000) between correlated_1 and correlated_2
+2025-07-27 09:17:28,920 - nids.preprocessing.cleaner - INFO -   Removing correlated_2 (variance: 0.608906)
+2025-07-27 09:17:28,921 - nids.preprocessing.cleaner - INFO - Features to remove (high_correlation): ['correlated_2']
+2025-07-27 09:17:28,921 - nids.preprocessing.cleaner - INFO - Features to remove (low_variance): ['constant_feature', 'high_missing']
+2025-07-27 09:17:28,921 - nids.preprocessing.cleaner - INFO - Features to remove (high_missing): ['high_missing']
+2025-07-27 09:17:28,921 - nids.preprocessing.cleaner - INFO - Features to remove (constant): ['constant_feature', 'near_constant', 'high_missing']
+2025-07-27 09:17:28,921 - nids.preprocessing.cleaner - INFO - Features to keep: 5 out of 9
+2025-07-27 09:17:28,921 - nids.preprocessing.cleaner - INFO - Features to remove: 4
+2025-07-27 09:17:28,922 - nids.preprocessing.cleaner - INFO - Fitting feature cleaner...
+2025-07-27 09:17:28,922 - nids.preprocessing.cleaner - INFO - Input data shape: (105, 9)
+2025-07-27 09:17:28,923 - nids.preprocessing.cleaner - INFO - Found 1 features with >=50.0% missing values
+2025-07-27 09:17:28,923 - nids.preprocessing.cleaner - INFO -   high_missing: 66.67% missing
+2025-07-27 09:17:28,924 - nids.preprocessing.cleaner - INFO - Constant numerical feature: constant_feature (single value: 5.0)
+2025-07-27 09:17:28,924 - nids.preprocessing.cleaner - INFO - Near-constant feature: near_constant (most common value frequency: 95.24%)
+2025-07-27 09:17:28,925 - nids.preprocessing.cleaner - INFO - Constant numerical feature: high_missing (single value: 1.0)
+2025-07-27 09:17:28,929 - nids.preprocessing.cleaner - INFO - Found 2 low variance features
+2025-07-27 09:17:28,929 - nids.preprocessing.cleaner - INFO -   constant_feature: variance = 0.000000
+2025-07-27 09:17:28,929 - nids.preprocessing.cleaner - INFO -   high_missing: variance = 0.000000
+2025-07-27 09:17:28,932 - nids.preprocessing.cleaner - INFO - High correlation (1.000) between correlated_1 and correlated_2
+2025-07-27 09:17:28,933 - nids.preprocessing.cleaner - INFO -   Removing correlated_2 (variance: 0.608906)
+2025-07-27 09:17:28,933 - nids.preprocessing.cleaner - INFO - Features to remove (high_correlation): ['correlated_2']
+2025-07-27 09:17:28,933 - nids.preprocessing.cleaner - INFO - Features to remove (low_variance): ['constant_feature', 'high_missing']
+2025-07-27 09:17:28,933 - nids.preprocessing.cleaner - INFO - Features to remove (high_missing): ['high_missing']
+2025-07-27 09:17:28,933 - nids.preprocessing.cleaner - INFO - Features to remove (constant): ['constant_feature', 'near_constant', 'high_missing']
+2025-07-27 09:17:28,934 - nids.preprocessing.cleaner - INFO - Features to keep: 5 out of 9
+2025-07-27 09:17:28,934 - nids.preprocessing.cleaner - INFO - Features to remove: 4
+2025-07-27 09:17:28,937 - nids.preprocessing.cleaner - INFO - Fitting feature cleaner...
+2025-07-27 09:17:28,937 - nids.preprocessing.cleaner - INFO - Input data shape: (105, 9)
+2025-07-27 09:17:28,938 - nids.preprocessing.cleaner - INFO - Constant numerical feature: constant_feature (single value: 5.0)
+2025-07-27 09:17:28,939 - nids.preprocessing.cleaner - INFO - Near-constant feature: near_constant (most common value frequency: 95.24%)
+2025-07-27 09:17:28,939 - nids.preprocessing.cleaner - INFO - Constant numerical feature: high_missing (single value: 1.0)
+2025-07-27 09:17:28,943 - nids.preprocessing.cleaner - INFO - Found 2 low variance features
+2025-07-27 09:17:28,944 - nids.preprocessing.cleaner - INFO -   constant_feature: variance = 0.000000
+2025-07-27 09:17:28,944 - nids.preprocessing.cleaner - INFO -   high_missing: variance = 0.000000
+2025-07-27 09:17:28,946 - nids.preprocessing.cleaner - INFO - High correlation (1.000) between correlated_1 and correlated_2
+2025-07-27 09:17:28,947 - nids.preprocessing.cleaner - INFO -   Removing correlated_2 (variance: 0.608906)
+2025-07-27 09:17:28,947 - nids.preprocessing.cleaner - INFO - Features to remove (high_correlation): ['correlated_2']
+2025-07-27 09:17:28,947 - nids.preprocessing.cleaner - INFO - Features to remove (low_variance): ['constant_feature', 'high_missing']
+2025-07-27 09:17:28,947 - nids.preprocessing.cleaner - INFO - Features to remove (constant): ['constant_feature', 'near_constant', 'high_missing']
+2025-07-27 09:17:28,947 - nids.preprocessing.cleaner - INFO - Features to keep: 5 out of 9
+2025-07-27 09:17:28,947 - nids.preprocessing.cleaner - INFO - Features to remove: 4
+2025-07-27 09:17:28,948 - nids.preprocessing.cleaner - INFO - Fitting feature cleaner...
+2025-07-27 09:17:28,948 - nids.preprocessing.cleaner - INFO - Input data shape: (105, 9)
+2025-07-27 09:17:28,949 - nids.preprocessing.cleaner - INFO - Found 1 features with >=30.0% missing values
+2025-07-27 09:17:28,949 - nids.preprocessing.cleaner - INFO -   high_missing: 66.67% missing
+2025-07-27 09:17:28,950 - nids.preprocessing.cleaner - INFO - Constant numerical feature: constant_feature (single value: 5.0)
+2025-07-27 09:17:28,950 - nids.preprocessing.cleaner - INFO - Near-constant feature: near_constant (most common value frequency: 95.24%)
+2025-07-27 09:17:28,950 - nids.preprocessing.cleaner - INFO - Constant numerical feature: high_missing (single value: 1.0)
+2025-07-27 09:17:28,955 - nids.preprocessing.cleaner - INFO - Found 2 low variance features
+2025-07-27 09:17:28,955 - nids.preprocessing.cleaner - INFO -   constant_feature: variance = 0.000000
+2025-07-27 09:17:28,955 - nids.preprocessing.cleaner - INFO -   high_missing: variance = 0.000000
+2025-07-27 09:17:28,958 - nids.preprocessing.cleaner - INFO - High correlation (1.000) between correlated_1 and correlated_2
+2025-07-27 09:17:28,958 - nids.preprocessing.cleaner - INFO -   Removing correlated_2 (variance: 0.608906)
+2025-07-27 09:17:28,958 - nids.preprocessing.cleaner - INFO - Features to remove (high_correlation): ['correlated_2']
+2025-07-27 09:17:28,959 - nids.preprocessing.cleaner - INFO - Features to remove (low_variance): ['constant_feature', 'high_missing']
+2025-07-27 09:17:28,959 - nids.preprocessing.cleaner - INFO - Features to remove (high_missing): ['high_missing']
+2025-07-27 09:17:28,959 - nids.preprocessing.cleaner - INFO - Features to remove (constant): ['constant_feature', 'near_constant', 'high_missing']
+2025-07-27 09:17:28,959 - nids.preprocessing.cleaner - INFO - Features to keep: 5 out of 9
+2025-07-27 09:17:28,959 - nids.preprocessing.cleaner - INFO - Features to remove: 4
+2025-07-27 09:17:28,961 - nids.preprocessing.cleaner - INFO - Fitting feature cleaner...
+2025-07-27 09:17:28,962 - nids.preprocessing.cleaner - INFO - Input data shape: (100, 4)
+2025-07-27 09:17:28,963 - nids.preprocessing.cleaner - INFO - Constant categorical feature: categorical_constant (mode frequency: 100.00%)
+2025-07-27 09:17:28,964 - nids.preprocessing.cleaner - INFO - Constant categorical feature: categorical_near_constant (mode frequency: 95.00%)
+2025-07-27 09:17:28,966 - nids.preprocessing.cleaner - INFO - Features to remove (constant): ['categorical_constant', 'categorical_near_constant']
+2025-07-27 09:17:28,966 - nids.preprocessing.cleaner - INFO - Features to keep: 2 out of 4
+2025-07-27 09:17:28,967 - nids.preprocessing.cleaner - INFO - Features to remove: 2
+2025-07-27 09:17:28,967 - nids.preprocessing.cleaner - INFO - Cleaning data with shape: (100, 4)
+2025-07-27 09:17:28,968 - nids.preprocessing.cleaner - INFO - Removed 2 features
+2025-07-27 09:17:28,969 - nids.preprocessing.cleaner - INFO - Cleaned data shape: (100, 2)
+2025-07-27 09:17:28,971 - nids.preprocessing.cleaner - INFO - Fitting feature cleaner...
+2025-07-27 09:17:28,971 - nids.preprocessing.cleaner - INFO - Input data shape: (50, 3)
+2025-07-27 09:17:28,972 - nids.preprocessing.cleaner - INFO - Found 1 features with >=50.0% missing values
+2025-07-27 09:17:28,972 - nids.preprocessing.cleaner - INFO -   high_missing: 80.00% missing
+2025-07-27 09:17:28,972 - nids.preprocessing.cleaner - INFO - Constant numerical feature: constant1 (single value: 1)
+2025-07-27 09:17:28,972 - nids.preprocessing.cleaner - INFO - Constant numerical feature: constant2 (single value: 2)
+2025-07-27 09:17:28,973 - nids.preprocessing.cleaner - INFO - Constant numerical feature: high_missing (single value: nan)
+2025-07-27 09:17:28,974 - nids.preprocessing.cleaner - WARNING - Could not apply variance threshold: No feature in X meets the variance threshold 0.00000
+2025-07-27 09:17:28,975 - nids.preprocessing.cleaner - INFO - Features to remove (high_missing): ['high_missing']
+2025-07-27 09:17:28,975 - nids.preprocessing.cleaner - INFO - Features to remove (constant): ['constant1', 'constant2', 'high_missing']
+2025-07-27 09:17:28,976 - nids.preprocessing.cleaner - INFO - Features to keep: 0 out of 3
+2025-07-27 09:17:28,976 - nids.preprocessing.cleaner - INFO - Features to remove: 3
+2025-07-27 09:17:28,976 - nids.preprocessing.cleaner - INFO - Cleaning data with shape: (50, 3)
+2025-07-27 09:17:28,977 - nids.preprocessing.cleaner - INFO - Removed 48 duplicate rows
+2025-07-27 09:17:28,977 - nids.preprocessing.cleaner - INFO - Removed 4 features
+2025-07-27 09:17:28,977 - nids.preprocessing.cleaner - INFO - Cleaned data shape: (2, 0)
+2025-07-27 09:17:28,980 - nids.preprocessing.cleaner - INFO - Fitting feature cleaner...
+2025-07-27 09:17:28,980 - nids.preprocessing.cleaner - INFO - Input data shape: (100, 3)
+2025-07-27 09:17:28,981 - nids.preprocessing.cleaner - INFO - Constant categorical feature: cat_constant (mode frequency: 100.00%)
+2025-07-27 09:17:28,982 - nids.preprocessing.cleaner - INFO - Features to remove (constant): ['cat_constant']
+2025-07-27 09:17:28,982 - nids.preprocessing.cleaner - INFO - Features to keep: 2 out of 3
+2025-07-27 09:17:28,982 - nids.preprocessing.cleaner - INFO - Features to remove: 1
+2025-07-27 09:17:28,982 - nids.preprocessing.cleaner - INFO - Cleaning data with shape: (100, 3)
+2025-07-27 09:17:28,983 - nids.preprocessing.cleaner - INFO - Removed 97 duplicate rows
+2025-07-27 09:17:28,983 - nids.preprocessing.cleaner - INFO - Removed 1 features
+2025-07-27 09:17:28,984 - nids.preprocessing.cleaner - INFO - Cleaned data shape: (3, 2)
+2025-07-27 09:17:28,986 - nids.preprocessing.cleaner - INFO - Fitting feature cleaner...
+2025-07-27 09:17:28,986 - nids.preprocessing.cleaner - INFO - Input data shape: (100, 1)
+2025-07-27 09:17:28,989 - nids.preprocessing.cleaner - INFO - Features to keep: 1 out of 1
+2025-07-27 09:17:28,989 - nids.preprocessing.cleaner - INFO - Features to remove: 0
+2025-07-27 09:17:28,989 - nids.preprocessing.cleaner - INFO - Cleaning data with shape: (100, 1)
+2025-07-27 09:17:28,990 - nids.preprocessing.cleaner - INFO - Cleaned data shape: (100, 1)
+2025-07-27 09:17:28,992 - nids.preprocessing.cleaner - WARNING - Unknown outlier method: unknown_method
+2025-07-27 09:17:29,010 - nids.preprocessing.cleaner - INFO - Found 1 low variance features
+2025-07-27 09:17:29,010 - nids.preprocessing.cleaner - INFO -   zero_var: variance = 0.000000
+2025-07-27 09:17:29,012 - nids.preprocessing.cleaner - INFO - Found 1 features with >=50.0% missing values
+2025-07-27 09:17:29,013 - nids.preprocessing.cleaner - INFO -   all_nan: 100.00% missing
+2025-07-27 09:17:29,014 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:17:29,017 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:17:29,019 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:17:29,022 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:17:29,024 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:17:29,026 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:17:29,028 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:17:29,031 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:17:29,033 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:17:29,033 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:17:29,034 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:17:29,034 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:17:29,035 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:17:29,035 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:17:29,040 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:17:29,040 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:17:29,040 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:17:29,041 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:17:29,041 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:17:29,041 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:17:29,042 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:17:29,044 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:17:29,044 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (33.3%)
+2025-07-27 09:17:29,044 - nids.preprocessing.balancer - INFO -   Class 1: 800 samples (33.3%)
+2025-07-27 09:17:29,044 - nids.preprocessing.balancer - INFO -   Class 2: 800 samples (33.3%)
+2025-07-27 09:17:29,045 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:17:29,045 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (2400, 3)
+2025-07-27 09:17:29,048 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_undersample
+2025-07-27 09:17:29,048 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:17:29,048 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:17:29,049 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:17:29,049 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:17:29,049 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:17:29,049 - nids.preprocessing.balancer - INFO - Applying random_undersample balancing...
+2025-07-27 09:17:29,051 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:17:29,051 - nids.preprocessing.balancer - INFO -   Class 0: 50 samples (33.3%)
+2025-07-27 09:17:29,052 - nids.preprocessing.balancer - INFO -   Class 1: 50 samples (33.3%)
+2025-07-27 09:17:29,052 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (33.3%)
+2025-07-27 09:17:29,052 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:17:29,053 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (150, 3)
+2025-07-27 09:17:29,056 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: none
+2025-07-27 09:17:29,056 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:17:29,056 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:17:29,057 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:17:29,057 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:17:29,057 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:17:29,058 - nids.preprocessing.balancer - INFO - No balancing applied (strategy='none')
+2025-07-27 09:17:29,060 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:17:29,063 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:17:29,065 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:17:29,065 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:17:29,066 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:17:29,066 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:17:29,066 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:17:29,066 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:17:29,067 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:17:29,069 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:17:29,069 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (33.3%)
+2025-07-27 09:17:29,069 - nids.preprocessing.balancer - INFO -   Class 1: 800 samples (33.3%)
+2025-07-27 09:17:29,070 - nids.preprocessing.balancer - INFO -   Class 2: 800 samples (33.3%)
+2025-07-27 09:17:29,070 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:17:29,070 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (2400, 3)
+2025-07-27 09:17:29,072 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:17:29,074 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:17:29,074 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:17:29,074 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:17:29,074 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:17:29,074 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:17:29,074 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:17:29,075 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:17:29,076 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:17:29,076 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (33.3%)
+2025-07-27 09:17:29,076 - nids.preprocessing.balancer - INFO -   Class 1: 800 samples (33.3%)
+2025-07-27 09:17:29,077 - nids.preprocessing.balancer - INFO -   Class 2: 800 samples (33.3%)
+2025-07-27 09:17:29,077 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:17:29,077 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (2400, 3)
+2025-07-27 09:17:29,079 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:17:29,081 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:17:29,083 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:17:29,083 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:17:29,084 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:17:29,084 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:17:29,084 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:17:29,084 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:17:29,085 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:17:29,087 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:17:29,088 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (33.3%)
+2025-07-27 09:17:29,088 - nids.preprocessing.balancer - INFO -   Class 1: 800 samples (33.3%)
+2025-07-27 09:17:29,088 - nids.preprocessing.balancer - INFO -   Class 2: 800 samples (33.3%)
+2025-07-27 09:17:29,089 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:17:29,089 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (2400, 3)
+2025-07-27 09:17:29,091 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:17:29,092 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:17:29,093 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:17:29,093 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:17:29,093 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:17:29,093 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:17:29,093 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:17:29,094 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:17:29,095 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:17:29,095 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (33.3%)
+2025-07-27 09:17:29,095 - nids.preprocessing.balancer - INFO -   Class 1: 800 samples (33.3%)
+2025-07-27 09:17:29,096 - nids.preprocessing.balancer - INFO -   Class 2: 800 samples (33.3%)
+2025-07-27 09:17:29,096 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:17:29,096 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (2400, 3)
+2025-07-27 09:17:29,097 - nids.preprocessing.balancer - INFO - Balancer saved to C:\Users\theja\AppData\Local\Temp\tmpot3sq8xh.pkl
+2025-07-27 09:17:29,097 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:17:29,098 - nids.preprocessing.balancer - INFO - Balancer loaded from C:\Users\theja\AppData\Local\Temp\tmpot3sq8xh.pkl
+2025-07-27 09:17:29,099 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:17:29,100 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:17:29,100 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (33.3%)
+2025-07-27 09:17:29,100 - nids.preprocessing.balancer - INFO -   Class 1: 800 samples (33.3%)
+2025-07-27 09:17:29,101 - nids.preprocessing.balancer - INFO -   Class 2: 800 samples (33.3%)
+2025-07-27 09:17:29,101 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:17:29,101 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (2400, 3)
+2025-07-27 09:17:29,104 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:17:29,106 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:17:29,115 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:17:29,116 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:17:29,116 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:17:29,116 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:17:29,116 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:17:29,116 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:17:29,116 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:17:29,118 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:17:29,118 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (33.3%)
+2025-07-27 09:17:29,118 - nids.preprocessing.balancer - INFO -   Class 1: 800 samples (33.3%)
+2025-07-27 09:17:29,119 - nids.preprocessing.balancer - INFO -   Class 2: 800 samples (33.3%)
+2025-07-27 09:17:29,119 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:17:29,119 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (2400, 3)
+2025-07-27 09:17:29,120 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:17:29,120 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:17:29,120 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:17:29,121 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:17:29,121 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:17:29,121 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:17:29,121 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:17:29,123 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:17:29,123 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (33.3%)
+2025-07-27 09:17:29,123 - nids.preprocessing.balancer - INFO -   Class 1: 800 samples (33.3%)
+2025-07-27 09:17:29,123 - nids.preprocessing.balancer - INFO -   Class 2: 800 samples (33.3%)
+2025-07-27 09:17:29,123 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:17:29,124 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (2400, 3)
+2025-07-27 09:17:29,124 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:17:29,124 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:17:29,125 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:17:29,125 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:17:29,125 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:17:29,125 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:17:29,126 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:17:29,127 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:17:29,127 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (50.0%)
+2025-07-27 09:17:29,127 - nids.preprocessing.balancer - INFO -   Class 1: 400 samples (25.0%)
+2025-07-27 09:17:29,127 - nids.preprocessing.balancer - INFO -   Class 2: 400 samples (25.0%)
+2025-07-27 09:17:29,128 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (1600, 3)
+2025-07-27 09:17:29,131 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:17:29,131 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:17:29,131 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:17:29,132 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:17:29,132 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:17:29,132 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:17:29,132 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:17:29,133 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:17:29,134 - nids.preprocessing.balancer - INFO -   Class 0: 200 samples (33.3%)
+2025-07-27 09:17:29,134 - nids.preprocessing.balancer - INFO -   Class 1: 200 samples (33.3%)
+2025-07-27 09:17:29,134 - nids.preprocessing.balancer - INFO -   Class 2: 200 samples (33.3%)
+2025-07-27 09:17:29,134 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:17:29,135 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (600, 3)
+2025-07-27 09:17:29,137 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:17:29,138 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:17:29,138 - nids.preprocessing.balancer - INFO -   Class 0: 900 samples (90.0%)
+2025-07-27 09:17:29,138 - nids.preprocessing.balancer - INFO -   Class 1: 100 samples (10.0%)
+2025-07-27 09:17:29,138 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:17:29,138 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:17:29,139 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:17:29,140 - nids.preprocessing.balancer - INFO -   Class 0: 900 samples (50.0%)
+2025-07-27 09:17:29,140 - nids.preprocessing.balancer - INFO -   Class 1: 900 samples (50.0%)
+2025-07-27 09:17:29,140 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:17:29,140 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 2) -> (1800, 2)
+2025-07-27 09:17:29,142 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:17:29,143 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:17:29,144 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:17:29,144 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:17:29,144 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:17:29,144 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:17:29,144 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:17:29,144 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:17:29,146 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:17:29,146 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (33.3%)
+2025-07-27 09:17:29,146 - nids.preprocessing.balancer - INFO -   Class 1: 800 samples (33.3%)
+2025-07-27 09:17:29,146 - nids.preprocessing.balancer - INFO -   Class 2: 800 samples (33.3%)
+2025-07-27 09:17:29,147 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:17:29,147 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (2400, 3)
+2025-07-27 09:17:29,148 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:17:29,149 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:17:29,149 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:17:29,150 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:17:29,150 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:17:29,150 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:17:29,150 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:17:29,150 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:17:29,152 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:17:29,153 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (33.3%)
+2025-07-27 09:17:29,153 - nids.preprocessing.balancer - INFO -   Class 1: 800 samples (33.3%)
+2025-07-27 09:17:29,153 - nids.preprocessing.balancer - INFO -   Class 2: 800 samples (33.3%)
+2025-07-27 09:17:29,153 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:17:29,154 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (2400, 3)
+2025-07-27 09:17:29,157 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:17:29,157 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:17:29,157 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:17:29,157 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:17:29,157 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:17:29,158 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:17:29,158 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:17:29,159 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:17:29,159 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (33.3%)
+2025-07-27 09:17:29,159 - nids.preprocessing.balancer - INFO -   Class 1: 800 samples (33.3%)
+2025-07-27 09:17:29,160 - nids.preprocessing.balancer - INFO -   Class 2: 800 samples (33.3%)
+2025-07-27 09:17:29,160 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:17:29,160 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (2400, 3)
+2025-07-27 09:17:29,160 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:17:29,161 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:17:29,161 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:17:29,161 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:17:29,161 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:17:29,161 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:17:29,161 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:17:29,163 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:17:29,163 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (33.3%)
+2025-07-27 09:17:29,163 - nids.preprocessing.balancer - INFO -   Class 1: 800 samples (33.3%)
+2025-07-27 09:17:29,163 - nids.preprocessing.balancer - INFO -   Class 2: 800 samples (33.3%)
+2025-07-27 09:17:29,164 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:17:29,164 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (2400, 3)
+2025-07-27 09:17:29,167 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:17:29,167 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:17:29,167 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:17:29,167 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:17:29,168 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:17:29,168 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:17:29,168 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:17:29,170 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:17:29,170 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (33.3%)
+2025-07-27 09:17:29,170 - nids.preprocessing.balancer - INFO -   Class 1: 800 samples (33.3%)
+2025-07-27 09:17:29,170 - nids.preprocessing.balancer - INFO -   Class 2: 800 samples (33.3%)
+2025-07-27 09:17:29,170 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:17:29,171 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (2400, 3)
+2025-07-27 09:17:29,171 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:17:29,171 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:17:29,171 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:17:29,171 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:17:29,172 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:17:29,172 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:17:29,172 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:17:29,173 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:17:29,173 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (33.3%)
+2025-07-27 09:17:29,173 - nids.preprocessing.balancer - INFO -   Class 1: 800 samples (33.3%)
+2025-07-27 09:17:29,173 - nids.preprocessing.balancer - INFO -   Class 2: 800 samples (33.3%)
+2025-07-27 09:17:29,174 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:17:29,175 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (2400, 3)
+2025-07-27 09:17:29,176 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:17:29,181 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_undersample
+2025-07-27 09:17:29,182 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:17:29,182 - nids.preprocessing.balancer - INFO -   Class 0: 3 samples (60.0%)
+2025-07-27 09:17:29,182 - nids.preprocessing.balancer - INFO -   Class 1: 2 samples (40.0%)
+2025-07-27 09:17:29,182 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:17:29,182 - nids.preprocessing.balancer - INFO - Applying random_undersample balancing...
+2025-07-27 09:17:29,183 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:17:29,184 - nids.preprocessing.balancer - INFO -   Class 0: 1 samples (50.0%)
+2025-07-27 09:17:29,184 - nids.preprocessing.balancer - INFO -   Class 1: 1 samples (50.0%)
+2025-07-27 09:17:29,184 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:17:29,184 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (5, 1) -> (2, 1)
+2025-07-27 09:17:29,187 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:17:29,187 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:17:29,187 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:17:29,188 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:17:29,188 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:17:29,188 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:17:29,188 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:17:29,190 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:17:29,190 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (33.3%)
+2025-07-27 09:17:29,190 - nids.preprocessing.balancer - INFO -   Class 1: 800 samples (33.3%)
+2025-07-27 09:17:29,190 - nids.preprocessing.balancer - INFO -   Class 2: 800 samples (33.3%)
+2025-07-27 09:17:29,190 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:17:29,191 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (2400, 3)
+2025-07-27 09:22:42,823 - src.models.trainer - INFO - Starting model evaluation
+2025-07-27 09:22:42,824 - src.models.trainer - INFO - Evaluating random_forest model
+2025-07-27 09:22:42,837 - src.models.trainer - INFO - Evaluation completed for random_forest
+2025-07-27 09:22:42,837 - src.models.trainer - INFO -   Accuracy: 0.4800
+2025-07-27 09:22:42,837 - src.models.trainer - INFO -   Precision: 0.4729
+2025-07-27 09:22:42,838 - src.models.trainer - INFO -   Recall: 0.4734
+2025-07-27 09:22:42,838 - src.models.trainer - INFO -   F1-Score: 0.4724
+2025-07-27 09:22:42,838 - src.models.trainer - INFO -   ROC-AUC: 0.4066
+2025-07-27 09:22:42,857 - src.models.trainer - INFO - Performing cross-validation for random_forest
+2025-07-27 09:22:42,857 - src.models.trainer - INFO - Cross-validation results for random_forest: {'cv_accuracy_mean': np.float64(0.8233333333333333), 'cv_accuracy_std': np.float64(0.02054804667656323), 'cv_precision_macro_mean': np.float64(0.8233333333333333), 'cv_precision_macro_std': np.float64(0.02054804667656323), 'cv_recall_macro_mean': np.float64(0.8233333333333333), 'cv_recall_macro_std': np.float64(0.02054804667656323), 'cv_f1_macro_mean': np.float64(0.8233333333333333), 'cv_f1_macro_std': np.float64(0.02054804667656323)}
+2025-07-27 09:22:42,861 - src.models.trainer - INFO - Starting hyperparameter tuning for random_forest
+2025-07-27 09:22:42,861 - src.models.trainer - INFO - Hyperparameter tuning completed for random_forest in 0.00s
+2025-07-27 09:22:42,861 - src.models.trainer - INFO - Best parameters: {'n_estimators': 200, 'max_depth': 10}
+2025-07-27 09:22:42,862 - src.models.trainer - INFO - Best cross-validation score: 0.8500
+2025-07-27 09:22:42,865 - src.models.trainer - INFO - Training results saved to C:\Users\theja\AppData\Local\Temp\tmp359gyx_j.pkl
+2025-07-27 09:22:42,873 - src.models.trainer - INFO - Training results loaded from C:\Users\theja\AppData\Local\Temp\tmp359gyx_j.pkl
+2025-07-27 09:22:42,875 - src.models.trainer - INFO - Selecting best model based on F1-score
+2025-07-27 09:22:42,875 - src.models.trainer - INFO - Selected xgboost as best model with F1-score: 0.8600
+2025-07-27 09:22:42,877 - src.models.trainer - INFO - Selecting best model based on F1-score
+2025-07-27 09:22:42,879 - src.models.trainer - INFO - Starting model training process
+2025-07-27 09:22:42,881 - src.models.trainer - INFO - Training random_forest model
+2025-07-27 09:22:42,882 - src.models.trainer - INFO - Successfully trained random_forest model in 0.00s
+2025-07-27 09:22:42,882 - src.models.trainer - INFO - Training xgboost model
+2025-07-27 09:22:42,882 - src.models.trainer - INFO - Successfully trained xgboost model in 0.00s
+2025-07-27 09:22:42,882 - src.models.trainer - INFO - Model training completed. Trained 2 models.
+2025-07-27 09:25:47,569 - src.models.evaluator - INFO - Comparing models
+2025-07-27 09:25:47,569 - src.models.evaluator - INFO - Model comparison completed. Best overall model: model_b
+2025-07-27 09:25:47,582 - src.models.evaluator - INFO - Comparing models
+2025-07-27 09:25:47,594 - src.models.evaluator - INFO - Comparing models
+2025-07-27 09:25:47,606 - src.models.evaluator - INFO - Evaluating model: test_model
+2025-07-27 09:25:47,625 - src.models.evaluator - INFO - Evaluation completed for test_model
+2025-07-27 09:25:47,626 - src.models.evaluator - INFO -   Accuracy: 0.9900
+2025-07-27 09:25:47,626 - src.models.evaluator - INFO -   F1-Score: 0.9900
+2025-07-27 09:25:47,626 - src.models.evaluator - INFO -   Inference time: 0.0010s
+2025-07-27 09:28:31,530 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmpt3ips_mo\test_registry
+2025-07-27 09:28:31,540 - src.models.registry - INFO - Registering model: random_forest v1.0.0
+2025-07-27 09:28:31,544 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmpt3ips_mo\test_registry\models\random_forest_1.0.0_20250727_092831_37730836.pkl
+2025-07-27 09:28:31,545 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmpt3ips_mo\test_registry\metadata\random_forest_1.0.0_20250727_092831_37730836_metadata.json
+2025-07-27 09:28:31,555 - src.models.registry - INFO - Model registered successfully with ID: random_forest_1.0.0_20250727_092831_37730836
+2025-07-27 09:28:31,556 - src.models.registry - INFO - Archiving model: random_forest_1.0.0_20250727_092831_37730836
+2025-07-27 09:28:31,556 - src.models.registry - INFO - Model random_forest_1.0.0_20250727_092831_37730836 archived successfully
+2025-07-27 09:28:31,556 - src.models.registry - INFO - Retrieving model: random_forest_1.0.0_20250727_092831_37730836
+2025-07-27 09:28:31,557 - src.models.registry - INFO - Restoring model: random_forest_1.0.0_20250727_092831_37730836
+2025-07-27 09:28:31,557 - src.models.registry - INFO - Model random_forest_1.0.0_20250727_092831_37730836 restored successfully
+2025-07-27 09:28:31,557 - src.models.registry - INFO - Retrieving model: random_forest_1.0.0_20250727_092831_37730836
+2025-07-27 09:28:31,568 - src.models.registry - INFO - Model random_forest_1.0.0_20250727_092831_37730836 retrieved successfully
+2025-07-27 09:28:31,573 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmpcys00r38\test_registry
+2025-07-27 09:28:31,582 - src.models.registry - INFO - Registering model: random_forest v1.0.0
+2025-07-27 09:28:31,586 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmpcys00r38\test_registry\models\random_forest_1.0.0_20250727_092831_60b0bb2d.pkl
+2025-07-27 09:28:31,587 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmpcys00r38\test_registry\metadata\random_forest_1.0.0_20250727_092831_60b0bb2d_metadata.json
+2025-07-27 09:28:31,596 - src.models.registry - INFO - Model registered successfully with ID: random_forest_1.0.0_20250727_092831_60b0bb2d
+2025-07-27 09:28:31,597 - src.models.registry - INFO - Starting registry cleanup (dry_run=False)
+2025-07-27 09:28:31,598 - src.models.registry - INFO - Registry cleanup completed. Found 1 orphaned model files, 1 orphaned metadata files, 0 missing model files, 0 missing metadata files, 0 hash mismatches
+2025-07-27 09:28:31,603 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmpphbg88st\test_registry
+2025-07-27 09:28:31,612 - src.models.registry - INFO - Registering model: random_forest v1.0.0
+2025-07-27 09:28:31,616 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmpphbg88st\test_registry\models\random_forest_1.0.0_20250727_092831_f2fa918f.pkl
+2025-07-27 09:28:31,617 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmpphbg88st\test_registry\metadata\random_forest_1.0.0_20250727_092831_f2fa918f_metadata.json
+2025-07-27 09:28:31,625 - src.models.registry - INFO - Model registered successfully with ID: random_forest_1.0.0_20250727_092831_f2fa918f
+2025-07-27 09:28:31,626 - src.models.registry - INFO - Starting registry cleanup (dry_run=True)
+2025-07-27 09:28:31,627 - src.models.registry - INFO - Registry cleanup completed. Found 1 orphaned model files, 1 orphaned metadata files, 0 missing model files, 0 missing metadata files, 0 hash mismatches
+2025-07-27 09:28:31,632 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmpc3hgdjx8\test_registry
+2025-07-27 09:28:31,641 - src.models.registry - INFO - Registering model: random_forest v1.0.0
+2025-07-27 09:28:31,645 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmpc3hgdjx8\test_registry\models\random_forest_1.0.0_20250727_092831_a14c92d2.pkl
+2025-07-27 09:28:31,646 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmpc3hgdjx8\test_registry\metadata\random_forest_1.0.0_20250727_092831_a14c92d2_metadata.json
+2025-07-27 09:28:31,654 - src.models.registry - INFO - Model registered successfully with ID: random_forest_1.0.0_20250727_092831_a14c92d2
+2025-07-27 09:28:31,655 - src.models.registry - INFO - Deleting model: random_forest_1.0.0_20250727_092831_a14c92d2
+2025-07-27 09:28:31,655 - src.models.registry - INFO - Deleted model file: C:\Users\theja\AppData\Local\Temp\tmpc3hgdjx8\test_registry\models\random_forest_1.0.0_20250727_092831_a14c92d2.pkl
+2025-07-27 09:28:31,656 - src.models.registry - INFO - Deleted metadata file: C:\Users\theja\AppData\Local\Temp\tmpc3hgdjx8\test_registry\metadata\random_forest_1.0.0_20250727_092831_a14c92d2_metadata.json
+2025-07-27 09:28:31,656 - src.models.registry - INFO - Model random_forest_1.0.0_20250727_092831_a14c92d2 deleted successfully
+2025-07-27 09:28:31,660 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmpl0v5t6ru\test_registry
+2025-07-27 09:28:31,670 - src.models.registry - INFO - Deleting model: nonexistent_model_id
+2025-07-27 09:28:31,670 - src.models.registry - WARNING - Model nonexistent_model_id not found in registry
+2025-07-27 09:28:31,674 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmpf9ikag34\test_registry
+2025-07-27 09:28:31,688 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmphwpzgxt9\test_registry
+2025-07-27 09:28:31,697 - src.models.registry - INFO - Registering model: random_forest v1.0.0
+2025-07-27 09:28:31,701 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmphwpzgxt9\test_registry\models\random_forest_1.0.0_20250727_092831_b959ed51.pkl
+2025-07-27 09:28:31,702 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmphwpzgxt9\test_registry\metadata\random_forest_1.0.0_20250727_092831_b959ed51_metadata.json
+2025-07-27 09:28:31,711 - src.models.registry - INFO - Model registered successfully with ID: random_forest_1.0.0_20250727_092831_b959ed51
+2025-07-27 09:28:31,711 - src.models.registry - INFO - Registering model: random_forest v2.0.0
+2025-07-27 09:28:31,715 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmphwpzgxt9\test_registry\models\random_forest_2.0.0_20250727_092831_d44404cd.pkl
+2025-07-27 09:28:31,716 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmphwpzgxt9\test_registry\metadata\random_forest_2.0.0_20250727_092831_d44404cd_metadata.json
+2025-07-27 09:28:31,724 - src.models.registry - INFO - Model registered successfully with ID: random_forest_2.0.0_20250727_092831_d44404cd
+2025-07-27 09:28:31,724 - src.models.registry - INFO - Registering model: random_forest v1.5.0
+2025-07-27 09:28:31,728 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmphwpzgxt9\test_registry\models\random_forest_1.5.0_20250727_092831_ab76dfe9.pkl
+2025-07-27 09:28:31,729 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmphwpzgxt9\test_registry\metadata\random_forest_1.5.0_20250727_092831_ab76dfe9_metadata.json
+2025-07-27 09:28:31,737 - src.models.registry - INFO - Model registered successfully with ID: random_forest_1.5.0_20250727_092831_ab76dfe9
+2025-07-27 09:28:31,738 - src.models.registry - INFO - Listing registered models
+2025-07-27 09:28:31,756 - src.models.registry - INFO - Found 3 models
+2025-07-27 09:28:31,756 - src.models.registry - INFO - Retrieving model: random_forest_2.0.0_20250727_092831_d44404cd
+2025-07-27 09:28:31,759 - src.models.registry - INFO - Model random_forest_2.0.0_20250727_092831_d44404cd retrieved successfully
+2025-07-27 09:28:31,764 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmp0ju4_wbv\test_registry
+2025-07-27 09:28:31,772 - src.models.registry - INFO - Listing registered models
+2025-07-27 09:28:31,773 - src.models.registry - INFO - Found 0 models
+2025-07-27 09:28:31,777 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmpow1nxs6w\test_registry
+2025-07-27 09:28:31,786 - src.models.registry - INFO - Registering model: random_forest v1.0.0
+2025-07-27 09:28:31,790 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmpow1nxs6w\test_registry\models\random_forest_1.0.0_20250727_092831_9d0bc988.pkl
+2025-07-27 09:28:31,791 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmpow1nxs6w\test_registry\metadata\random_forest_1.0.0_20250727_092831_9d0bc988_metadata.json
+2025-07-27 09:28:31,800 - src.models.registry - INFO - Model registered successfully with ID: random_forest_1.0.0_20250727_092831_9d0bc988
+2025-07-27 09:28:31,800 - src.models.registry - INFO - Retrieving model: random_forest_1.0.0_20250727_092831_9d0bc988
+2025-07-27 09:28:31,809 - src.models.registry - INFO - Model random_forest_1.0.0_20250727_092831_9d0bc988 retrieved successfully
+2025-07-27 09:28:31,813 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmpsybb_ykw\test_registry
+2025-07-27 09:28:31,823 - src.models.registry - INFO - Registering model: random_forest v1.0.0
+2025-07-27 09:28:31,826 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmpsybb_ykw\test_registry\models\random_forest_1.0.0_20250727_092831_35e93b7e.pkl
+2025-07-27 09:28:31,827 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmpsybb_ykw\test_registry\metadata\random_forest_1.0.0_20250727_092831_35e93b7e_metadata.json
+2025-07-27 09:28:31,836 - src.models.registry - INFO - Model registered successfully with ID: random_forest_1.0.0_20250727_092831_35e93b7e
+2025-07-27 09:28:31,836 - src.models.registry - INFO - Registering model: random_forest v1.1.0
+2025-07-27 09:28:31,839 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmpsybb_ykw\test_registry\models\random_forest_1.1.0_20250727_092831_265e108f.pkl
+2025-07-27 09:28:31,840 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmpsybb_ykw\test_registry\metadata\random_forest_1.1.0_20250727_092831_265e108f_metadata.json
+2025-07-27 09:28:31,848 - src.models.registry - INFO - Model registered successfully with ID: random_forest_1.1.0_20250727_092831_265e108f
+2025-07-27 09:28:31,849 - src.models.registry - INFO - Registering model: random_forest v2.0.0
+2025-07-27 09:28:31,852 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmpsybb_ykw\test_registry\models\random_forest_2.0.0_20250727_092831_0da6fe16.pkl
+2025-07-27 09:28:31,853 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmpsybb_ykw\test_registry\metadata\random_forest_2.0.0_20250727_092831_0da6fe16_metadata.json
+2025-07-27 09:28:31,861 - src.models.registry - INFO - Model registered successfully with ID: random_forest_2.0.0_20250727_092831_0da6fe16
+2025-07-27 09:28:31,861 - src.models.registry - INFO - Listing registered models
+2025-07-27 09:28:31,880 - src.models.registry - INFO - Found 3 models
+2025-07-27 09:28:31,884 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmp4bgo0a9h\test_registry
+2025-07-27 09:28:31,894 - src.models.registry - INFO - Retrieving model: nonexistent_model_id
+2025-07-27 09:28:31,898 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmpl3t8srzb\test_registry
+2025-07-27 09:28:31,907 - src.models.registry - INFO - Registering model: random_forest v1.0.0
+2025-07-27 09:28:31,912 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmpl3t8srzb\test_registry\models\random_forest_1.0.0_20250727_092831_2e4772da.pkl
+2025-07-27 09:28:31,913 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmpl3t8srzb\test_registry\metadata\random_forest_1.0.0_20250727_092831_2e4772da_metadata.json
+2025-07-27 09:28:31,921 - src.models.registry - INFO - Model registered successfully with ID: random_forest_1.0.0_20250727_092831_2e4772da
+2025-07-27 09:28:31,921 - src.models.registry - INFO - Archiving model: random_forest_1.0.0_20250727_092831_2e4772da
+2025-07-27 09:28:31,922 - src.models.registry - INFO - Model random_forest_1.0.0_20250727_092831_2e4772da archived successfully
+2025-07-27 09:28:31,923 - src.models.registry - INFO - Registering model: xgboost v1.0.0
+2025-07-27 09:28:31,923 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmpl3t8srzb\test_registry\models\xgboost_1.0.0_20250727_092831_aa5cbaea.pkl
+2025-07-27 09:28:31,924 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmpl3t8srzb\test_registry\metadata\xgboost_1.0.0_20250727_092831_aa5cbaea_metadata.json
+2025-07-27 09:28:31,924 - src.models.registry - WARNING - Could not calculate model hash: [Errno 2] No such file or directory: 'C:\\Users\\theja\\AppData\\Local\\Temp\\tmpl3t8srzb\\test_registry\\models\\xgboost_1.0.0_20250727_092831_aa5cbaea.pkl'
+2025-07-27 09:28:31,924 - src.models.registry - ERROR - Failed to register model: [WinError 2] The system cannot find the file specified: 'C:\\Users\\theja\\AppData\\Local\\Temp\\tmpl3t8srzb\\test_registry\\models\\xgboost_1.0.0_20250727_092831_aa5cbaea.pkl'
+2025-07-27 09:28:32,169 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmpktp38m0u\test_registry
+2025-07-27 09:28:32,178 - src.models.registry - INFO - Registering model: random_forest v1.0.0
+2025-07-27 09:28:32,182 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmpktp38m0u\test_registry\models\random_forest_1.0.0_20250727_092832_4a2c12bc.pkl
+2025-07-27 09:28:32,182 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmpktp38m0u\test_registry\metadata\random_forest_1.0.0_20250727_092832_4a2c12bc_metadata.json
+2025-07-27 09:28:32,191 - src.models.registry - INFO - Model registered successfully with ID: random_forest_1.0.0_20250727_092832_4a2c12bc
+2025-07-27 09:28:32,191 - src.models.registry - INFO - Registering model: xgboost v1.1.0
+2025-07-27 09:28:32,192 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmpktp38m0u\test_registry\models\xgboost_1.1.0_20250727_092832_2661ceaa.pkl
+2025-07-27 09:28:32,192 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmpktp38m0u\test_registry\metadata\xgboost_1.1.0_20250727_092832_2661ceaa_metadata.json
+2025-07-27 09:28:32,193 - src.models.registry - WARNING - Could not calculate model hash: [Errno 2] No such file or directory: 'C:\\Users\\theja\\AppData\\Local\\Temp\\tmpktp38m0u\\test_registry\\models\\xgboost_1.1.0_20250727_092832_2661ceaa.pkl'
+2025-07-27 09:28:32,193 - src.models.registry - ERROR - Failed to register model: [WinError 2] The system cannot find the file specified: 'C:\\Users\\theja\\AppData\\Local\\Temp\\tmpktp38m0u\\test_registry\\models\\xgboost_1.1.0_20250727_092832_2661ceaa.pkl'
+2025-07-27 09:28:32,212 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmpcbkk5pru\test_registry
+2025-07-27 09:28:32,221 - src.models.registry - INFO - Registering model: random_forest v1.0.0
+2025-07-27 09:28:32,225 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmpcbkk5pru\test_registry\models\random_forest_1.0.0_20250727_092832_9488e2c7.pkl
+2025-07-27 09:28:32,226 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmpcbkk5pru\test_registry\metadata\random_forest_1.0.0_20250727_092832_9488e2c7_metadata.json
+2025-07-27 09:28:32,234 - src.models.registry - INFO - Model registered successfully with ID: random_forest_1.0.0_20250727_092832_9488e2c7
+2025-07-27 09:28:32,239 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmpbxyu2jf1\test_registry
+2025-07-27 09:28:32,248 - src.models.registry - INFO - Registering model: random_forest v1.0.0
+2025-07-27 09:28:32,252 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmpbxyu2jf1\test_registry\models\random_forest_1.0.0_20250727_092832_6f6cde19.pkl
+2025-07-27 09:28:32,252 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmpbxyu2jf1\test_registry\metadata\random_forest_1.0.0_20250727_092832_6f6cde19_metadata.json
+2025-07-27 09:28:32,261 - src.models.registry - INFO - Model registered successfully with ID: random_forest_1.0.0_20250727_092832_6f6cde19
+2025-07-27 09:28:32,265 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmpk2sy8b_6\test_registry
+2025-07-27 09:28:32,285 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmpvwf7015p\test_registry
+2025-07-27 09:28:32,295 - src.models.registry - INFO - Registering model: random_forest v1.0.0
+2025-07-27 09:28:32,299 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmpvwf7015p\test_registry\models\random_forest_1.0.0_20250727_092832_a967b596.pkl
+2025-07-27 09:28:32,300 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmpvwf7015p\test_registry\metadata\random_forest_1.0.0_20250727_092832_a967b596_metadata.json
+2025-07-27 09:28:32,308 - src.models.registry - INFO - Model registered successfully with ID: random_forest_1.0.0_20250727_092832_a967b596
+2025-07-27 09:28:32,317 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmpvwf7015p\test_registry
+2025-07-27 09:29:05,236 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmpnoeq0ka1\test_registry
+2025-07-27 09:29:05,247 - src.models.registry - INFO - Registering model: random_forest v1.0.0
+2025-07-27 09:29:05,251 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmpnoeq0ka1\test_registry\models\random_forest_1.0.0_20250727_092905_9a030780.pkl
+2025-07-27 09:29:05,252 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmpnoeq0ka1\test_registry\metadata\random_forest_1.0.0_20250727_092905_9a030780_metadata.json
+2025-07-27 09:29:05,260 - src.models.registry - INFO - Model registered successfully with ID: random_forest_1.0.0_20250727_092905_9a030780
+2025-07-27 09:29:05,260 - src.models.registry - INFO - Archiving model: random_forest_1.0.0_20250727_092905_9a030780
+2025-07-27 09:29:05,261 - src.models.registry - INFO - Model random_forest_1.0.0_20250727_092905_9a030780 archived successfully
+2025-07-27 09:29:05,261 - src.models.registry - INFO - Retrieving model: random_forest_1.0.0_20250727_092905_9a030780
+2025-07-27 09:29:05,262 - src.models.registry - INFO - Restoring model: random_forest_1.0.0_20250727_092905_9a030780
+2025-07-27 09:29:05,262 - src.models.registry - INFO - Model random_forest_1.0.0_20250727_092905_9a030780 restored successfully
+2025-07-27 09:29:05,262 - src.models.registry - INFO - Retrieving model: random_forest_1.0.0_20250727_092905_9a030780
+2025-07-27 09:29:05,273 - src.models.registry - INFO - Model random_forest_1.0.0_20250727_092905_9a030780 retrieved successfully
+2025-07-27 09:29:05,279 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmpkth299nn\test_registry
+2025-07-27 09:29:05,289 - src.models.registry - INFO - Registering model: random_forest v1.0.0
+2025-07-27 09:29:05,292 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmpkth299nn\test_registry\models\random_forest_1.0.0_20250727_092905_53cdc601.pkl
+2025-07-27 09:29:05,293 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmpkth299nn\test_registry\metadata\random_forest_1.0.0_20250727_092905_53cdc601_metadata.json
+2025-07-27 09:29:05,302 - src.models.registry - INFO - Model registered successfully with ID: random_forest_1.0.0_20250727_092905_53cdc601
+2025-07-27 09:29:05,303 - src.models.registry - INFO - Starting registry cleanup (dry_run=False)
+2025-07-27 09:29:05,305 - src.models.registry - INFO - Registry cleanup completed. Found 1 orphaned model files, 1 orphaned metadata files, 0 missing model files, 0 missing metadata files, 0 hash mismatches
+2025-07-27 09:29:05,309 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmpt0vi_5yp\test_registry
+2025-07-27 09:29:05,319 - src.models.registry - INFO - Registering model: random_forest v1.0.0
+2025-07-27 09:29:05,323 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmpt0vi_5yp\test_registry\models\random_forest_1.0.0_20250727_092905_bcb78f5b.pkl
+2025-07-27 09:29:05,324 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmpt0vi_5yp\test_registry\metadata\random_forest_1.0.0_20250727_092905_bcb78f5b_metadata.json
+2025-07-27 09:29:05,332 - src.models.registry - INFO - Model registered successfully with ID: random_forest_1.0.0_20250727_092905_bcb78f5b
+2025-07-27 09:29:05,334 - src.models.registry - INFO - Starting registry cleanup (dry_run=True)
+2025-07-27 09:29:05,335 - src.models.registry - INFO - Registry cleanup completed. Found 1 orphaned model files, 1 orphaned metadata files, 0 missing model files, 0 missing metadata files, 0 hash mismatches
+2025-07-27 09:29:05,340 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmpglr7vkjh\test_registry
+2025-07-27 09:29:05,350 - src.models.registry - INFO - Registering model: random_forest v1.0.0
+2025-07-27 09:29:05,353 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmpglr7vkjh\test_registry\models\random_forest_1.0.0_20250727_092905_b4e4f85b.pkl
+2025-07-27 09:29:05,354 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmpglr7vkjh\test_registry\metadata\random_forest_1.0.0_20250727_092905_b4e4f85b_metadata.json
+2025-07-27 09:29:05,363 - src.models.registry - INFO - Model registered successfully with ID: random_forest_1.0.0_20250727_092905_b4e4f85b
+2025-07-27 09:29:05,364 - src.models.registry - INFO - Deleting model: random_forest_1.0.0_20250727_092905_b4e4f85b
+2025-07-27 09:29:05,364 - src.models.registry - INFO - Deleted model file: C:\Users\theja\AppData\Local\Temp\tmpglr7vkjh\test_registry\models\random_forest_1.0.0_20250727_092905_b4e4f85b.pkl
+2025-07-27 09:29:05,365 - src.models.registry - INFO - Deleted metadata file: C:\Users\theja\AppData\Local\Temp\tmpglr7vkjh\test_registry\metadata\random_forest_1.0.0_20250727_092905_b4e4f85b_metadata.json
+2025-07-27 09:29:05,366 - src.models.registry - INFO - Model random_forest_1.0.0_20250727_092905_b4e4f85b deleted successfully
+2025-07-27 09:29:05,370 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmp4skoo0fj\test_registry
+2025-07-27 09:29:05,380 - src.models.registry - INFO - Deleting model: nonexistent_model_id
+2025-07-27 09:29:05,380 - src.models.registry - WARNING - Model nonexistent_model_id not found in registry
+2025-07-27 09:29:05,385 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmpmellyb40\test_registry
+2025-07-27 09:29:05,398 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmp3eirvf06\test_registry
+2025-07-27 09:29:05,408 - src.models.registry - INFO - Registering model: random_forest v1.0.0
+2025-07-27 09:29:05,412 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmp3eirvf06\test_registry\models\random_forest_1.0.0_20250727_092905_95dbd61a.pkl
+2025-07-27 09:29:05,413 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmp3eirvf06\test_registry\metadata\random_forest_1.0.0_20250727_092905_95dbd61a_metadata.json
+2025-07-27 09:29:05,422 - src.models.registry - INFO - Model registered successfully with ID: random_forest_1.0.0_20250727_092905_95dbd61a
+2025-07-27 09:29:05,422 - src.models.registry - INFO - Registering model: random_forest v2.0.0
+2025-07-27 09:29:05,426 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmp3eirvf06\test_registry\models\random_forest_2.0.0_20250727_092905_e353c46a.pkl
+2025-07-27 09:29:05,426 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmp3eirvf06\test_registry\metadata\random_forest_2.0.0_20250727_092905_e353c46a_metadata.json
+2025-07-27 09:29:05,435 - src.models.registry - INFO - Model registered successfully with ID: random_forest_2.0.0_20250727_092905_e353c46a
+2025-07-27 09:29:05,435 - src.models.registry - INFO - Registering model: random_forest v1.5.0
+2025-07-27 09:29:05,439 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmp3eirvf06\test_registry\models\random_forest_1.5.0_20250727_092905_d2ffc451.pkl
+2025-07-27 09:29:05,439 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmp3eirvf06\test_registry\metadata\random_forest_1.5.0_20250727_092905_d2ffc451_metadata.json
+2025-07-27 09:29:05,447 - src.models.registry - INFO - Model registered successfully with ID: random_forest_1.5.0_20250727_092905_d2ffc451
+2025-07-27 09:29:05,448 - src.models.registry - INFO - Listing registered models
+2025-07-27 09:29:05,467 - src.models.registry - INFO - Found 3 models
+2025-07-27 09:29:05,468 - src.models.registry - INFO - Retrieving model: random_forest_2.0.0_20250727_092905_e353c46a
+2025-07-27 09:29:05,470 - src.models.registry - INFO - Model random_forest_2.0.0_20250727_092905_e353c46a retrieved successfully
+2025-07-27 09:29:05,474 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmpe7cggv60\test_registry
+2025-07-27 09:29:05,484 - src.models.registry - INFO - Listing registered models
+2025-07-27 09:29:05,484 - src.models.registry - INFO - Found 0 models
+2025-07-27 09:29:05,488 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmpxbe2spj_\test_registry
+2025-07-27 09:29:05,498 - src.models.registry - INFO - Registering model: random_forest v1.0.0
+2025-07-27 09:29:05,502 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmpxbe2spj_\test_registry\models\random_forest_1.0.0_20250727_092905_439a2bf9.pkl
+2025-07-27 09:29:05,503 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmpxbe2spj_\test_registry\metadata\random_forest_1.0.0_20250727_092905_439a2bf9_metadata.json
+2025-07-27 09:29:05,511 - src.models.registry - INFO - Model registered successfully with ID: random_forest_1.0.0_20250727_092905_439a2bf9
+2025-07-27 09:29:05,512 - src.models.registry - INFO - Retrieving model: random_forest_1.0.0_20250727_092905_439a2bf9
+2025-07-27 09:29:05,521 - src.models.registry - INFO - Model random_forest_1.0.0_20250727_092905_439a2bf9 retrieved successfully
+2025-07-27 09:29:05,526 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmpifh7c_ea\test_registry
+2025-07-27 09:29:05,535 - src.models.registry - INFO - Registering model: random_forest v1.0.0
+2025-07-27 09:29:05,539 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmpifh7c_ea\test_registry\models\random_forest_1.0.0_20250727_092905_9204c4c9.pkl
+2025-07-27 09:29:05,539 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmpifh7c_ea\test_registry\metadata\random_forest_1.0.0_20250727_092905_9204c4c9_metadata.json
+2025-07-27 09:29:05,548 - src.models.registry - INFO - Model registered successfully with ID: random_forest_1.0.0_20250727_092905_9204c4c9
+2025-07-27 09:29:05,549 - src.models.registry - INFO - Registering model: random_forest v1.1.0
+2025-07-27 09:29:05,552 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmpifh7c_ea\test_registry\models\random_forest_1.1.0_20250727_092905_c87b4f6c.pkl
+2025-07-27 09:29:05,553 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmpifh7c_ea\test_registry\metadata\random_forest_1.1.0_20250727_092905_c87b4f6c_metadata.json
+2025-07-27 09:29:05,561 - src.models.registry - INFO - Model registered successfully with ID: random_forest_1.1.0_20250727_092905_c87b4f6c
+2025-07-27 09:29:05,561 - src.models.registry - INFO - Registering model: random_forest v2.0.0
+2025-07-27 09:29:05,565 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmpifh7c_ea\test_registry\models\random_forest_2.0.0_20250727_092905_1857a025.pkl
+2025-07-27 09:29:05,566 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmpifh7c_ea\test_registry\metadata\random_forest_2.0.0_20250727_092905_1857a025_metadata.json
+2025-07-27 09:29:05,575 - src.models.registry - INFO - Model registered successfully with ID: random_forest_2.0.0_20250727_092905_1857a025
+2025-07-27 09:29:05,575 - src.models.registry - INFO - Listing registered models
+2025-07-27 09:29:05,594 - src.models.registry - INFO - Found 3 models
+2025-07-27 09:29:05,599 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmp523ha79z\test_registry
+2025-07-27 09:29:05,608 - src.models.registry - INFO - Retrieving model: nonexistent_model_id
+2025-07-27 09:29:05,612 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmpkvb3g31v\test_registry
+2025-07-27 09:29:05,622 - src.models.registry - INFO - Registering model: random_forest v1.0.0
+2025-07-27 09:29:05,625 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmpkvb3g31v\test_registry\models\random_forest_1.0.0_20250727_092905_fd6caf98.pkl
+2025-07-27 09:29:05,626 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmpkvb3g31v\test_registry\metadata\random_forest_1.0.0_20250727_092905_fd6caf98_metadata.json
+2025-07-27 09:29:05,635 - src.models.registry - INFO - Model registered successfully with ID: random_forest_1.0.0_20250727_092905_fd6caf98
+2025-07-27 09:29:05,635 - src.models.registry - INFO - Archiving model: random_forest_1.0.0_20250727_092905_fd6caf98
+2025-07-27 09:29:05,636 - src.models.registry - INFO - Model random_forest_1.0.0_20250727_092905_fd6caf98 archived successfully
+2025-07-27 09:29:05,636 - src.models.registry - INFO - Registering model: xgboost v1.0.0
+2025-07-27 09:29:05,637 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmpkvb3g31v\test_registry\models\xgboost_1.0.0_20250727_092905_4534276a.pkl
+2025-07-27 09:29:05,638 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmpkvb3g31v\test_registry\metadata\xgboost_1.0.0_20250727_092905_4534276a_metadata.json
+2025-07-27 09:29:05,645 - src.models.registry - INFO - Model registered successfully with ID: xgboost_1.0.0_20250727_092905_4534276a
+2025-07-27 09:29:05,650 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmp3u9x3j0f\test_registry
+2025-07-27 09:29:05,659 - src.models.registry - INFO - Registering model: random_forest v1.0.0
+2025-07-27 09:29:05,663 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmp3u9x3j0f\test_registry\models\random_forest_1.0.0_20250727_092905_18af7f51.pkl
+2025-07-27 09:29:05,664 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmp3u9x3j0f\test_registry\metadata\random_forest_1.0.0_20250727_092905_18af7f51_metadata.json
+2025-07-27 09:29:05,672 - src.models.registry - INFO - Model registered successfully with ID: random_forest_1.0.0_20250727_092905_18af7f51
+2025-07-27 09:29:05,673 - src.models.registry - INFO - Registering model: xgboost v1.1.0
+2025-07-27 09:29:05,673 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmp3u9x3j0f\test_registry\models\xgboost_1.1.0_20250727_092905_b63e4b18.pkl
+2025-07-27 09:29:05,674 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmp3u9x3j0f\test_registry\metadata\xgboost_1.1.0_20250727_092905_b63e4b18_metadata.json
+2025-07-27 09:29:05,675 - src.models.registry - INFO - Model registered successfully with ID: xgboost_1.1.0_20250727_092905_b63e4b18
+2025-07-27 09:29:05,675 - src.models.registry - INFO - Listing registered models
+2025-07-27 09:29:05,689 - src.models.registry - INFO - Found 2 models
+2025-07-27 09:29:05,690 - src.models.registry - INFO - Listing registered models
+2025-07-27 09:29:05,690 - src.models.registry - INFO - Found 1 models
+2025-07-27 09:29:05,690 - src.models.registry - INFO - Listing registered models
+2025-07-27 09:29:05,690 - src.models.registry - INFO - Found 1 models
+2025-07-27 09:29:05,696 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmp8bkayfiu\test_registry
+2025-07-27 09:29:05,705 - src.models.registry - INFO - Registering model: random_forest v1.0.0
+2025-07-27 09:29:05,709 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmp8bkayfiu\test_registry\models\random_forest_1.0.0_20250727_092905_3e365a0d.pkl
+2025-07-27 09:29:05,709 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmp8bkayfiu\test_registry\metadata\random_forest_1.0.0_20250727_092905_3e365a0d_metadata.json
+2025-07-27 09:29:05,718 - src.models.registry - INFO - Model registered successfully with ID: random_forest_1.0.0_20250727_092905_3e365a0d
+2025-07-27 09:29:05,723 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmpnheza3mi\test_registry
+2025-07-27 09:29:05,732 - src.models.registry - INFO - Registering model: random_forest v1.0.0
+2025-07-27 09:29:05,736 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmpnheza3mi\test_registry\models\random_forest_1.0.0_20250727_092905_11dd6c85.pkl
+2025-07-27 09:29:05,737 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmpnheza3mi\test_registry\metadata\random_forest_1.0.0_20250727_092905_11dd6c85_metadata.json
+2025-07-27 09:29:05,745 - src.models.registry - INFO - Model registered successfully with ID: random_forest_1.0.0_20250727_092905_11dd6c85
+2025-07-27 09:29:05,750 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmphz31dqdt\test_registry
+2025-07-27 09:29:05,764 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmpeyznqe5a\test_registry
+2025-07-27 09:29:05,773 - src.models.registry - INFO - Registering model: random_forest v1.0.0
+2025-07-27 09:29:05,776 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmpeyznqe5a\test_registry\models\random_forest_1.0.0_20250727_092905_91a651cb.pkl
+2025-07-27 09:29:05,777 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmpeyznqe5a\test_registry\metadata\random_forest_1.0.0_20250727_092905_91a651cb_metadata.json
+2025-07-27 09:29:05,787 - src.models.registry - INFO - Model registered successfully with ID: random_forest_1.0.0_20250727_092905_91a651cb
+2025-07-27 09:29:05,796 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmpeyznqe5a\test_registry
+2025-07-27 09:29:28,948 - src.models.trainer - INFO - Starting model evaluation
+2025-07-27 09:29:28,948 - src.models.trainer - INFO - Evaluating random_forest model
+2025-07-27 09:29:28,961 - src.models.trainer - INFO - Evaluation completed for random_forest
+2025-07-27 09:29:28,961 - src.models.trainer - INFO -   Accuracy: 0.4800
+2025-07-27 09:29:28,962 - src.models.trainer - INFO -   Precision: 0.4729
+2025-07-27 09:29:28,962 - src.models.trainer - INFO -   Recall: 0.4734
+2025-07-27 09:29:28,962 - src.models.trainer - INFO -   F1-Score: 0.4724
+2025-07-27 09:29:28,962 - src.models.trainer - INFO -   ROC-AUC: 0.4066
+2025-07-27 09:29:28,978 - src.models.trainer - INFO - Performing cross-validation for random_forest
+2025-07-27 09:29:28,978 - src.models.trainer - INFO - Cross-validation results for random_forest: {'cv_accuracy_mean': np.float64(0.8233333333333333), 'cv_accuracy_std': np.float64(0.02054804667656323), 'cv_precision_macro_mean': np.float64(0.8233333333333333), 'cv_precision_macro_std': np.float64(0.02054804667656323), 'cv_recall_macro_mean': np.float64(0.8233333333333333), 'cv_recall_macro_std': np.float64(0.02054804667656323), 'cv_f1_macro_mean': np.float64(0.8233333333333333), 'cv_f1_macro_std': np.float64(0.02054804667656323)}
+2025-07-27 09:29:28,981 - src.models.trainer - INFO - Starting hyperparameter tuning for random_forest
+2025-07-27 09:29:28,981 - src.models.trainer - INFO - Hyperparameter tuning completed for random_forest in 0.00s
+2025-07-27 09:29:28,982 - src.models.trainer - INFO - Best parameters: {'n_estimators': 200, 'max_depth': 10}
+2025-07-27 09:29:28,982 - src.models.trainer - INFO - Best cross-validation score: 0.8500
+2025-07-27 09:29:28,985 - src.models.trainer - INFO - Training results saved to C:\Users\theja\AppData\Local\Temp\tmp8essacol.pkl
+2025-07-27 09:29:28,986 - src.models.trainer - INFO - Training results loaded from C:\Users\theja\AppData\Local\Temp\tmp8essacol.pkl
+2025-07-27 09:29:28,989 - src.models.trainer - INFO - Selecting best model based on F1-score
+2025-07-27 09:29:28,989 - src.models.trainer - INFO - Selected xgboost as best model with F1-score: 0.8600
+2025-07-27 09:29:28,991 - src.models.trainer - INFO - Selecting best model based on F1-score
+2025-07-27 09:29:28,993 - src.models.trainer - INFO - Starting model training process
+2025-07-27 09:29:28,994 - src.models.trainer - INFO - Training random_forest model
+2025-07-27 09:29:28,995 - src.models.trainer - INFO - Successfully trained random_forest model in 0.00s
+2025-07-27 09:29:28,995 - src.models.trainer - INFO - Training xgboost model
+2025-07-27 09:29:28,995 - src.models.trainer - INFO - Successfully trained xgboost model in 0.00s
+2025-07-27 09:29:28,996 - src.models.trainer - INFO - Model training completed. Trained 2 models.
+2025-07-27 09:29:29,082 - src.models.evaluator - INFO - Comparing models
+2025-07-27 09:29:29,083 - src.models.evaluator - INFO - Model comparison completed. Best overall model: model_b
+2025-07-27 09:29:29,095 - src.models.evaluator - INFO - Comparing models
+2025-07-27 09:29:29,106 - src.models.evaluator - INFO - Comparing models
+2025-07-27 09:29:29,119 - src.models.evaluator - INFO - Evaluating model: test_model
+2025-07-27 09:29:29,139 - src.models.evaluator - INFO - Evaluation completed for test_model
+2025-07-27 09:29:29,139 - src.models.evaluator - INFO -   Accuracy: 0.9900
+2025-07-27 09:29:29,139 - src.models.evaluator - INFO -   F1-Score: 0.9900
+2025-07-27 09:29:29,140 - src.models.evaluator - INFO -   Inference time: 0.0010s
+2025-07-27 09:29:29,219 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmp5lh2h9zz\test_registry
+2025-07-27 09:29:29,229 - src.models.registry - INFO - Registering model: random_forest v1.0.0
+2025-07-27 09:29:29,233 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmp5lh2h9zz\test_registry\models\random_forest_1.0.0_20250727_092929_203b3737.pkl
+2025-07-27 09:29:29,234 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmp5lh2h9zz\test_registry\metadata\random_forest_1.0.0_20250727_092929_203b3737_metadata.json
+2025-07-27 09:29:29,242 - src.models.registry - INFO - Model registered successfully with ID: random_forest_1.0.0_20250727_092929_203b3737
+2025-07-27 09:29:29,242 - src.models.registry - INFO - Archiving model: random_forest_1.0.0_20250727_092929_203b3737
+2025-07-27 09:29:29,243 - src.models.registry - INFO - Model random_forest_1.0.0_20250727_092929_203b3737 archived successfully
+2025-07-27 09:29:29,243 - src.models.registry - INFO - Retrieving model: random_forest_1.0.0_20250727_092929_203b3737
+2025-07-27 09:29:29,243 - src.models.registry - INFO - Restoring model: random_forest_1.0.0_20250727_092929_203b3737
+2025-07-27 09:29:29,243 - src.models.registry - INFO - Model random_forest_1.0.0_20250727_092929_203b3737 restored successfully
+2025-07-27 09:29:29,244 - src.models.registry - INFO - Retrieving model: random_forest_1.0.0_20250727_092929_203b3737
+2025-07-27 09:29:29,254 - src.models.registry - INFO - Model random_forest_1.0.0_20250727_092929_203b3737 retrieved successfully
+2025-07-27 09:29:29,259 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmpn2riug1g\test_registry
+2025-07-27 09:29:29,268 - src.models.registry - INFO - Registering model: random_forest v1.0.0
+2025-07-27 09:29:29,272 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmpn2riug1g\test_registry\models\random_forest_1.0.0_20250727_092929_41ad3b80.pkl
+2025-07-27 09:29:29,273 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmpn2riug1g\test_registry\metadata\random_forest_1.0.0_20250727_092929_41ad3b80_metadata.json
+2025-07-27 09:29:29,282 - src.models.registry - INFO - Model registered successfully with ID: random_forest_1.0.0_20250727_092929_41ad3b80
+2025-07-27 09:29:29,283 - src.models.registry - INFO - Starting registry cleanup (dry_run=False)
+2025-07-27 09:29:29,284 - src.models.registry - INFO - Registry cleanup completed. Found 1 orphaned model files, 1 orphaned metadata files, 0 missing model files, 0 missing metadata files, 0 hash mismatches
+2025-07-27 09:29:29,289 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmpf96_6ce9\test_registry
+2025-07-27 09:29:29,298 - src.models.registry - INFO - Registering model: random_forest v1.0.0
+2025-07-27 09:29:29,302 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmpf96_6ce9\test_registry\models\random_forest_1.0.0_20250727_092929_1d24afeb.pkl
+2025-07-27 09:29:29,302 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmpf96_6ce9\test_registry\metadata\random_forest_1.0.0_20250727_092929_1d24afeb_metadata.json
+2025-07-27 09:29:29,311 - src.models.registry - INFO - Model registered successfully with ID: random_forest_1.0.0_20250727_092929_1d24afeb
+2025-07-27 09:29:29,312 - src.models.registry - INFO - Starting registry cleanup (dry_run=True)
+2025-07-27 09:29:29,313 - src.models.registry - INFO - Registry cleanup completed. Found 1 orphaned model files, 1 orphaned metadata files, 0 missing model files, 0 missing metadata files, 0 hash mismatches
+2025-07-27 09:29:29,318 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmp6wk4gg6q\test_registry
+2025-07-27 09:29:29,327 - src.models.registry - INFO - Registering model: random_forest v1.0.0
+2025-07-27 09:29:29,331 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmp6wk4gg6q\test_registry\models\random_forest_1.0.0_20250727_092929_6af841fc.pkl
+2025-07-27 09:29:29,332 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmp6wk4gg6q\test_registry\metadata\random_forest_1.0.0_20250727_092929_6af841fc_metadata.json
+2025-07-27 09:29:29,340 - src.models.registry - INFO - Model registered successfully with ID: random_forest_1.0.0_20250727_092929_6af841fc
+2025-07-27 09:29:29,340 - src.models.registry - INFO - Deleting model: random_forest_1.0.0_20250727_092929_6af841fc
+2025-07-27 09:29:29,341 - src.models.registry - INFO - Deleted model file: C:\Users\theja\AppData\Local\Temp\tmp6wk4gg6q\test_registry\models\random_forest_1.0.0_20250727_092929_6af841fc.pkl
+2025-07-27 09:29:29,341 - src.models.registry - INFO - Deleted metadata file: C:\Users\theja\AppData\Local\Temp\tmp6wk4gg6q\test_registry\metadata\random_forest_1.0.0_20250727_092929_6af841fc_metadata.json
+2025-07-27 09:29:29,342 - src.models.registry - INFO - Model random_forest_1.0.0_20250727_092929_6af841fc deleted successfully
+2025-07-27 09:29:29,346 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmpby37os1n\test_registry
+2025-07-27 09:29:29,356 - src.models.registry - INFO - Deleting model: nonexistent_model_id
+2025-07-27 09:29:29,356 - src.models.registry - WARNING - Model nonexistent_model_id not found in registry
+2025-07-27 09:29:29,361 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmpyzg_uxpt\test_registry
+2025-07-27 09:29:29,374 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmpbcm81c7x\test_registry
+2025-07-27 09:29:29,384 - src.models.registry - INFO - Registering model: random_forest v1.0.0
+2025-07-27 09:29:29,387 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmpbcm81c7x\test_registry\models\random_forest_1.0.0_20250727_092929_550a3842.pkl
+2025-07-27 09:29:29,388 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmpbcm81c7x\test_registry\metadata\random_forest_1.0.0_20250727_092929_550a3842_metadata.json
+2025-07-27 09:29:29,396 - src.models.registry - INFO - Model registered successfully with ID: random_forest_1.0.0_20250727_092929_550a3842
+2025-07-27 09:29:29,397 - src.models.registry - INFO - Registering model: random_forest v2.0.0
+2025-07-27 09:29:29,401 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmpbcm81c7x\test_registry\models\random_forest_2.0.0_20250727_092929_efd52ad2.pkl
+2025-07-27 09:29:29,402 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmpbcm81c7x\test_registry\metadata\random_forest_2.0.0_20250727_092929_efd52ad2_metadata.json
+2025-07-27 09:29:29,409 - src.models.registry - INFO - Model registered successfully with ID: random_forest_2.0.0_20250727_092929_efd52ad2
+2025-07-27 09:29:29,410 - src.models.registry - INFO - Registering model: random_forest v1.5.0
+2025-07-27 09:29:29,413 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmpbcm81c7x\test_registry\models\random_forest_1.5.0_20250727_092929_97344135.pkl
+2025-07-27 09:29:29,415 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmpbcm81c7x\test_registry\metadata\random_forest_1.5.0_20250727_092929_97344135_metadata.json
+2025-07-27 09:29:29,423 - src.models.registry - INFO - Model registered successfully with ID: random_forest_1.5.0_20250727_092929_97344135
+2025-07-27 09:29:29,423 - src.models.registry - INFO - Listing registered models
+2025-07-27 09:29:29,442 - src.models.registry - INFO - Found 3 models
+2025-07-27 09:29:29,442 - src.models.registry - INFO - Retrieving model: random_forest_2.0.0_20250727_092929_efd52ad2
+2025-07-27 09:29:29,445 - src.models.registry - INFO - Model random_forest_2.0.0_20250727_092929_efd52ad2 retrieved successfully
+2025-07-27 09:29:29,450 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmpbpa_9jhn\test_registry
+2025-07-27 09:29:29,460 - src.models.registry - INFO - Listing registered models
+2025-07-27 09:29:29,460 - src.models.registry - INFO - Found 0 models
+2025-07-27 09:29:29,464 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmpcori3_yn\test_registry
+2025-07-27 09:29:29,474 - src.models.registry - INFO - Registering model: random_forest v1.0.0
+2025-07-27 09:29:29,477 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmpcori3_yn\test_registry\models\random_forest_1.0.0_20250727_092929_5bd849e5.pkl
+2025-07-27 09:29:29,478 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmpcori3_yn\test_registry\metadata\random_forest_1.0.0_20250727_092929_5bd849e5_metadata.json
+2025-07-27 09:29:29,487 - src.models.registry - INFO - Model registered successfully with ID: random_forest_1.0.0_20250727_092929_5bd849e5
+2025-07-27 09:29:29,487 - src.models.registry - INFO - Retrieving model: random_forest_1.0.0_20250727_092929_5bd849e5
+2025-07-27 09:29:29,496 - src.models.registry - INFO - Model random_forest_1.0.0_20250727_092929_5bd849e5 retrieved successfully
+2025-07-27 09:29:29,501 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmpy172qqst\test_registry
+2025-07-27 09:29:29,510 - src.models.registry - INFO - Registering model: random_forest v1.0.0
+2025-07-27 09:29:29,514 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmpy172qqst\test_registry\models\random_forest_1.0.0_20250727_092929_f3b63148.pkl
+2025-07-27 09:29:29,515 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmpy172qqst\test_registry\metadata\random_forest_1.0.0_20250727_092929_f3b63148_metadata.json
+2025-07-27 09:29:29,523 - src.models.registry - INFO - Model registered successfully with ID: random_forest_1.0.0_20250727_092929_f3b63148
+2025-07-27 09:29:29,523 - src.models.registry - INFO - Registering model: random_forest v1.1.0
+2025-07-27 09:29:29,526 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmpy172qqst\test_registry\models\random_forest_1.1.0_20250727_092929_9c8d23dc.pkl
+2025-07-27 09:29:29,527 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmpy172qqst\test_registry\metadata\random_forest_1.1.0_20250727_092929_9c8d23dc_metadata.json
+2025-07-27 09:29:29,537 - src.models.registry - INFO - Model registered successfully with ID: random_forest_1.1.0_20250727_092929_9c8d23dc
+2025-07-27 09:29:29,537 - src.models.registry - INFO - Registering model: random_forest v2.0.0
+2025-07-27 09:29:29,540 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmpy172qqst\test_registry\models\random_forest_2.0.0_20250727_092929_66cf2f7c.pkl
+2025-07-27 09:29:29,540 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmpy172qqst\test_registry\metadata\random_forest_2.0.0_20250727_092929_66cf2f7c_metadata.json
+2025-07-27 09:29:29,549 - src.models.registry - INFO - Model registered successfully with ID: random_forest_2.0.0_20250727_092929_66cf2f7c
+2025-07-27 09:29:29,550 - src.models.registry - INFO - Listing registered models
+2025-07-27 09:29:29,569 - src.models.registry - INFO - Found 3 models
+2025-07-27 09:29:29,574 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmp37swvgik\test_registry
+2025-07-27 09:29:29,583 - src.models.registry - INFO - Retrieving model: nonexistent_model_id
+2025-07-27 09:29:29,587 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmpxgfj3wsv\test_registry
+2025-07-27 09:29:29,597 - src.models.registry - INFO - Registering model: random_forest v1.0.0
+2025-07-27 09:29:29,601 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmpxgfj3wsv\test_registry\models\random_forest_1.0.0_20250727_092929_2e28f549.pkl
+2025-07-27 09:29:29,602 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmpxgfj3wsv\test_registry\metadata\random_forest_1.0.0_20250727_092929_2e28f549_metadata.json
+2025-07-27 09:29:29,610 - src.models.registry - INFO - Model registered successfully with ID: random_forest_1.0.0_20250727_092929_2e28f549
+2025-07-27 09:29:29,610 - src.models.registry - INFO - Archiving model: random_forest_1.0.0_20250727_092929_2e28f549
+2025-07-27 09:29:29,611 - src.models.registry - INFO - Model random_forest_1.0.0_20250727_092929_2e28f549 archived successfully
+2025-07-27 09:29:29,611 - src.models.registry - INFO - Registering model: xgboost v1.0.0
+2025-07-27 09:29:29,612 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmpxgfj3wsv\test_registry\models\xgboost_1.0.0_20250727_092929_36b09636.pkl
+2025-07-27 09:29:29,613 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmpxgfj3wsv\test_registry\metadata\xgboost_1.0.0_20250727_092929_36b09636_metadata.json
+2025-07-27 09:29:29,614 - src.models.registry - INFO - Model registered successfully with ID: xgboost_1.0.0_20250727_092929_36b09636
+2025-07-27 09:29:29,619 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmp_hkfgomd\test_registry
+2025-07-27 09:29:29,628 - src.models.registry - INFO - Registering model: random_forest v1.0.0
+2025-07-27 09:29:29,631 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmp_hkfgomd\test_registry\models\random_forest_1.0.0_20250727_092929_79bc95a1.pkl
+2025-07-27 09:29:29,633 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmp_hkfgomd\test_registry\metadata\random_forest_1.0.0_20250727_092929_79bc95a1_metadata.json
+2025-07-27 09:29:29,641 - src.models.registry - INFO - Model registered successfully with ID: random_forest_1.0.0_20250727_092929_79bc95a1
+2025-07-27 09:29:29,642 - src.models.registry - INFO - Registering model: xgboost v1.1.0
+2025-07-27 09:29:29,642 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmp_hkfgomd\test_registry\models\xgboost_1.1.0_20250727_092929_478663ab.pkl
+2025-07-27 09:29:29,643 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmp_hkfgomd\test_registry\metadata\xgboost_1.1.0_20250727_092929_478663ab_metadata.json
+2025-07-27 09:29:29,644 - src.models.registry - INFO - Model registered successfully with ID: xgboost_1.1.0_20250727_092929_478663ab
+2025-07-27 09:29:29,644 - src.models.registry - INFO - Listing registered models
+2025-07-27 09:29:29,658 - src.models.registry - INFO - Found 2 models
+2025-07-27 09:29:29,658 - src.models.registry - INFO - Listing registered models
+2025-07-27 09:29:29,659 - src.models.registry - INFO - Found 1 models
+2025-07-27 09:29:29,659 - src.models.registry - INFO - Listing registered models
+2025-07-27 09:29:29,659 - src.models.registry - INFO - Found 1 models
+2025-07-27 09:29:29,664 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmpi31d8ltg\test_registry
+2025-07-27 09:29:29,673 - src.models.registry - INFO - Registering model: random_forest v1.0.0
+2025-07-27 09:29:29,677 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmpi31d8ltg\test_registry\models\random_forest_1.0.0_20250727_092929_18e35a3a.pkl
+2025-07-27 09:29:29,678 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmpi31d8ltg\test_registry\metadata\random_forest_1.0.0_20250727_092929_18e35a3a_metadata.json
+2025-07-27 09:29:29,687 - src.models.registry - INFO - Model registered successfully with ID: random_forest_1.0.0_20250727_092929_18e35a3a
+2025-07-27 09:29:29,692 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmp7hi9454l\test_registry
+2025-07-27 09:29:29,701 - src.models.registry - INFO - Registering model: random_forest v1.0.0
+2025-07-27 09:29:29,705 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmp7hi9454l\test_registry\models\random_forest_1.0.0_20250727_092929_d1567c55.pkl
+2025-07-27 09:29:29,706 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmp7hi9454l\test_registry\metadata\random_forest_1.0.0_20250727_092929_d1567c55_metadata.json
+2025-07-27 09:29:29,714 - src.models.registry - INFO - Model registered successfully with ID: random_forest_1.0.0_20250727_092929_d1567c55
+2025-07-27 09:29:29,739 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmp2ef9l3rz\test_registry
+2025-07-27 09:29:29,753 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmp1e9on5y0\test_registry
+2025-07-27 09:29:29,763 - src.models.registry - INFO - Registering model: random_forest v1.0.0
+2025-07-27 09:29:29,766 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmp1e9on5y0\test_registry\models\random_forest_1.0.0_20250727_092929_7747553f.pkl
+2025-07-27 09:29:29,767 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmp1e9on5y0\test_registry\metadata\random_forest_1.0.0_20250727_092929_7747553f_metadata.json
+2025-07-27 09:29:29,776 - src.models.registry - INFO - Model registered successfully with ID: random_forest_1.0.0_20250727_092929_7747553f
+2025-07-27 09:29:29,784 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmp1e9on5y0\test_registry
