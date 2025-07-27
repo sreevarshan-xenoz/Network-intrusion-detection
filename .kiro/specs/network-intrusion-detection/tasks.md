@@ -12,8 +12,12 @@
   - Create requirements.txt with all necessary dependencies
   - _Requirements: 8.1, 8.2_
 
-- [ ] 2. Implement data ingestion and loading capabilities
-  - [ ] 2.1 Create abstract DatasetLoader base class
+- [-] 2. Implement data ingestion and loading capabilities
+
+
+
+  - [-] 2.1 Create abstract DatasetLoader base class
+
     - Write base class with common loading and validation methods
     - Define interface for schema detection and feature extraction
     - Implement error handling for malformed data files
