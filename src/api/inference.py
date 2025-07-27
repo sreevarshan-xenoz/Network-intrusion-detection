@@ -254,7 +254,7 @@ async def http_exception_handler(request: Request, exc: HTTPException):
             message=exc.detail,
             timestamp=datetime.now(),
             request_id=str(uuid.uuid4())
-        ).dict()
+        ).model_dump(mode='json')
     )
 
 
@@ -268,7 +268,7 @@ async def general_exception_handler(request: Request, exc: Exception):
             message="An unexpected error occurred",
             timestamp=datetime.now(),
             request_id=str(uuid.uuid4())
-        ).dict()
+        ).model_dump(mode='json')
     )
 
 

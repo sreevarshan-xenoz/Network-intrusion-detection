@@ -43,7 +43,8 @@ class BatchPredictionRequest(BaseModel):
     """Request model for batch packet classification."""
     packets: List[NetworkPacketRequest] = Field(..., description="List of network packets to classify")
     
-    @validator('packets')
+    @field_validator('packets')
+    @classmethod
     def validate_batch_size(cls, v):
         """Validate batch size limits."""
         if len(v) > 1000:  # Configurable limit
