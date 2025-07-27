@@ -1,3 +1,24 @@
 2025-07-27 08:31:32,888 - __main__ - INFO - Starting Network Intrusion Detection System
 2025-07-27 08:31:32,888 - __main__ - INFO - Configuration loaded from: G:\Network-intrusion-detection\src\utils\..\..\config\config.yaml
 2025-07-27 08:31:32,888 - __main__ - INFO - System initialized successfully
+2025-07-27 08:39:16,601 - nids.data.mock_loader - ERROR - Failed to load data from test.csv: No data
+2025-07-27 08:39:16,606 - nids.data.mock_loader - INFO - Loaded 3 records from test.csv
+2025-07-27 08:39:16,607 - nids.data.mock_loader - INFO - Dataset shape: (3, 2), File size: 1.00 MB
+2025-07-27 08:39:16,610 - nids.data.mock_loader - INFO - Memory usage: 0.00 MB
+2025-07-27 08:39:16,619 - nids.data.mock_loader - INFO - Loading data from C:\Users\theja\AppData\Local\Temp\tmpekv7hb8n.csv
+2025-07-27 08:39:16,620 - nids.data.mock_loader - INFO - Loaded 3 records from C:\Users\theja\AppData\Local\Temp\tmpekv7hb8n.csv
+2025-07-27 08:39:16,620 - nids.data.mock_loader - INFO - Dataset shape: (3, 4), File size: 0.00 MB
+2025-07-27 08:39:16,620 - nids.data.mock_loader - INFO - Memory usage: 0.00 MB
+2025-07-27 08:39:16,627 - nids.data.mock_network_loader - ERROR - Missing required columns: ['dst_ip']
+2025-07-27 08:39:16,631 - nids.data.mock_network_loader - INFO - Cleaned column names for consistency
+2025-07-27 08:39:16,634 - nids.data.mock_network_loader - INFO - Found 2 missing values across 2 columns
+2025-07-27 08:39:16,635 - nids.data.mock_network_loader - WARNING - Column 'col1': 1 missing values (33.33%)
+2025-07-27 08:39:16,635 - nids.data.mock_network_loader - WARNING - Column 'col2': 1 missing values (33.33%)
+2025-07-27 08:39:16,638 - nids.data.mock_network_loader - INFO - Found 2 missing values across 2 columns
+2025-07-27 08:39:16,639 - nids.data.mock_network_loader - INFO - Dropped 2 rows with missing values
+2025-07-27 08:39:16,642 - nids.data.mock_network_loader - INFO - Found 2 missing values across 2 columns
+2025-07-27 08:39:16,645 - nids.data.mock_network_loader - INFO - Filled missing values with appropriate defaults
+2025-07-27 08:39:16,652 - nids.data.mock_network_loader - INFO - Data quality report: {'total_records': 5, 'total_features': 4, 'missing_values': np.int64(0), 'duplicate_records': np.int64(1), 'memory_usage_mb': np.float64(0.0004787445068359375), 'constant_columns': ['constant_col'], 'high_cardinality_columns': [('high_cardinality', 4)]}
+2025-07-27 08:39:16,652 - nids.data.mock_network_loader - WARNING - Dataset has 20.00% duplicate records
+2025-07-27 08:39:16,653 - nids.data.mock_network_loader - WARNING - Found 1 constant columns: ['constant_col']
+2025-07-27 08:39:16,656 - nids.data.mock_network_loader - INFO - Standardized 2 feature names

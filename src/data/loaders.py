@@ -218,12 +218,12 @@ class BaseNetworkDatasetLoader(DatasetLoader):
                     if pd.api.types.is_numeric_dtype(data[col]):
                         # Fill numeric columns with median
                         fill_value = data[col].median()
-                        data[col].fillna(fill_value, inplace=True)
+                        data.loc[:, col] = data[col].fillna(fill_value)
                     else:
                         # Fill categorical columns with mode or 'unknown'
                         mode_values = data[col].mode()
                         fill_value = mode_values[0] if len(mode_values) > 0 else 'unknown'
-                        data[col].fillna(fill_value, inplace=True)
+                        data.loc[:, col] = data[col].fillna(fill_value)
             
             self.logger.info("Filled missing values with appropriate defaults")
         
