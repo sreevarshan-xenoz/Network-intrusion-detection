@@ -1,1 +1,3 @@
-# API components and endpoints
+"""
+API package for network intrusion detection system.
+"""
