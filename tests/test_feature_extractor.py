@@ -48,7 +48,7 @@ def mock_encoder():
 def mock_scaler():
     """Mock feature scaler fixture."""
     scaler = Mock(spec=FeatureScaler)
-    scaler.transform.return_value = np.array([[0.5] * 25])  # Scaled features
+    scaler.transform.return_value = np.array([[0.5] * 29])  # Scaled features (29 features)
     return scaler
 
 
@@ -312,11 +312,6 @@ class TestRealTimeFeatureExtractor:
         
         # Should call the scaler
         mock_scaler.transform.assert_called_once()
-        
-        # Debug: print actual vs expected features
-        print(f"Actual features: {len(features)}, Expected: {len(feature_extractor.feature_names)}")
-        print(f"Feature names: {sorted(feature_extractor.feature_names)}")
-        print(f"Actual features: {sorted(features.keys())}")
         
         # Should return scaled features
         assert len(features) == len(feature_extractor.feature_names)

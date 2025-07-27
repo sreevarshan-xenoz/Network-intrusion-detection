@@ -21,6 +21,7 @@ from .models import (
 )
 from .auth import get_current_user, require_permission, check_rate_limit
 from .model_loader import ModelLoader
+from .feature_extractor import RealTimeFeatureExtractor
 from ..models.interfaces import PredictionResult
 from ..services.interfaces import NetworkTrafficRecord
 
@@ -30,11 +31,11 @@ class InferenceService:
     
     def __init__(self):
         self.model_loader: Optional[ModelLoader] = None  # Will be injected
-        self.feature_extractor = None  # Will be injected
+        self.feature_extractor: Optional[RealTimeFeatureExtractor] = None  # Will be injected
         self.logger = logging.getLogger(__name__)
         self.start_time = time.time()
         
-    def set_dependencies(self, model_loader: Optional[ModelLoader], feature_extractor):
+    def set_dependencies(self, model_loader: Optional[ModelLoader], feature_extractor: Optional[RealTimeFeatureExtractor]):
         """Inject dependencies."""
         self.model_loader = model_loader
         self.feature_extractor = feature_extractor
@@ -352,6 +353,30 @@ async def get_prediction_stats(
     
     stats = inference_service.model_loader.get_prediction_stats(hours)
     return stats
+
+
+@app.get("/stats/features")
+async def get_feature_stats(
+    user: dict = Depends(require_permission("model_info"))
+):
+    """Get feature extraction statistics."""
+    if not inference_service.feature_extractor:
+        raise HTTPException(status_code=503, detail="Feature extractor not available")
+    
+    stats = inference_service.feature_extractor.get_flow_statistics()
+    return stats
+
+
+@app.post("/features/reset")
+async def reset_feature_stats(
+    user: dict = Depends(require_permission("model_info"))
+):
+    """Reset feature extraction statistics."""
+    if not inference_service.feature_extractor:
+        raise HTTPException(status_code=503, detail="Feature extractor not available")
+    
+    inference_service.feature_extractor.reset_statistics()
+    return {"message": "Feature extraction statistics reset successfully"}
 
 
 @app.get("/")

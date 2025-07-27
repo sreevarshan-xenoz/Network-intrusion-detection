@@ -37,10 +37,17 @@ def mock_model_loader():
 @pytest.fixture
 def mock_feature_extractor():
     """Mock feature extractor fixture."""
-    mock_extractor = Mock()
+    from src.api.feature_extractor import RealTimeFeatureExtractor
+    mock_extractor = Mock(spec=RealTimeFeatureExtractor)
     mock_extractor.extract_features.return_value = {
         "extracted_feature1": 0.5,
         "extracted_feature2": 1.2
+    }
+    mock_extractor.get_flow_statistics.return_value = {
+        "active_flows": 5,
+        "recent_packets": 100,
+        "protocol_distribution": {"TCP": 80, "UDP": 20},
+        "top_ports": {80: 50, 443: 30}
     }
     return mock_extractor
 
