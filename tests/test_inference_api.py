@@ -70,6 +70,10 @@ def auth_headers():
 class TestInferenceService:
     """Test cases for InferenceService class."""
     
+    def setup_method(self):
+        """Setup method to clear cache before each test."""
+        inference_service.prediction_cache.clear()
+    
     def test_set_dependencies(self, mock_model_loader, mock_feature_extractor):
         """Test dependency injection."""
         service = inference_service
@@ -96,26 +100,36 @@ class TestInferenceService:
         )
         
         with patch.object(inference_service, '_make_prediction', return_value=mock_prediction):
-            packet = NetworkPacketRequest(**sample_packet_data)
-            user = {"api_key": "test_key", "name": "test_user"}
+            # Add a small delay to ensure processing time > 0
+            import asyncio
+            async def delayed_prediction(*args, **kwargs):
+                await asyncio.sleep(0.001)  # 1ms delay
+                return mock_prediction
             
-            result = await inference_service.predict_single(packet, user)
-            
-            assert result.is_malicious == True
-            assert result.attack_type == "DoS"
-            assert result.confidence_score == 0.95
-            assert result.processing_time_ms > 0
+            with patch.object(inference_service, '_make_prediction', side_effect=delayed_prediction):
+                packet = NetworkPacketRequest(**sample_packet_data)
+                user = {"api_key": "test_key", "name": "test_user"}
+                
+                result = await inference_service.predict_single(packet, user)
+                
+                assert result.is_malicious == True
+                assert result.attack_type == "DoS"
+                assert result.confidence_score == 0.95
+                assert result.processing_time_ms > 0
     
     @pytest.mark.asyncio
     async def test_predict_single_no_model(self, sample_packet_data):
         """Test prediction when no model is loaded."""
-        # Setup with no model
-        inference_service.set_dependencies(None, None)
+        # Setup with model loader that has no current_model
+        mock_loader = Mock()
+        mock_loader.current_model = None
+        inference_service.set_dependencies(mock_loader, None)
         
         packet = NetworkPacketRequest(**sample_packet_data)
         user = {"api_key": "test_key", "name": "test_user"}
         
-        with pytest.raises(Exception):  # Should raise HTTPException
+        from fastapi import HTTPException
+        with pytest.raises(HTTPException):  # Should raise HTTPException
             await inference_service.predict_single(packet, user)
     
     @pytest.mark.asyncio
@@ -135,18 +149,26 @@ class TestInferenceService:
             model_version="1.0.0"
         )
         
-        with patch.object(inference_service, '_make_prediction', return_value=mock_prediction):
-            batch_request = BatchPredictionRequest(
-                packets=[NetworkPacketRequest(**sample_packet_data)]
-            )
-            user = {"api_key": "test_key", "name": "test_user"}
-            
-            result = await inference_service.predict_batch(batch_request, user)
-            
-            assert result.total_processed == 1
-            assert len(result.predictions) == 1
-            assert result.processing_time_ms > 0
-            assert len(result.errors) == 0
+        # Add a small delay to ensure processing time > 0
+        import asyncio
+        async def delayed_prediction(*args, **kwargs):
+            await asyncio.sleep(0.001)  # 1ms delay
+            return mock_prediction
+        
+        with patch.object(inference_service, '_make_prediction', side_effect=delayed_prediction):
+            # Disable caching for this test
+            with patch.object(inference_service, '_get_cached_prediction', return_value=None):
+                batch_request = BatchPredictionRequest(
+                    packets=[NetworkPacketRequest(**sample_packet_data)]
+                )
+                user = {"api_key": "test_key", "name": "test_user"}
+                
+                result = await inference_service.predict_batch(batch_request, user)
+                
+                assert result.total_processed == 1
+                assert len(result.predictions) == 1
+                assert result.processing_time_ms > 0
+                assert len(result.errors) == 0
     
     @pytest.mark.asyncio
     async def test_get_model_info_success(self, mock_model_loader):
@@ -186,6 +208,9 @@ class TestInferenceService:
     
     def test_cache_functionality(self, sample_packet_data):
         """Test prediction caching."""
+        # Clear cache first
+        inference_service.prediction_cache.clear()
+        
         packet = NetworkPacketRequest(**sample_packet_data)
         cache_key = inference_service._generate_cache_key(packet)
         
