@@ -113,10 +113,10 @@ class TestDatasetLoader:
             with pytest.raises(DataLoadingError, match="Path is not a file"):
                 self.loader.validate_file_path(temp_dir)
     
-    @patch('chardet.detect')
-    def test_detect_file_encoding_with_chardet(self, mock_detect):
+    @patch('src.data.interfaces.chardet', create=True)
+    def test_detect_file_encoding_with_chardet(self, mock_chardet):
         """Test encoding detection with chardet available."""
-        mock_detect.return_value = {'encoding': 'utf-8', 'confidence': 0.9}
+        mock_chardet.detect.return_value = {'encoding': 'utf-8', 'confidence': 0.9}
         
         with tempfile.NamedTemporaryFile(mode='w', delete=False) as f:
             f.write("test data")
@@ -128,10 +128,10 @@ class TestDatasetLoader:
         finally:
             os.unlink(temp_path)
     
-    @patch('chardet.detect')
-    def test_detect_file_encoding_low_confidence(self, mock_detect):
+    @patch('src.data.interfaces.chardet', create=True)
+    def test_detect_file_encoding_low_confidence(self, mock_chardet):
         """Test encoding detection with low confidence."""
-        mock_detect.return_value = {'encoding': 'iso-8859-1', 'confidence': 0.5}
+        mock_chardet.detect.return_value = {'encoding': 'iso-8859-1', 'confidence': 0.5}
         
         with tempfile.NamedTemporaryFile(mode='w', delete=False) as f:
             f.write("test data")
@@ -140,6 +140,19 @@ class TestDatasetLoader:
         try:
             encoding = self.loader.detect_file_encoding(temp_path)
             assert encoding == 'utf-8'  # Should fallback to utf-8
+        finally:
+            os.unlink(temp_path)
+    
+    def test_detect_file_encoding_no_chardet(self):
+        """Test encoding detection when chardet is not available."""
+        with tempfile.NamedTemporaryFile(mode='w', delete=False) as f:
+            f.write("test data")
+            temp_path = f.name
+        
+        try:
+            # This should fallback to utf-8 when chardet is not available
+            encoding = self.loader.detect_file_encoding(temp_path)
+            assert encoding == 'utf-8'
         finally:
             os.unlink(temp_path)
     

@@ -16,7 +16,8 @@
 
 
 
-  - [-] 2.1 Create abstract DatasetLoader base class
+  - [x] 2.1 Create abstract DatasetLoader base class
+
 
     - Write base class with common loading and validation methods
     - Define interface for schema detection and feature extraction
@@ -24,6 +25,8 @@
     - _Requirements: 3.3_
 
   - [ ] 2.2 Implement NSL-KDD dataset loader
+
+
     - Write NSLKDDLoader class to parse NSL-KDD format
     - Handle both training and testing file formats
     - Extract and map feature names to standardized schema
