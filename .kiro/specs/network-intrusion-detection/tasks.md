@@ -24,7 +24,8 @@
     - Implement error handling for malformed data files
     - _Requirements: 3.3_
 
-  - [ ] 2.2 Implement NSL-KDD dataset loader
+  - [x] 2.2 Implement NSL-KDD dataset loader
+
 
 
     - Write NSLKDDLoader class to parse NSL-KDD format
@@ -33,7 +34,8 @@
     - Create unit tests for NSL-KDD data loading
     - _Requirements: 3.1_
 
-  - [ ] 2.3 Implement CICIDS dataset loader
+  - [-] 2.3 Implement CICIDS dataset loader
+
     - Write CICIDSLoader class for CICIDS2017/2018 formats
     - Handle large CSV files with memory-efficient loading
     - Map CICIDS features to standardized schema

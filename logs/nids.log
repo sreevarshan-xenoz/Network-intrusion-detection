@@ -71,3 +71,75 @@
 2025-07-27 08:45:54,068 - nids.data.mock_network_loader - WARNING - Dataset has 20.00% duplicate records
 2025-07-27 08:45:54,068 - nids.data.mock_network_loader - WARNING - Found 1 constant columns: ['constant_col']
 2025-07-27 08:45:54,070 - nids.data.mock_network_loader - INFO - Standardized 2 feature names
+2025-07-27 08:48:26,231 - nids.data.nsl_kdd - INFO - Loading NSL-KDD dataset from C:\Users\theja\AppData\Local\Temp\tmpkljsi7q5.csv
+2025-07-27 08:48:26,232 - nids.data.nsl_kdd - WARNING - chardet not available, using utf-8 encoding
+2025-07-27 08:48:26,244 - nids.data.nsl_kdd - INFO - Detected training file format with difficulty scores
+2025-07-27 08:48:26,246 - nids.data.nsl_kdd - INFO - Successfully loaded 2 records with 43 features
+2025-07-27 08:48:26,249 - nids.data.nsl_kdd - INFO - Loading NSL-KDD dataset from C:\Users\theja\AppData\Local\Temp\tmp8nbu6rmz.csv
+2025-07-27 08:48:26,250 - nids.data.nsl_kdd - WARNING - chardet not available, using utf-8 encoding
+2025-07-27 08:48:26,261 - nids.data.nsl_kdd - INFO - Detected test file format without difficulty scores
+2025-07-27 08:48:26,262 - nids.data.nsl_kdd - INFO - Successfully loaded 2 records with 42 features
+2025-07-27 08:48:26,265 - nids.data.nsl_kdd - INFO - Loading NSL-KDD dataset from C:\Users\theja\AppData\Local\Temp\tmp0wv1c_q4.csv
+2025-07-27 08:48:26,266 - nids.data.nsl_kdd - WARNING - chardet not available, using utf-8 encoding
+2025-07-27 08:48:26,277 - nids.data.nsl_kdd - INFO - Detected test file format without difficulty scores
+2025-07-27 08:48:26,278 - nids.data.nsl_kdd - INFO - Successfully loaded 2 records with 42 features
+2025-07-27 08:48:26,280 - nids.data.nsl_kdd - INFO - Loading NSL-KDD dataset from C:\Users\theja\AppData\Local\Temp\tmpzwz7hd2v.csv
+2025-07-27 08:48:26,281 - nids.data.nsl_kdd - WARNING - chardet not available, using utf-8 encoding
+2025-07-27 08:48:26,290 - nids.data.nsl_kdd - ERROR - Failed to load data from C:\Users\theja\AppData\Local\Temp\tmpzwz7hd2v.csv: Unexpected number of columns: 5. Expected 43 (training) or 42 (test)
+2025-07-27 08:48:26,428 - nids.data.nsl_kdd - INFO - Added attack category column
+2025-07-27 08:48:26,430 - nids.data.nsl_kdd - WARNING - Target column 'attack_type' not found, cannot add categories
+2025-07-27 08:48:26,435 - nids.data.nsl_kdd - INFO - Added attack category column
+2025-07-27 08:48:26,436 - nids.data.nsl_kdd - INFO - Found 1 missing values across 1 columns
+2025-07-27 08:48:26,437 - nids.data.nsl_kdd - INFO - Filled missing values with appropriate defaults
+2025-07-27 08:48:26,439 - nids.data.nsl_kdd - INFO - Applied basic preprocessing for ML
+2025-07-27 08:48:26,443 - nids.data.nsl_kdd - INFO - Standardized 3 feature names
+2025-07-27 08:48:26,446 - nids.data.nsl_kdd - INFO - Loading data from C:\Users\theja\AppData\Local\Temp\tmpj0u750ft.csv
+2025-07-27 08:48:26,447 - nids.data.nsl_kdd - INFO - Loading NSL-KDD dataset from C:\Users\theja\AppData\Local\Temp\tmpj0u750ft.csv
+2025-07-27 08:48:26,447 - nids.data.nsl_kdd - WARNING - chardet not available, using utf-8 encoding
+2025-07-27 08:48:26,450 - nids.data.nsl_kdd - INFO - Detected test file format without difficulty scores
+2025-07-27 08:48:26,451 - nids.data.nsl_kdd - INFO - Successfully loaded 2 records with 42 features
+2025-07-27 08:48:26,452 - nids.data.nsl_kdd - INFO - Schema validation passed
+2025-07-27 08:48:26,453 - nids.data.nsl_kdd - INFO - Loaded 2 records from C:\Users\theja\AppData\Local\Temp\tmpj0u750ft.csv
+2025-07-27 08:48:26,453 - nids.data.nsl_kdd - INFO - Dataset shape: (2, 42), File size: 0.00 MB
+2025-07-27 08:48:26,455 - nids.data.nsl_kdd - INFO - Memory usage: 0.00 MB
+2025-07-27 08:48:48,210 - nids.data.nsl_kdd - INFO - Loading NSL-KDD dataset from C:\Users\theja\AppData\Local\Temp\tmppt1rji11.csv
+2025-07-27 08:48:48,210 - nids.data.nsl_kdd - WARNING - chardet not available, using utf-8 encoding
+2025-07-27 08:48:48,214 - nids.data.nsl_kdd - INFO - Detected test file format without difficulty scores
+2025-07-27 08:48:48,215 - nids.data.nsl_kdd - INFO - Successfully loaded 2 records with 42 features
+2025-07-27 08:48:48,216 - nids.data.nsl_kdd - INFO - Schema validation passed
+2025-07-27 08:48:57,573 - nids.data.nsl_kdd - INFO - Loading NSL-KDD dataset from C:\Users\theja\AppData\Local\Temp\tmpj4xj4m4u.csv
+2025-07-27 08:48:57,574 - nids.data.nsl_kdd - WARNING - chardet not available, using utf-8 encoding
+2025-07-27 08:48:57,578 - nids.data.nsl_kdd - INFO - Detected training file format with difficulty scores
+2025-07-27 08:48:57,580 - nids.data.nsl_kdd - INFO - Successfully loaded 2 records with 43 features
+2025-07-27 08:48:57,583 - nids.data.nsl_kdd - INFO - Loading NSL-KDD dataset from C:\Users\theja\AppData\Local\Temp\tmpkjwb5ie3.csv
+2025-07-27 08:48:57,584 - nids.data.nsl_kdd - WARNING - chardet not available, using utf-8 encoding
+2025-07-27 08:48:57,586 - nids.data.nsl_kdd - INFO - Detected test file format without difficulty scores
+2025-07-27 08:48:57,587 - nids.data.nsl_kdd - INFO - Successfully loaded 2 records with 42 features
+2025-07-27 08:48:57,590 - nids.data.nsl_kdd - INFO - Loading NSL-KDD dataset from C:\Users\theja\AppData\Local\Temp\tmpddmmk73v.csv
+2025-07-27 08:48:57,591 - nids.data.nsl_kdd - WARNING - chardet not available, using utf-8 encoding
+2025-07-27 08:48:57,594 - nids.data.nsl_kdd - INFO - Detected test file format without difficulty scores
+2025-07-27 08:48:57,594 - nids.data.nsl_kdd - INFO - Successfully loaded 2 records with 42 features
+2025-07-27 08:48:57,598 - nids.data.nsl_kdd - INFO - Loading NSL-KDD dataset from C:\Users\theja\AppData\Local\Temp\tmpb42gakg9.csv
+2025-07-27 08:48:57,598 - nids.data.nsl_kdd - WARNING - chardet not available, using utf-8 encoding
+2025-07-27 08:48:57,600 - nids.data.nsl_kdd - ERROR - Failed to load data from C:\Users\theja\AppData\Local\Temp\tmpb42gakg9.csv: Unexpected number of columns: 5. Expected 43 (training) or 42 (test)
+2025-07-27 08:48:57,603 - nids.data.nsl_kdd - INFO - Loading NSL-KDD dataset from C:\Users\theja\AppData\Local\Temp\tmp4i41ax2v.csv
+2025-07-27 08:48:57,603 - nids.data.nsl_kdd - WARNING - chardet not available, using utf-8 encoding
+2025-07-27 08:48:57,606 - nids.data.nsl_kdd - INFO - Detected test file format without difficulty scores
+2025-07-27 08:48:57,607 - nids.data.nsl_kdd - INFO - Successfully loaded 2 records with 42 features
+2025-07-27 08:48:57,608 - nids.data.nsl_kdd - INFO - Schema validation passed
+2025-07-27 08:48:57,616 - nids.data.nsl_kdd - INFO - Added attack category column
+2025-07-27 08:48:57,618 - nids.data.nsl_kdd - WARNING - Target column 'attack_type' not found, cannot add categories
+2025-07-27 08:48:57,624 - nids.data.nsl_kdd - INFO - Added attack category column
+2025-07-27 08:48:57,625 - nids.data.nsl_kdd - INFO - Found 1 missing values across 1 columns
+2025-07-27 08:48:57,626 - nids.data.nsl_kdd - INFO - Filled missing values with appropriate defaults
+2025-07-27 08:48:57,628 - nids.data.nsl_kdd - INFO - Applied basic preprocessing for ML
+2025-07-27 08:48:57,632 - nids.data.nsl_kdd - INFO - Standardized 3 feature names
+2025-07-27 08:48:57,636 - nids.data.nsl_kdd - INFO - Loading data from C:\Users\theja\AppData\Local\Temp\tmpgh0emp16.csv
+2025-07-27 08:48:57,636 - nids.data.nsl_kdd - INFO - Loading NSL-KDD dataset from C:\Users\theja\AppData\Local\Temp\tmpgh0emp16.csv
+2025-07-27 08:48:57,637 - nids.data.nsl_kdd - WARNING - chardet not available, using utf-8 encoding
+2025-07-27 08:48:57,640 - nids.data.nsl_kdd - INFO - Detected test file format without difficulty scores
+2025-07-27 08:48:57,641 - nids.data.nsl_kdd - INFO - Successfully loaded 2 records with 42 features
+2025-07-27 08:48:57,643 - nids.data.nsl_kdd - INFO - Schema validation passed
+2025-07-27 08:48:57,644 - nids.data.nsl_kdd - INFO - Loaded 2 records from C:\Users\theja\AppData\Local\Temp\tmpgh0emp16.csv
+2025-07-27 08:48:57,644 - nids.data.nsl_kdd - INFO - Dataset shape: (2, 42), File size: 0.00 MB
+2025-07-27 08:48:57,645 - nids.data.nsl_kdd - INFO - Memory usage: 0.00 MB
