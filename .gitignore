@@ -225,6 +225,9 @@ $RECYCLE.BIN/
 
 # Project-specific ignores
 
+# Kiro IDE configuration and specs
+.kiro/
+
 # Data files
 data/
 datasets/
