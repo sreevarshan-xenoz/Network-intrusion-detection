@@ -20,6 +20,7 @@ from .models import (
     ModelInfo, HealthResponse, ErrorResponse
 )
 from .auth import get_current_user, require_permission, check_rate_limit
+from .model_loader import ModelLoader
 from ..models.interfaces import PredictionResult
 from ..services.interfaces import NetworkTrafficRecord
 
@@ -28,14 +29,12 @@ class InferenceService:
     """Main inference service class."""
     
     def __init__(self):
-        self.model_loader = None  # Will be injected
+        self.model_loader: Optional[ModelLoader] = None  # Will be injected
         self.feature_extractor = None  # Will be injected
         self.logger = logging.getLogger(__name__)
         self.start_time = time.time()
-        self.prediction_cache = {}  # Simple in-memory cache
-        self.cache_ttl = 300  # 5 minutes
         
-    def set_dependencies(self, model_loader, feature_extractor):
+    def set_dependencies(self, model_loader: Optional[ModelLoader], feature_extractor):
         """Inject dependencies."""
         self.model_loader = model_loader
         self.feature_extractor = feature_extractor
@@ -60,14 +59,23 @@ class InferenceService:
                 features=packet.features
             )
             
-            # Check cache first
+            # Check cache first (using ModelLoader's cache)
             cache_key = self._generate_cache_key(packet)
-            cached_result = self._get_cached_prediction(cache_key)
-            if cached_result:
-                self.logger.info(f"Cache hit for prediction {record_id}")
-                cached_result.record_id = record_id
-                cached_result.timestamp = datetime.now()
-                return cached_result
+            if self.model_loader:
+                cached_result = self.model_loader.get_cached_prediction(cache_key)
+                if cached_result:
+                    self.logger.info(f"Cache hit for prediction {record_id}")
+                    # Create new response with updated record_id and timestamp
+                    return PredictionResponse(
+                        record_id=record_id,
+                        timestamp=datetime.now(),
+                        is_malicious=cached_result.is_malicious,
+                        attack_type=cached_result.attack_type,
+                        confidence_score=cached_result.confidence_score,
+                        feature_importance=cached_result.feature_importance,
+                        model_version=cached_result.model_version,
+                        processing_time_ms=0.1  # Minimal time for cache hit
+                    )
             
             # Extract features
             if self.feature_extractor:
@@ -92,11 +100,13 @@ class InferenceService:
                 processing_time_ms=(time.time() - start_time) * 1000
             )
             
-            # Cache the result
-            self._cache_prediction(cache_key, response)
-            
-            # Log prediction (background task)
-            self._log_prediction_async(prediction_result, traffic_record)
+            # Cache the result using ModelLoader
+            if self.model_loader:
+                self.model_loader.cache_prediction(cache_key, prediction_result)
+                
+                # Log prediction to persistent storage
+                processing_time_ms = (time.time() - start_time) * 1000
+                self.model_loader.log_prediction(prediction_result, traffic_record, processing_time_ms)
             
             return response
             
@@ -132,6 +142,8 @@ class InferenceService:
             raise HTTPException(status_code=503, detail="No model loaded")
         
         metadata = self.model_loader.get_current_model_metadata()
+        if not metadata:
+            raise HTTPException(status_code=503, detail="No model metadata available")
         
         return ModelInfo(
             model_id=metadata.model_id,
@@ -182,25 +194,6 @@ class InferenceService:
         """Generate cache key for packet."""
         key_data = f"{packet.source_ip}:{packet.destination_ip}:{packet.protocol}:{packet.packet_size}"
         return str(hash(key_data))
-    
-    def _get_cached_prediction(self, cache_key: str) -> Optional[PredictionResponse]:
-        """Get cached prediction if still valid."""
-        if cache_key in self.prediction_cache:
-            cached_data, timestamp = self.prediction_cache[cache_key]
-            if time.time() - timestamp < self.cache_ttl:
-                return cached_data
-            else:
-                del self.prediction_cache[cache_key]
-        return None
-    
-    def _cache_prediction(self, cache_key: str, response: PredictionResponse) -> None:
-        """Cache prediction result."""
-        self.prediction_cache[cache_key] = (response, time.time())
-    
-    def _log_prediction_async(self, prediction: PredictionResult, traffic_record: NetworkTrafficRecord) -> None:
-        """Log prediction asynchronously."""
-        # This would log to database or file
-        self.logger.info(f"Prediction logged: {prediction.record_id} - {prediction.is_malicious}")
 
 
 # Global service instance
@@ -307,6 +300,58 @@ async def get_model_info(
 async def health_check():
     """Health check endpoint."""
     return await inference_service.health_check()
+
+
+@app.post("/model/swap/{model_id}")
+async def hot_swap_model(
+    model_id: str,
+    user: dict = Depends(require_permission("model_info"))
+):
+    """Hot-swap the current model."""
+    if not inference_service.model_loader:
+        raise HTTPException(status_code=503, detail="Model loader not available")
+    
+    success = inference_service.model_loader.hot_swap_model(model_id)
+    if success:
+        return {"message": f"Successfully swapped to model {model_id}"}
+    else:
+        raise HTTPException(status_code=400, detail=f"Failed to swap to model {model_id}")
+
+
+@app.get("/model/cache/info")
+async def get_cache_info(
+    user: dict = Depends(require_permission("model_info"))
+):
+    """Get cache information."""
+    if not inference_service.model_loader:
+        raise HTTPException(status_code=503, detail="Model loader not available")
+    
+    return inference_service.model_loader.get_cache_info()
+
+
+@app.post("/model/cache/clear")
+async def clear_cache(
+    user: dict = Depends(require_permission("model_info"))
+):
+    """Clear all caches."""
+    if not inference_service.model_loader:
+        raise HTTPException(status_code=503, detail="Model loader not available")
+    
+    inference_service.model_loader.clear_cache()
+    return {"message": "Cache cleared successfully"}
+
+
+@app.get("/stats/predictions")
+async def get_prediction_stats(
+    hours: int = 24,
+    user: dict = Depends(require_permission("model_info"))
+):
+    """Get prediction statistics."""
+    if not inference_service.model_loader:
+        raise HTTPException(status_code=503, detail="Model loader not available")
+    
+    stats = inference_service.model_loader.get_prediction_stats(hours)
+    return stats
 
 
 @app.get("/")

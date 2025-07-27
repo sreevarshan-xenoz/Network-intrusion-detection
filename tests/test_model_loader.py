@@ -53,9 +53,15 @@ def temp_db_path():
     with tempfile.NamedTemporaryFile(suffix='.db', delete=False) as f:
         db_path = f.name
     yield db_path
-    # Cleanup
-    if os.path.exists(db_path):
-        os.unlink(db_path)
+    # Cleanup - try multiple times on Windows
+    import time
+    for _ in range(3):
+        try:
+            if os.path.exists(db_path):
+                os.unlink(db_path)
+            break
+        except PermissionError:
+            time.sleep(0.1)  # Wait a bit and try again
 
 
 @pytest.fixture
@@ -324,10 +330,17 @@ class TestModelLoader:
             row = cursor.fetchone()
             
             assert row is not None
-            assert row[1] == sample_prediction.record_id  # record_id
-            assert row[3] == sample_traffic_record.source_ip  # source_ip
-            assert row[8] == sample_prediction.is_malicious  # is_malicious
-            assert row[11] == processing_time  # processing_time_ms
+            # Check specific columns by name to avoid index issues
+            cursor.execute("""
+                SELECT record_id, source_ip, is_malicious, processing_time_ms 
+                FROM predictions WHERE record_id = ?
+            """, (sample_prediction.record_id,))
+            data = cursor.fetchone()
+            
+            assert data[0] == sample_prediction.record_id  # record_id
+            assert data[1] == sample_traffic_record.source_ip  # source_ip
+            assert data[2] == sample_prediction.is_malicious  # is_malicious
+            assert data[3] == processing_time  # processing_time_ms
     
     def test_get_prediction_stats(self, model_loader, sample_prediction, sample_traffic_record):
         """Test getting prediction statistics."""
