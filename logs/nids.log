@@ -143,3 +143,272 @@
 2025-07-27 08:48:57,644 - nids.data.nsl_kdd - INFO - Loaded 2 records from C:\Users\theja\AppData\Local\Temp\tmpgh0emp16.csv
 2025-07-27 08:48:57,644 - nids.data.nsl_kdd - INFO - Dataset shape: (2, 42), File size: 0.00 MB
 2025-07-27 08:48:57,645 - nids.data.nsl_kdd - INFO - Memory usage: 0.00 MB
+2025-07-27 08:55:19,439 - nids.data.cicids - INFO - Set chunk size to 5000
+2025-07-27 08:55:19,450 - nids.data.cicids - INFO - Loading CICIDS dataset from C:\Users\theja\AppData\Local\Temp\tmpamjs7ayb.csv
+2025-07-27 08:55:19,450 - nids.data.cicids - INFO - Loading file directly (1.00 MB)
+2025-07-27 08:55:19,451 - nids.data.cicids - WARNING - chardet not available, using utf-8 encoding
+2025-07-27 08:55:19,461 - nids.data.cicids - INFO - Cleaned column names for consistency
+2025-07-27 08:55:19,464 - nids.data.cicids - INFO - Successfully loaded 4 records with 28 columns
+2025-07-27 08:55:19,469 - nids.data.cicids - INFO - Set chunk size to 2
+2025-07-27 08:55:19,469 - nids.data.cicids - INFO - Loading CICIDS dataset from C:\Users\theja\AppData\Local\Temp\tmpib1g8ggz.csv
+2025-07-27 08:55:19,470 - nids.data.cicids - INFO - Large file detected (600.00 MB), using chunked loading
+2025-07-27 08:55:19,470 - nids.data.cicids - WARNING - chardet not available, using utf-8 encoding
+2025-07-27 08:55:19,473 - nids.data.cicids - INFO - Cleaned column names for consistency
+2025-07-27 08:55:19,476 - nids.data.cicids - INFO - Cleaned column names for consistency
+2025-07-27 08:55:19,477 - nids.data.cicids - INFO - Successfully loaded 4 records from 2 chunks
+2025-07-27 08:55:19,482 - nids.data.cicids - INFO - Loading CICIDS dataset from C:\Users\theja\AppData\Local\Temp\tmpkvzqzmmg.csv
+2025-07-27 08:55:19,482 - nids.data.cicids - INFO - Loading file directly (0.00 MB)
+2025-07-27 08:55:19,483 - nids.data.cicids - WARNING - chardet not available, using utf-8 encoding
+2025-07-27 08:55:19,485 - nids.data.cicids - INFO - Cleaned column names for consistency
+2025-07-27 08:55:19,487 - nids.data.cicids - INFO - Successfully loaded 2 records with 28 columns
+2025-07-27 08:55:19,491 - nids.data.cicids - INFO - Loading CICIDS dataset from C:\Users\theja\AppData\Local\Temp\tmp3geby7bm.csv
+2025-07-27 08:55:19,492 - nids.data.cicids - INFO - Loading file directly (0.00 MB)
+2025-07-27 08:55:19,492 - nids.data.cicids - WARNING - chardet not available, using utf-8 encoding
+2025-07-27 08:55:19,502 - nids.data.cicids - INFO - Cleaned column names for consistency
+2025-07-27 08:55:19,503 - nids.data.cicids - INFO - Successfully loaded 4 records with 28 columns
+2025-07-27 08:55:19,508 - nids.data.cicids - INFO - Loading CICIDS dataset from C:\Users\theja\AppData\Local\Temp\tmpthfalz8x.csv
+2025-07-27 08:55:19,508 - nids.data.cicids - INFO - Loading file directly (0.00 MB)
+2025-07-27 08:55:19,509 - nids.data.cicids - WARNING - chardet not available, using utf-8 encoding
+2025-07-27 08:55:19,518 - nids.data.cicids - INFO - Cleaned column names for consistency
+2025-07-27 08:55:19,520 - nids.data.cicids - INFO - Successfully loaded 4 records with 28 columns
+2025-07-27 08:55:19,663 - nids.data.cicids - INFO - Loading CICIDS dataset from C:\Users\theja\AppData\Local\Temp\tmpp4a21_cr.csv
+2025-07-27 08:55:19,663 - nids.data.cicids - INFO - Loading file directly (0.00 MB)
+2025-07-27 08:55:19,664 - nids.data.cicids - WARNING - chardet not available, using utf-8 encoding
+2025-07-27 08:55:19,666 - nids.data.cicids - INFO - Cleaned column names for consistency
+2025-07-27 08:55:19,667 - nids.data.cicids - INFO - Successfully loaded 4 records with 28 columns
+2025-07-27 08:55:19,670 - nids.data.cicids - INFO - Schema validation passed
+2025-07-27 08:55:19,676 - nids.data.cicids - WARNING - Feature 'packet_length' has 25.00% negative values, which is unusual for this type of feature
+2025-07-27 08:55:19,677 - nids.data.cicids - WARNING - Feature 'byte_count' has 25.00% negative values, which is unusual for this type of feature
+2025-07-27 08:55:19,677 - nids.data.cicids - WARNING - Feature 'flow_duration' has 25.00% negative values, which is unusual for this type of feature
+2025-07-27 08:55:19,681 - nids.data.cicids - INFO - Added attack category column
+2025-07-27 08:55:19,683 - nids.data.cicids - WARNING - Target column 'label' not found, cannot add categories
+2025-07-27 08:55:19,691 - nids.data.cicids - INFO - Added attack category column
+2025-07-27 08:55:19,692 - nids.data.cicids - INFO - Found 1 missing values across 1 columns
+2025-07-27 08:55:19,694 - nids.data.cicids - INFO - Filled missing values with appropriate defaults
+2025-07-27 08:55:19,695 - nids.data.cicids - INFO - Found 1 missing values across 1 columns
+2025-07-27 08:55:19,697 - nids.data.cicids - INFO - Filled missing values with appropriate defaults
+2025-07-27 08:55:19,698 - nids.data.cicids - INFO - Applied basic preprocessing for ML
+2025-07-27 08:55:19,704 - nids.data.cicids - INFO - Sampled 20 records from 100 total records
+2025-07-27 08:55:19,708 - nids.data.cicids - INFO - Sampled 30 records from 100 total records
+2025-07-27 08:55:19,717 - nids.data.cicids - INFO - Cleaned column names for consistency
+2025-07-27 08:55:19,718 - nids.data.cicids - INFO - Standardized 3 feature names
+2025-07-27 08:55:19,725 - nids.data.cicids - INFO - Loading data from C:\Users\theja\AppData\Local\Temp\tmpzlylgiv5.csv
+2025-07-27 08:55:19,725 - nids.data.cicids - INFO - Loading CICIDS dataset from C:\Users\theja\AppData\Local\Temp\tmpzlylgiv5.csv
+2025-07-27 08:55:19,726 - nids.data.cicids - INFO - Loading file directly (0.00 MB)
+2025-07-27 08:55:19,726 - nids.data.cicids - WARNING - chardet not available, using utf-8 encoding
+2025-07-27 08:55:19,730 - nids.data.cicids - INFO - Cleaned column names for consistency
+2025-07-27 08:55:19,732 - nids.data.cicids - INFO - Successfully loaded 4 records with 28 columns
+2025-07-27 08:55:19,735 - nids.data.cicids - INFO - Schema validation passed
+2025-07-27 08:55:19,735 - nids.data.cicids - INFO - Loaded 4 records from C:\Users\theja\AppData\Local\Temp\tmpzlylgiv5.csv
+2025-07-27 08:55:19,735 - nids.data.cicids - INFO - Dataset shape: (4, 28), File size: 0.00 MB
+2025-07-27 08:55:19,736 - nids.data.cicids - INFO - Memory usage: 0.00 MB
+2025-07-27 08:55:19,741 - nids.data.cicids - INFO - Cleaned column names for consistency
+2025-07-27 08:56:15,940 - nids.data.cicids - INFO - Renamed target column from 'Class' to 'label'
+2025-07-27 08:56:15,941 - nids.data.cicids - INFO - Renamed target column from 'Attack' to 'label'
+2025-07-27 08:56:15,942 - nids.data.cicids - INFO - Renamed target column from 'Category' to 'label'
+2025-07-27 08:56:15,943 - nids.data.cicids - INFO - Renamed target column from 'Target' to 'label'
+2025-07-27 08:56:22,307 - nids.data.cicids - INFO - Set chunk size to 5000
+2025-07-27 08:56:22,318 - nids.data.cicids - INFO - Loading CICIDS dataset from C:\Users\theja\AppData\Local\Temp\tmph1qs3ll4.csv
+2025-07-27 08:56:22,318 - nids.data.cicids - INFO - Loading file directly (1.00 MB)
+2025-07-27 08:56:22,319 - nids.data.cicids - WARNING - chardet not available, using utf-8 encoding
+2025-07-27 08:56:22,322 - nids.data.cicids - INFO - Cleaned column names for consistency
+2025-07-27 08:56:22,324 - nids.data.cicids - INFO - Successfully loaded 4 records with 28 columns
+2025-07-27 08:56:22,329 - nids.data.cicids - INFO - Set chunk size to 2
+2025-07-27 08:56:22,329 - nids.data.cicids - INFO - Loading CICIDS dataset from C:\Users\theja\AppData\Local\Temp\tmpxia0lf3z.csv
+2025-07-27 08:56:22,329 - nids.data.cicids - INFO - Large file detected (600.00 MB), using chunked loading
+2025-07-27 08:56:22,330 - nids.data.cicids - WARNING - chardet not available, using utf-8 encoding
+2025-07-27 08:56:22,332 - nids.data.cicids - INFO - Cleaned column names for consistency
+2025-07-27 08:56:22,334 - nids.data.cicids - INFO - Cleaned column names for consistency
+2025-07-27 08:56:22,336 - nids.data.cicids - INFO - Successfully loaded 4 records from 2 chunks
+2025-07-27 08:56:22,341 - nids.data.cicids - INFO - Loading CICIDS dataset from C:\Users\theja\AppData\Local\Temp\tmpl5ewi1a3.csv
+2025-07-27 08:56:22,341 - nids.data.cicids - INFO - Loading file directly (0.00 MB)
+2025-07-27 08:56:22,342 - nids.data.cicids - WARNING - chardet not available, using utf-8 encoding
+2025-07-27 08:56:22,344 - nids.data.cicids - INFO - Cleaned column names for consistency
+2025-07-27 08:56:22,346 - nids.data.cicids - INFO - Successfully loaded 2 records with 28 columns
+2025-07-27 08:56:22,350 - nids.data.cicids - INFO - Loading CICIDS dataset from C:\Users\theja\AppData\Local\Temp\tmpc2cdg9y6.csv
+2025-07-27 08:56:22,350 - nids.data.cicids - INFO - Loading file directly (0.00 MB)
+2025-07-27 08:56:22,351 - nids.data.cicids - WARNING - chardet not available, using utf-8 encoding
+2025-07-27 08:56:22,353 - nids.data.cicids - INFO - Cleaned column names for consistency
+2025-07-27 08:56:22,354 - nids.data.cicids - INFO - Successfully loaded 4 records with 28 columns
+2025-07-27 08:56:22,360 - nids.data.cicids - INFO - Loading CICIDS dataset from C:\Users\theja\AppData\Local\Temp\tmpv03876na.csv
+2025-07-27 08:56:22,360 - nids.data.cicids - INFO - Loading file directly (0.00 MB)
+2025-07-27 08:56:22,361 - nids.data.cicids - WARNING - chardet not available, using utf-8 encoding
+2025-07-27 08:56:22,363 - nids.data.cicids - INFO - Cleaned column names for consistency
+2025-07-27 08:56:22,364 - nids.data.cicids - INFO - Successfully loaded 4 records with 28 columns
+2025-07-27 08:56:22,368 - nids.data.cicids - INFO - Renamed target column from 'Class' to 'label'
+2025-07-27 08:56:22,368 - nids.data.cicids - INFO - Renamed target column from 'Attack' to 'label'
+2025-07-27 08:56:22,369 - nids.data.cicids - INFO - Renamed target column from 'Category' to 'label'
+2025-07-27 08:56:22,370 - nids.data.cicids - INFO - Renamed target column from 'Target' to 'label'
+2025-07-27 08:56:22,376 - nids.data.cicids - INFO - Loading CICIDS dataset from C:\Users\theja\AppData\Local\Temp\tmpoudcjncs.csv
+2025-07-27 08:56:22,377 - nids.data.cicids - INFO - Loading file directly (0.00 MB)
+2025-07-27 08:56:22,377 - nids.data.cicids - WARNING - chardet not available, using utf-8 encoding
+2025-07-27 08:56:22,380 - nids.data.cicids - INFO - Cleaned column names for consistency
+2025-07-27 08:56:22,381 - nids.data.cicids - INFO - Successfully loaded 4 records with 28 columns
+2025-07-27 08:56:22,383 - nids.data.cicids - INFO - Schema validation passed
+2025-07-27 08:56:22,390 - nids.data.cicids - WARNING - Feature 'packet_length' has 25.00% negative values, which is unusual for this type of feature
+2025-07-27 08:56:22,391 - nids.data.cicids - WARNING - Feature 'byte_count' has 25.00% negative values, which is unusual for this type of feature
+2025-07-27 08:56:22,391 - nids.data.cicids - WARNING - Feature 'flow_duration' has 25.00% negative values, which is unusual for this type of feature
+2025-07-27 08:56:22,395 - nids.data.cicids - INFO - Added attack category column
+2025-07-27 08:56:22,397 - nids.data.cicids - WARNING - Target column 'label' not found, cannot add categories
+2025-07-27 08:56:22,403 - nids.data.cicids - INFO - Added attack category column
+2025-07-27 08:56:22,404 - nids.data.cicids - INFO - Found 1 missing values across 1 columns
+2025-07-27 08:56:22,405 - nids.data.cicids - INFO - Filled missing values with appropriate defaults
+2025-07-27 08:56:22,406 - nids.data.cicids - INFO - Found 1 missing values across 1 columns
+2025-07-27 08:56:22,407 - nids.data.cicids - INFO - Filled missing values with appropriate defaults
+2025-07-27 08:56:22,408 - nids.data.cicids - INFO - Applied basic preprocessing for ML
+2025-07-27 08:56:22,412 - nids.data.cicids - INFO - Sampled 20 records from 100 total records
+2025-07-27 08:56:22,702 - nids.data.cicids - INFO - Sampled 30 records from 100 total records
+2025-07-27 08:56:22,710 - nids.data.cicids - INFO - Cleaned column names for consistency
+2025-07-27 08:56:22,710 - nids.data.cicids - INFO - Standardized 3 feature names
+2025-07-27 08:56:22,715 - nids.data.cicids - INFO - Loading data from C:\Users\theja\AppData\Local\Temp\tmpqu3pwwcy.csv
+2025-07-27 08:56:22,715 - nids.data.cicids - INFO - Loading CICIDS dataset from C:\Users\theja\AppData\Local\Temp\tmpqu3pwwcy.csv
+2025-07-27 08:56:22,716 - nids.data.cicids - INFO - Loading file directly (0.00 MB)
+2025-07-27 08:56:22,716 - nids.data.cicids - WARNING - chardet not available, using utf-8 encoding
+2025-07-27 08:56:22,718 - nids.data.cicids - INFO - Cleaned column names for consistency
+2025-07-27 08:56:22,720 - nids.data.cicids - INFO - Successfully loaded 4 records with 28 columns
+2025-07-27 08:56:22,722 - nids.data.cicids - INFO - Schema validation passed
+2025-07-27 08:56:22,722 - nids.data.cicids - INFO - Loaded 4 records from C:\Users\theja\AppData\Local\Temp\tmpqu3pwwcy.csv
+2025-07-27 08:56:22,722 - nids.data.cicids - INFO - Dataset shape: (4, 28), File size: 0.00 MB
+2025-07-27 08:56:22,723 - nids.data.cicids - INFO - Memory usage: 0.00 MB
+2025-07-27 08:56:22,727 - nids.data.cicids - INFO - Cleaned column names for consistency
+2025-07-27 08:56:36,392 - nids.data.cicids - INFO - Sampled 20 records from 100 total records
+2025-07-27 08:56:50,656 - nids.data.cicids - INFO - Set chunk size to 5000
+2025-07-27 08:56:50,667 - nids.data.cicids - INFO - Loading CICIDS dataset from C:\Users\theja\AppData\Local\Temp\tmpxyo935ra.csv
+2025-07-27 08:56:50,667 - nids.data.cicids - INFO - Loading file directly (1.00 MB)
+2025-07-27 08:56:50,668 - nids.data.cicids - WARNING - chardet not available, using utf-8 encoding
+2025-07-27 08:56:50,670 - nids.data.cicids - INFO - Cleaned column names for consistency
+2025-07-27 08:56:50,672 - nids.data.cicids - INFO - Successfully loaded 4 records with 28 columns
+2025-07-27 08:56:50,677 - nids.data.cicids - INFO - Set chunk size to 2
+2025-07-27 08:56:50,677 - nids.data.cicids - INFO - Loading CICIDS dataset from C:\Users\theja\AppData\Local\Temp\tmp1bp6gwg2.csv
+2025-07-27 08:56:50,677 - nids.data.cicids - INFO - Large file detected (600.00 MB), using chunked loading
+2025-07-27 08:56:50,678 - nids.data.cicids - WARNING - chardet not available, using utf-8 encoding
+2025-07-27 08:56:50,681 - nids.data.cicids - INFO - Cleaned column names for consistency
+2025-07-27 08:56:50,683 - nids.data.cicids - INFO - Cleaned column names for consistency
+2025-07-27 08:56:50,685 - nids.data.cicids - INFO - Successfully loaded 4 records from 2 chunks
+2025-07-27 08:56:50,689 - nids.data.cicids - INFO - Loading CICIDS dataset from C:\Users\theja\AppData\Local\Temp\tmp_2589x5w.csv
+2025-07-27 08:56:50,690 - nids.data.cicids - INFO - Loading file directly (0.00 MB)
+2025-07-27 08:56:50,690 - nids.data.cicids - WARNING - chardet not available, using utf-8 encoding
+2025-07-27 08:56:50,693 - nids.data.cicids - INFO - Cleaned column names for consistency
+2025-07-27 08:56:50,694 - nids.data.cicids - INFO - Successfully loaded 2 records with 28 columns
+2025-07-27 08:56:50,699 - nids.data.cicids - INFO - Loading CICIDS dataset from C:\Users\theja\AppData\Local\Temp\tmpkhyl_hqv.csv
+2025-07-27 08:56:50,699 - nids.data.cicids - INFO - Loading file directly (0.00 MB)
+2025-07-27 08:56:50,699 - nids.data.cicids - WARNING - chardet not available, using utf-8 encoding
+2025-07-27 08:56:50,702 - nids.data.cicids - INFO - Cleaned column names for consistency
+2025-07-27 08:56:50,703 - nids.data.cicids - INFO - Successfully loaded 4 records with 28 columns
+2025-07-27 08:56:50,708 - nids.data.cicids - INFO - Loading CICIDS dataset from C:\Users\theja\AppData\Local\Temp\tmpzb42sdo_.csv
+2025-07-27 08:56:50,708 - nids.data.cicids - INFO - Loading file directly (0.00 MB)
+2025-07-27 08:56:50,709 - nids.data.cicids - WARNING - chardet not available, using utf-8 encoding
+2025-07-27 08:56:50,712 - nids.data.cicids - INFO - Cleaned column names for consistency
+2025-07-27 08:56:50,714 - nids.data.cicids - INFO - Successfully loaded 4 records with 28 columns
+2025-07-27 08:56:50,717 - nids.data.cicids - INFO - Renamed target column from 'Class' to 'label'
+2025-07-27 08:56:50,717 - nids.data.cicids - INFO - Renamed target column from 'Attack' to 'label'
+2025-07-27 08:56:50,718 - nids.data.cicids - INFO - Renamed target column from 'Category' to 'label'
+2025-07-27 08:56:50,719 - nids.data.cicids - INFO - Renamed target column from 'Target' to 'label'
+2025-07-27 08:56:50,726 - nids.data.cicids - INFO - Loading CICIDS dataset from C:\Users\theja\AppData\Local\Temp\tmphqy3rska.csv
+2025-07-27 08:56:50,726 - nids.data.cicids - INFO - Loading file directly (0.00 MB)
+2025-07-27 08:56:50,727 - nids.data.cicids - WARNING - chardet not available, using utf-8 encoding
+2025-07-27 08:56:50,729 - nids.data.cicids - INFO - Cleaned column names for consistency
+2025-07-27 08:56:50,730 - nids.data.cicids - INFO - Successfully loaded 4 records with 28 columns
+2025-07-27 08:56:50,733 - nids.data.cicids - INFO - Schema validation passed
+2025-07-27 08:56:50,739 - nids.data.cicids - WARNING - Feature 'packet_length' has 25.00% negative values, which is unusual for this type of feature
+2025-07-27 08:56:50,740 - nids.data.cicids - WARNING - Feature 'byte_count' has 25.00% negative values, which is unusual for this type of feature
+2025-07-27 08:56:50,740 - nids.data.cicids - WARNING - Feature 'flow_duration' has 25.00% negative values, which is unusual for this type of feature
+2025-07-27 08:56:50,745 - nids.data.cicids - INFO - Added attack category column
+2025-07-27 08:56:50,747 - nids.data.cicids - WARNING - Target column 'label' not found, cannot add categories
+2025-07-27 08:56:50,753 - nids.data.cicids - INFO - Added attack category column
+2025-07-27 08:56:50,754 - nids.data.cicids - INFO - Found 1 missing values across 1 columns
+2025-07-27 08:56:50,755 - nids.data.cicids - INFO - Filled missing values with appropriate defaults
+2025-07-27 08:56:50,756 - nids.data.cicids - INFO - Found 1 missing values across 1 columns
+2025-07-27 08:56:50,757 - nids.data.cicids - INFO - Filled missing values with appropriate defaults
+2025-07-27 08:56:50,758 - nids.data.cicids - INFO - Applied basic preprocessing for ML
+2025-07-27 08:56:50,762 - nids.data.cicids - INFO - Sampled 20 records from 100 total records
+2025-07-27 08:56:50,764 - nids.data.cicids - INFO - Sampled 30 records from 100 total records
+2025-07-27 08:56:50,769 - nids.data.cicids - INFO - Cleaned column names for consistency
+2025-07-27 08:56:50,770 - nids.data.cicids - INFO - Standardized 3 feature names
+2025-07-27 08:56:50,776 - nids.data.cicids - INFO - Loading data from C:\Users\theja\AppData\Local\Temp\tmp4lzz09op.csv
+2025-07-27 08:56:50,776 - nids.data.cicids - INFO - Loading CICIDS dataset from C:\Users\theja\AppData\Local\Temp\tmp4lzz09op.csv
+2025-07-27 08:56:50,776 - nids.data.cicids - INFO - Loading file directly (0.00 MB)
+2025-07-27 08:56:50,777 - nids.data.cicids - WARNING - chardet not available, using utf-8 encoding
+2025-07-27 08:56:50,779 - nids.data.cicids - INFO - Cleaned column names for consistency
+2025-07-27 08:56:50,781 - nids.data.cicids - INFO - Successfully loaded 4 records with 28 columns
+2025-07-27 08:56:50,783 - nids.data.cicids - INFO - Schema validation passed
+2025-07-27 08:56:50,783 - nids.data.cicids - INFO - Loaded 4 records from C:\Users\theja\AppData\Local\Temp\tmp4lzz09op.csv
+2025-07-27 08:56:50,783 - nids.data.cicids - INFO - Dataset shape: (4, 28), File size: 0.00 MB
+2025-07-27 08:56:50,783 - nids.data.cicids - INFO - Memory usage: 0.00 MB
+2025-07-27 08:56:50,787 - nids.data.cicids - INFO - Cleaned column names for consistency
+2025-07-27 08:56:58,022 - nids.data.mock_loader - WARNING - chardet not available, using utf-8 encoding
+2025-07-27 08:56:58,026 - nids.data.mock_loader - WARNING - chardet not available, using utf-8 encoding
+2025-07-27 08:56:58,029 - nids.data.mock_loader - WARNING - chardet not available, using utf-8 encoding
+2025-07-27 08:56:58,031 - nids.data.mock_loader - ERROR - Failed to load data from test.csv: No data
+2025-07-27 08:56:58,035 - nids.data.mock_loader - INFO - Loaded 3 records from test.csv
+2025-07-27 08:56:58,035 - nids.data.mock_loader - INFO - Dataset shape: (3, 2), File size: 1.00 MB
+2025-07-27 08:56:58,036 - nids.data.mock_loader - INFO - Memory usage: 0.00 MB
+2025-07-27 08:56:58,040 - nids.data.mock_loader - INFO - Loading data from C:\Users\theja\AppData\Local\Temp\tmpiwfksfiv.csv
+2025-07-27 08:56:58,041 - nids.data.mock_loader - INFO - Loaded 3 records from C:\Users\theja\AppData\Local\Temp\tmpiwfksfiv.csv
+2025-07-27 08:56:58,041 - nids.data.mock_loader - INFO - Dataset shape: (3, 4), File size: 0.00 MB
+2025-07-27 08:56:58,042 - nids.data.mock_loader - INFO - Memory usage: 0.00 MB
+2025-07-27 08:56:58,049 - nids.data.mock_network_loader - ERROR - Missing required columns: ['dst_ip']
+2025-07-27 08:56:58,052 - nids.data.mock_network_loader - INFO - Cleaned column names for consistency
+2025-07-27 08:56:58,054 - nids.data.mock_network_loader - INFO - Found 2 missing values across 2 columns
+2025-07-27 08:56:58,055 - nids.data.mock_network_loader - WARNING - Column 'col1': 1 missing values (33.33%)
+2025-07-27 08:56:58,055 - nids.data.mock_network_loader - WARNING - Column 'col2': 1 missing values (33.33%)
+2025-07-27 08:56:58,059 - nids.data.mock_network_loader - INFO - Found 2 missing values across 2 columns
+2025-07-27 08:56:58,059 - nids.data.mock_network_loader - INFO - Dropped 2 rows with missing values
+2025-07-27 08:56:58,062 - nids.data.mock_network_loader - INFO - Found 2 missing values across 2 columns
+2025-07-27 08:56:58,063 - nids.data.mock_network_loader - INFO - Filled missing values with appropriate defaults
+2025-07-27 08:56:58,067 - nids.data.mock_network_loader - INFO - Data quality report: {'total_records': 5, 'total_features': 4, 'missing_values': np.int64(0), 'duplicate_records': np.int64(1), 'memory_usage_mb': np.float64(0.0004787445068359375), 'constant_columns': ['constant_col'], 'high_cardinality_columns': [('high_cardinality', 4)]}
+2025-07-27 08:56:58,067 - nids.data.mock_network_loader - WARNING - Dataset has 20.00% duplicate records
+2025-07-27 08:56:58,068 - nids.data.mock_network_loader - WARNING - Found 1 constant columns: ['constant_col']
+2025-07-27 08:56:58,070 - nids.data.mock_network_loader - INFO - Standardized 2 feature names
+2025-07-27 08:56:58,076 - nids.data.nsl_kdd - INFO - Loading NSL-KDD dataset from C:\Users\theja\AppData\Local\Temp\tmpb3_p2z84.csv
+2025-07-27 08:56:58,077 - nids.data.nsl_kdd - WARNING - chardet not available, using utf-8 encoding
+2025-07-27 08:56:58,080 - nids.data.nsl_kdd - INFO - Detected training file format with difficulty scores
+2025-07-27 08:56:58,080 - nids.data.nsl_kdd - INFO - Successfully loaded 2 records with 43 features
+2025-07-27 08:56:58,083 - nids.data.nsl_kdd - INFO - Loading NSL-KDD dataset from C:\Users\theja\AppData\Local\Temp\tmpe0ilkg7m.csv
+2025-07-27 08:56:58,084 - nids.data.nsl_kdd - WARNING - chardet not available, using utf-8 encoding
+2025-07-27 08:56:58,093 - nids.data.nsl_kdd - INFO - Detected test file format without difficulty scores
+2025-07-27 08:56:58,094 - nids.data.nsl_kdd - INFO - Successfully loaded 2 records with 42 features
+2025-07-27 08:56:58,097 - nids.data.nsl_kdd - INFO - Loading NSL-KDD dataset from C:\Users\theja\AppData\Local\Temp\tmpkhy_xg1d.csv
+2025-07-27 08:56:58,098 - nids.data.nsl_kdd - WARNING - chardet not available, using utf-8 encoding
+2025-07-27 08:56:58,100 - nids.data.nsl_kdd - INFO - Detected test file format without difficulty scores
+2025-07-27 08:56:58,101 - nids.data.nsl_kdd - INFO - Successfully loaded 2 records with 42 features
+2025-07-27 08:56:58,104 - nids.data.nsl_kdd - INFO - Loading NSL-KDD dataset from C:\Users\theja\AppData\Local\Temp\tmpgobfgkkf.csv
+2025-07-27 08:56:58,104 - nids.data.nsl_kdd - WARNING - chardet not available, using utf-8 encoding
+2025-07-27 08:56:58,107 - nids.data.nsl_kdd - ERROR - Failed to load data from C:\Users\theja\AppData\Local\Temp\tmpgobfgkkf.csv: Unexpected number of columns: 5. Expected 43 (training) or 42 (test)
+2025-07-27 08:56:58,110 - nids.data.nsl_kdd - INFO - Loading NSL-KDD dataset from C:\Users\theja\AppData\Local\Temp\tmpx2arqz7n.csv
+2025-07-27 08:56:58,111 - nids.data.nsl_kdd - WARNING - chardet not available, using utf-8 encoding
+2025-07-27 08:56:58,113 - nids.data.nsl_kdd - INFO - Detected test file format without difficulty scores
+2025-07-27 08:56:58,114 - nids.data.nsl_kdd - INFO - Successfully loaded 2 records with 42 features
+2025-07-27 08:56:58,115 - nids.data.nsl_kdd - INFO - Schema validation passed
+2025-07-27 08:56:58,123 - nids.data.nsl_kdd - INFO - Added attack category column
+2025-07-27 08:56:58,125 - nids.data.nsl_kdd - WARNING - Target column 'attack_type' not found, cannot add categories
+2025-07-27 08:56:58,131 - nids.data.nsl_kdd - INFO - Added attack category column
+2025-07-27 08:56:58,131 - nids.data.nsl_kdd - INFO - Found 1 missing values across 1 columns
+2025-07-27 08:56:58,132 - nids.data.nsl_kdd - INFO - Filled missing values with appropriate defaults
+2025-07-27 08:56:58,134 - nids.data.nsl_kdd - INFO - Applied basic preprocessing for ML
+2025-07-27 08:56:58,138 - nids.data.nsl_kdd - INFO - Standardized 3 feature names
+2025-07-27 08:56:58,143 - nids.data.nsl_kdd - INFO - Loading data from C:\Users\theja\AppData\Local\Temp\tmpdtdau5k5.csv
+2025-07-27 08:56:58,143 - nids.data.nsl_kdd - INFO - Loading NSL-KDD dataset from C:\Users\theja\AppData\Local\Temp\tmpdtdau5k5.csv
+2025-07-27 08:56:58,144 - nids.data.nsl_kdd - WARNING - chardet not available, using utf-8 encoding
+2025-07-27 08:56:58,146 - nids.data.nsl_kdd - INFO - Detected test file format without difficulty scores
+2025-07-27 08:56:58,147 - nids.data.nsl_kdd - INFO - Successfully loaded 2 records with 42 features
+2025-07-27 08:56:58,148 - nids.data.nsl_kdd - INFO - Schema validation passed
+2025-07-27 08:56:58,148 - nids.data.nsl_kdd - INFO - Loaded 2 records from C:\Users\theja\AppData\Local\Temp\tmpdtdau5k5.csv
+2025-07-27 08:56:58,148 - nids.data.nsl_kdd - INFO - Dataset shape: (2, 42), File size: 0.00 MB
+2025-07-27 08:56:58,149 - nids.data.nsl_kdd - INFO - Memory usage: 0.00 MB
+2025-07-27 08:57:36,701 - nids.data.cicids - INFO - Loading CICIDS dataset from C:\Users\theja\AppData\Local\Temp\tmp5a8p_io_.csv
+2025-07-27 08:57:36,701 - nids.data.cicids - INFO - Loading file directly (0.00 MB)
+2025-07-27 08:57:36,702 - nids.data.cicids - WARNING - chardet not available, using utf-8 encoding
+2025-07-27 08:57:36,712 - nids.data.cicids - INFO - Cleaned column names for consistency
+2025-07-27 08:57:36,714 - nids.data.cicids - INFO - Successfully loaded 5 records with 28 columns
+2025-07-27 08:57:36,716 - nids.data.cicids - INFO - Schema validation passed
+2025-07-27 08:57:36,717 - nids.data.cicids - INFO - Added attack category column
+2025-07-27 08:57:36,718 - nids.data.cicids - INFO - Added attack category column
+2025-07-27 08:57:36,719 - nids.data.cicids - INFO - Applied basic preprocessing for ML
+2025-07-27 08:57:36,725 - nids.data.cicids - INFO - Sampled 4 records from 5 total records
+2025-07-27 08:57:36,725 - nids.data.cicids - INFO - Set chunk size to 2
+2025-07-27 08:57:36,725 - nids.data.cicids - INFO - Loading CICIDS dataset from C:\Users\theja\AppData\Local\Temp\tmp5a8p_io_.csv
+2025-07-27 08:57:36,726 - nids.data.cicids - INFO - Loading file directly (0.00 MB)
+2025-07-27 08:57:36,726 - nids.data.cicids - WARNING - chardet not available, using utf-8 encoding
+2025-07-27 08:57:36,728 - nids.data.cicids - INFO - Cleaned column names for consistency
+2025-07-27 08:57:36,730 - nids.data.cicids - INFO - Successfully loaded 5 records with 28 columns
