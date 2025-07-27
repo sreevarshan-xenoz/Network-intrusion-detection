@@ -1,10 +1,11 @@
 """
 Pydantic models for API request/response schemas.
 """
-from pydantic import BaseModel, Field, validator
+from pydantic import BaseModel, Field, field_validator
 from typing import Dict, List, Optional, Any
 from datetime import datetime
 from enum import Enum
+import ipaddress
 
 
 class SeverityLevel(str, Enum):
@@ -27,10 +28,10 @@ class NetworkPacketRequest(BaseModel):
     flags: List[str] = Field(default_factory=list, description="TCP flags or protocol-specific flags")
     features: Dict[str, float] = Field(default_factory=dict, description="Additional extracted features")
     
-    @validator('source_ip', 'destination_ip')
+    @field_validator('source_ip', 'destination_ip')
+    @classmethod
     def validate_ip(cls, v):
         """Basic IP address validation."""
-        import ipaddress
         try:
             ipaddress.ip_address(v)
             return v
