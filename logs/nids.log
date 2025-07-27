@@ -980,3 +980,911 @@
 2025-07-27 09:08:05,877 - nids.preprocessing.scaler - INFO - Feature stds: {'constant': np.float64(1.0), 'variable': np.float64(2.8722813232690143)}
 2025-07-27 09:08:05,877 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 10 samples
 2025-07-27 09:08:05,878 - nids.preprocessing.scaler - INFO - Transformed data shape: (10, 2)
+2025-07-27 09:11:13,466 - nids.preprocessing.cleaner - INFO - Removed 5 duplicate rows
+2025-07-27 09:11:13,474 - nids.preprocessing.cleaner - INFO - Found 1 features with >=50.0% missing values
+2025-07-27 09:11:13,474 - nids.preprocessing.cleaner - INFO -   high_missing: 66.67% missing
+2025-07-27 09:11:13,478 - nids.preprocessing.cleaner - INFO - Constant numerical feature: constant_feature (single value: 5.0)
+2025-07-27 09:11:13,480 - nids.preprocessing.cleaner - INFO - Near-constant feature: near_constant (most common value frequency: 95.24%)
+2025-07-27 09:11:13,480 - nids.preprocessing.cleaner - INFO - Constant numerical feature: high_missing (single value: 1.0)
+2025-07-27 09:11:13,490 - nids.preprocessing.cleaner - INFO - Found 3 low variance features
+2025-07-27 09:11:13,491 - nids.preprocessing.cleaner - INFO -   constant_feature: variance = 0.000000
+2025-07-27 09:11:13,491 - nids.preprocessing.cleaner - INFO -   high_missing: variance = 0.000000
+2025-07-27 09:11:13,491 - nids.preprocessing.cleaner - INFO -   low_variance: variance = 0.000001
+2025-07-27 09:11:13,500 - nids.preprocessing.cleaner - INFO - High correlation (1.000) between correlated_1 and correlated_2
+2025-07-27 09:11:13,500 - nids.preprocessing.cleaner - INFO -   Removing correlated_2 (variance: 0.608906)
+2025-07-27 09:11:13,505 - nids.preprocessing.cleaner - INFO - Found 5 outliers in near_constant using Z-score
+2025-07-27 09:11:13,506 - nids.preprocessing.cleaner - INFO - Found 1 outliers in low_variance using Z-score
+2025-07-27 09:11:13,507 - nids.preprocessing.cleaner - INFO - Found 4 outliers in outlier_feature using Z-score
+2025-07-27 09:11:13,514 - nids.preprocessing.cleaner - INFO - Found 5 outliers in near_constant using IQR
+2025-07-27 09:11:13,514 - nids.preprocessing.cleaner - INFO -   Bounds: [1.000, 1.000]
+2025-07-27 09:11:13,517 - nids.preprocessing.cleaner - INFO - Found 5 outliers in outlier_feature using IQR
+2025-07-27 09:11:13,517 - nids.preprocessing.cleaner - INFO -   Bounds: [-5.386, 5.295]
+2025-07-27 09:11:13,522 - nids.preprocessing.cleaner - INFO - Found 5 outliers in good_feature1 using Z-score
+2025-07-27 09:11:13,523 - nids.preprocessing.cleaner - INFO - Found 5 outliers in near_constant using Z-score
+2025-07-27 09:11:13,524 - nids.preprocessing.cleaner - INFO - Found 5 outliers in low_variance using Z-score
+2025-07-27 09:11:13,524 - nids.preprocessing.cleaner - INFO - Found 4 outliers in correlated_1 using Z-score
+2025-07-27 09:11:13,525 - nids.preprocessing.cleaner - INFO - Found 5 outliers in outlier_feature using Z-score
+2025-07-27 09:11:13,525 - nids.preprocessing.cleaner - INFO - Found 4 outliers in correlated_2 using Z-score
+2025-07-27 09:11:13,526 - nids.preprocessing.cleaner - INFO - Removed 18 rows containing outliers
+2025-07-27 09:11:13,530 - nids.preprocessing.cleaner - INFO - Found 1 outliers in good_feature1 using IQR
+2025-07-27 09:11:13,530 - nids.preprocessing.cleaner - INFO -   Bounds: [-2.151, 2.085]
+2025-07-27 09:11:13,533 - nids.preprocessing.cleaner - INFO - Found 5 outliers in near_constant using IQR
+2025-07-27 09:11:13,533 - nids.preprocessing.cleaner - INFO -   Bounds: [1.000, 1.000]
+2025-07-27 09:11:13,535 - nids.preprocessing.cleaner - INFO - Found 2 outliers in low_variance using IQR
+2025-07-27 09:11:13,535 - nids.preprocessing.cleaner - INFO -   Bounds: [-0.003, 0.003]
+2025-07-27 09:11:13,536 - nids.preprocessing.cleaner - INFO - Found 5 outliers in outlier_feature using IQR
+2025-07-27 09:11:13,537 - nids.preprocessing.cleaner - INFO -   Bounds: [-3.097, 3.006]
+2025-07-27 09:11:13,538 - nids.preprocessing.cleaner - INFO - Removed 8 rows containing outliers
+2025-07-27 09:11:13,543 - nids.preprocessing.cleaner - INFO - Fitting feature cleaner...
+2025-07-27 09:11:13,543 - nids.preprocessing.cleaner - INFO - Input data shape: (105, 9)
+2025-07-27 09:11:13,544 - nids.preprocessing.cleaner - INFO - Found 1 features with >=50.0% missing values
+2025-07-27 09:11:13,544 - nids.preprocessing.cleaner - INFO -   high_missing: 66.67% missing
+2025-07-27 09:11:13,545 - nids.preprocessing.cleaner - INFO - Constant numerical feature: constant_feature (single value: 5.0)
+2025-07-27 09:11:13,546 - nids.preprocessing.cleaner - INFO - Near-constant feature: near_constant (most common value frequency: 95.24%)
+2025-07-27 09:11:13,546 - nids.preprocessing.cleaner - INFO - Constant numerical feature: high_missing (single value: 1.0)
+2025-07-27 09:11:13,551 - nids.preprocessing.cleaner - INFO - Found 2 low variance features
+2025-07-27 09:11:13,552 - nids.preprocessing.cleaner - INFO -   constant_feature: variance = 0.000000
+2025-07-27 09:11:13,552 - nids.preprocessing.cleaner - INFO -   high_missing: variance = 0.000000
+2025-07-27 09:11:13,555 - nids.preprocessing.cleaner - INFO - High correlation (1.000) between correlated_1 and correlated_2
+2025-07-27 09:11:13,555 - nids.preprocessing.cleaner - INFO -   Removing correlated_2 (variance: 0.608906)
+2025-07-27 09:11:13,555 - nids.preprocessing.cleaner - INFO - Features to remove (high_correlation): ['correlated_2']
+2025-07-27 09:11:13,555 - nids.preprocessing.cleaner - INFO - Features to remove (low_variance): ['constant_feature', 'high_missing']
+2025-07-27 09:11:13,556 - nids.preprocessing.cleaner - INFO - Features to remove (high_missing): ['high_missing']
+2025-07-27 09:11:13,556 - nids.preprocessing.cleaner - INFO - Features to remove (constant): ['constant_feature', 'near_constant', 'high_missing']
+2025-07-27 09:11:13,556 - nids.preprocessing.cleaner - INFO - Features to keep: 5 out of 9
+2025-07-27 09:11:13,556 - nids.preprocessing.cleaner - INFO - Features to remove: 4
+2025-07-27 09:11:13,560 - nids.preprocessing.cleaner - INFO - Fitting feature cleaner...
+2025-07-27 09:11:13,560 - nids.preprocessing.cleaner - INFO - Input data shape: (105, 9)
+2025-07-27 09:11:13,560 - nids.preprocessing.cleaner - INFO - Found 1 features with >=50.0% missing values
+2025-07-27 09:11:13,561 - nids.preprocessing.cleaner - INFO -   high_missing: 66.67% missing
+2025-07-27 09:11:13,561 - nids.preprocessing.cleaner - INFO - Constant numerical feature: constant_feature (single value: 5.0)
+2025-07-27 09:11:13,562 - nids.preprocessing.cleaner - INFO - Near-constant feature: near_constant (most common value frequency: 95.24%)
+2025-07-27 09:11:13,562 - nids.preprocessing.cleaner - INFO - Constant numerical feature: high_missing (single value: 1.0)
+2025-07-27 09:11:13,566 - nids.preprocessing.cleaner - INFO - Found 2 low variance features
+2025-07-27 09:11:13,567 - nids.preprocessing.cleaner - INFO -   constant_feature: variance = 0.000000
+2025-07-27 09:11:13,567 - nids.preprocessing.cleaner - INFO -   high_missing: variance = 0.000000
+2025-07-27 09:11:13,570 - nids.preprocessing.cleaner - INFO - High correlation (1.000) between correlated_1 and correlated_2
+2025-07-27 09:11:13,570 - nids.preprocessing.cleaner - INFO -   Removing correlated_2 (variance: 0.608906)
+2025-07-27 09:11:13,570 - nids.preprocessing.cleaner - INFO - Features to remove (high_correlation): ['correlated_2']
+2025-07-27 09:11:13,570 - nids.preprocessing.cleaner - INFO - Features to remove (low_variance): ['constant_feature', 'high_missing']
+2025-07-27 09:11:13,570 - nids.preprocessing.cleaner - INFO - Features to remove (high_missing): ['high_missing']
+2025-07-27 09:11:13,571 - nids.preprocessing.cleaner - INFO - Features to remove (constant): ['constant_feature', 'near_constant', 'high_missing']
+2025-07-27 09:11:13,571 - nids.preprocessing.cleaner - INFO - Features to keep: 5 out of 9
+2025-07-27 09:11:13,571 - nids.preprocessing.cleaner - INFO - Features to remove: 4
+2025-07-27 09:11:13,571 - nids.preprocessing.cleaner - INFO - Cleaning data with shape: (105, 9)
+2025-07-27 09:11:13,572 - nids.preprocessing.cleaner - INFO - Removed 5 duplicate rows
+2025-07-27 09:11:13,573 - nids.preprocessing.cleaner - INFO - Removed 7 features
+2025-07-27 09:11:13,574 - nids.preprocessing.cleaner - INFO - Found 2 outliers in low_variance using Z-score
+2025-07-27 09:11:13,575 - nids.preprocessing.cleaner - INFO - Found 4 outliers in outlier_feature using Z-score
+2025-07-27 09:11:13,576 - nids.preprocessing.cleaner - INFO - Removed 6 rows containing outliers
+2025-07-27 09:11:13,576 - nids.preprocessing.cleaner - INFO - Cleaned data shape: (94, 5)
+2025-07-27 09:11:13,581 - nids.preprocessing.cleaner - INFO - Fitting feature cleaner...
+2025-07-27 09:11:13,581 - nids.preprocessing.cleaner - INFO - Input data shape: (105, 9)
+2025-07-27 09:11:13,582 - nids.preprocessing.cleaner - INFO - Found 1 features with >=50.0% missing values
+2025-07-27 09:11:13,582 - nids.preprocessing.cleaner - INFO -   high_missing: 66.67% missing
+2025-07-27 09:11:13,583 - nids.preprocessing.cleaner - INFO - Constant numerical feature: constant_feature (single value: 5.0)
+2025-07-27 09:11:13,584 - nids.preprocessing.cleaner - INFO - Near-constant feature: near_constant (most common value frequency: 95.24%)
+2025-07-27 09:11:13,584 - nids.preprocessing.cleaner - INFO - Constant numerical feature: high_missing (single value: 1.0)
+2025-07-27 09:11:13,589 - nids.preprocessing.cleaner - INFO - Found 2 low variance features
+2025-07-27 09:11:13,589 - nids.preprocessing.cleaner - INFO -   constant_feature: variance = 0.000000
+2025-07-27 09:11:13,589 - nids.preprocessing.cleaner - INFO -   high_missing: variance = 0.000000
+2025-07-27 09:11:13,592 - nids.preprocessing.cleaner - INFO - High correlation (1.000) between correlated_1 and correlated_2
+2025-07-27 09:11:13,593 - nids.preprocessing.cleaner - INFO -   Removing correlated_2 (variance: 0.608906)
+2025-07-27 09:11:13,593 - nids.preprocessing.cleaner - INFO - Features to remove (high_correlation): ['correlated_2']
+2025-07-27 09:11:13,593 - nids.preprocessing.cleaner - INFO - Features to remove (low_variance): ['constant_feature', 'high_missing']
+2025-07-27 09:11:13,593 - nids.preprocessing.cleaner - INFO - Features to remove (high_missing): ['high_missing']
+2025-07-27 09:11:13,593 - nids.preprocessing.cleaner - INFO - Features to remove (constant): ['constant_feature', 'near_constant', 'high_missing']
+2025-07-27 09:11:13,594 - nids.preprocessing.cleaner - INFO - Features to keep: 5 out of 9
+2025-07-27 09:11:13,594 - nids.preprocessing.cleaner - INFO - Features to remove: 4
+2025-07-27 09:11:13,594 - nids.preprocessing.cleaner - INFO - Cleaning data with shape: (105, 9)
+2025-07-27 09:11:13,595 - nids.preprocessing.cleaner - INFO - Removed 5 duplicate rows
+2025-07-27 09:11:13,595 - nids.preprocessing.cleaner - INFO - Removed 7 features
+2025-07-27 09:11:13,597 - nids.preprocessing.cleaner - INFO - Found 2 outliers in low_variance using Z-score
+2025-07-27 09:11:13,597 - nids.preprocessing.cleaner - INFO - Found 4 outliers in outlier_feature using Z-score
+2025-07-27 09:11:13,598 - nids.preprocessing.cleaner - INFO - Removed 6 rows containing outliers
+2025-07-27 09:11:13,598 - nids.preprocessing.cleaner - INFO - Cleaned data shape: (94, 5)
+2025-07-27 09:11:13,601 - nids.preprocessing.cleaner - INFO - Fitting feature cleaner...
+2025-07-27 09:11:13,601 - nids.preprocessing.cleaner - INFO - Input data shape: (105, 9)
+2025-07-27 09:11:13,602 - nids.preprocessing.cleaner - INFO - Found 1 features with >=50.0% missing values
+2025-07-27 09:11:13,602 - nids.preprocessing.cleaner - INFO -   high_missing: 66.67% missing
+2025-07-27 09:11:13,603 - nids.preprocessing.cleaner - INFO - Constant numerical feature: constant_feature (single value: 5.0)
+2025-07-27 09:11:13,603 - nids.preprocessing.cleaner - INFO - Near-constant feature: near_constant (most common value frequency: 95.24%)
+2025-07-27 09:11:13,604 - nids.preprocessing.cleaner - INFO - Constant numerical feature: high_missing (single value: 1.0)
+2025-07-27 09:11:13,609 - nids.preprocessing.cleaner - INFO - Found 2 low variance features
+2025-07-27 09:11:13,609 - nids.preprocessing.cleaner - INFO -   constant_feature: variance = 0.000000
+2025-07-27 09:11:13,610 - nids.preprocessing.cleaner - INFO -   high_missing: variance = 0.000000
+2025-07-27 09:11:13,613 - nids.preprocessing.cleaner - INFO - High correlation (1.000) between correlated_1 and correlated_2
+2025-07-27 09:11:13,613 - nids.preprocessing.cleaner - INFO -   Removing correlated_2 (variance: 0.608906)
+2025-07-27 09:11:13,614 - nids.preprocessing.cleaner - INFO - Features to remove (high_correlation): ['correlated_2']
+2025-07-27 09:11:13,614 - nids.preprocessing.cleaner - INFO - Features to remove (low_variance): ['constant_feature', 'high_missing']
+2025-07-27 09:11:13,614 - nids.preprocessing.cleaner - INFO - Features to remove (high_missing): ['high_missing']
+2025-07-27 09:11:13,614 - nids.preprocessing.cleaner - INFO - Features to remove (constant): ['constant_feature', 'near_constant', 'high_missing']
+2025-07-27 09:11:13,614 - nids.preprocessing.cleaner - INFO - Features to keep: 5 out of 9
+2025-07-27 09:11:13,614 - nids.preprocessing.cleaner - INFO - Features to remove: 4
+2025-07-27 09:11:13,619 - nids.preprocessing.cleaner - INFO - Fitting feature cleaner...
+2025-07-27 09:11:13,620 - nids.preprocessing.cleaner - INFO - Input data shape: (105, 9)
+2025-07-27 09:11:13,620 - nids.preprocessing.cleaner - INFO - Found 1 features with >=50.0% missing values
+2025-07-27 09:11:13,621 - nids.preprocessing.cleaner - INFO -   high_missing: 66.67% missing
+2025-07-27 09:11:13,622 - nids.preprocessing.cleaner - INFO - Constant numerical feature: constant_feature (single value: 5.0)
+2025-07-27 09:11:13,622 - nids.preprocessing.cleaner - INFO - Near-constant feature: near_constant (most common value frequency: 95.24%)
+2025-07-27 09:11:13,622 - nids.preprocessing.cleaner - INFO - Constant numerical feature: high_missing (single value: 1.0)
+2025-07-27 09:11:13,627 - nids.preprocessing.cleaner - INFO - Found 2 low variance features
+2025-07-27 09:11:13,627 - nids.preprocessing.cleaner - INFO -   constant_feature: variance = 0.000000
+2025-07-27 09:11:13,628 - nids.preprocessing.cleaner - INFO -   high_missing: variance = 0.000000
+2025-07-27 09:11:13,630 - nids.preprocessing.cleaner - INFO - High correlation (1.000) between correlated_1 and correlated_2
+2025-07-27 09:11:13,631 - nids.preprocessing.cleaner - INFO -   Removing correlated_2 (variance: 0.608906)
+2025-07-27 09:11:13,631 - nids.preprocessing.cleaner - INFO - Features to remove (high_correlation): ['correlated_2']
+2025-07-27 09:11:13,631 - nids.preprocessing.cleaner - INFO - Features to remove (low_variance): ['constant_feature', 'high_missing']
+2025-07-27 09:11:13,631 - nids.preprocessing.cleaner - INFO - Features to remove (high_missing): ['high_missing']
+2025-07-27 09:11:13,632 - nids.preprocessing.cleaner - INFO - Features to remove (constant): ['constant_feature', 'near_constant', 'high_missing']
+2025-07-27 09:11:13,632 - nids.preprocessing.cleaner - INFO - Features to keep: 5 out of 9
+2025-07-27 09:11:13,632 - nids.preprocessing.cleaner - INFO - Features to remove: 4
+2025-07-27 09:11:13,635 - nids.preprocessing.cleaner - INFO - Fitting feature cleaner...
+2025-07-27 09:11:13,635 - nids.preprocessing.cleaner - INFO - Input data shape: (105, 9)
+2025-07-27 09:11:13,636 - nids.preprocessing.cleaner - INFO - Found 1 features with >=50.0% missing values
+2025-07-27 09:11:13,636 - nids.preprocessing.cleaner - INFO -   high_missing: 66.67% missing
+2025-07-27 09:11:13,637 - nids.preprocessing.cleaner - INFO - Constant numerical feature: constant_feature (single value: 5.0)
+2025-07-27 09:11:13,638 - nids.preprocessing.cleaner - INFO - Near-constant feature: near_constant (most common value frequency: 95.24%)
+2025-07-27 09:11:13,638 - nids.preprocessing.cleaner - INFO - Constant numerical feature: high_missing (single value: 1.0)
+2025-07-27 09:11:13,643 - nids.preprocessing.cleaner - INFO - Found 2 low variance features
+2025-07-27 09:11:13,644 - nids.preprocessing.cleaner - INFO -   constant_feature: variance = 0.000000
+2025-07-27 09:11:13,644 - nids.preprocessing.cleaner - INFO -   high_missing: variance = 0.000000
+2025-07-27 09:11:13,647 - nids.preprocessing.cleaner - INFO - High correlation (1.000) between correlated_1 and correlated_2
+2025-07-27 09:11:13,647 - nids.preprocessing.cleaner - INFO -   Removing correlated_2 (variance: 0.608906)
+2025-07-27 09:11:13,647 - nids.preprocessing.cleaner - INFO - Features to remove (high_correlation): ['correlated_2']
+2025-07-27 09:11:13,647 - nids.preprocessing.cleaner - INFO - Features to remove (low_variance): ['constant_feature', 'high_missing']
+2025-07-27 09:11:13,648 - nids.preprocessing.cleaner - INFO - Features to remove (high_missing): ['high_missing']
+2025-07-27 09:11:13,648 - nids.preprocessing.cleaner - INFO - Features to remove (constant): ['constant_feature', 'near_constant', 'high_missing']
+2025-07-27 09:11:13,648 - nids.preprocessing.cleaner - INFO - Features to keep: 5 out of 9
+2025-07-27 09:11:13,648 - nids.preprocessing.cleaner - INFO - Features to remove: 4
+2025-07-27 09:11:13,648 - nids.preprocessing.cleaner - INFO - Cleaning data with shape: (105, 9)
+2025-07-27 09:11:13,649 - nids.preprocessing.cleaner - INFO - Removed 5 duplicate rows
+2025-07-27 09:11:13,649 - nids.preprocessing.cleaner - INFO - Removed 7 features
+2025-07-27 09:11:13,652 - nids.preprocessing.cleaner - INFO - Found 2 outliers in low_variance using Z-score
+2025-07-27 09:11:13,654 - nids.preprocessing.cleaner - INFO - Found 4 outliers in outlier_feature using Z-score
+2025-07-27 09:11:13,654 - nids.preprocessing.cleaner - INFO - Removed 6 rows containing outliers
+2025-07-27 09:11:13,654 - nids.preprocessing.cleaner - INFO - Cleaned data shape: (94, 5)
+2025-07-27 09:11:13,660 - nids.preprocessing.cleaner - INFO - Fitting feature cleaner...
+2025-07-27 09:11:13,660 - nids.preprocessing.cleaner - INFO - Input data shape: (105, 9)
+2025-07-27 09:11:13,662 - nids.preprocessing.cleaner - INFO - Found 1 features with >=50.0% missing values
+2025-07-27 09:11:13,662 - nids.preprocessing.cleaner - INFO -   high_missing: 66.67% missing
+2025-07-27 09:11:13,664 - nids.preprocessing.cleaner - INFO - Constant numerical feature: constant_feature (single value: 5.0)
+2025-07-27 09:11:13,665 - nids.preprocessing.cleaner - INFO - Near-constant feature: near_constant (most common value frequency: 95.24%)
+2025-07-27 09:11:13,666 - nids.preprocessing.cleaner - INFO - Constant numerical feature: high_missing (single value: 1.0)
+2025-07-27 09:11:13,671 - nids.preprocessing.cleaner - INFO - Found 2 low variance features
+2025-07-27 09:11:13,672 - nids.preprocessing.cleaner - INFO -   constant_feature: variance = 0.000000
+2025-07-27 09:11:13,672 - nids.preprocessing.cleaner - INFO -   high_missing: variance = 0.000000
+2025-07-27 09:11:13,677 - nids.preprocessing.cleaner - INFO - High correlation (1.000) between correlated_1 and correlated_2
+2025-07-27 09:11:13,677 - nids.preprocessing.cleaner - INFO -   Removing correlated_2 (variance: 0.608906)
+2025-07-27 09:11:13,678 - nids.preprocessing.cleaner - INFO - Features to remove (high_correlation): ['correlated_2']
+2025-07-27 09:11:13,678 - nids.preprocessing.cleaner - INFO - Features to remove (low_variance): ['constant_feature', 'high_missing']
+2025-07-27 09:11:13,678 - nids.preprocessing.cleaner - INFO - Features to remove (high_missing): ['high_missing']
+2025-07-27 09:11:13,678 - nids.preprocessing.cleaner - INFO - Features to remove (constant): ['constant_feature', 'near_constant', 'high_missing']
+2025-07-27 09:11:13,679 - nids.preprocessing.cleaner - INFO - Features to keep: 5 out of 9
+2025-07-27 09:11:13,679 - nids.preprocessing.cleaner - INFO - Features to remove: 4
+2025-07-27 09:11:13,679 - nids.preprocessing.cleaner - INFO - Cleaning data with shape: (105, 9)
+2025-07-27 09:11:13,681 - nids.preprocessing.cleaner - INFO - Removed 5 duplicate rows
+2025-07-27 09:11:13,682 - nids.preprocessing.cleaner - INFO - Removed 7 features
+2025-07-27 09:11:13,684 - nids.preprocessing.cleaner - INFO - Found 2 outliers in low_variance using Z-score
+2025-07-27 09:11:13,686 - nids.preprocessing.cleaner - INFO - Found 4 outliers in outlier_feature using Z-score
+2025-07-27 09:11:13,686 - nids.preprocessing.cleaner - INFO - Removed 6 rows containing outliers
+2025-07-27 09:11:13,687 - nids.preprocessing.cleaner - INFO - Cleaned data shape: (94, 5)
+2025-07-27 09:11:13,688 - nids.preprocessing.cleaner - INFO - Cleaner saved to C:\Users\theja\AppData\Local\Temp\tmp0831xufi.pkl
+2025-07-27 09:11:13,698 - nids.preprocessing.cleaner - INFO - Cleaner loaded from C:\Users\theja\AppData\Local\Temp\tmp0831xufi.pkl
+2025-07-27 09:11:13,698 - nids.preprocessing.cleaner - INFO - Cleaning data with shape: (105, 9)
+2025-07-27 09:11:13,700 - nids.preprocessing.cleaner - INFO - Removed 5 duplicate rows
+2025-07-27 09:11:13,700 - nids.preprocessing.cleaner - INFO - Removed 7 features
+2025-07-27 09:11:13,702 - nids.preprocessing.cleaner - INFO - Found 2 outliers in low_variance using Z-score
+2025-07-27 09:11:13,703 - nids.preprocessing.cleaner - INFO - Found 4 outliers in outlier_feature using Z-score
+2025-07-27 09:11:13,704 - nids.preprocessing.cleaner - INFO - Removed 6 rows containing outliers
+2025-07-27 09:11:13,704 - nids.preprocessing.cleaner - INFO - Cleaned data shape: (94, 5)
+2025-07-27 09:11:13,714 - nids.preprocessing.cleaner - INFO - Fitting feature cleaner...
+2025-07-27 09:11:13,714 - nids.preprocessing.cleaner - INFO - Input data shape: (105, 9)
+2025-07-27 09:11:13,715 - nids.preprocessing.cleaner - INFO - Found 1 features with >=50.0% missing values
+2025-07-27 09:11:13,715 - nids.preprocessing.cleaner - INFO -   high_missing: 66.67% missing
+2025-07-27 09:11:13,716 - nids.preprocessing.cleaner - INFO - Constant numerical feature: constant_feature (single value: 5.0)
+2025-07-27 09:11:13,717 - nids.preprocessing.cleaner - INFO - Near-constant feature: near_constant (most common value frequency: 95.24%)
+2025-07-27 09:11:13,717 - nids.preprocessing.cleaner - INFO - Constant numerical feature: high_missing (single value: 1.0)
+2025-07-27 09:11:13,724 - nids.preprocessing.cleaner - INFO - Found 2 low variance features
+2025-07-27 09:11:13,725 - nids.preprocessing.cleaner - INFO -   constant_feature: variance = 0.000000
+2025-07-27 09:11:13,725 - nids.preprocessing.cleaner - INFO -   high_missing: variance = 0.000000
+2025-07-27 09:11:13,730 - nids.preprocessing.cleaner - INFO - High correlation (1.000) between correlated_1 and correlated_2
+2025-07-27 09:11:13,730 - nids.preprocessing.cleaner - INFO -   Removing correlated_2 (variance: 0.608906)
+2025-07-27 09:11:13,731 - nids.preprocessing.cleaner - INFO - Features to remove (high_correlation): ['correlated_2']
+2025-07-27 09:11:13,731 - nids.preprocessing.cleaner - INFO - Features to remove (low_variance): ['constant_feature', 'high_missing']
+2025-07-27 09:11:13,731 - nids.preprocessing.cleaner - INFO - Features to remove (high_missing): ['high_missing']
+2025-07-27 09:11:13,731 - nids.preprocessing.cleaner - INFO - Features to remove (constant): ['constant_feature', 'near_constant', 'high_missing']
+2025-07-27 09:11:13,732 - nids.preprocessing.cleaner - INFO - Features to keep: 5 out of 9
+2025-07-27 09:11:13,732 - nids.preprocessing.cleaner - INFO - Features to remove: 4
+2025-07-27 09:11:13,732 - nids.preprocessing.cleaner - INFO - Fitting feature cleaner...
+2025-07-27 09:11:13,732 - nids.preprocessing.cleaner - INFO - Input data shape: (105, 9)
+2025-07-27 09:11:13,733 - nids.preprocessing.cleaner - INFO - Found 1 features with >=50.0% missing values
+2025-07-27 09:11:13,733 - nids.preprocessing.cleaner - INFO -   high_missing: 66.67% missing
+2025-07-27 09:11:13,734 - nids.preprocessing.cleaner - INFO - Constant numerical feature: constant_feature (single value: 5.0)
+2025-07-27 09:11:13,735 - nids.preprocessing.cleaner - INFO - Near-constant feature: near_constant (most common value frequency: 95.24%)
+2025-07-27 09:11:13,735 - nids.preprocessing.cleaner - INFO - Constant numerical feature: high_missing (single value: 1.0)
+2025-07-27 09:11:13,741 - nids.preprocessing.cleaner - INFO - Found 2 low variance features
+2025-07-27 09:11:13,742 - nids.preprocessing.cleaner - INFO -   constant_feature: variance = 0.000000
+2025-07-27 09:11:13,742 - nids.preprocessing.cleaner - INFO -   high_missing: variance = 0.000000
+2025-07-27 09:11:13,748 - nids.preprocessing.cleaner - INFO - High correlation (1.000) between correlated_1 and correlated_2
+2025-07-27 09:11:13,748 - nids.preprocessing.cleaner - INFO -   Removing correlated_2 (variance: 0.608906)
+2025-07-27 09:11:13,749 - nids.preprocessing.cleaner - INFO - Features to remove (high_correlation): ['correlated_2']
+2025-07-27 09:11:13,749 - nids.preprocessing.cleaner - INFO - Features to remove (low_variance): ['constant_feature', 'high_missing']
+2025-07-27 09:11:13,749 - nids.preprocessing.cleaner - INFO - Features to remove (high_missing): ['high_missing']
+2025-07-27 09:11:13,749 - nids.preprocessing.cleaner - INFO - Features to remove (constant): ['constant_feature', 'near_constant', 'high_missing']
+2025-07-27 09:11:13,750 - nids.preprocessing.cleaner - INFO - Features to keep: 5 out of 9
+2025-07-27 09:11:13,750 - nids.preprocessing.cleaner - INFO - Features to remove: 4
+2025-07-27 09:11:13,753 - nids.preprocessing.cleaner - INFO - Fitting feature cleaner...
+2025-07-27 09:11:13,753 - nids.preprocessing.cleaner - INFO - Input data shape: (105, 9)
+2025-07-27 09:11:13,755 - nids.preprocessing.cleaner - INFO - Constant numerical feature: constant_feature (single value: 5.0)
+2025-07-27 09:11:13,756 - nids.preprocessing.cleaner - INFO - Near-constant feature: near_constant (most common value frequency: 95.24%)
+2025-07-27 09:11:13,756 - nids.preprocessing.cleaner - INFO - Constant numerical feature: high_missing (single value: 1.0)
+2025-07-27 09:11:13,762 - nids.preprocessing.cleaner - INFO - Found 2 low variance features
+2025-07-27 09:11:13,763 - nids.preprocessing.cleaner - INFO -   constant_feature: variance = 0.000000
+2025-07-27 09:11:13,763 - nids.preprocessing.cleaner - INFO -   high_missing: variance = 0.000000
+2025-07-27 09:11:13,766 - nids.preprocessing.cleaner - INFO - High correlation (1.000) between correlated_1 and correlated_2
+2025-07-27 09:11:13,767 - nids.preprocessing.cleaner - INFO -   Removing correlated_2 (variance: 0.608906)
+2025-07-27 09:11:13,767 - nids.preprocessing.cleaner - INFO - Features to remove (high_correlation): ['correlated_2']
+2025-07-27 09:11:13,767 - nids.preprocessing.cleaner - INFO - Features to remove (low_variance): ['constant_feature', 'high_missing']
+2025-07-27 09:11:13,767 - nids.preprocessing.cleaner - INFO - Features to remove (constant): ['constant_feature', 'near_constant', 'high_missing']
+2025-07-27 09:11:13,768 - nids.preprocessing.cleaner - INFO - Features to keep: 5 out of 9
+2025-07-27 09:11:13,768 - nids.preprocessing.cleaner - INFO - Features to remove: 4
+2025-07-27 09:11:13,768 - nids.preprocessing.cleaner - INFO - Fitting feature cleaner...
+2025-07-27 09:11:13,768 - nids.preprocessing.cleaner - INFO - Input data shape: (105, 9)
+2025-07-27 09:11:13,769 - nids.preprocessing.cleaner - INFO - Found 1 features with >=30.0% missing values
+2025-07-27 09:11:13,770 - nids.preprocessing.cleaner - INFO -   high_missing: 66.67% missing
+2025-07-27 09:11:13,771 - nids.preprocessing.cleaner - INFO - Constant numerical feature: constant_feature (single value: 5.0)
+2025-07-27 09:11:13,772 - nids.preprocessing.cleaner - INFO - Near-constant feature: near_constant (most common value frequency: 95.24%)
+2025-07-27 09:11:13,772 - nids.preprocessing.cleaner - INFO - Constant numerical feature: high_missing (single value: 1.0)
+2025-07-27 09:11:13,777 - nids.preprocessing.cleaner - INFO - Found 2 low variance features
+2025-07-27 09:11:13,778 - nids.preprocessing.cleaner - INFO -   constant_feature: variance = 0.000000
+2025-07-27 09:11:13,778 - nids.preprocessing.cleaner - INFO -   high_missing: variance = 0.000000
+2025-07-27 09:11:13,781 - nids.preprocessing.cleaner - INFO - High correlation (1.000) between correlated_1 and correlated_2
+2025-07-27 09:11:13,782 - nids.preprocessing.cleaner - INFO -   Removing correlated_2 (variance: 0.608906)
+2025-07-27 09:11:13,782 - nids.preprocessing.cleaner - INFO - Features to remove (high_correlation): ['correlated_2']
+2025-07-27 09:11:13,782 - nids.preprocessing.cleaner - INFO - Features to remove (low_variance): ['constant_feature', 'high_missing']
+2025-07-27 09:11:13,783 - nids.preprocessing.cleaner - INFO - Features to remove (high_missing): ['high_missing']
+2025-07-27 09:11:13,783 - nids.preprocessing.cleaner - INFO - Features to remove (constant): ['constant_feature', 'near_constant', 'high_missing']
+2025-07-27 09:11:13,783 - nids.preprocessing.cleaner - INFO - Features to keep: 5 out of 9
+2025-07-27 09:11:13,783 - nids.preprocessing.cleaner - INFO - Features to remove: 4
+2025-07-27 09:11:13,785 - nids.preprocessing.cleaner - INFO - Fitting feature cleaner...
+2025-07-27 09:11:13,786 - nids.preprocessing.cleaner - INFO - Input data shape: (100, 4)
+2025-07-27 09:11:13,788 - nids.preprocessing.cleaner - INFO - Constant categorical feature: categorical_constant (mode frequency: 100.00%)
+2025-07-27 09:11:13,789 - nids.preprocessing.cleaner - INFO - Constant categorical feature: categorical_near_constant (mode frequency: 95.00%)
+2025-07-27 09:11:13,792 - nids.preprocessing.cleaner - INFO - Features to remove (constant): ['categorical_constant', 'categorical_near_constant']
+2025-07-27 09:11:13,792 - nids.preprocessing.cleaner - INFO - Features to keep: 2 out of 4
+2025-07-27 09:11:13,792 - nids.preprocessing.cleaner - INFO - Features to remove: 2
+2025-07-27 09:11:13,792 - nids.preprocessing.cleaner - INFO - Cleaning data with shape: (100, 4)
+2025-07-27 09:11:13,793 - nids.preprocessing.cleaner - INFO - Removed 2 features
+2025-07-27 09:11:13,794 - nids.preprocessing.cleaner - INFO - Cleaned data shape: (100, 2)
+2025-07-27 09:11:13,797 - nids.preprocessing.cleaner - INFO - Fitting feature cleaner...
+2025-07-27 09:11:13,797 - nids.preprocessing.cleaner - INFO - Input data shape: (50, 3)
+2025-07-27 09:11:13,798 - nids.preprocessing.cleaner - INFO - Found 1 features with >=50.0% missing values
+2025-07-27 09:11:13,798 - nids.preprocessing.cleaner - INFO -   high_missing: 80.00% missing
+2025-07-27 09:11:13,799 - nids.preprocessing.cleaner - INFO - Constant numerical feature: constant1 (single value: 1)
+2025-07-27 09:11:13,799 - nids.preprocessing.cleaner - INFO - Constant numerical feature: constant2 (single value: 2)
+2025-07-27 09:11:13,799 - nids.preprocessing.cleaner - INFO - Constant numerical feature: high_missing (single value: nan)
+2025-07-27 09:11:13,801 - nids.preprocessing.cleaner - WARNING - Could not apply variance threshold: No feature in X meets the variance threshold 0.00000
+2025-07-27 09:11:13,803 - nids.preprocessing.cleaner - INFO - Features to remove (high_missing): ['high_missing']
+2025-07-27 09:11:13,803 - nids.preprocessing.cleaner - INFO - Features to remove (constant): ['constant1', 'constant2', 'high_missing']
+2025-07-27 09:11:13,803 - nids.preprocessing.cleaner - INFO - Features to keep: 0 out of 3
+2025-07-27 09:11:13,803 - nids.preprocessing.cleaner - INFO - Features to remove: 3
+2025-07-27 09:11:13,804 - nids.preprocessing.cleaner - INFO - Cleaning data with shape: (50, 3)
+2025-07-27 09:11:13,805 - nids.preprocessing.cleaner - INFO - Removed 48 duplicate rows
+2025-07-27 09:11:13,805 - nids.preprocessing.cleaner - INFO - Removed 4 features
+2025-07-27 09:11:13,806 - nids.preprocessing.cleaner - INFO - Cleaned data shape: (2, 0)
+2025-07-27 09:11:13,808 - nids.preprocessing.cleaner - INFO - Fitting feature cleaner...
+2025-07-27 09:11:13,808 - nids.preprocessing.cleaner - INFO - Input data shape: (100, 3)
+2025-07-27 09:11:13,810 - nids.preprocessing.cleaner - INFO - Constant categorical feature: cat_constant (mode frequency: 100.00%)
+2025-07-27 09:11:13,811 - nids.preprocessing.cleaner - INFO - Features to remove (constant): ['cat_constant']
+2025-07-27 09:11:13,811 - nids.preprocessing.cleaner - INFO - Features to keep: 2 out of 3
+2025-07-27 09:11:13,811 - nids.preprocessing.cleaner - INFO - Features to remove: 1
+2025-07-27 09:11:13,811 - nids.preprocessing.cleaner - INFO - Cleaning data with shape: (100, 3)
+2025-07-27 09:11:13,812 - nids.preprocessing.cleaner - INFO - Removed 97 duplicate rows
+2025-07-27 09:11:13,812 - nids.preprocessing.cleaner - INFO - Removed 1 features
+2025-07-27 09:11:13,813 - nids.preprocessing.cleaner - INFO - Cleaned data shape: (3, 2)
+2025-07-27 09:11:13,815 - nids.preprocessing.cleaner - INFO - Fitting feature cleaner...
+2025-07-27 09:11:13,815 - nids.preprocessing.cleaner - INFO - Input data shape: (100, 1)
+2025-07-27 09:11:13,818 - nids.preprocessing.cleaner - INFO - Features to keep: 1 out of 1
+2025-07-27 09:11:13,818 - nids.preprocessing.cleaner - INFO - Features to remove: 0
+2025-07-27 09:11:13,818 - nids.preprocessing.cleaner - INFO - Cleaning data with shape: (100, 1)
+2025-07-27 09:11:13,819 - nids.preprocessing.cleaner - INFO - Cleaned data shape: (100, 1)
+2025-07-27 09:11:13,823 - nids.preprocessing.cleaner - WARNING - Unknown outlier method: unknown_method
+2025-07-27 09:11:13,844 - nids.preprocessing.cleaner - INFO - Found 1 low variance features
+2025-07-27 09:11:13,845 - nids.preprocessing.cleaner - INFO -   zero_var: variance = 0.000000
+2025-07-27 09:11:13,848 - nids.preprocessing.cleaner - INFO - Found 1 features with >=50.0% missing values
+2025-07-27 09:11:13,848 - nids.preprocessing.cleaner - INFO -   all_nan: 100.00% missing
+2025-07-27 09:14:56,432 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:14:56,691 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:14:56,695 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:14:56,697 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:14:56,701 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:14:56,704 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:14:56,707 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:14:56,710 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:14:56,711 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:14:56,712 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:14:56,712 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:14:56,712 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:14:56,712 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:14:56,712 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:14:56,715 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:14:56,716 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:14:56,716 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:14:56,716 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:14:56,716 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:14:56,717 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:14:56,717 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:14:56,719 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:14:56,719 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (33.3%)
+2025-07-27 09:14:56,720 - nids.preprocessing.balancer - INFO -   Class 1: 800 samples (33.3%)
+2025-07-27 09:14:56,720 - nids.preprocessing.balancer - INFO -   Class 2: 800 samples (33.3%)
+2025-07-27 09:14:56,720 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:14:56,720 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (2400, 3)
+2025-07-27 09:14:56,724 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_undersample
+2025-07-27 09:14:56,724 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:14:56,724 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:14:56,724 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:14:56,724 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:14:56,725 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:14:56,725 - nids.preprocessing.balancer - INFO - Applying random_undersample balancing...
+2025-07-27 09:14:56,726 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:14:56,726 - nids.preprocessing.balancer - INFO -   Class 0: 50 samples (33.3%)
+2025-07-27 09:14:56,726 - nids.preprocessing.balancer - INFO -   Class 1: 50 samples (33.3%)
+2025-07-27 09:14:56,727 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (33.3%)
+2025-07-27 09:14:56,727 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:14:56,727 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (150, 3)
+2025-07-27 09:14:56,730 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: none
+2025-07-27 09:14:56,731 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:14:56,731 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:14:56,731 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:14:56,731 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:14:56,731 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:14:56,732 - nids.preprocessing.balancer - INFO - No balancing applied (strategy='none')
+2025-07-27 09:14:56,735 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:14:56,738 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:14:56,739 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:14:56,739 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:14:56,740 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:14:56,740 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:14:56,740 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:14:56,740 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:14:56,741 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:14:56,742 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:14:56,742 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (33.3%)
+2025-07-27 09:14:56,742 - nids.preprocessing.balancer - INFO -   Class 1: 800 samples (33.3%)
+2025-07-27 09:14:56,743 - nids.preprocessing.balancer - INFO -   Class 2: 800 samples (33.3%)
+2025-07-27 09:14:56,743 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:14:56,743 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (2400, 3)
+2025-07-27 09:14:56,745 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:14:56,747 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:14:56,747 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:14:56,747 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:14:56,748 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:14:56,748 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:14:56,748 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:14:56,748 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:14:56,750 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:14:56,750 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (33.3%)
+2025-07-27 09:14:56,750 - nids.preprocessing.balancer - INFO -   Class 1: 800 samples (33.3%)
+2025-07-27 09:14:56,750 - nids.preprocessing.balancer - INFO -   Class 2: 800 samples (33.3%)
+2025-07-27 09:14:56,750 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:14:56,751 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (2400, 3)
+2025-07-27 09:14:56,753 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:14:56,754 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:14:56,756 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:14:56,756 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:14:56,756 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:14:56,757 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:14:56,757 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:14:56,757 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:14:56,757 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:14:56,758 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:14:56,759 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (33.3%)
+2025-07-27 09:14:56,759 - nids.preprocessing.balancer - INFO -   Class 1: 800 samples (33.3%)
+2025-07-27 09:14:56,759 - nids.preprocessing.balancer - INFO -   Class 2: 800 samples (33.3%)
+2025-07-27 09:14:56,759 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:14:56,760 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (2400, 3)
+2025-07-27 09:14:56,762 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:14:56,764 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:14:56,764 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:14:56,765 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:14:56,765 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:14:56,765 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:14:56,765 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:14:56,765 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:14:56,767 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:14:56,767 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (33.3%)
+2025-07-27 09:14:56,767 - nids.preprocessing.balancer - INFO -   Class 1: 800 samples (33.3%)
+2025-07-27 09:14:56,767 - nids.preprocessing.balancer - INFO -   Class 2: 800 samples (33.3%)
+2025-07-27 09:14:56,768 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:14:56,768 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (2400, 3)
+2025-07-27 09:14:56,791 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:14:56,794 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:14:56,805 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:14:56,806 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:14:56,806 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:14:56,806 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:14:56,806 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:14:56,807 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:14:56,807 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:14:56,809 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:14:56,809 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (33.3%)
+2025-07-27 09:14:56,809 - nids.preprocessing.balancer - INFO -   Class 1: 800 samples (33.3%)
+2025-07-27 09:14:56,809 - nids.preprocessing.balancer - INFO -   Class 2: 800 samples (33.3%)
+2025-07-27 09:14:56,809 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:14:56,810 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (2400, 3)
+2025-07-27 09:14:56,810 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:14:56,810 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:14:56,811 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:14:56,811 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:14:56,811 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:14:56,811 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:14:56,811 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:14:56,813 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:14:56,813 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (33.3%)
+2025-07-27 09:14:56,814 - nids.preprocessing.balancer - INFO -   Class 1: 800 samples (33.3%)
+2025-07-27 09:14:56,814 - nids.preprocessing.balancer - INFO -   Class 2: 800 samples (33.3%)
+2025-07-27 09:14:56,814 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:14:56,814 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (2400, 3)
+2025-07-27 09:14:56,815 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:14:56,815 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:14:56,815 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:14:56,816 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:14:56,816 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:14:56,816 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:14:56,816 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:14:56,818 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:14:56,818 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (50.0%)
+2025-07-27 09:14:56,818 - nids.preprocessing.balancer - INFO -   Class 1: 400 samples (25.0%)
+2025-07-27 09:14:56,818 - nids.preprocessing.balancer - INFO -   Class 2: 400 samples (25.0%)
+2025-07-27 09:14:56,819 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (1600, 3)
+2025-07-27 09:14:56,821 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:14:56,822 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:14:56,822 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:14:56,822 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:14:56,822 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:14:56,822 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:14:56,823 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:14:56,824 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:14:56,824 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (66.7%)
+2025-07-27 09:14:56,824 - nids.preprocessing.balancer - INFO -   Class 1: 200 samples (16.7%)
+2025-07-27 09:14:56,825 - nids.preprocessing.balancer - INFO -   Class 2: 200 samples (16.7%)
+2025-07-27 09:14:56,825 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (1200, 3)
+2025-07-27 09:14:56,840 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:14:56,840 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:14:56,840 - nids.preprocessing.balancer - INFO -   Class 0: 900 samples (90.0%)
+2025-07-27 09:14:56,841 - nids.preprocessing.balancer - INFO -   Class 1: 100 samples (10.0%)
+2025-07-27 09:14:56,841 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:14:56,841 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:14:56,842 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:14:56,842 - nids.preprocessing.balancer - INFO -   Class 0: 900 samples (50.0%)
+2025-07-27 09:14:56,842 - nids.preprocessing.balancer - INFO -   Class 1: 900 samples (50.0%)
+2025-07-27 09:14:56,843 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:14:56,843 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 2) -> (1800, 2)
+2025-07-27 09:14:56,844 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:14:56,846 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:14:56,846 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:14:56,847 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:14:56,847 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:14:56,847 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:14:56,847 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:14:56,847 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:14:56,849 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:14:56,849 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (33.3%)
+2025-07-27 09:14:56,849 - nids.preprocessing.balancer - INFO -   Class 1: 800 samples (33.3%)
+2025-07-27 09:14:56,850 - nids.preprocessing.balancer - INFO -   Class 2: 800 samples (33.3%)
+2025-07-27 09:14:56,850 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:14:56,850 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (2400, 3)
+2025-07-27 09:14:56,852 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:14:56,854 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:14:56,855 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:14:56,855 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:14:56,855 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:14:56,855 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:14:56,855 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:14:56,856 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:14:56,857 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:14:56,857 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (33.3%)
+2025-07-27 09:14:56,857 - nids.preprocessing.balancer - INFO -   Class 1: 800 samples (33.3%)
+2025-07-27 09:14:56,858 - nids.preprocessing.balancer - INFO -   Class 2: 800 samples (33.3%)
+2025-07-27 09:14:56,858 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:14:56,858 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (2400, 3)
+2025-07-27 09:14:56,861 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:14:56,861 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:14:56,861 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:14:56,862 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:14:56,862 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:14:56,862 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:14:56,862 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:14:56,864 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:14:56,865 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (33.3%)
+2025-07-27 09:14:56,865 - nids.preprocessing.balancer - INFO -   Class 1: 800 samples (33.3%)
+2025-07-27 09:14:56,865 - nids.preprocessing.balancer - INFO -   Class 2: 800 samples (33.3%)
+2025-07-27 09:14:56,865 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:14:56,865 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (2400, 3)
+2025-07-27 09:14:56,865 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:14:56,866 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:14:56,866 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:14:56,866 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:14:56,866 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:14:56,866 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:14:56,867 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:14:56,868 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:14:56,868 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (33.3%)
+2025-07-27 09:14:56,868 - nids.preprocessing.balancer - INFO -   Class 1: 800 samples (33.3%)
+2025-07-27 09:14:56,869 - nids.preprocessing.balancer - INFO -   Class 2: 800 samples (33.3%)
+2025-07-27 09:14:56,869 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:14:56,869 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (2400, 3)
+2025-07-27 09:14:56,873 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:14:56,873 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:14:56,873 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:14:56,873 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:14:56,873 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:14:56,874 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:14:56,874 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:14:56,875 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:14:56,875 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (33.3%)
+2025-07-27 09:14:56,875 - nids.preprocessing.balancer - INFO -   Class 1: 800 samples (33.3%)
+2025-07-27 09:14:56,876 - nids.preprocessing.balancer - INFO -   Class 2: 800 samples (33.3%)
+2025-07-27 09:14:56,876 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:14:56,876 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (2400, 3)
+2025-07-27 09:14:56,876 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:14:56,877 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:14:56,877 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:14:56,877 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:14:56,877 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:14:56,877 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:14:56,878 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:14:56,879 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:14:56,879 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (33.3%)
+2025-07-27 09:14:56,879 - nids.preprocessing.balancer - INFO -   Class 1: 800 samples (33.3%)
+2025-07-27 09:14:56,880 - nids.preprocessing.balancer - INFO -   Class 2: 800 samples (33.3%)
+2025-07-27 09:14:56,880 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:14:56,880 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (2400, 3)
+2025-07-27 09:14:56,882 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:14:56,889 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_undersample
+2025-07-27 09:14:56,889 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:14:56,889 - nids.preprocessing.balancer - INFO -   Class 0: 3 samples (60.0%)
+2025-07-27 09:14:56,890 - nids.preprocessing.balancer - INFO -   Class 1: 2 samples (40.0%)
+2025-07-27 09:14:56,890 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:14:56,890 - nids.preprocessing.balancer - INFO - Applying random_undersample balancing...
+2025-07-27 09:14:56,891 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:14:56,891 - nids.preprocessing.balancer - INFO -   Class 0: 1 samples (50.0%)
+2025-07-27 09:14:56,891 - nids.preprocessing.balancer - INFO -   Class 1: 1 samples (50.0%)
+2025-07-27 09:14:56,891 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:14:56,892 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (5, 1) -> (2, 1)
+2025-07-27 09:14:56,894 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:14:56,895 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:14:56,895 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:14:56,895 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:14:56,895 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:14:56,895 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:14:56,896 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:14:56,897 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:14:56,897 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (33.3%)
+2025-07-27 09:14:56,898 - nids.preprocessing.balancer - INFO -   Class 1: 800 samples (33.3%)
+2025-07-27 09:14:56,898 - nids.preprocessing.balancer - INFO -   Class 2: 800 samples (33.3%)
+2025-07-27 09:14:56,899 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:14:56,899 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (2400, 3)
+2025-07-27 09:16:11,007 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:16:11,007 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:16:11,007 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:16:11,008 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:16:11,008 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:16:11,008 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:16:11,008 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:16:11,011 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:16:11,011 - nids.preprocessing.balancer - INFO -   Class 0: 200 samples (33.3%)
+2025-07-27 09:16:11,011 - nids.preprocessing.balancer - INFO -   Class 1: 200 samples (33.3%)
+2025-07-27 09:16:11,011 - nids.preprocessing.balancer - INFO -   Class 2: 200 samples (33.3%)
+2025-07-27 09:16:11,011 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:16:11,011 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (600, 3)
+2025-07-27 09:16:19,499 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:16:19,501 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:16:19,502 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:16:19,502 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:16:19,502 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:16:19,502 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:16:19,502 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:16:19,503 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:16:19,505 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:16:19,505 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (33.3%)
+2025-07-27 09:16:19,505 - nids.preprocessing.balancer - INFO -   Class 1: 800 samples (33.3%)
+2025-07-27 09:16:19,505 - nids.preprocessing.balancer - INFO -   Class 2: 800 samples (33.3%)
+2025-07-27 09:16:19,505 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:16:19,506 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (2400, 3)
+2025-07-27 09:16:19,507 - nids.preprocessing.balancer - INFO - Balancer saved to C:\Users\theja\AppData\Local\Temp\tmpn69sdsi0.pkl
+2025-07-27 09:16:19,507 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:16:19,515 - nids.preprocessing.balancer - INFO - Balancer loaded from C:\Users\theja\AppData\Local\Temp\tmpn69sdsi0.pkl
+2025-07-27 09:16:19,516 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:16:19,517 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:16:19,517 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (33.3%)
+2025-07-27 09:16:19,518 - nids.preprocessing.balancer - INFO -   Class 1: 800 samples (33.3%)
+2025-07-27 09:16:19,518 - nids.preprocessing.balancer - INFO -   Class 2: 800 samples (33.3%)
+2025-07-27 09:16:19,518 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:16:19,518 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (2400, 3)
+2025-07-27 09:16:27,100 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:16:27,103 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:16:27,106 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:16:27,109 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:16:27,112 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:16:27,114 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:16:27,116 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:16:27,119 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:16:27,121 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:16:27,121 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:16:27,122 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:16:27,122 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:16:27,122 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:16:27,122 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:16:27,124 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:16:27,125 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:16:27,125 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:16:27,125 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:16:27,125 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:16:27,126 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:16:27,126 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:16:27,128 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:16:27,128 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (33.3%)
+2025-07-27 09:16:27,128 - nids.preprocessing.balancer - INFO -   Class 1: 800 samples (33.3%)
+2025-07-27 09:16:27,128 - nids.preprocessing.balancer - INFO -   Class 2: 800 samples (33.3%)
+2025-07-27 09:16:27,129 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:16:27,129 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (2400, 3)
+2025-07-27 09:16:27,132 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_undersample
+2025-07-27 09:16:27,132 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:16:27,133 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:16:27,133 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:16:27,133 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:16:27,133 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:16:27,133 - nids.preprocessing.balancer - INFO - Applying random_undersample balancing...
+2025-07-27 09:16:27,134 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:16:27,135 - nids.preprocessing.balancer - INFO -   Class 0: 50 samples (33.3%)
+2025-07-27 09:16:27,135 - nids.preprocessing.balancer - INFO -   Class 1: 50 samples (33.3%)
+2025-07-27 09:16:27,135 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (33.3%)
+2025-07-27 09:16:27,135 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:16:27,135 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (150, 3)
+2025-07-27 09:16:27,139 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: none
+2025-07-27 09:16:27,139 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:16:27,139 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:16:27,139 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:16:27,139 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:16:27,140 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:16:27,140 - nids.preprocessing.balancer - INFO - No balancing applied (strategy='none')
+2025-07-27 09:16:27,142 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:16:27,144 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:16:27,146 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:16:27,146 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:16:27,146 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:16:27,146 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:16:27,147 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:16:27,147 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:16:27,147 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:16:27,149 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:16:27,149 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (33.3%)
+2025-07-27 09:16:27,149 - nids.preprocessing.balancer - INFO -   Class 1: 800 samples (33.3%)
+2025-07-27 09:16:27,149 - nids.preprocessing.balancer - INFO -   Class 2: 800 samples (33.3%)
+2025-07-27 09:16:27,150 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:16:27,150 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (2400, 3)
+2025-07-27 09:16:27,152 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:16:27,153 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:16:27,154 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:16:27,154 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:16:27,154 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:16:27,154 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:16:27,154 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:16:27,154 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:16:27,156 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:16:27,156 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (33.3%)
+2025-07-27 09:16:27,156 - nids.preprocessing.balancer - INFO -   Class 1: 800 samples (33.3%)
+2025-07-27 09:16:27,157 - nids.preprocessing.balancer - INFO -   Class 2: 800 samples (33.3%)
+2025-07-27 09:16:27,157 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:16:27,157 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (2400, 3)
+2025-07-27 09:16:27,159 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:16:27,160 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:16:27,162 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:16:27,162 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:16:27,162 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:16:27,162 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:16:27,162 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:16:27,163 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:16:27,163 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:16:27,164 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:16:27,164 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (33.3%)
+2025-07-27 09:16:27,164 - nids.preprocessing.balancer - INFO -   Class 1: 800 samples (33.3%)
+2025-07-27 09:16:27,165 - nids.preprocessing.balancer - INFO -   Class 2: 800 samples (33.3%)
+2025-07-27 09:16:27,165 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:16:27,165 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (2400, 3)
+2025-07-27 09:16:27,168 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:16:27,170 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:16:27,170 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:16:27,170 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:16:27,170 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:16:27,170 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:16:27,171 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:16:27,171 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:16:27,172 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:16:27,172 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (33.3%)
+2025-07-27 09:16:27,173 - nids.preprocessing.balancer - INFO -   Class 1: 800 samples (33.3%)
+2025-07-27 09:16:27,173 - nids.preprocessing.balancer - INFO -   Class 2: 800 samples (33.3%)
+2025-07-27 09:16:27,173 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:16:27,173 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (2400, 3)
+2025-07-27 09:16:27,174 - nids.preprocessing.balancer - INFO - Balancer saved to C:\Users\theja\AppData\Local\Temp\tmp0yiturw8.pkl
+2025-07-27 09:16:27,175 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:16:27,176 - nids.preprocessing.balancer - INFO - Balancer loaded from C:\Users\theja\AppData\Local\Temp\tmp0yiturw8.pkl
+2025-07-27 09:16:27,176 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:16:27,177 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:16:27,177 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (33.3%)
+2025-07-27 09:16:27,178 - nids.preprocessing.balancer - INFO -   Class 1: 800 samples (33.3%)
+2025-07-27 09:16:27,178 - nids.preprocessing.balancer - INFO -   Class 2: 800 samples (33.3%)
+2025-07-27 09:16:27,178 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:16:27,178 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (2400, 3)
+2025-07-27 09:16:27,181 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:16:27,183 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:16:27,195 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:16:27,195 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:16:27,195 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:16:27,195 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:16:27,195 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:16:27,196 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:16:27,196 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:16:27,197 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:16:27,197 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (33.3%)
+2025-07-27 09:16:27,198 - nids.preprocessing.balancer - INFO -   Class 1: 800 samples (33.3%)
+2025-07-27 09:16:27,198 - nids.preprocessing.balancer - INFO -   Class 2: 800 samples (33.3%)
+2025-07-27 09:16:27,198 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:16:27,198 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (2400, 3)
+2025-07-27 09:16:27,199 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:16:27,199 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:16:27,199 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:16:27,199 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:16:27,200 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:16:27,200 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:16:27,200 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:16:27,202 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:16:27,202 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (33.3%)
+2025-07-27 09:16:27,202 - nids.preprocessing.balancer - INFO -   Class 1: 800 samples (33.3%)
+2025-07-27 09:16:27,202 - nids.preprocessing.balancer - INFO -   Class 2: 800 samples (33.3%)
+2025-07-27 09:16:27,203 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:16:27,203 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (2400, 3)
+2025-07-27 09:16:27,203 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:16:27,203 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:16:27,204 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:16:27,204 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:16:27,204 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:16:27,204 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:16:27,204 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:16:27,205 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:16:27,206 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (50.0%)
+2025-07-27 09:16:27,206 - nids.preprocessing.balancer - INFO -   Class 1: 400 samples (25.0%)
+2025-07-27 09:16:27,206 - nids.preprocessing.balancer - INFO -   Class 2: 400 samples (25.0%)
+2025-07-27 09:16:27,206 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (1600, 3)
+2025-07-27 09:16:27,209 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:16:27,209 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:16:27,210 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:16:27,210 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:16:27,210 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:16:27,210 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:16:27,210 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:16:27,212 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:16:27,212 - nids.preprocessing.balancer - INFO -   Class 0: 200 samples (33.3%)
+2025-07-27 09:16:27,212 - nids.preprocessing.balancer - INFO -   Class 1: 200 samples (33.3%)
+2025-07-27 09:16:27,212 - nids.preprocessing.balancer - INFO -   Class 2: 200 samples (33.3%)
+2025-07-27 09:16:27,212 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:16:27,213 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (600, 3)
+2025-07-27 09:16:27,215 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:16:27,215 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:16:27,215 - nids.preprocessing.balancer - INFO -   Class 0: 900 samples (90.0%)
+2025-07-27 09:16:27,216 - nids.preprocessing.balancer - INFO -   Class 1: 100 samples (10.0%)
+2025-07-27 09:16:27,216 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:16:27,216 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:16:27,217 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:16:27,217 - nids.preprocessing.balancer - INFO -   Class 0: 900 samples (50.0%)
+2025-07-27 09:16:27,218 - nids.preprocessing.balancer - INFO -   Class 1: 900 samples (50.0%)
+2025-07-27 09:16:27,218 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:16:27,218 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 2) -> (1800, 2)
+2025-07-27 09:16:27,220 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:16:27,221 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:16:27,223 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:16:27,223 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:16:27,223 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:16:27,223 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:16:27,223 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:16:27,223 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:16:27,224 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:16:27,225 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (33.3%)
+2025-07-27 09:16:27,225 - nids.preprocessing.balancer - INFO -   Class 1: 800 samples (33.3%)
+2025-07-27 09:16:27,225 - nids.preprocessing.balancer - INFO -   Class 2: 800 samples (33.3%)
+2025-07-27 09:16:27,225 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:16:27,225 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (2400, 3)
+2025-07-27 09:16:27,227 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:16:27,228 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:16:27,229 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:16:27,229 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:16:27,229 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:16:27,229 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:16:27,229 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:16:27,230 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:16:27,231 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:16:27,231 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (33.3%)
+2025-07-27 09:16:27,231 - nids.preprocessing.balancer - INFO -   Class 1: 800 samples (33.3%)
+2025-07-27 09:16:27,231 - nids.preprocessing.balancer - INFO -   Class 2: 800 samples (33.3%)
+2025-07-27 09:16:27,232 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:16:27,232 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (2400, 3)
+2025-07-27 09:16:27,235 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:16:27,235 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:16:27,235 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:16:27,236 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:16:27,236 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:16:27,236 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:16:27,236 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:16:27,238 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:16:27,238 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (33.3%)
+2025-07-27 09:16:27,238 - nids.preprocessing.balancer - INFO -   Class 1: 800 samples (33.3%)
+2025-07-27 09:16:27,238 - nids.preprocessing.balancer - INFO -   Class 2: 800 samples (33.3%)
+2025-07-27 09:16:27,239 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:16:27,239 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (2400, 3)
+2025-07-27 09:16:27,239 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:16:27,239 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:16:27,239 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:16:27,240 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:16:27,240 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:16:27,240 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:16:27,240 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:16:27,241 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:16:27,242 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (33.3%)
+2025-07-27 09:16:27,242 - nids.preprocessing.balancer - INFO -   Class 1: 800 samples (33.3%)
+2025-07-27 09:16:27,242 - nids.preprocessing.balancer - INFO -   Class 2: 800 samples (33.3%)
+2025-07-27 09:16:27,242 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:16:27,242 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (2400, 3)
+2025-07-27 09:16:27,246 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:16:27,246 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:16:27,246 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:16:27,246 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:16:27,247 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:16:27,247 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:16:27,247 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:16:27,248 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:16:27,248 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (33.3%)
+2025-07-27 09:16:27,249 - nids.preprocessing.balancer - INFO -   Class 1: 800 samples (33.3%)
+2025-07-27 09:16:27,249 - nids.preprocessing.balancer - INFO -   Class 2: 800 samples (33.3%)
+2025-07-27 09:16:27,249 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:16:27,249 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (2400, 3)
+2025-07-27 09:16:27,250 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:16:27,250 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:16:27,250 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:16:27,250 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:16:27,250 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:16:27,250 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:16:27,251 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:16:27,252 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:16:27,252 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (33.3%)
+2025-07-27 09:16:27,253 - nids.preprocessing.balancer - INFO -   Class 1: 800 samples (33.3%)
+2025-07-27 09:16:27,253 - nids.preprocessing.balancer - INFO -   Class 2: 800 samples (33.3%)
+2025-07-27 09:16:27,253 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:16:27,253 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (2400, 3)
+2025-07-27 09:16:27,255 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-27 09:16:27,261 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_undersample
+2025-07-27 09:16:27,261 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:16:27,261 - nids.preprocessing.balancer - INFO -   Class 0: 3 samples (60.0%)
+2025-07-27 09:16:27,262 - nids.preprocessing.balancer - INFO -   Class 1: 2 samples (40.0%)
+2025-07-27 09:16:27,262 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:16:27,262 - nids.preprocessing.balancer - INFO - Applying random_undersample balancing...
+2025-07-27 09:16:27,263 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:16:27,263 - nids.preprocessing.balancer - INFO -   Class 0: 1 samples (50.0%)
+2025-07-27 09:16:27,263 - nids.preprocessing.balancer - INFO -   Class 1: 1 samples (50.0%)
+2025-07-27 09:16:27,264 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:16:27,264 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (5, 1) -> (2, 1)
+2025-07-27 09:16:27,267 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-27 09:16:27,267 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-27 09:16:27,267 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (80.0%)
+2025-07-27 09:16:27,267 - nids.preprocessing.balancer - INFO -   Class 1: 150 samples (15.0%)
+2025-07-27 09:16:27,268 - nids.preprocessing.balancer - INFO -   Class 2: 50 samples (5.0%)
+2025-07-27 09:16:27,268 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-27 09:16:27,268 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-27 09:16:27,269 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-27 09:16:27,270 - nids.preprocessing.balancer - INFO -   Class 0: 800 samples (33.3%)
+2025-07-27 09:16:27,270 - nids.preprocessing.balancer - INFO -   Class 1: 800 samples (33.3%)
+2025-07-27 09:16:27,270 - nids.preprocessing.balancer - INFO -   Class 2: 800 samples (33.3%)
+2025-07-27 09:16:27,270 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-27 09:16:27,270 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (1000, 3) -> (2400, 3)
