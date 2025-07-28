@@ -1,0 +1,93 @@
+# Staging environment override for docker-compose
+version: '3.8'
+
+services:
+  api:
+    build:
+      target: production
+    environment:
+      - ENVIRONMENT=staging
+      - LOG_LEVEL=DEBUG
+    deploy:
+      replicas: 1
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 1G
+        reservations:
+          cpus: '0.25'
+          memory: 512M
+    restart: unless-stopped
+
+  dashboard:
+    build:
+      target: production
+    environment:
+      - ENVIRONMENT=staging
+    deploy:
+      resources:
+        limits:
+          cpus: '0.25'
+          memory: 512M
+        reservations:
+          cpus: '0.1'
+          memory: 256M
+    restart: unless-stopped
+
+  # Reduced resource limits for staging
+  redis:
+    deploy:
+      resources:
+        limits:
+          cpus: '0.25'
+          memory: 256M
+        reservations:
+          cpus: '0.1'
+          memory: 128M
+
+  mongodb:
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+        reservations:
+          cpus: '0.25'
+          memory: 256M
+
+  prometheus:
+    deploy:
+      resources:
+        limits:
+          cpus: '0.25'
+          memory: 512M
+        reservations:
+          cpus: '0.1'
+          memory: 256M
+
+  grafana:
+    deploy:
+      resources:
+        limits:
+          cpus: '0.25'
+          memory: 256M
+        reservations:
+          cpus: '0.1'
+          memory: 128M
+
+  # Add staging-specific services
+  test-runner:
+    build:
+      context: .
+      target: development
+    container_name: nids-test-runner
+    environment:
+      - ENVIRONMENT=staging
+      - API_URL=http://api:8000
+    volumes:
+      - ./tests:/app/tests:ro
+    command: ["python", "-m", "pytest", "tests/", "-v"]
+    depends_on:
+      - api
+    profiles:
+      - testing
