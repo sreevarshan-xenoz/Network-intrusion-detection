@@ -1,0 +1,349 @@
+name: Security Scanning and Dependency Updates
+
+on:
+  schedule:
+    # Run daily at 3 AM UTC
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+    paths:
+      - 'requirements*.txt'
+      - 'Dockerfile'
+      - '.github/workflows/security-scan.yml'
+
+jobs:
+  dependency-scan:
+    name: Dependency Vulnerability Scan
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+        pip install safety bandit semgrep
+
+    - name: Run Safety check
+      run: |
+        safety check --json --output safety-report.json || true
+        safety check --short-report
+
+    - name: Run Bandit security scan
+      run: |
+        bandit -r src -f json -o bandit-report.json || true
+        bandit -r src -f txt
+
+    - name: Run Semgrep security scan
+      run: |
+        semgrep --config=auto src --json --output=semgrep-report.json || true
+        semgrep --config=auto src
+
+    - name: Upload security reports
+      uses: actions/upload-artifact@v3
+      with:
+        name: security-reports
+        path: |
+          safety-report.json
+          bandit-report.json
+          semgrep-report.json
+
+  docker-security-scan:
+    name: Docker Image Security Scan
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Build Docker image
+      run: |
+        docker build -t nids:security-scan .
+
+    - name: Run Trivy vulnerability scanner
+      uses: aquasecurity/trivy-action@master
+      with:
+        image-ref: 'nids:security-scan'
+        format: 'sarif'
+        output: 'trivy-results.sarif'
+
+    - name: Upload Trivy scan results
+      uses: github/codeql-action/upload-sarif@v2
+      if: always()
+      with:
+        sarif_file: 'trivy-results.sarif'
+
+    - name: Run Docker Bench Security
+      run: |
+        docker run --rm --net host --pid host --userns host --cap-add audit_control \
+          -e DOCKER_CONTENT_TRUST=$DOCKER_CONTENT_TRUST \
+          -v /etc:/etc:ro \
+          -v /usr/bin/containerd:/usr/bin/containerd:ro \
+          -v /usr/bin/runc:/usr/bin/runc:ro \
+          -v /usr/lib/systemd:/usr/lib/systemd:ro \
+          -v /var/lib:/var/lib:ro \
+          -v /var/run/docker.sock:/var/run/docker.sock:ro \
+          --label docker_bench_security \
+          docker/docker-bench-security || true
+
+  license-scan:
+    name: License Compliance Scan
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Install pip-licenses
+      run: |
+        pip install pip-licenses
+
+    - name: Install project dependencies
+      run: |
+        pip install -r requirements.txt
+
+    - name: Generate license report
+      run: |
+        pip-licenses --format=json --output-file=licenses.json
+        pip-licenses --format=plain-vertical
+
+    - name: Check for problematic licenses
+      run: |
+        python -c "
+        import json
+        
+        # Load license data
+        with open('licenses.json', 'r') as f:
+            licenses = json.load(f)
+        
+        # Define problematic licenses
+        problematic_licenses = ['GPL-3.0', 'AGPL-3.0', 'LGPL-3.0']
+        
+        issues = []
+        for pkg in licenses:
+            if pkg['License'] in problematic_licenses:
+                issues.append(f'{pkg[\"Name\"]} ({pkg[\"License\"]})')
+        
+        if issues:
+            print('WARNING: Found packages with problematic licenses:')
+            for issue in issues:
+                print(f'  - {issue}')
+        else:
+            print('No problematic licenses found')
+        "
+
+    - name: Upload license report
+      uses: actions/upload-artifact@v3
+      with:
+        name: license-report
+        path: licenses.json
+
+  dependency-update:
+    name: Automated Dependency Updates
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule'
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Install pip-tools
+      run: |
+        pip install pip-tools
+
+    - name: Update dependencies
+      run: |
+        # Update requirements.txt
+        pip-compile --upgrade requirements.in || pip-compile --upgrade requirements.txt
+        
+        # Update dev requirements
+        pip-compile --upgrade requirements-dev.in || pip-compile --upgrade requirements-dev.txt
+
+    - name: Check for security updates
+      run: |
+        pip install safety
+        safety check --json --output safety-before.json || true
+        
+        # Install updated dependencies
+        pip install -r requirements.txt
+        
+        safety check --json --output safety-after.json || true
+        
+        # Compare security reports
+        python -c "
+        import json
+        
+        try:
+            with open('safety-before.json', 'r') as f:
+                before = json.load(f)
+            with open('safety-after.json', 'r') as f:
+                after = json.load(f)
+            
+            before_vulns = len(before.get('vulnerabilities', []))
+            after_vulns = len(after.get('vulnerabilities', []))
+            
+            print(f'Vulnerabilities before update: {before_vulns}')
+            print(f'Vulnerabilities after update: {after_vulns}')
+            
+            if after_vulns < before_vulns:
+                print(f'Security improvement: {before_vulns - after_vulns} vulnerabilities fixed')
+        except:
+            print('Could not compare security reports')
+        "
+
+    - name: Run tests with updated dependencies
+      run: |
+        pip install -r requirements-dev.txt
+        python -m pytest tests/ --maxfail=5
+
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v5
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        commit-message: 'chore: update dependencies'
+        title: 'Automated dependency updates'
+        body: |
+          This PR contains automated dependency updates.
+          
+          ## Changes
+          - Updated Python dependencies to latest versions
+          - Security vulnerabilities addressed (if any)
+          
+          ## Testing
+          - [x] All tests pass with updated dependencies
+          - [x] Security scan completed
+          
+          Please review the changes and merge if everything looks good.
+        branch: automated-dependency-updates
+        delete-branch: true
+
+  secrets-scan:
+    name: Secrets and Sensitive Data Scan
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Run TruffleHog
+      uses: trufflesecurity/trufflehog@main
+      with:
+        path: ./
+        base: main
+        head: HEAD
+        extra_args: --debug --only-verified
+
+    - name: Run GitLeaks
+      uses: gitleaks/gitleaks-action@v2
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  compliance-check:
+    name: Security Compliance Check
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Check file permissions
+      run: |
+        echo "Checking file permissions..."
+        find . -type f -perm /o+w -exec echo "World-writable file: {}" \;
+        find . -type f -name "*.py" -perm /o+x -exec echo "Executable Python file: {}" \;
+
+    - name: Check for hardcoded secrets patterns
+      run: |
+        echo "Checking for hardcoded secrets patterns..."
+        
+        # Check for common secret patterns
+        grep -r -i "password\s*=" . --include="*.py" --include="*.yml" --include="*.yaml" || true
+        grep -r -i "secret\s*=" . --include="*.py" --include="*.yml" --include="*.yaml" || true
+        grep -r -i "api_key\s*=" . --include="*.py" --include="*.yml" --include="*.yaml" || true
+        grep -r -i "token\s*=" . --include="*.py" --include="*.yml" --include="*.yaml" || true
+
+    - name: Check Docker security best practices
+      run: |
+        echo "Checking Dockerfile security..."
+        
+        # Check if running as root
+        if grep -q "USER root" Dockerfile; then
+          echo "WARNING: Dockerfile runs as root user"
+        fi
+        
+        # Check for COPY --chown usage
+        if ! grep -q "COPY --chown" Dockerfile; then
+          echo "INFO: Consider using COPY --chown for better security"
+        fi
+
+  generate-security-report:
+    name: Generate Security Report
+    runs-on: ubuntu-latest
+    needs: [dependency-scan, docker-security-scan, license-scan, secrets-scan, compliance-check]
+    if: always()
+    
+    steps:
+    - name: Download all artifacts
+      uses: actions/download-artifact@v3
+
+    - name: Generate consolidated security report
+      run: |
+        echo "# Security Scan Report" > security-report.md
+        echo "Generated on: $(date)" >> security-report.md
+        echo "" >> security-report.md
+        
+        echo "## Summary" >> security-report.md
+        echo "- Dependency scan: ${{ needs.dependency-scan.result }}" >> security-report.md
+        echo "- Docker security scan: ${{ needs.docker-security-scan.result }}" >> security-report.md
+        echo "- License scan: ${{ needs.license-scan.result }}" >> security-report.md
+        echo "- Secrets scan: ${{ needs.secrets-scan.result }}" >> security-report.md
+        echo "- Compliance check: ${{ needs.compliance-check.result }}" >> security-report.md
+        echo "" >> security-report.md
+        
+        echo "## Recommendations" >> security-report.md
+        echo "1. Review and address any high-severity vulnerabilities" >> security-report.md
+        echo "2. Update dependencies regularly" >> security-report.md
+        echo "3. Monitor for new security advisories" >> security-report.md
+        echo "4. Implement security scanning in CI/CD pipeline" >> security-report.md
+
+    - name: Upload security report
+      uses: actions/upload-artifact@v3
+      with:
+        name: consolidated-security-report
+        path: security-report.md
+
+    - name: Comment on PR (if applicable)
+      if: github.event_name == 'pull_request'
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const fs = require('fs');
+          const report = fs.readFileSync('security-report.md', 'utf8');
+          
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: `## Security Scan Results\n\n${report}`
+          });

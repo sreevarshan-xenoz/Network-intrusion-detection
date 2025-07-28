@@ -1,0 +1,36 @@
+# Global owners
+* @dev-team
+
+# Security-related files
+/src/api/auth.py @security-team
+/src/utils/security.py @security-team
+/.github/workflows/security-scan.yml @security-team
+/config/nginx/ @security-team
+
+# Infrastructure and deployment
+/docker-compose*.yml @devops-team
+/Dockerfile @devops-team
+/.github/workflows/ci-cd.yml @devops-team
+/.github/workflows/deploy.yml @devops-team
+/config/prometheus/ @devops-team
+/config/grafana/ @devops-team
+/scripts/ @devops-team
+
+# Machine learning models
+/src/models/ @ml-team
+/src/data/ @ml-team
+/.github/workflows/model-retraining.yml @ml-team
+
+# API and services
+/src/api/ @backend-team
+/src/services/ @backend-team
+
+# Documentation
+/README.md @tech-writers
+/DOCKER_README.md @tech-writers
+/docs/ @tech-writers
+
+# Configuration files
+/config/ @devops-team @security-team
+/.env.example @devops-team
+/requirements*.txt @dev-team
