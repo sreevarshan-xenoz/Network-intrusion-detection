@@ -5044,3 +5044,71 @@
 2025-07-28 11:40:19,736 - nids.preprocessing.cleaner - INFO - Cleaning data with shape: (4, 3)
 2025-07-28 11:40:19,737 - nids.preprocessing.cleaner - INFO - Removed 1 features
 2025-07-28 11:40:19,738 - nids.preprocessing.cleaner - INFO - Cleaned data shape: (4, 2)
+2025-07-28 12:35:30,810 - src.models.monitor - INFO - Database initialized successfully
+2025-07-28 12:35:30,811 - src.models.monitor - INFO - Model monitor initialized with database: C:\Users\theja\AppData\Local\Temp\tmp1nyltqz6\test_monitor.db
+2025-07-28 12:35:30,818 - src.models.monitor - INFO - Alert test_alert_ack acknowledged
+2025-07-28 12:35:30,819 - src.models.monitor - WARNING - Alert non_existent_alert not found
+2025-07-28 12:35:31,144 - src.models.monitor - INFO - Database initialized successfully
+2025-07-28 12:35:31,145 - src.models.monitor - INFO - Model monitor initialized with database: C:\Users\theja\AppData\Local\Temp\tmp0k3333tr\test_monitor.db
+2025-07-28 12:35:31,196 - src.models.monitor - INFO - Database initialized successfully
+2025-07-28 12:35:31,196 - src.models.monitor - INFO - Model monitor initialized with database: C:\Users\theja\AppData\Local\Temp\tmpc70kzhwr\test_monitor.db
+2025-07-28 12:35:31,262 - src.models.monitor - INFO - Database initialized successfully
+2025-07-28 12:35:31,263 - src.models.monitor - INFO - Model monitor initialized with database: C:\Users\theja\AppData\Local\Temp\tmphxmeyiuv\test_monitor.db
+2025-07-28 12:35:31,318 - src.models.monitor - INFO - Database initialized successfully
+2025-07-28 12:35:31,318 - src.models.monitor - INFO - Model monitor initialized with database: C:\Users\theja\AppData\Local\Temp\tmp0i4vjjuc\test_monitor.db
+2025-07-28 12:35:31,376 - src.models.monitor - INFO - Database initialized successfully
+2025-07-28 12:35:31,376 - src.models.monitor - INFO - Model monitor initialized with database: C:\Users\theja\AppData\Local\Temp\tmp51pbmuog\test_monitor.db
+2025-07-28 12:35:31,384 - src.models.monitor - WARNING - Performance drift detected for test_model_v1.0.accuracy: 0.2125
+2025-07-28 12:35:31,439 - src.models.monitor - INFO - Database initialized successfully
+2025-07-28 12:35:31,440 - src.models.monitor - INFO - Model monitor initialized with database: C:\Users\theja\AppData\Local\Temp\tmpo8gndr2p\test_monitor.db
+2025-07-28 12:35:31,490 - src.models.monitor - INFO - Database initialized successfully
+2025-07-28 12:35:31,490 - src.models.monitor - INFO - Model monitor initialized with database: C:\Users\theja\AppData\Local\Temp\tmp4l9500q3\test_monitor.db
+2025-07-28 12:35:31,542 - src.models.monitor - INFO - Database initialized successfully
+2025-07-28 12:35:31,543 - src.models.monitor - INFO - Model monitor initialized with database: C:\Users\theja\AppData\Local\Temp\tmp3fxvhc5l\test_monitor.db
+2025-07-28 12:35:31,659 - src.models.monitor - INFO - Database initialized successfully
+2025-07-28 12:35:31,659 - src.models.monitor - INFO - Model monitor initialized with database: C:\Users\theja\AppData\Local\Temp\tmp6g7ih4sg\test_monitor.db
+2025-07-28 12:35:31,719 - src.models.monitor - INFO - Database initialized successfully
+2025-07-28 12:35:31,720 - src.models.monitor - INFO - Model monitor initialized with database: C:\Users\theja\AppData\Local\Temp\tmpc3ygivuu\test_monitor.db
+2025-07-28 12:35:31,783 - src.models.monitor - INFO - Database initialized successfully
+2025-07-28 12:35:31,783 - src.models.monitor - INFO - Model monitor initialized with database: C:\Users\theja\AppData\Local\Temp\tmpi9e6qqcd\test_monitor.db
+2025-07-28 12:35:31,836 - src.models.monitor - INFO - Database initialized successfully
+2025-07-28 12:35:31,836 - src.models.monitor - INFO - Model monitor initialized with database: C:\Users\theja\AppData\Local\Temp\tmp8f86ztwu\test_monitor.db
+2025-07-28 12:35:31,892 - src.models.monitor - INFO - Database initialized successfully
+2025-07-28 12:35:31,892 - src.models.monitor - INFO - Model monitor initialized with database: C:\Users\theja\AppData\Local\Temp\tmp6go94ile\test_monitor.db
+2025-07-28 12:35:31,896 - src.models.monitor - INFO - Monitoring performance for model: test_model_v1.0
+2025-07-28 12:35:31,900 - src.models.monitor - INFO - Recorded 11 performance metrics for model test_model_v1.0
+2025-07-28 12:35:31,957 - src.models.monitor - INFO - Database initialized successfully
+2025-07-28 12:35:31,957 - src.models.monitor - INFO - Model monitor initialized with database: C:\Users\theja\AppData\Local\Temp\tmpgx9_dh1k\test_monitor.db
+2025-07-28 12:35:31,961 - src.models.monitor - INFO - Recorded 4 performance metrics for model test_model_v1.0
+2025-07-28 12:35:32,020 - src.models.monitor - INFO - Database initialized successfully
+2025-07-28 12:35:32,020 - src.models.monitor - INFO - Model monitor initialized with database: C:\Users\theja\AppData\Local\Temp\tmpnngbrr21\test_monitor.db
+2025-07-28 12:36:08,367 - src.models.monitor - INFO - Database initialized successfully
+2025-07-28 12:36:08,368 - src.models.monitor - INFO - Model monitor initialized with database: C:\Users\theja\AppData\Local\Temp\tmphjla_ukm\test_monitor.db
+2025-07-28 12:36:18,216 - src.models.monitor - INFO - Database initialized successfully
+2025-07-28 12:36:18,216 - src.models.monitor - INFO - Model monitor initialized with database: C:\Users\theja\AppData\Local\Temp\tmpjkn74jgf\test_monitor.db
+2025-07-28 12:41:55,953 - src.models.retraining - INFO - Retraining pipeline initialized
+2025-07-28 12:42:30,957 - src.models.retraining - INFO - Retraining pipeline initialized
+2025-07-28 12:42:30,958 - src.models.retraining - INFO - Registered data loader: test_data
+2025-07-28 12:42:30,958 - src.models.retraining - INFO - Registered data loader: new_loader
+2025-07-28 12:42:30,958 - src.models.retraining - INFO - Shutting down retraining pipeline
+2025-07-28 12:42:30,959 - src.models.retraining - INFO - Retraining scheduler stopped
+2025-07-28 12:42:50,537 - src.models.retraining - INFO - Retraining pipeline initialized
+2025-07-28 12:42:50,537 - src.models.retraining - INFO - Registered data loader: test_data
+2025-07-28 12:42:50,538 - src.models.retraining - INFO - Registered data loader: new_loader
+2025-07-28 12:42:50,538 - src.models.retraining - INFO - Shutting down retraining pipeline
+2025-07-28 12:42:50,538 - src.models.retraining - INFO - Retraining scheduler stopped
+2025-07-28 12:42:50,538 - src.models.retraining - INFO - Retraining pipeline shutdown complete
+2025-07-28 12:43:00,717 - src.models.retraining - INFO - Retraining pipeline initialized
+2025-07-28 12:43:00,718 - src.models.retraining - INFO - Registered data loader: test_data
+2025-07-28 12:43:00,719 - src.models.retraining - INFO - Scheduled retraining job retrain_test_model_v1.0_1753686780 for model test_model_v1.0 at 2025-07-28 13:43:00.718937
+2025-07-28 12:43:00,719 - src.models.retraining - INFO - Shutting down retraining pipeline
+2025-07-28 12:43:00,719 - src.models.retraining - INFO - Retraining scheduler stopped
+2025-07-28 12:43:00,720 - src.models.retraining - INFO - Cancelled pending job: retrain_test_model_v1.0_1753686780
+2025-07-28 12:43:00,721 - src.models.retraining - INFO - Retraining pipeline shutdown complete
+2025-07-28 12:43:11,547 - src.models.retraining - INFO - Retraining pipeline initialized
+2025-07-28 12:43:11,548 - src.models.retraining - INFO - Registered data loader: test_data
+2025-07-28 12:43:11,549 - src.models.retraining - WARNING - Triggered drift retraining job drift_retrain_test_model_v1.0_1753686791 for model test_model_v1.0 due to high drift in accuracy
+2025-07-28 12:43:11,549 - src.models.retraining - INFO - Shutting down retraining pipeline
+2025-07-28 12:43:11,549 - src.models.retraining - INFO - Retraining scheduler stopped
+2025-07-28 12:43:11,550 - src.models.retraining - INFO - Cancelled pending job: drift_retrain_test_model_v1.0_1753686791
+2025-07-28 12:43:11,550 - src.models.retraining - INFO - Retraining pipeline shutdown complete
