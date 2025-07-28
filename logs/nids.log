@@ -4664,3 +4664,383 @@
 2025-07-28 11:37:46,269 - src.models.trainer - INFO - Cross-validation results for random_forest: {'cv_accuracy_mean': np.float64(0.713745975425455), 'cv_accuracy_std': np.float64(0.0038124415350229745), 'cv_precision_macro_mean': np.float64(0.4145983912369215), 'cv_precision_macro_std': np.float64(0.07897257200759039), 'cv_recall_macro_mean': np.float64(0.49303737638161715), 'cv_recall_macro_std': np.float64(0.0032674441837042753), 'cv_f1_macro_mean': np.float64(0.4183773029213033), 'cv_f1_macro_std': np.float64(0.0062346396272587755)}
 2025-07-28 11:37:46,269 - src.models.trainer - INFO - Successfully trained random_forest model in 18.59s
 2025-07-28 11:37:46,269 - src.models.trainer - INFO - Model training completed. Trained 1 models.
+2025-07-28 11:38:29,780 - nids.data.nsl_kdd - INFO - Loading NSL-KDD dataset from C:\Users\theja\AppData\Local\Temp\tmpfbbeq4z0\test_nsl_kdd.csv
+2025-07-28 11:38:29,780 - nids.data.nsl_kdd - WARNING - chardet not available, using utf-8 encoding
+2025-07-28 11:38:29,784 - nids.data.nsl_kdd - INFO - Detected test file format without difficulty scores
+2025-07-28 11:38:29,785 - nids.data.nsl_kdd - INFO - Successfully loaded 10 records with 42 features
+2025-07-28 11:38:29,786 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-28 11:38:29,789 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 38 numerical columns
+2025-07-28 11:38:29,795 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 41
+2025-07-28 11:38:29,797 - nids.preprocessing.encoder - INFO - Transformed data shape: (10, 41)
+2025-07-28 11:38:29,798 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-28 11:38:29,799 - nids.preprocessing.scaler - INFO - Feature means: {'protocol_type_tcp': np.float64(1.0), 'service_http': np.float64(1.0), 'flag_SF': np.float64(1.0), 'duration': np.float64(0.0), 'src_bytes': np.float64(481.3), 'dst_bytes': np.float64(8583.2), 'land': np.float64(0.0), 'wrong_fragment': np.float64(0.0), 'urgent': np.float64(0.0), 'hot': np.float64(0.0), 'num_failed_logins': np.float64(0.0), 'logged_in': np.float64(1.0), 'num_compromised': np.float64(0.0), 'root_shell': np.float64(0.0), 'su_attempted': np.float64(0.0), 'num_root': np.float64(0.0), 'num_file_creations': np.float64(0.0), 'num_shells': np.float64(0.0), 'num_access_files': np.float64(0.0), 'num_outbound_cmds': np.float64(0.0), 'is_host_login': np.float64(0.0), 'is_guest_login': np.float64(0.0), 'count': np.float64(4.6), 'srv_count': np.float64(4.6), 'serror_rate': np.float64(0.0), 'srv_serror_rate': np.float64(0.0), 'rerror_rate': np.float64(0.0), 'srv_rerror_rate': np.float64(0.0), 'same_srv_rate': np.float64(1.0), 'diff_srv_rate': np.float64(0.0), 'srv_diff_host_rate': np.float64(0.0), 'dst_host_count': np.float64(4.5), 'dst_host_srv_count': np.float64(4.5), 'dst_host_same_srv_rate': np.float64(0.9), 'dst_host_diff_srv_rate': np.float64(0.0), 'dst_host_same_src_port_rate': np.float64(0.283), 'dst_host_srv_diff_host_rate': np.float64(0.0), 'dst_host_serror_rate': np.float64(0.0), 'dst_host_srv_serror_rate': np.float64(0.0), 'dst_host_rerror_rate': np.float64(0.0), 'dst_host_srv_rerror_rate': np.float64(0.0)}
+2025-07-28 11:38:29,800 - nids.preprocessing.scaler - INFO - Feature stds: {'protocol_type_tcp': np.float64(1.0), 'service_http': np.float64(1.0), 'flag_SF': np.float64(1.0), 'duration': np.float64(1.0), 'src_bytes': np.float64(247.31924712807938), 'dst_bytes': np.float64(12329.409238077875), 'land': np.float64(1.0), 'wrong_fragment': np.float64(1.0), 'urgent': np.float64(1.0), 'hot': np.float64(1.0), 'num_failed_logins': np.float64(1.0), 'logged_in': np.float64(1.0), 'num_compromised': np.float64(1.0), 'root_shell': np.float64(1.0), 'su_attempted': np.float64(1.0), 'num_root': np.float64(1.0), 'num_file_creations': np.float64(1.0), 'num_shells': np.float64(1.0), 'num_access_files': np.float64(1.0), 'num_outbound_cmds': np.float64(1.0), 'is_host_login': np.float64(1.0), 'is_guest_login': np.float64(1.0), 'count': np.float64(2.727636339397171), 'srv_count': np.float64(2.727636339397171), 'serror_rate': np.float64(1.0), 'srv_serror_rate': np.float64(1.0), 'rerror_rate': np.float64(1.0), 'srv_rerror_rate': np.float64(1.0), 'same_srv_rate': np.float64(1.0), 'diff_srv_rate': np.float64(1.0), 'srv_diff_host_rate': np.float64(1.0), 'dst_host_count': np.float64(2.8722813232690143), 'dst_host_srv_count': np.float64(2.8722813232690143), 'dst_host_same_srv_rate': np.float64(0.30000000000000004), 'dst_host_diff_srv_rate': np.float64(1.0), 'dst_host_same_src_port_rate': np.float64(0.2716633946633223), 'dst_host_srv_diff_host_rate': np.float64(1.0), 'dst_host_serror_rate': np.float64(1.0), 'dst_host_srv_serror_rate': np.float64(1.0), 'dst_host_rerror_rate': np.float64(1.0), 'dst_host_srv_rerror_rate': np.float64(1.0)}
+2025-07-28 11:38:29,800 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 10 samples
+2025-07-28 11:38:29,801 - nids.preprocessing.scaler - INFO - Transformed data shape: (10, 41)
+2025-07-28 11:38:29,802 - nids.preprocessing.cleaner - INFO - Fitting feature cleaner...
+2025-07-28 11:38:29,802 - nids.preprocessing.cleaner - INFO - Input data shape: (10, 41)
+2025-07-28 11:38:29,803 - nids.preprocessing.cleaner - INFO - Constant numerical feature: protocol_type_tcp (single value: 0.0)
+2025-07-28 11:38:29,803 - nids.preprocessing.cleaner - INFO - Constant numerical feature: service_http (single value: 0.0)
+2025-07-28 11:38:29,803 - nids.preprocessing.cleaner - INFO - Constant numerical feature: flag_SF (single value: 0.0)
+2025-07-28 11:38:29,803 - nids.preprocessing.cleaner - INFO - Constant numerical feature: duration (single value: 0.0)
+2025-07-28 11:38:29,804 - nids.preprocessing.cleaner - INFO - Constant numerical feature: land (single value: 0.0)
+2025-07-28 11:38:29,805 - nids.preprocessing.cleaner - INFO - Constant numerical feature: wrong_fragment (single value: 0.0)
+2025-07-28 11:38:29,805 - nids.preprocessing.cleaner - INFO - Constant numerical feature: urgent (single value: 0.0)
+2025-07-28 11:38:29,805 - nids.preprocessing.cleaner - INFO - Constant numerical feature: hot (single value: 0.0)
+2025-07-28 11:38:29,805 - nids.preprocessing.cleaner - INFO - Constant numerical feature: num_failed_logins (single value: 0.0)
+2025-07-28 11:38:29,806 - nids.preprocessing.cleaner - INFO - Constant numerical feature: logged_in (single value: 0.0)
+2025-07-28 11:38:29,806 - nids.preprocessing.cleaner - INFO - Constant numerical feature: num_compromised (single value: 0.0)
+2025-07-28 11:38:29,806 - nids.preprocessing.cleaner - INFO - Constant numerical feature: root_shell (single value: 0.0)
+2025-07-28 11:38:29,806 - nids.preprocessing.cleaner - INFO - Constant numerical feature: su_attempted (single value: 0.0)
+2025-07-28 11:38:29,807 - nids.preprocessing.cleaner - INFO - Constant numerical feature: num_root (single value: 0.0)
+2025-07-28 11:38:29,807 - nids.preprocessing.cleaner - INFO - Constant numerical feature: num_file_creations (single value: 0.0)
+2025-07-28 11:38:29,808 - nids.preprocessing.cleaner - INFO - Constant numerical feature: num_shells (single value: 0.0)
+2025-07-28 11:38:29,808 - nids.preprocessing.cleaner - INFO - Constant numerical feature: num_access_files (single value: 0.0)
+2025-07-28 11:38:29,808 - nids.preprocessing.cleaner - INFO - Constant numerical feature: num_outbound_cmds (single value: 0.0)
+2025-07-28 11:38:29,808 - nids.preprocessing.cleaner - INFO - Constant numerical feature: is_host_login (single value: 0.0)
+2025-07-28 11:38:29,809 - nids.preprocessing.cleaner - INFO - Constant numerical feature: is_guest_login (single value: 0.0)
+2025-07-28 11:38:29,810 - nids.preprocessing.cleaner - INFO - Constant numerical feature: serror_rate (single value: 0.0)
+2025-07-28 11:38:29,810 - nids.preprocessing.cleaner - INFO - Constant numerical feature: srv_serror_rate (single value: 0.0)
+2025-07-28 11:38:29,810 - nids.preprocessing.cleaner - INFO - Constant numerical feature: rerror_rate (single value: 0.0)
+2025-07-28 11:38:29,811 - nids.preprocessing.cleaner - INFO - Constant numerical feature: srv_rerror_rate (single value: 0.0)
+2025-07-28 11:38:29,811 - nids.preprocessing.cleaner - INFO - Constant numerical feature: same_srv_rate (single value: 0.0)
+2025-07-28 11:38:29,811 - nids.preprocessing.cleaner - INFO - Constant numerical feature: diff_srv_rate (single value: 0.0)
+2025-07-28 11:38:29,811 - nids.preprocessing.cleaner - INFO - Constant numerical feature: srv_diff_host_rate (single value: 0.0)
+2025-07-28 11:38:29,812 - nids.preprocessing.cleaner - INFO - Constant numerical feature: dst_host_diff_srv_rate (single value: 0.0)
+2025-07-28 11:38:29,813 - nids.preprocessing.cleaner - INFO - Constant numerical feature: dst_host_srv_diff_host_rate (single value: 0.0)
+2025-07-28 11:38:29,813 - nids.preprocessing.cleaner - INFO - Constant numerical feature: dst_host_serror_rate (single value: 0.0)
+2025-07-28 11:38:29,814 - nids.preprocessing.cleaner - INFO - Constant numerical feature: dst_host_srv_serror_rate (single value: 0.0)
+2025-07-28 11:38:29,814 - nids.preprocessing.cleaner - INFO - Constant numerical feature: dst_host_rerror_rate (single value: 0.0)
+2025-07-28 11:38:29,814 - nids.preprocessing.cleaner - INFO - Constant numerical feature: dst_host_srv_rerror_rate (single value: 0.0)
+2025-07-28 11:38:29,822 - nids.preprocessing.cleaner - INFO - Found 33 low variance features
+2025-07-28 11:38:29,822 - nids.preprocessing.cleaner - INFO -   protocol_type_tcp: variance = 0.000000
+2025-07-28 11:38:29,822 - nids.preprocessing.cleaner - INFO -   service_http: variance = 0.000000
+2025-07-28 11:38:29,823 - nids.preprocessing.cleaner - INFO -   flag_SF: variance = 0.000000
+2025-07-28 11:38:29,823 - nids.preprocessing.cleaner - INFO -   duration: variance = 0.000000
+2025-07-28 11:38:29,823 - nids.preprocessing.cleaner - INFO -   land: variance = 0.000000
+2025-07-28 11:38:29,824 - nids.preprocessing.cleaner - INFO -   wrong_fragment: variance = 0.000000
+2025-07-28 11:38:29,824 - nids.preprocessing.cleaner - INFO -   urgent: variance = 0.000000
+2025-07-28 11:38:29,824 - nids.preprocessing.cleaner - INFO -   hot: variance = 0.000000
+2025-07-28 11:38:29,825 - nids.preprocessing.cleaner - INFO -   num_failed_logins: variance = 0.000000
+2025-07-28 11:38:29,825 - nids.preprocessing.cleaner - INFO -   logged_in: variance = 0.000000
+2025-07-28 11:38:29,825 - nids.preprocessing.cleaner - INFO -   num_compromised: variance = 0.000000
+2025-07-28 11:38:29,826 - nids.preprocessing.cleaner - INFO -   root_shell: variance = 0.000000
+2025-07-28 11:38:29,826 - nids.preprocessing.cleaner - INFO -   su_attempted: variance = 0.000000
+2025-07-28 11:38:29,826 - nids.preprocessing.cleaner - INFO -   num_root: variance = 0.000000
+2025-07-28 11:38:29,826 - nids.preprocessing.cleaner - INFO -   num_file_creations: variance = 0.000000
+2025-07-28 11:38:29,827 - nids.preprocessing.cleaner - INFO -   num_shells: variance = 0.000000
+2025-07-28 11:38:29,827 - nids.preprocessing.cleaner - INFO -   num_access_files: variance = 0.000000
+2025-07-28 11:38:29,827 - nids.preprocessing.cleaner - INFO -   num_outbound_cmds: variance = 0.000000
+2025-07-28 11:38:29,827 - nids.preprocessing.cleaner - INFO -   is_host_login: variance = 0.000000
+2025-07-28 11:38:29,828 - nids.preprocessing.cleaner - INFO -   is_guest_login: variance = 0.000000
+2025-07-28 11:38:29,828 - nids.preprocessing.cleaner - INFO -   serror_rate: variance = 0.000000
+2025-07-28 11:38:29,828 - nids.preprocessing.cleaner - INFO -   srv_serror_rate: variance = 0.000000
+2025-07-28 11:38:29,828 - nids.preprocessing.cleaner - INFO -   rerror_rate: variance = 0.000000
+2025-07-28 11:38:29,829 - nids.preprocessing.cleaner - INFO -   srv_rerror_rate: variance = 0.000000
+2025-07-28 11:38:29,829 - nids.preprocessing.cleaner - INFO -   same_srv_rate: variance = 0.000000
+2025-07-28 11:38:29,829 - nids.preprocessing.cleaner - INFO -   diff_srv_rate: variance = 0.000000
+2025-07-28 11:38:29,829 - nids.preprocessing.cleaner - INFO -   srv_diff_host_rate: variance = 0.000000
+2025-07-28 11:38:29,830 - nids.preprocessing.cleaner - INFO -   dst_host_diff_srv_rate: variance = 0.000000
+2025-07-28 11:38:29,830 - nids.preprocessing.cleaner - INFO -   dst_host_srv_diff_host_rate: variance = 0.000000
+2025-07-28 11:38:29,830 - nids.preprocessing.cleaner - INFO -   dst_host_serror_rate: variance = 0.000000
+2025-07-28 11:38:29,831 - nids.preprocessing.cleaner - INFO -   dst_host_srv_serror_rate: variance = 0.000000
+2025-07-28 11:38:29,831 - nids.preprocessing.cleaner - INFO -   dst_host_rerror_rate: variance = 0.000000
+2025-07-28 11:38:29,831 - nids.preprocessing.cleaner - INFO -   dst_host_srv_rerror_rate: variance = 0.000000
+2025-07-28 11:38:29,839 - nids.preprocessing.cleaner - INFO - High correlation (0.984) between src_bytes and count
+2025-07-28 11:38:29,839 - nids.preprocessing.cleaner - INFO -   Removing src_bytes (variance: 1.111111)
+2025-07-28 11:38:29,839 - nids.preprocessing.cleaner - INFO - High correlation (0.984) between src_bytes and srv_count
+2025-07-28 11:38:29,840 - nids.preprocessing.cleaner - INFO -   Removing src_bytes (variance: 1.111111)
+2025-07-28 11:38:29,840 - nids.preprocessing.cleaner - INFO - High correlation (0.982) between src_bytes and dst_host_count
+2025-07-28 11:38:29,840 - nids.preprocessing.cleaner - INFO -   Removing src_bytes (variance: 1.111111)
+2025-07-28 11:38:29,840 - nids.preprocessing.cleaner - INFO - High correlation (0.982) between src_bytes and dst_host_srv_count
+2025-07-28 11:38:29,841 - nids.preprocessing.cleaner - INFO -   Removing src_bytes (variance: 1.111111)
+2025-07-28 11:38:29,842 - nids.preprocessing.cleaner - INFO - High correlation (0.987) between dst_bytes and dst_host_same_srv_rate
+2025-07-28 11:38:29,842 - nids.preprocessing.cleaner - INFO -   Removing dst_host_same_srv_rate (variance: 1.111111)
+2025-07-28 11:38:29,848 - nids.preprocessing.cleaner - INFO - High correlation (1.000) between count and srv_count
+2025-07-28 11:38:29,848 - nids.preprocessing.cleaner - INFO -   Removing count (variance: 1.111111)
+2025-07-28 11:38:29,849 - nids.preprocessing.cleaner - INFO - High correlation (0.983) between count and dst_host_count
+2025-07-28 11:38:29,849 - nids.preprocessing.cleaner - INFO -   Removing count (variance: 1.111111)
+2025-07-28 11:38:29,849 - nids.preprocessing.cleaner - INFO - High correlation (0.983) between count and dst_host_srv_count
+2025-07-28 11:38:29,849 - nids.preprocessing.cleaner - INFO -   Removing count (variance: 1.111111)
+2025-07-28 11:38:29,850 - nids.preprocessing.cleaner - INFO - High correlation (0.983) between srv_count and dst_host_count
+2025-07-28 11:38:29,850 - nids.preprocessing.cleaner - INFO -   Removing srv_count (variance: 1.111111)
+2025-07-28 11:38:29,850 - nids.preprocessing.cleaner - INFO - High correlation (0.983) between srv_count and dst_host_srv_count
+2025-07-28 11:38:29,851 - nids.preprocessing.cleaner - INFO -   Removing srv_count (variance: 1.111111)
+2025-07-28 11:38:29,853 - nids.preprocessing.cleaner - INFO - High correlation (1.000) between dst_host_count and dst_host_srv_count
+2025-07-28 11:38:29,853 - nids.preprocessing.cleaner - INFO -   Removing dst_host_count (variance: 1.111111)
+2025-07-28 11:38:29,854 - nids.preprocessing.cleaner - INFO - Features to remove (high_correlation): ['dst_host_same_srv_rate', 'srv_count', 'count', 'dst_host_count', 'src_bytes']
+2025-07-28 11:38:29,854 - nids.preprocessing.cleaner - INFO - Features to remove (low_variance): ['protocol_type_tcp', 'service_http', 'flag_SF', 'duration', 'land', 'wrong_fragment', 'urgent', 'hot', 'num_failed_logins', 'logged_in', 'num_compromised', 'root_shell', 'su_attempted', 'num_root', 'num_file_creations', 'num_shells', 'num_access_files', 'num_outbound_cmds', 'is_host_login', 'is_guest_login', 'serror_rate', 'srv_serror_rate', 'rerror_rate', 'srv_rerror_rate', 'same_srv_rate', 'diff_srv_rate', 'srv_diff_host_rate', 'dst_host_diff_srv_rate', 'dst_host_srv_diff_host_rate', 'dst_host_serror_rate', 'dst_host_srv_serror_rate', 'dst_host_rerror_rate', 'dst_host_srv_rerror_rate']
+2025-07-28 11:38:29,854 - nids.preprocessing.cleaner - INFO - Features to remove (constant): ['protocol_type_tcp', 'service_http', 'flag_SF', 'duration', 'land', 'wrong_fragment', 'urgent', 'hot', 'num_failed_logins', 'logged_in', 'num_compromised', 'root_shell', 'su_attempted', 'num_root', 'num_file_creations', 'num_shells', 'num_access_files', 'num_outbound_cmds', 'is_host_login', 'is_guest_login', 'serror_rate', 'srv_serror_rate', 'rerror_rate', 'srv_rerror_rate', 'same_srv_rate', 'diff_srv_rate', 'srv_diff_host_rate', 'dst_host_diff_srv_rate', 'dst_host_srv_diff_host_rate', 'dst_host_serror_rate', 'dst_host_srv_serror_rate', 'dst_host_rerror_rate', 'dst_host_srv_rerror_rate']
+2025-07-28 11:38:29,854 - nids.preprocessing.cleaner - INFO - Features to keep: 3 out of 41
+2025-07-28 11:38:29,855 - nids.preprocessing.cleaner - INFO - Features to remove: 38
+2025-07-28 11:38:29,855 - nids.preprocessing.cleaner - INFO - Cleaning data with shape: (10, 41)
+2025-07-28 11:38:29,857 - nids.preprocessing.cleaner - INFO - Removed 71 features
+2025-07-28 11:38:29,859 - nids.preprocessing.cleaner - INFO - Cleaned data shape: (10, 3)
+2025-07-28 11:38:29,859 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-28 11:38:29,860 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-28 11:38:29,860 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-28 11:38:29,860 - nids.preprocessing.balancer - INFO -   Class neptune: 5 samples (50.0%)
+2025-07-28 11:38:29,860 - nids.preprocessing.balancer - INFO -   Class normal: 5 samples (50.0%)
+2025-07-28 11:38:29,861 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-28 11:38:29,861 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-28 11:38:29,861 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-28 11:38:29,861 - nids.preprocessing.balancer - INFO -   Class neptune: 5 samples (50.0%)
+2025-07-28 11:38:29,862 - nids.preprocessing.balancer - INFO -   Class normal: 5 samples (50.0%)
+2025-07-28 11:38:29,862 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-28 11:38:29,862 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (10, 3) -> (10, 3)
+2025-07-28 11:38:29,863 - src.models.trainer - INFO - Starting model training process
+2025-07-28 11:38:29,864 - src.models.trainer - INFO - Training random_forest model
+2025-07-28 11:38:29,865 - src.models.trainer - INFO - Starting hyperparameter tuning for random_forest
+2025-07-28 11:38:39,460 - src.models.trainer - INFO - Hyperparameter tuning completed for random_forest in 9.60s
+2025-07-28 11:38:39,460 - src.models.trainer - INFO - Best parameters: {'max_depth': 10, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 300}
+2025-07-28 11:38:39,461 - src.models.trainer - INFO - Best cross-validation score: 0.7500
+2025-07-28 11:38:39,694 - src.models.trainer - INFO - Performing cross-validation for random_forest
+2025-07-28 11:38:42,794 - src.models.trainer - INFO - Cross-validation results for random_forest: {'cv_accuracy_mean': np.float64(0.7777777777777777), 'cv_accuracy_std': np.float64(0.3142696805273545), 'cv_precision_macro_mean': np.float64(0.75), 'cv_precision_macro_std': np.float64(0.3535533905932738), 'cv_recall_macro_mean': np.float64(0.8333333333333334), 'cv_recall_macro_std': np.float64(0.23570226039551584), 'cv_f1_macro_mean': np.float64(0.75), 'cv_f1_macro_std': np.float64(0.3535533905932738)}
+2025-07-28 11:38:42,795 - src.models.trainer - INFO - Successfully trained random_forest model in 12.93s
+2025-07-28 11:38:42,795 - src.models.trainer - INFO - Model training completed. Trained 1 models.
+2025-07-28 11:38:42,796 - src.models.evaluator - INFO - Evaluating model: random_forest
+2025-07-28 11:38:42,833 - src.models.evaluator - WARNING - Could not calculate Average Precision: pos_label=1 is not a valid label. It should be one of ['neptune', 'normal']
+2025-07-28 11:38:42,839 - src.models.evaluator - WARNING - Could not calculate ROC analysis: y_true takes value in {'neptune', 'normal'} and pos_label is not specified: either make y_true take value in {0, 1} or {-1, 1} or pass pos_label explicitly.
+2025-07-28 11:38:42,840 - src.models.evaluator - WARNING - Could not calculate PR analysis: y_true takes value in {'neptune', 'normal'} and pos_label is not specified: either make y_true take value in {0, 1} or {-1, 1} or pass pos_label explicitly.
+2025-07-28 11:38:42,851 - src.models.evaluator - INFO - Evaluation completed for random_forest
+2025-07-28 11:38:42,851 - src.models.evaluator - INFO -   Accuracy: 0.9000
+2025-07-28 11:38:42,851 - src.models.evaluator - INFO -   F1-Score: 0.8990
+2025-07-28 11:38:42,851 - src.models.evaluator - INFO -   Inference time: 0.0211s
+2025-07-28 11:38:42,853 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmpfbbeq4z0
+2025-07-28 11:38:42,853 - src.models.registry - INFO - Registering model: random_forest v1.0.0
+2025-07-28 11:38:42,926 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmpfbbeq4z0\models\random_forest_1.0.0_20250728_113842_ad108c1d.pkl
+2025-07-28 11:38:42,927 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmpfbbeq4z0\metadata\random_forest_1.0.0_20250728_113842_ad108c1d_metadata.json
+2025-07-28 11:38:42,937 - src.models.registry - INFO - Model registered successfully with ID: random_forest_1.0.0_20250728_113842_ad108c1d
+2025-07-28 11:38:42,937 - src.models.registry - INFO - Retrieving model: random_forest_1.0.0_20250728_113842_ad108c1d
+2025-07-28 11:38:42,993 - src.models.registry - INFO - Model random_forest_1.0.0_20250728_113842_ad108c1d retrieved successfully
+2025-07-28 11:38:43,011 - nids.data.cicids - INFO - Loading CICIDS dataset from C:\Users\theja\AppData\Local\Temp\tmp_vf6w5oj\test_cicids.csv
+2025-07-28 11:38:43,011 - nids.data.cicids - INFO - Loading file directly (0.00 MB)
+2025-07-28 11:38:43,013 - nids.data.cicids - WARNING - chardet not available, using utf-8 encoding
+2025-07-28 11:38:43,015 - nids.data.cicids - INFO - Cleaned column names for consistency
+2025-07-28 11:38:43,016 - nids.data.cicids - INFO - Successfully loaded 10 records with 11 columns
+2025-07-28 11:38:43,017 - src.models.trainer - INFO - Starting model training process
+2025-07-28 11:38:43,019 - src.models.trainer - INFO - Training random_forest model
+2025-07-28 11:38:43,019 - src.models.trainer - INFO - Starting hyperparameter tuning for random_forest
+2025-07-28 11:38:48,627 - src.models.trainer - INFO - Hyperparameter tuning completed for random_forest in 5.61s
+2025-07-28 11:38:48,627 - src.models.trainer - INFO - Best parameters: {'max_depth': 10, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 100}
+2025-07-28 11:38:48,628 - src.models.trainer - INFO - Best cross-validation score: 0.6000
+2025-07-28 11:38:48,710 - src.models.trainer - INFO - Performing cross-validation for random_forest
+2025-07-28 11:38:49,811 - src.models.trainer - INFO - Cross-validation results for random_forest: {'cv_accuracy_mean': np.float64(0.7777777777777777), 'cv_accuracy_std': np.float64(0.15713484026367724), 'cv_precision_macro_mean': np.float64(0.5555555555555555), 'cv_precision_macro_std': np.float64(0.31426968052735443), 'cv_recall_macro_mean': np.float64(0.6666666666666666), 'cv_recall_macro_std': np.float64(0.23570226039551584), 'cv_f1_macro_mean': np.float64(0.6), 'cv_f1_macro_std': np.float64(0.282842712474619)}
+2025-07-28 11:38:49,811 - src.models.trainer - INFO - Successfully trained random_forest model in 6.79s
+2025-07-28 11:38:49,812 - src.models.trainer - INFO - Model training completed. Trained 1 models.
+2025-07-28 11:38:49,812 - src.models.evaluator - INFO - Evaluating model: random_forest
+2025-07-28 11:38:49,834 - src.models.evaluator - WARNING - Could not calculate Average Precision: pos_label=1 is not a valid label. It should be one of ['benign', 'ddos']
+2025-07-28 11:38:49,839 - src.models.evaluator - WARNING - Could not calculate ROC analysis: y_true takes value in {'benign', 'ddos'} and pos_label is not specified: either make y_true take value in {0, 1} or {-1, 1} or pass pos_label explicitly.
+2025-07-28 11:38:49,840 - src.models.evaluator - WARNING - Could not calculate PR analysis: y_true takes value in {'benign', 'ddos'} and pos_label is not specified: either make y_true take value in {0, 1} or {-1, 1} or pass pos_label explicitly.
+2025-07-28 11:38:49,843 - src.models.evaluator - INFO - Evaluation completed for random_forest
+2025-07-28 11:38:49,844 - src.models.evaluator - INFO -   Accuracy: 1.0000
+2025-07-28 11:38:49,844 - src.models.evaluator - INFO -   F1-Score: 1.0000
+2025-07-28 11:38:49,844 - src.models.evaluator - INFO -   Inference time: 0.0070s
+2025-07-28 11:38:49,849 - nids.data.nsl_kdd - INFO - Loading NSL-KDD dataset from C:\Users\theja\AppData\Local\Temp\tmpervmyvkl\invalid.csv
+2025-07-28 11:38:49,850 - nids.data.nsl_kdd - WARNING - chardet not available, using utf-8 encoding
+2025-07-28 11:38:49,858 - nids.data.nsl_kdd - ERROR - Failed to load data from C:\Users\theja\AppData\Local\Temp\tmpervmyvkl\invalid.csv: Unexpected number of columns: 3. Expected 43 (training) or 42 (test)
+2025-07-28 11:39:11,316 - nids.preprocessing.cleaner - INFO - Fitting feature cleaner...
+2025-07-28 11:39:11,316 - nids.preprocessing.cleaner - INFO - Input data shape: (4, 3)
+2025-07-28 11:39:11,322 - nids.preprocessing.cleaner - INFO - High correlation (0.966) between feature1 and feature3
+2025-07-28 11:39:11,322 - nids.preprocessing.cleaner - INFO -   Removing feature1 (variance: 1.555556)
+2025-07-28 11:39:11,323 - nids.preprocessing.cleaner - INFO - Features to remove (high_correlation): ['feature1']
+2025-07-28 11:39:11,323 - nids.preprocessing.cleaner - INFO - Features to keep: 2 out of 3
+2025-07-28 11:39:11,323 - nids.preprocessing.cleaner - INFO - Features to remove: 1
+2025-07-28 11:39:11,323 - nids.preprocessing.cleaner - INFO - Cleaning data with shape: (4, 3)
+2025-07-28 11:39:11,324 - nids.preprocessing.cleaner - INFO - Removed 1 features
+2025-07-28 11:39:11,326 - nids.preprocessing.cleaner - INFO - Cleaned data shape: (4, 2)
+2025-07-28 11:39:48,125 - nids.preprocessing.cleaner - INFO - Fitting feature cleaner...
+2025-07-28 11:39:48,126 - nids.preprocessing.cleaner - INFO - Input data shape: (4, 3)
+2025-07-28 11:39:48,132 - nids.preprocessing.cleaner - INFO - High correlation (0.966) between feature1 and feature3
+2025-07-28 11:39:48,132 - nids.preprocessing.cleaner - INFO -   Removing feature1 (variance: 1.555556)
+2025-07-28 11:39:48,132 - nids.preprocessing.cleaner - INFO - Features to remove (high_correlation): ['feature1']
+2025-07-28 11:39:48,132 - nids.preprocessing.cleaner - INFO - Features to keep: 2 out of 3
+2025-07-28 11:39:48,132 - nids.preprocessing.cleaner - INFO - Features to remove: 1
+2025-07-28 11:39:48,133 - nids.preprocessing.cleaner - INFO - Cleaning data with shape: (4, 3)
+2025-07-28 11:39:48,134 - nids.preprocessing.cleaner - INFO - Removed 1 features
+2025-07-28 11:39:48,135 - nids.preprocessing.cleaner - INFO - Cleaned data shape: (4, 2)
+2025-07-28 11:40:01,028 - nids.data.nsl_kdd - INFO - Loading NSL-KDD dataset from C:\Users\theja\AppData\Local\Temp\tmpfzqv3b6g\test_nsl_kdd.csv
+2025-07-28 11:40:01,029 - nids.data.nsl_kdd - WARNING - chardet not available, using utf-8 encoding
+2025-07-28 11:40:01,032 - nids.data.nsl_kdd - INFO - Detected test file format without difficulty scores
+2025-07-28 11:40:01,033 - nids.data.nsl_kdd - INFO - Successfully loaded 10 records with 42 features
+2025-07-28 11:40:01,034 - nids.preprocessing.encoder - INFO - Fitting feature encoder...
+2025-07-28 11:40:01,037 - nids.preprocessing.encoder - INFO - Detected 3 categorical and 38 numerical columns
+2025-07-28 11:40:01,041 - nids.preprocessing.encoder - INFO - Encoder fitted successfully. Output features: 41
+2025-07-28 11:40:01,044 - nids.preprocessing.encoder - INFO - Transformed data shape: (10, 41)
+2025-07-28 11:40:01,045 - nids.preprocessing.scaler - INFO - Fitting standard scaler...
+2025-07-28 11:40:01,046 - nids.preprocessing.scaler - INFO - Feature means: {'protocol_type_tcp': np.float64(1.0), 'service_http': np.float64(1.0), 'flag_SF': np.float64(1.0), 'duration': np.float64(0.0), 'src_bytes': np.float64(481.3), 'dst_bytes': np.float64(8583.2), 'land': np.float64(0.0), 'wrong_fragment': np.float64(0.0), 'urgent': np.float64(0.0), 'hot': np.float64(0.0), 'num_failed_logins': np.float64(0.0), 'logged_in': np.float64(1.0), 'num_compromised': np.float64(0.0), 'root_shell': np.float64(0.0), 'su_attempted': np.float64(0.0), 'num_root': np.float64(0.0), 'num_file_creations': np.float64(0.0), 'num_shells': np.float64(0.0), 'num_access_files': np.float64(0.0), 'num_outbound_cmds': np.float64(0.0), 'is_host_login': np.float64(0.0), 'is_guest_login': np.float64(0.0), 'count': np.float64(4.6), 'srv_count': np.float64(4.6), 'serror_rate': np.float64(0.0), 'srv_serror_rate': np.float64(0.0), 'rerror_rate': np.float64(0.0), 'srv_rerror_rate': np.float64(0.0), 'same_srv_rate': np.float64(1.0), 'diff_srv_rate': np.float64(0.0), 'srv_diff_host_rate': np.float64(0.0), 'dst_host_count': np.float64(4.5), 'dst_host_srv_count': np.float64(4.5), 'dst_host_same_srv_rate': np.float64(0.9), 'dst_host_diff_srv_rate': np.float64(0.0), 'dst_host_same_src_port_rate': np.float64(0.283), 'dst_host_srv_diff_host_rate': np.float64(0.0), 'dst_host_serror_rate': np.float64(0.0), 'dst_host_srv_serror_rate': np.float64(0.0), 'dst_host_rerror_rate': np.float64(0.0), 'dst_host_srv_rerror_rate': np.float64(0.0)}
+2025-07-28 11:40:01,047 - nids.preprocessing.scaler - INFO - Feature stds: {'protocol_type_tcp': np.float64(1.0), 'service_http': np.float64(1.0), 'flag_SF': np.float64(1.0), 'duration': np.float64(1.0), 'src_bytes': np.float64(247.31924712807938), 'dst_bytes': np.float64(12329.409238077875), 'land': np.float64(1.0), 'wrong_fragment': np.float64(1.0), 'urgent': np.float64(1.0), 'hot': np.float64(1.0), 'num_failed_logins': np.float64(1.0), 'logged_in': np.float64(1.0), 'num_compromised': np.float64(1.0), 'root_shell': np.float64(1.0), 'su_attempted': np.float64(1.0), 'num_root': np.float64(1.0), 'num_file_creations': np.float64(1.0), 'num_shells': np.float64(1.0), 'num_access_files': np.float64(1.0), 'num_outbound_cmds': np.float64(1.0), 'is_host_login': np.float64(1.0), 'is_guest_login': np.float64(1.0), 'count': np.float64(2.727636339397171), 'srv_count': np.float64(2.727636339397171), 'serror_rate': np.float64(1.0), 'srv_serror_rate': np.float64(1.0), 'rerror_rate': np.float64(1.0), 'srv_rerror_rate': np.float64(1.0), 'same_srv_rate': np.float64(1.0), 'diff_srv_rate': np.float64(1.0), 'srv_diff_host_rate': np.float64(1.0), 'dst_host_count': np.float64(2.8722813232690143), 'dst_host_srv_count': np.float64(2.8722813232690143), 'dst_host_same_srv_rate': np.float64(0.30000000000000004), 'dst_host_diff_srv_rate': np.float64(1.0), 'dst_host_same_src_port_rate': np.float64(0.2716633946633223), 'dst_host_srv_diff_host_rate': np.float64(1.0), 'dst_host_serror_rate': np.float64(1.0), 'dst_host_srv_serror_rate': np.float64(1.0), 'dst_host_rerror_rate': np.float64(1.0), 'dst_host_srv_rerror_rate': np.float64(1.0)}
+2025-07-28 11:40:01,047 - nids.preprocessing.scaler - INFO - Scaler fitted successfully on 10 samples
+2025-07-28 11:40:01,048 - nids.preprocessing.scaler - INFO - Transformed data shape: (10, 41)
+2025-07-28 11:40:01,049 - nids.preprocessing.cleaner - INFO - Fitting feature cleaner...
+2025-07-28 11:40:01,049 - nids.preprocessing.cleaner - INFO - Input data shape: (10, 41)
+2025-07-28 11:40:01,050 - nids.preprocessing.cleaner - INFO - Constant numerical feature: protocol_type_tcp (single value: 0.0)
+2025-07-28 11:40:01,050 - nids.preprocessing.cleaner - INFO - Constant numerical feature: service_http (single value: 0.0)
+2025-07-28 11:40:01,050 - nids.preprocessing.cleaner - INFO - Constant numerical feature: flag_SF (single value: 0.0)
+2025-07-28 11:40:01,051 - nids.preprocessing.cleaner - INFO - Constant numerical feature: duration (single value: 0.0)
+2025-07-28 11:40:01,051 - nids.preprocessing.cleaner - INFO - Constant numerical feature: land (single value: 0.0)
+2025-07-28 11:40:01,052 - nids.preprocessing.cleaner - INFO - Constant numerical feature: wrong_fragment (single value: 0.0)
+2025-07-28 11:40:01,052 - nids.preprocessing.cleaner - INFO - Constant numerical feature: urgent (single value: 0.0)
+2025-07-28 11:40:01,052 - nids.preprocessing.cleaner - INFO - Constant numerical feature: hot (single value: 0.0)
+2025-07-28 11:40:01,053 - nids.preprocessing.cleaner - INFO - Constant numerical feature: num_failed_logins (single value: 0.0)
+2025-07-28 11:40:01,053 - nids.preprocessing.cleaner - INFO - Constant numerical feature: logged_in (single value: 0.0)
+2025-07-28 11:40:01,053 - nids.preprocessing.cleaner - INFO - Constant numerical feature: num_compromised (single value: 0.0)
+2025-07-28 11:40:01,053 - nids.preprocessing.cleaner - INFO - Constant numerical feature: root_shell (single value: 0.0)
+2025-07-28 11:40:01,054 - nids.preprocessing.cleaner - INFO - Constant numerical feature: su_attempted (single value: 0.0)
+2025-07-28 11:40:01,054 - nids.preprocessing.cleaner - INFO - Constant numerical feature: num_root (single value: 0.0)
+2025-07-28 11:40:01,054 - nids.preprocessing.cleaner - INFO - Constant numerical feature: num_file_creations (single value: 0.0)
+2025-07-28 11:40:01,054 - nids.preprocessing.cleaner - INFO - Constant numerical feature: num_shells (single value: 0.0)
+2025-07-28 11:40:01,055 - nids.preprocessing.cleaner - INFO - Constant numerical feature: num_access_files (single value: 0.0)
+2025-07-28 11:40:01,055 - nids.preprocessing.cleaner - INFO - Constant numerical feature: num_outbound_cmds (single value: 0.0)
+2025-07-28 11:40:01,055 - nids.preprocessing.cleaner - INFO - Constant numerical feature: is_host_login (single value: 0.0)
+2025-07-28 11:40:01,055 - nids.preprocessing.cleaner - INFO - Constant numerical feature: is_guest_login (single value: 0.0)
+2025-07-28 11:40:01,056 - nids.preprocessing.cleaner - INFO - Constant numerical feature: serror_rate (single value: 0.0)
+2025-07-28 11:40:01,057 - nids.preprocessing.cleaner - INFO - Constant numerical feature: srv_serror_rate (single value: 0.0)
+2025-07-28 11:40:01,057 - nids.preprocessing.cleaner - INFO - Constant numerical feature: rerror_rate (single value: 0.0)
+2025-07-28 11:40:01,057 - nids.preprocessing.cleaner - INFO - Constant numerical feature: srv_rerror_rate (single value: 0.0)
+2025-07-28 11:40:01,058 - nids.preprocessing.cleaner - INFO - Constant numerical feature: same_srv_rate (single value: 0.0)
+2025-07-28 11:40:01,058 - nids.preprocessing.cleaner - INFO - Constant numerical feature: diff_srv_rate (single value: 0.0)
+2025-07-28 11:40:01,058 - nids.preprocessing.cleaner - INFO - Constant numerical feature: srv_diff_host_rate (single value: 0.0)
+2025-07-28 11:40:01,059 - nids.preprocessing.cleaner - INFO - Constant numerical feature: dst_host_diff_srv_rate (single value: 0.0)
+2025-07-28 11:40:01,060 - nids.preprocessing.cleaner - INFO - Constant numerical feature: dst_host_srv_diff_host_rate (single value: 0.0)
+2025-07-28 11:40:01,060 - nids.preprocessing.cleaner - INFO - Constant numerical feature: dst_host_serror_rate (single value: 0.0)
+2025-07-28 11:40:01,061 - nids.preprocessing.cleaner - INFO - Constant numerical feature: dst_host_srv_serror_rate (single value: 0.0)
+2025-07-28 11:40:01,061 - nids.preprocessing.cleaner - INFO - Constant numerical feature: dst_host_rerror_rate (single value: 0.0)
+2025-07-28 11:40:01,061 - nids.preprocessing.cleaner - INFO - Constant numerical feature: dst_host_srv_rerror_rate (single value: 0.0)
+2025-07-28 11:40:01,068 - nids.preprocessing.cleaner - INFO - Found 33 low variance features
+2025-07-28 11:40:01,069 - nids.preprocessing.cleaner - INFO -   protocol_type_tcp: variance = 0.000000
+2025-07-28 11:40:01,069 - nids.preprocessing.cleaner - INFO -   service_http: variance = 0.000000
+2025-07-28 11:40:01,069 - nids.preprocessing.cleaner - INFO -   flag_SF: variance = 0.000000
+2025-07-28 11:40:01,069 - nids.preprocessing.cleaner - INFO -   duration: variance = 0.000000
+2025-07-28 11:40:01,070 - nids.preprocessing.cleaner - INFO -   land: variance = 0.000000
+2025-07-28 11:40:01,070 - nids.preprocessing.cleaner - INFO -   wrong_fragment: variance = 0.000000
+2025-07-28 11:40:01,070 - nids.preprocessing.cleaner - INFO -   urgent: variance = 0.000000
+2025-07-28 11:40:01,071 - nids.preprocessing.cleaner - INFO -   hot: variance = 0.000000
+2025-07-28 11:40:01,071 - nids.preprocessing.cleaner - INFO -   num_failed_logins: variance = 0.000000
+2025-07-28 11:40:01,071 - nids.preprocessing.cleaner - INFO -   logged_in: variance = 0.000000
+2025-07-28 11:40:01,071 - nids.preprocessing.cleaner - INFO -   num_compromised: variance = 0.000000
+2025-07-28 11:40:01,072 - nids.preprocessing.cleaner - INFO -   root_shell: variance = 0.000000
+2025-07-28 11:40:01,072 - nids.preprocessing.cleaner - INFO -   su_attempted: variance = 0.000000
+2025-07-28 11:40:01,072 - nids.preprocessing.cleaner - INFO -   num_root: variance = 0.000000
+2025-07-28 11:40:01,072 - nids.preprocessing.cleaner - INFO -   num_file_creations: variance = 0.000000
+2025-07-28 11:40:01,073 - nids.preprocessing.cleaner - INFO -   num_shells: variance = 0.000000
+2025-07-28 11:40:01,073 - nids.preprocessing.cleaner - INFO -   num_access_files: variance = 0.000000
+2025-07-28 11:40:01,073 - nids.preprocessing.cleaner - INFO -   num_outbound_cmds: variance = 0.000000
+2025-07-28 11:40:01,073 - nids.preprocessing.cleaner - INFO -   is_host_login: variance = 0.000000
+2025-07-28 11:40:01,074 - nids.preprocessing.cleaner - INFO -   is_guest_login: variance = 0.000000
+2025-07-28 11:40:01,074 - nids.preprocessing.cleaner - INFO -   serror_rate: variance = 0.000000
+2025-07-28 11:40:01,074 - nids.preprocessing.cleaner - INFO -   srv_serror_rate: variance = 0.000000
+2025-07-28 11:40:01,074 - nids.preprocessing.cleaner - INFO -   rerror_rate: variance = 0.000000
+2025-07-28 11:40:01,075 - nids.preprocessing.cleaner - INFO -   srv_rerror_rate: variance = 0.000000
+2025-07-28 11:40:01,075 - nids.preprocessing.cleaner - INFO -   same_srv_rate: variance = 0.000000
+2025-07-28 11:40:01,075 - nids.preprocessing.cleaner - INFO -   diff_srv_rate: variance = 0.000000
+2025-07-28 11:40:01,075 - nids.preprocessing.cleaner - INFO -   srv_diff_host_rate: variance = 0.000000
+2025-07-28 11:40:01,075 - nids.preprocessing.cleaner - INFO -   dst_host_diff_srv_rate: variance = 0.000000
+2025-07-28 11:40:01,075 - nids.preprocessing.cleaner - INFO -   dst_host_srv_diff_host_rate: variance = 0.000000
+2025-07-28 11:40:01,077 - nids.preprocessing.cleaner - INFO -   dst_host_serror_rate: variance = 0.000000
+2025-07-28 11:40:01,077 - nids.preprocessing.cleaner - INFO -   dst_host_srv_serror_rate: variance = 0.000000
+2025-07-28 11:40:01,078 - nids.preprocessing.cleaner - INFO -   dst_host_rerror_rate: variance = 0.000000
+2025-07-28 11:40:01,078 - nids.preprocessing.cleaner - INFO -   dst_host_srv_rerror_rate: variance = 0.000000
+2025-07-28 11:40:01,086 - nids.preprocessing.cleaner - INFO - High correlation (0.984) between src_bytes and count
+2025-07-28 11:40:01,087 - nids.preprocessing.cleaner - INFO -   Removing src_bytes (variance: 1.111111)
+2025-07-28 11:40:01,087 - nids.preprocessing.cleaner - INFO - High correlation (0.984) between src_bytes and srv_count
+2025-07-28 11:40:01,087 - nids.preprocessing.cleaner - INFO -   Removing src_bytes (variance: 1.111111)
+2025-07-28 11:40:01,088 - nids.preprocessing.cleaner - INFO - High correlation (0.982) between src_bytes and dst_host_count
+2025-07-28 11:40:01,088 - nids.preprocessing.cleaner - INFO -   Removing src_bytes (variance: 1.111111)
+2025-07-28 11:40:01,088 - nids.preprocessing.cleaner - INFO - High correlation (0.982) between src_bytes and dst_host_srv_count
+2025-07-28 11:40:01,088 - nids.preprocessing.cleaner - INFO -   Removing src_bytes (variance: 1.111111)
+2025-07-28 11:40:01,089 - nids.preprocessing.cleaner - INFO - High correlation (0.987) between dst_bytes and dst_host_same_srv_rate
+2025-07-28 11:40:01,089 - nids.preprocessing.cleaner - INFO -   Removing dst_host_same_srv_rate (variance: 1.111111)
+2025-07-28 11:40:01,095 - nids.preprocessing.cleaner - INFO - High correlation (1.000) between count and srv_count
+2025-07-28 11:40:01,095 - nids.preprocessing.cleaner - INFO -   Removing count (variance: 1.111111)
+2025-07-28 11:40:01,096 - nids.preprocessing.cleaner - INFO - High correlation (0.983) between count and dst_host_count
+2025-07-28 11:40:01,096 - nids.preprocessing.cleaner - INFO -   Removing count (variance: 1.111111)
+2025-07-28 11:40:01,096 - nids.preprocessing.cleaner - INFO - High correlation (0.983) between count and dst_host_srv_count
+2025-07-28 11:40:01,097 - nids.preprocessing.cleaner - INFO -   Removing count (variance: 1.111111)
+2025-07-28 11:40:01,097 - nids.preprocessing.cleaner - INFO - High correlation (0.983) between srv_count and dst_host_count
+2025-07-28 11:40:01,097 - nids.preprocessing.cleaner - INFO -   Removing srv_count (variance: 1.111111)
+2025-07-28 11:40:01,098 - nids.preprocessing.cleaner - INFO - High correlation (0.983) between srv_count and dst_host_srv_count
+2025-07-28 11:40:01,098 - nids.preprocessing.cleaner - INFO -   Removing srv_count (variance: 1.111111)
+2025-07-28 11:40:01,099 - nids.preprocessing.cleaner - INFO - High correlation (1.000) between dst_host_count and dst_host_srv_count
+2025-07-28 11:40:01,100 - nids.preprocessing.cleaner - INFO -   Removing dst_host_count (variance: 1.111111)
+2025-07-28 11:40:01,100 - nids.preprocessing.cleaner - INFO - Features to remove (high_correlation): ['dst_host_same_srv_rate', 'dst_host_count', 'src_bytes', 'count', 'srv_count']
+2025-07-28 11:40:01,101 - nids.preprocessing.cleaner - INFO - Features to remove (low_variance): ['protocol_type_tcp', 'service_http', 'flag_SF', 'duration', 'land', 'wrong_fragment', 'urgent', 'hot', 'num_failed_logins', 'logged_in', 'num_compromised', 'root_shell', 'su_attempted', 'num_root', 'num_file_creations', 'num_shells', 'num_access_files', 'num_outbound_cmds', 'is_host_login', 'is_guest_login', 'serror_rate', 'srv_serror_rate', 'rerror_rate', 'srv_rerror_rate', 'same_srv_rate', 'diff_srv_rate', 'srv_diff_host_rate', 'dst_host_diff_srv_rate', 'dst_host_srv_diff_host_rate', 'dst_host_serror_rate', 'dst_host_srv_serror_rate', 'dst_host_rerror_rate', 'dst_host_srv_rerror_rate']
+2025-07-28 11:40:01,101 - nids.preprocessing.cleaner - INFO - Features to remove (constant): ['protocol_type_tcp', 'service_http', 'flag_SF', 'duration', 'land', 'wrong_fragment', 'urgent', 'hot', 'num_failed_logins', 'logged_in', 'num_compromised', 'root_shell', 'su_attempted', 'num_root', 'num_file_creations', 'num_shells', 'num_access_files', 'num_outbound_cmds', 'is_host_login', 'is_guest_login', 'serror_rate', 'srv_serror_rate', 'rerror_rate', 'srv_rerror_rate', 'same_srv_rate', 'diff_srv_rate', 'srv_diff_host_rate', 'dst_host_diff_srv_rate', 'dst_host_srv_diff_host_rate', 'dst_host_serror_rate', 'dst_host_srv_serror_rate', 'dst_host_rerror_rate', 'dst_host_srv_rerror_rate']
+2025-07-28 11:40:01,101 - nids.preprocessing.cleaner - INFO - Features to keep: 3 out of 41
+2025-07-28 11:40:01,101 - nids.preprocessing.cleaner - INFO - Features to remove: 38
+2025-07-28 11:40:01,101 - nids.preprocessing.cleaner - INFO - Cleaning data with shape: (10, 41)
+2025-07-28 11:40:01,104 - nids.preprocessing.cleaner - INFO - Removed 71 features
+2025-07-28 11:40:01,105 - nids.preprocessing.cleaner - INFO - Cleaned data shape: (10, 3)
+2025-07-28 11:40:01,106 - nids.preprocessing.balancer - WARNING - imbalanced-learn not available. Strategy 'smote' not supported. Falling back to 'random_oversample'
+2025-07-28 11:40:01,106 - nids.preprocessing.balancer - INFO - Fitting class balancer with strategy: random_oversample
+2025-07-28 11:40:01,106 - nids.preprocessing.balancer - INFO - Original class distribution:
+2025-07-28 11:40:01,106 - nids.preprocessing.balancer - INFO -   Class neptune: 5 samples (50.0%)
+2025-07-28 11:40:01,107 - nids.preprocessing.balancer - INFO -   Class normal: 5 samples (50.0%)
+2025-07-28 11:40:01,107 - nids.preprocessing.balancer - INFO - Class balancer fitted successfully
+2025-07-28 11:40:01,107 - nids.preprocessing.balancer - INFO - Applying random_oversample balancing...
+2025-07-28 11:40:01,107 - nids.preprocessing.balancer - INFO - Balanced class distribution:
+2025-07-28 11:40:01,108 - nids.preprocessing.balancer - INFO -   Class neptune: 5 samples (50.0%)
+2025-07-28 11:40:01,108 - nids.preprocessing.balancer - INFO -   Class normal: 5 samples (50.0%)
+2025-07-28 11:40:01,108 - nids.preprocessing.balancer - INFO - Dataset well balanced (ratio: 1.000)
+2025-07-28 11:40:01,108 - nids.preprocessing.balancer - INFO - Balancing complete. Shape: (10, 3) -> (10, 3)
+2025-07-28 11:40:01,109 - src.models.trainer - INFO - Starting model training process
+2025-07-28 11:40:01,110 - src.models.trainer - INFO - Training random_forest model
+2025-07-28 11:40:01,111 - src.models.trainer - INFO - Starting hyperparameter tuning for random_forest
+2025-07-28 11:40:10,682 - src.models.trainer - INFO - Hyperparameter tuning completed for random_forest in 9.57s
+2025-07-28 11:40:10,683 - src.models.trainer - INFO - Best parameters: {'max_depth': 10, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 200}
+2025-07-28 11:40:10,683 - src.models.trainer - INFO - Best cross-validation score: 0.8000
+2025-07-28 11:40:10,843 - src.models.trainer - INFO - Performing cross-validation for random_forest
+2025-07-28 11:40:12,819 - src.models.trainer - INFO - Cross-validation results for random_forest: {'cv_accuracy_mean': np.float64(0.7777777777777777), 'cv_accuracy_std': np.float64(0.3142696805273545), 'cv_precision_macro_mean': np.float64(0.7777777777777777), 'cv_precision_macro_std': np.float64(0.3142696805273545), 'cv_recall_macro_mean': np.float64(0.75), 'cv_recall_macro_std': np.float64(0.3535533905932738), 'cv_f1_macro_mean': np.float64(0.6388888888888888), 'cv_f1_macro_std': np.float64(0.30681558381075724)}
+2025-07-28 11:40:12,820 - src.models.trainer - INFO - Successfully trained random_forest model in 11.71s
+2025-07-28 11:40:12,820 - src.models.trainer - INFO - Model training completed. Trained 1 models.
+2025-07-28 11:40:12,820 - src.models.evaluator - INFO - Evaluating model: random_forest
+2025-07-28 11:40:12,848 - src.models.evaluator - WARNING - Could not calculate Average Precision: pos_label=1 is not a valid label. It should be one of ['neptune', 'normal']
+2025-07-28 11:40:12,853 - src.models.evaluator - WARNING - Could not calculate ROC analysis: y_true takes value in {'neptune', 'normal'} and pos_label is not specified: either make y_true take value in {0, 1} or {-1, 1} or pass pos_label explicitly.
+2025-07-28 11:40:12,854 - src.models.evaluator - WARNING - Could not calculate PR analysis: y_true takes value in {'neptune', 'normal'} and pos_label is not specified: either make y_true take value in {0, 1} or {-1, 1} or pass pos_label explicitly.
+2025-07-28 11:40:12,860 - src.models.evaluator - INFO - Evaluation completed for random_forest
+2025-07-28 11:40:12,861 - src.models.evaluator - INFO -   Accuracy: 1.0000
+2025-07-28 11:40:12,861 - src.models.evaluator - INFO -   F1-Score: 1.0000
+2025-07-28 11:40:12,861 - src.models.evaluator - INFO -   Inference time: 0.0130s
+2025-07-28 11:40:12,863 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmpfzqv3b6g
+2025-07-28 11:40:12,864 - src.models.registry - INFO - Registering model: random_forest v1.0.0
+2025-07-28 11:40:12,905 - src.models.registry - INFO - Model saved to: C:\Users\theja\AppData\Local\Temp\tmpfzqv3b6g\models\random_forest_1.0.0_20250728_114012_3c313674.pkl
+2025-07-28 11:40:12,906 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmpfzqv3b6g\metadata\random_forest_1.0.0_20250728_114012_3c313674_metadata.json
+2025-07-28 11:40:12,915 - src.models.registry - INFO - Model registered successfully with ID: random_forest_1.0.0_20250728_114012_3c313674
+2025-07-28 11:40:12,915 - src.models.registry - INFO - Retrieving model: random_forest_1.0.0_20250728_114012_3c313674
+2025-07-28 11:40:12,953 - src.models.registry - INFO - Model random_forest_1.0.0_20250728_114012_3c313674 retrieved successfully
+2025-07-28 11:40:12,968 - nids.data.cicids - INFO - Loading CICIDS dataset from C:\Users\theja\AppData\Local\Temp\tmpx8w64ay7\test_cicids.csv
+2025-07-28 11:40:12,968 - nids.data.cicids - INFO - Loading file directly (0.00 MB)
+2025-07-28 11:40:12,969 - nids.data.cicids - WARNING - chardet not available, using utf-8 encoding
+2025-07-28 11:40:12,971 - nids.data.cicids - INFO - Cleaned column names for consistency
+2025-07-28 11:40:12,972 - nids.data.cicids - INFO - Successfully loaded 10 records with 11 columns
+2025-07-28 11:40:12,974 - src.models.trainer - INFO - Starting model training process
+2025-07-28 11:40:12,975 - src.models.trainer - INFO - Training random_forest model
+2025-07-28 11:40:12,975 - src.models.trainer - INFO - Starting hyperparameter tuning for random_forest
+2025-07-28 11:40:18,584 - src.models.trainer - INFO - Hyperparameter tuning completed for random_forest in 5.61s
+2025-07-28 11:40:18,585 - src.models.trainer - INFO - Best parameters: {'max_depth': 10, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 100}
+2025-07-28 11:40:18,585 - src.models.trainer - INFO - Best cross-validation score: 0.6000
+2025-07-28 11:40:18,665 - src.models.trainer - INFO - Performing cross-validation for random_forest
+2025-07-28 11:40:19,685 - src.models.trainer - INFO - Cross-validation results for random_forest: {'cv_accuracy_mean': np.float64(0.7777777777777777), 'cv_accuracy_std': np.float64(0.15713484026367724), 'cv_precision_macro_mean': np.float64(0.5555555555555555), 'cv_precision_macro_std': np.float64(0.31426968052735443), 'cv_recall_macro_mean': np.float64(0.6666666666666666), 'cv_recall_macro_std': np.float64(0.23570226039551584), 'cv_f1_macro_mean': np.float64(0.6), 'cv_f1_macro_std': np.float64(0.282842712474619)}
+2025-07-28 11:40:19,686 - src.models.trainer - INFO - Successfully trained random_forest model in 6.71s
+2025-07-28 11:40:19,686 - src.models.trainer - INFO - Model training completed. Trained 1 models.
+2025-07-28 11:40:19,687 - src.models.evaluator - INFO - Evaluating model: random_forest
+2025-07-28 11:40:19,707 - src.models.evaluator - WARNING - Could not calculate Average Precision: pos_label=1 is not a valid label. It should be one of ['benign', 'ddos']
+2025-07-28 11:40:19,713 - src.models.evaluator - WARNING - Could not calculate ROC analysis: y_true takes value in {'benign', 'ddos'} and pos_label is not specified: either make y_true take value in {0, 1} or {-1, 1} or pass pos_label explicitly.
+2025-07-28 11:40:19,713 - src.models.evaluator - WARNING - Could not calculate PR analysis: y_true takes value in {'benign', 'ddos'} and pos_label is not specified: either make y_true take value in {0, 1} or {-1, 1} or pass pos_label explicitly.
+2025-07-28 11:40:19,717 - src.models.evaluator - INFO - Evaluation completed for random_forest
+2025-07-28 11:40:19,717 - src.models.evaluator - INFO -   Accuracy: 1.0000
+2025-07-28 11:40:19,717 - src.models.evaluator - INFO -   F1-Score: 1.0000
+2025-07-28 11:40:19,718 - src.models.evaluator - INFO -   Inference time: 0.0070s
+2025-07-28 11:40:19,721 - nids.data.nsl_kdd - INFO - Loading NSL-KDD dataset from C:\Users\theja\AppData\Local\Temp\tmp1eb33wo6\invalid.csv
+2025-07-28 11:40:19,722 - nids.data.nsl_kdd - WARNING - chardet not available, using utf-8 encoding
+2025-07-28 11:40:19,724 - nids.data.nsl_kdd - ERROR - Failed to load data from C:\Users\theja\AppData\Local\Temp\tmp1eb33wo6\invalid.csv: Unexpected number of columns: 3. Expected 43 (training) or 42 (test)
+2025-07-28 11:40:19,729 - nids.preprocessing.cleaner - INFO - Fitting feature cleaner...
+2025-07-28 11:40:19,730 - nids.preprocessing.cleaner - INFO - Input data shape: (4, 3)
+2025-07-28 11:40:19,735 - nids.preprocessing.cleaner - INFO - High correlation (0.966) between feature1 and feature3
+2025-07-28 11:40:19,735 - nids.preprocessing.cleaner - INFO -   Removing feature1 (variance: 1.555556)
+2025-07-28 11:40:19,735 - nids.preprocessing.cleaner - INFO - Features to remove (high_correlation): ['feature1']
+2025-07-28 11:40:19,736 - nids.preprocessing.cleaner - INFO - Features to keep: 2 out of 3
+2025-07-28 11:40:19,736 - nids.preprocessing.cleaner - INFO - Features to remove: 1
+2025-07-28 11:40:19,736 - nids.preprocessing.cleaner - INFO - Cleaning data with shape: (4, 3)
+2025-07-28 11:40:19,737 - nids.preprocessing.cleaner - INFO - Removed 1 features
+2025-07-28 11:40:19,738 - nids.preprocessing.cleaner - INFO - Cleaned data shape: (4, 2)
