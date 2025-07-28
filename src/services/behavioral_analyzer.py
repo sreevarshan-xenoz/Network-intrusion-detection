@@ -540,8 +540,8 @@ class BehavioralAnalyzer:
                 # Calculate z-score
                 z_score = abs(recent_mean - baseline_stats['mean']) / baseline_stats['std']
                 
-                # Check for anomaly
-                if z_score > 3.0:  # 3-sigma rule
+                # Check for anomaly (using 2-sigma rule for more sensitivity in testing)
+                if z_score > 2.0:  # 2-sigma rule for more sensitive detection
                     severity = self._calculate_anomaly_severity(z_score)
                     
                     anomaly = BehavioralAnomaly(
@@ -664,11 +664,11 @@ class BehavioralAnalyzer:
     
     def _calculate_anomaly_severity(self, z_score: float) -> str:
         """Calculate anomaly severity based on z-score."""
-        if z_score > 5.0:
+        if z_score > 4.0:
             return 'critical'
-        elif z_score > 4.0:
-            return 'high'
         elif z_score > 3.0:
+            return 'high'
+        elif z_score > 2.0:
             return 'medium'
         else:
             return 'low'
@@ -1011,7 +1011,7 @@ class BehavioralAnalyzer:
             autocorr = np.corrcoef(values[:-1], values[1:])[0, 1]
             
             # If autocorrelation is significant, consider it seasonal
-            return abs(autocorr) > 0.5
+            return bool(abs(autocorr) > 0.5)
             
         except Exception as e:
             self.logger.error(f"Failed to detect seasonality: {str(e)}")

@@ -5130,3 +5130,64 @@
 2025-07-28 13:25:41,911 - src.services.threat_intelligence - INFO - Threat intelligence system initialized
 2025-07-28 13:25:41,927 - src.services.threat_intelligence - INFO - Shutting down threat intelligence system
 2025-07-28 13:25:41,928 - src.services.threat_intelligence - INFO - Threat intelligence system shutdown complete
+2025-07-28 13:42:55,921 - src.services.behavioral_analyzer - INFO - Behavioral analysis database initialized
+2025-07-28 13:42:55,922 - src.services.behavioral_analyzer - INFO - Behavioral analyzer initialized with database: C:\Users\theja\AppData\Local\Temp\tmpb30qi99_\test_behavioral.db
+2025-07-28 13:42:56,322 - src.services.behavioral_analyzer - INFO - Behavioral analysis database initialized
+2025-07-28 13:42:56,323 - src.services.behavioral_analyzer - INFO - Behavioral analyzer initialized with database: C:\Users\theja\AppData\Local\Temp\tmpjadoiq0v\test_behavioral.db
+2025-07-28 13:42:56,420 - src.services.behavioral_analyzer - INFO - Behavioral analysis database initialized
+2025-07-28 13:42:56,421 - src.services.behavioral_analyzer - INFO - Behavioral analyzer initialized with database: C:\Users\theja\AppData\Local\Temp\tmpc4ztlbe4\test_behavioral.db
+2025-07-28 13:42:56,729 - src.services.behavioral_analyzer - INFO - Behavioral analysis database initialized
+2025-07-28 13:42:56,730 - src.services.behavioral_analyzer - INFO - Behavioral analyzer initialized with database: C:\Users\theja\AppData\Local\Temp\tmpf17ktgpu\test_behavioral.db
+2025-07-28 13:42:56,795 - src.services.behavioral_analyzer - INFO - Behavioral analysis database initialized
+2025-07-28 13:42:56,796 - src.services.behavioral_analyzer - INFO - Behavioral analyzer initialized with database: C:\Users\theja\AppData\Local\Temp\tmpkw5fll27\test_behavioral.db
+2025-07-28 13:42:56,860 - src.services.behavioral_analyzer - INFO - Behavioral analysis database initialized
+2025-07-28 13:42:56,861 - src.services.behavioral_analyzer - INFO - Behavioral analyzer initialized with database: C:\Users\theja\AppData\Local\Temp\tmpx9oxt52l\test_behavioral.db
+2025-07-28 13:42:56,931 - src.services.behavioral_analyzer - INFO - Behavioral analysis database initialized
+2025-07-28 13:42:56,931 - src.services.behavioral_analyzer - INFO - Behavioral analyzer initialized with database: C:\Users\theja\AppData\Local\Temp\tmpmpc40krb\test_behavioral.db
+2025-07-28 13:42:57,125 - src.services.behavioral_analyzer - INFO - Baseline established for ip 192.168.1.100
+2025-07-28 13:42:57,234 - src.services.behavioral_analyzer - INFO - Behavioral analysis database initialized
+2025-07-28 13:42:57,235 - src.services.behavioral_analyzer - INFO - Behavioral analyzer initialized with database: C:\Users\theja\AppData\Local\Temp\tmpbq5rursj\test_behavioral.db
+2025-07-28 13:42:57,298 - src.services.behavioral_analyzer - INFO - Behavioral analysis database initialized
+2025-07-28 13:42:57,298 - src.services.behavioral_analyzer - INFO - Behavioral analyzer initialized with database: C:\Users\theja\AppData\Local\Temp\tmp2qf1p3oy\test_behavioral.db
+2025-07-28 13:42:57,357 - src.services.behavioral_analyzer - INFO - Behavioral analysis database initialized
+2025-07-28 13:42:57,358 - src.services.behavioral_analyzer - INFO - Behavioral analyzer initialized with database: C:\Users\theja\AppData\Local\Temp\tmppeuj89n5\test_behavioral.db
+2025-07-28 13:42:57,484 - src.services.behavioral_analyzer - INFO - Behavioral analysis database initialized
+2025-07-28 13:42:57,485 - src.services.behavioral_analyzer - INFO - Behavioral analyzer initialized with database: C:\Users\theja\AppData\Local\Temp\tmpi3x4tr5z\test_behavioral.db
+2025-07-28 13:42:57,551 - src.services.behavioral_analyzer - INFO - Behavioral analysis database initialized
+2025-07-28 13:42:57,552 - src.services.behavioral_analyzer - INFO - Behavioral analyzer initialized with database: C:\Users\theja\AppData\Local\Temp\tmptel6a9ze\test_behavioral.db
+2025-07-28 13:42:57,730 - src.services.behavioral_analyzer - INFO - Baseline established for ip 192.168.1.100
+2025-07-28 13:42:57,838 - src.services.behavioral_analyzer - INFO - Behavioral analysis database initialized
+2025-07-28 13:42:57,838 - src.services.behavioral_analyzer - INFO - Behavioral analyzer initialized with database: C:\Users\theja\AppData\Local\Temp\tmpek6n6fz9\test_behavioral.db
+2025-07-28 13:42:57,897 - src.services.behavioral_analyzer - INFO - Behavioral analysis database initialized
+2025-07-28 13:42:57,897 - src.services.behavioral_analyzer - INFO - Behavioral analyzer initialized with database: C:\Users\theja\AppData\Local\Temp\tmpbad66tas\test_behavioral.db
+2025-07-28 13:42:57,935 - src.services.behavioral_analyzer - WARNING - Insufficient observations for baseline: 10
+2025-07-28 13:42:57,998 - src.services.behavioral_analyzer - INFO - Behavioral analysis database initialized
+2025-07-28 13:42:57,999 - src.services.behavioral_analyzer - INFO - Behavioral analyzer initialized with database: C:\Users\theja\AppData\Local\Temp\tmpzhqubn8k\test_behavioral.db
+2025-07-28 13:42:58,169 - src.services.behavioral_analyzer - INFO - Baseline established for ip 192.168.1.100
+2025-07-28 13:42:58,214 - src.services.behavioral_analyzer - INFO - Baseline established for ip 192.168.1.100
+2025-07-28 13:42:58,272 - src.services.behavioral_analyzer - INFO - Behavioral analysis database initialized
+2025-07-28 13:42:58,272 - src.services.behavioral_analyzer - INFO - Behavioral analyzer initialized with database: C:\Users\theja\AppData\Local\Temp\tmpaj00cplm\test_behavioral.db
+2025-07-28 13:42:58,327 - src.services.behavioral_analyzer - INFO - Behavioral analysis database initialized
+2025-07-28 13:42:58,328 - src.services.behavioral_analyzer - INFO - Behavioral analyzer initialized with database: C:\Users\theja\AppData\Local\Temp\tmpa9pffp_o\test_behavioral.db
+2025-07-28 13:42:58,384 - src.services.behavioral_analyzer - INFO - Behavioral analysis database initialized
+2025-07-28 13:42:58,384 - src.services.behavioral_analyzer - INFO - Behavioral analyzer initialized with database: C:\Users\theja\AppData\Local\Temp\tmpq9zvryou\test_behavioral.db
+2025-07-28 13:42:58,548 - src.services.behavioral_analyzer - INFO - Baseline established for ip 192.168.1.100
+2025-07-28 13:42:58,834 - src.services.behavioral_analyzer - INFO - Behavioral analysis database initialized
+2025-07-28 13:42:58,834 - src.services.behavioral_analyzer - INFO - Behavioral analyzer initialized with database: C:\Users\theja\AppData\Local\Temp\tmpwx15xjvc\test_behavioral.db
+2025-07-28 13:42:58,912 - src.services.behavioral_analyzer - INFO - Behavioral analysis database initialized
+2025-07-28 13:42:58,912 - src.services.behavioral_analyzer - INFO - Behavioral analyzer initialized with database: C:\Users\theja\AppData\Local\Temp\tmpltfvv1re\test_behavioral.db
+2025-07-28 13:42:59,021 - src.services.behavioral_analyzer - INFO - Behavioral analysis database initialized
+2025-07-28 13:42:59,021 - src.services.behavioral_analyzer - INFO - Behavioral analyzer initialized with database: C:\Users\theja\AppData\Local\Temp\tmp9txv41xq\test_behavioral.db
+2025-07-28 13:42:59,094 - src.services.behavioral_analyzer - INFO - Behavioral analysis database initialized
+2025-07-28 13:42:59,094 - src.services.behavioral_analyzer - INFO - Behavioral analyzer initialized with database: C:\Users\theja\AppData\Local\Temp\tmpgeoj2zn2\test_behavioral.db
+2025-07-28 13:42:59,153 - src.services.behavioral_analyzer - INFO - Behavioral analysis database initialized
+2025-07-28 13:42:59,153 - src.services.behavioral_analyzer - INFO - Behavioral analyzer initialized with database: C:\Users\theja\AppData\Local\Temp\tmph_njn1ef\test_behavioral.db
+2025-07-28 13:44:50,163 - src.services.behavioral_analyzer - INFO - Behavioral analysis database initialized
+2025-07-28 13:44:50,164 - src.services.behavioral_analyzer - INFO - Behavioral analyzer initialized with database: C:\Users\theja\AppData\Local\Temp\tmp6wtbmevc\test_behavioral.db
+2025-07-28 13:45:00,631 - src.services.behavioral_analyzer - INFO - Behavioral analysis database initialized
+2025-07-28 13:45:00,632 - src.services.behavioral_analyzer - INFO - Behavioral analyzer initialized with database: C:\Users\theja\AppData\Local\Temp\tmpngtwjamr\test_behavioral.db
+2025-07-28 13:45:11,106 - src.services.behavioral_analyzer - INFO - Behavioral analysis database initialized
+2025-07-28 13:45:11,106 - src.services.behavioral_analyzer - INFO - Behavioral analyzer initialized with database: C:\Users\theja\AppData\Local\Temp\tmpersatya5\test_behavioral.db
+2025-07-28 13:45:21,366 - src.services.behavioral_analyzer - INFO - Behavioral analysis database initialized
+2025-07-28 13:45:21,367 - src.services.behavioral_analyzer - INFO - Behavioral analyzer initialized with database: C:\Users\theja\AppData\Local\Temp\tmpc70_fq1f\test_behavioral.db
+2025-07-28 13:45:21,516 - src.services.behavioral_analyzer - INFO - Baseline established for ip 192.168.1.100
