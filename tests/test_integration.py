@@ -102,11 +102,11 @@ class TestDataPipelineIntegration:
         data = loader.load_data(sample_nsl_kdd_data)
         
         assert not data.empty
-        assert 'label' in data.columns
+        assert 'attack_type' in data.columns
         
         # Step 2: Preprocess data
-        X = data.drop('label', axis=1)
-        y = data['label']
+        X = data.drop('attack_type', axis=1)
+        y = data['attack_type']
         
         # Feature encoding
         encoder = FeatureEncoder()
