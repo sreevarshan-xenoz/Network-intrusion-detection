@@ -5112,3 +5112,21 @@
 2025-07-28 12:43:11,549 - src.models.retraining - INFO - Retraining scheduler stopped
 2025-07-28 12:43:11,550 - src.models.retraining - INFO - Cancelled pending job: drift_retrain_test_model_v1.0_1753686791
 2025-07-28 12:43:11,550 - src.models.retraining - INFO - Retraining pipeline shutdown complete
+2025-07-28 13:24:38,141 - src.services.threat_intelligence - INFO - Threat intelligence database initialized
+2025-07-28 13:24:38,142 - src.services.threat_intelligence - WARNING - GeoIP database not found: nonexistent.mmdb
+2025-07-28 13:24:38,143 - src.services.threat_intelligence - INFO - Download GeoLite2-City.mmdb from MaxMind to enable geolocation features
+2025-07-28 13:24:38,143 - src.services.threat_intelligence - INFO - Threat intelligence system initialized
+2025-07-28 13:24:38,146 - src.services.threat_intelligence - INFO - Shutting down threat intelligence system
+2025-07-28 13:24:38,146 - src.services.threat_intelligence - INFO - Threat intelligence system shutdown complete
+2025-07-28 13:25:11,656 - src.services.threat_intelligence - INFO - Threat intelligence database initialized
+2025-07-28 13:25:11,657 - src.services.threat_intelligence - WARNING - GeoIP database not found: nonexistent.mmdb
+2025-07-28 13:25:11,657 - src.services.threat_intelligence - INFO - Download GeoLite2-City.mmdb from MaxMind to enable geolocation features
+2025-07-28 13:25:11,658 - src.services.threat_intelligence - INFO - Threat intelligence system initialized
+2025-07-28 13:25:11,658 - src.services.threat_intelligence - INFO - Shutting down threat intelligence system
+2025-07-28 13:25:11,659 - src.services.threat_intelligence - INFO - Threat intelligence system shutdown complete
+2025-07-28 13:25:41,906 - src.services.threat_intelligence - INFO - Threat intelligence database initialized
+2025-07-28 13:25:41,909 - src.services.threat_intelligence - WARNING - GeoIP database not found: nonexistent.mmdb
+2025-07-28 13:25:41,910 - src.services.threat_intelligence - INFO - Download GeoLite2-City.mmdb from MaxMind to enable geolocation features
+2025-07-28 13:25:41,911 - src.services.threat_intelligence - INFO - Threat intelligence system initialized
+2025-07-28 13:25:41,927 - src.services.threat_intelligence - INFO - Shutting down threat intelligence system
+2025-07-28 13:25:41,928 - src.services.threat_intelligence - INFO - Threat intelligence system shutdown complete
