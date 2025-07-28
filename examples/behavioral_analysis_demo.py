@@ -15,11 +15,11 @@ from datetime import datetime, timedelta
 import random
 import numpy as np
 
-# Add the src directory to the path
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
+# Add the project root to the path
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
-from services.behavioral_analyzer import BehavioralAnalyzer
-from services.interfaces import NetworkTrafficRecord
+from src.services.behavioral_analyzer import BehavioralAnalyzer
+from src.services.interfaces import NetworkTrafficRecord
 
 
 def generate_sample_traffic(source_ip: str, base_time: datetime, hours: int = 24) -> list:
