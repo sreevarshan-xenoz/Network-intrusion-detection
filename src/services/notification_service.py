@@ -1,0 +1,582 @@
+"""
+Multi-channel notification service for security alerts.
+"""
+import json
+import logging
+import smtplib
+import requests
+from abc import ABC, abstractmethod
+from datetime import datetime
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+from typing import Dict, Any, List, Optional, Callable
+from threading import Thread, Lock
+from queue import Queue, Empty
+import time
+
+from ..services.interfaces import SecurityAlert, NotificationService
+from ..utils.config import config
+
+
+class NotificationChannel(ABC):
+    """Abstract base class for notification channels."""
+    
+    @abstractmethod
+    def send(self, alert: SecurityAlert, config: Dict[str, Any]) -> bool:
+        """Send alert through this channel."""
+        pass
+    
+    @abstractmethod
+    def validate_config(self, config: Dict[str, Any]) -> bool:
+        """Validate channel configuration."""
+        pass
+
+
+class EmailNotificationChannel(NotificationChannel):
+    """Email notification channel."""
+    
+    def send(self, alert: SecurityAlert, config: Dict[str, Any]) -> bool:
+        """Send alert via email."""
+        try:
+            smtp_server = config.get('smtp_server', 'localhost')
+            smtp_port = config.get('smtp_port', 587)
+            username = config.get('username')
+            password = config.get('password')
+            recipients = config.get('recipients', [])
+            sender = config.get('sender', 'nids@localhost')
+            use_tls = config.get('use_tls', True)
+            
+            if not recipients:
+                logging.warning("No email recipients configured")
+                return False
+            
+            # Create message
+            msg = MIMEMultipart()
+            msg['From'] = sender
+            msg['To'] = ', '.join(recipients)
+            msg['Subject'] = f"[NIDS Alert - {alert.severity}] {alert.attack_type} detected"
+            
+            # Create email body
+            body = self._create_email_body(alert)
+            msg.attach(MIMEText(body, 'html'))
+            
+            # Send email
+            with smtplib.SMTP(smtp_server, smtp_port) as server:
+                if use_tls:
+                    server.starttls()
+                if username and password:
+                    server.login(username, password)
+                
+                text = msg.as_string()
+                server.sendmail(sender, recipients, text)
+            
+            logging.info("Email alert sent successfully for alert %s", alert.alert_id)
+            return True
+            
+        except Exception as e:
+            logging.error("Failed to send email alert %s: %s", alert.alert_id, e)
+            return False
+    
+    def validate_config(self, config: Dict[str, Any]) -> bool:
+        """Validate email configuration."""
+        required_fields = ['smtp_server', 'recipients']
+        return all(field in config for field in required_fields)
+    
+    def _create_email_body(self, alert: SecurityAlert) -> str:
+        """Create HTML email body."""
+        severity_colors = {
+            'LOW': '#28a745',
+            'MEDIUM': '#ffc107', 
+            'HIGH': '#fd7e14',
+            'CRITICAL': '#dc3545'
+        }
+        
+        color = severity_colors.get(alert.severity, '#6c757d')
+        
+        return f"""
+        <html>
+        <body>
+            <h2 style="color: {color};">Network Intrusion Detection Alert</h2>
+            
+            <table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse;">
+                <tr>
+                    <td><strong>Alert ID:</strong></td>
+                    <td>{alert.alert_id}</td>
+                </tr>
+                <tr>
+                    <td><strong>Timestamp:</strong></td>
+                    <td>{alert.timestamp.strftime('%Y-%m-%d %H:%M:%S UTC')}</td>
+                </tr>
+                <tr>
+                    <td><strong>Severity:</strong></td>
+                    <td style="color: {color}; font-weight: bold;">{alert.severity}</td>
+                </tr>
+                <tr>
+                    <td><strong>Attack Type:</strong></td>
+                    <td>{alert.attack_type}</td>
+                </tr>
+                <tr>
+                    <td><strong>Source IP:</strong></td>
+                    <td>{alert.source_ip}</td>
+                </tr>
+                <tr>
+                    <td><strong>Destination IP:</strong></td>
+                    <td>{alert.destination_ip}</td>
+                </tr>
+                <tr>
+                    <td><strong>Confidence Score:</strong></td>
+                    <td>{alert.confidence_score:.2%}</td>
+                </tr>
+            </table>
+            
+            <h3>Description</h3>
+            <p>{alert.description}</p>
+            
+            <h3>Recommended Action</h3>
+            <p>{alert.recommended_action}</p>
+            
+            <hr>
+            <p><small>This alert was generated by the Network Intrusion Detection System.</small></p>
+        </body>
+        </html>
+        """
+
+
+class WebhookNotificationChannel(NotificationChannel):
+    """Webhook notification channel."""
+    
+    def send(self, alert: SecurityAlert, config: Dict[str, Any]) -> bool:
+        """Send alert via webhook."""
+        try:
+            url = config.get('url')
+            if not url:
+                logging.warning("No webhook URL configured")
+                return False
+            
+            timeout = config.get('timeout', 10)
+            headers = config.get('headers', {'Content-Type': 'application/json'})
+            method = config.get('method', 'POST').upper()
+            
+            # Create payload
+            payload = self._create_webhook_payload(alert, config)
+            
+            # Send request
+            if method == 'POST':
+                response = requests.post(url, json=payload, headers=headers, timeout=timeout)
+            elif method == 'PUT':
+                response = requests.put(url, json=payload, headers=headers, timeout=timeout)
+            else:
+                logging.error("Unsupported webhook method: %s", method)
+                return False
+            
+            response.raise_for_status()
+            logging.info("Webhook alert sent successfully for alert %s", alert.alert_id)
+            return True
+            
+        except Exception as e:
+            logging.error("Failed to send webhook alert %s: %s", alert.alert_id, e)
+            return False
+    
+    def validate_config(self, config: Dict[str, Any]) -> bool:
+        """Validate webhook configuration."""
+        return 'url' in config
+    
+    def _create_webhook_payload(self, alert: SecurityAlert, config: Dict[str, Any]) -> Dict[str, Any]:
+        """Create webhook payload."""
+        payload_format = config.get('format', 'standard')
+        
+        if payload_format == 'slack':
+            return self._create_slack_payload(alert)
+        elif payload_format == 'teams':
+            return self._create_teams_payload(alert)
+        else:
+            return self._create_standard_payload(alert)
+    
+    def _create_standard_payload(self, alert: SecurityAlert) -> Dict[str, Any]:
+        """Create standard webhook payload."""
+        return {
+            'alert_id': alert.alert_id,
+            'timestamp': alert.timestamp.isoformat(),
+            'severity': alert.severity,
+            'attack_type': alert.attack_type,
+            'source_ip': alert.source_ip,
+            'destination_ip': alert.destination_ip,
+            'confidence_score': alert.confidence_score,
+            'description': alert.description,
+            'recommended_action': alert.recommended_action
+        }
+    
+    def _create_slack_payload(self, alert: SecurityAlert) -> Dict[str, Any]:
+        """Create Slack-formatted payload."""
+        severity_colors = {
+            'LOW': 'good',
+            'MEDIUM': 'warning',
+            'HIGH': 'danger',
+            'CRITICAL': 'danger'
+        }
+        
+        return {
+            'text': f"Network Intrusion Detection Alert - {alert.severity}",
+            'attachments': [{
+                'color': severity_colors.get(alert.severity, 'warning'),
+                'fields': [
+                    {'title': 'Attack Type', 'value': alert.attack_type, 'short': True},
+                    {'title': 'Severity', 'value': alert.severity, 'short': True},
+                    {'title': 'Source IP', 'value': alert.source_ip, 'short': True},
+                    {'title': 'Destination IP', 'value': alert.destination_ip, 'short': True},
+                    {'title': 'Confidence', 'value': f"{alert.confidence_score:.2%}", 'short': True},
+                    {'title': 'Timestamp', 'value': alert.timestamp.strftime('%Y-%m-%d %H:%M:%S UTC'), 'short': True},
+                    {'title': 'Description', 'value': alert.description, 'short': False},
+                    {'title': 'Recommended Action', 'value': alert.recommended_action, 'short': False}
+                ],
+                'footer': 'Network Intrusion Detection System',
+                'ts': int(alert.timestamp.timestamp())
+            }]
+        }
+    
+    def _create_teams_payload(self, alert: SecurityAlert) -> Dict[str, Any]:
+        """Create Microsoft Teams-formatted payload."""
+        severity_colors = {
+            'LOW': '28a745',
+            'MEDIUM': 'ffc107',
+            'HIGH': 'fd7e14', 
+            'CRITICAL': 'dc3545'
+        }
+        
+        return {
+            '@type': 'MessageCard',
+            '@context': 'http://schema.org/extensions',
+            'themeColor': severity_colors.get(alert.severity, '6c757d'),
+            'summary': f"NIDS Alert - {alert.attack_type}",
+            'sections': [{
+                'activityTitle': f"Network Intrusion Detection Alert - {alert.severity}",
+                'activitySubtitle': f"{alert.attack_type} detected",
+                'facts': [
+                    {'name': 'Source IP', 'value': alert.source_ip},
+                    {'name': 'Destination IP', 'value': alert.destination_ip},
+                    {'name': 'Confidence', 'value': f"{alert.confidence_score:.2%}"},
+                    {'name': 'Timestamp', 'value': alert.timestamp.strftime('%Y-%m-%d %H:%M:%S UTC')}
+                ],
+                'text': f"**Description:** {alert.description}\n\n**Recommended Action:** {alert.recommended_action}"
+            }]
+        }
+
+
+class LogNotificationChannel(NotificationChannel):
+    """Log-based notification channel."""
+    
+    def send(self, alert: SecurityAlert, config: Dict[str, Any]) -> bool:
+        """Send alert to log file."""
+        try:
+            log_level = config.get('level', 'WARNING').upper()
+            log_format = config.get('format', 'json')
+            logger_name = config.get('logger', 'nids.alerts')
+            
+            logger = logging.getLogger(logger_name)
+            
+            if log_format == 'json':
+                message = json.dumps({
+                    'alert_id': alert.alert_id,
+                    'timestamp': alert.timestamp.isoformat(),
+                    'severity': alert.severity,
+                    'attack_type': alert.attack_type,
+                    'source_ip': alert.source_ip,
+                    'destination_ip': alert.destination_ip,
+                    'confidence_score': alert.confidence_score,
+                    'description': alert.description,
+                    'recommended_action': alert.recommended_action
+                })
+            else:
+                message = (
+                    f"ALERT [{alert.severity}] {alert.attack_type} - "
+                    f"{alert.source_ip} -> {alert.destination_ip} "
+                    f"(confidence: {alert.confidence_score:.2%}) - {alert.description}"
+                )
+            
+            # Log at appropriate level
+            if log_level == 'CRITICAL':
+                logger.critical(message)
+            elif log_level == 'ERROR':
+                logger.error(message)
+            elif log_level == 'WARNING':
+                logger.warning(message)
+            elif log_level == 'INFO':
+                logger.info(message)
+            else:
+                logger.debug(message)
+            
+            return True
+            
+        except Exception as e:
+            logging.error("Failed to log alert %s: %s", alert.alert_id, e)
+            return False
+    
+    def validate_config(self, config: Dict[str, Any]) -> bool:
+        """Validate log configuration."""
+        return True  # Log channel always valid
+
+
+class MultiChannelNotificationService(NotificationService):
+    """Multi-channel notification service implementation."""
+    
+    def __init__(self, config_dict: Optional[Dict[str, Any]] = None):
+        """Initialize notification service."""
+        self.logger = logging.getLogger(__name__)
+        self.config = config_dict or config.get('notifications', {})
+        
+        # Available channels
+        self.channels = {
+            'email': EmailNotificationChannel(),
+            'webhook': WebhookNotificationChannel(),
+            'log': LogNotificationChannel()
+        }
+        
+        # Channel configurations
+        self.channel_configs: Dict[str, Dict[str, Any]] = {}
+        
+        # Async notification queue
+        self.notification_queue: Queue = Queue()
+        self.worker_thread: Optional[Thread] = None
+        self.running = False
+        
+        # Statistics
+        self._stats = {
+            'total_sent': 0,
+            'total_failed': 0,
+            'by_channel': {channel: {'sent': 0, 'failed': 0} for channel in self.channels},
+            'by_severity': {'LOW': 0, 'MEDIUM': 0, 'HIGH': 0, 'CRITICAL': 0}
+        }
+        self._stats_lock = Lock()
+        
+        # Load initial configuration
+        self._load_channel_configs()
+        
+        # Start worker thread
+        self._start_worker()
+        
+        self.logger.info("NotificationService initialized with %d channels", len(self.channels))
+    
+    def _load_channel_configs(self) -> None:
+        """Load channel configurations from config."""
+        for channel_name in self.channels:
+            channel_config = self.config.get(channel_name, {})
+            if channel_config.get('enabled', False):
+                self.channel_configs[channel_name] = channel_config
+                self.logger.info("Loaded configuration for %s channel", channel_name)
+    
+    def _start_worker(self) -> None:
+        """Start background worker thread for async notifications."""
+        self.running = True
+        self.worker_thread = Thread(target=self._notification_worker, daemon=True)
+        self.worker_thread.start()
+        self.logger.info("Notification worker thread started")
+    
+    def _notification_worker(self) -> None:
+        """Background worker for processing notifications."""
+        while self.running:
+            try:
+                # Get notification from queue with timeout
+                notification_task = self.notification_queue.get(timeout=1.0)
+                
+                alert, channels = notification_task
+                self._send_notification_sync(alert, channels)
+                
+                self.notification_queue.task_done()
+                
+            except Empty:
+                continue
+            except Exception as e:
+                self.logger.error("Error in notification worker: %s", e)
+    
+    def send_alert(self, alert: SecurityAlert, channels: List[str]) -> bool:
+        """Send alert through specified channels (async)."""
+        # Queue notification for background processing
+        self.notification_queue.put((alert, channels))
+        return True
+    
+    def send_alert_sync(self, alert: SecurityAlert, channels: List[str]) -> bool:
+        """Send alert through specified channels (synchronous)."""
+        return self._send_notification_sync(alert, channels)
+    
+    def _send_notification_sync(self, alert: SecurityAlert, channels: List[str]) -> bool:
+        """Send notification synchronously."""
+        success_count = 0
+        total_channels = len(channels)
+        
+        for channel_name in channels:
+            if channel_name not in self.channels:
+                self.logger.warning("Unknown notification channel: %s", channel_name)
+                continue
+            
+            if channel_name not in self.channel_configs:
+                self.logger.warning("Channel %s not configured or disabled", channel_name)
+                continue
+            
+            channel = self.channels[channel_name]
+            channel_config = self.channel_configs[channel_name]
+            
+            try:
+                success = channel.send(alert, channel_config)
+                
+                with self._stats_lock:
+                    if success:
+                        self._stats['by_channel'][channel_name]['sent'] += 1
+                        success_count += 1
+                    else:
+                        self._stats['by_channel'][channel_name]['failed'] += 1
+                
+            except Exception as e:
+                self.logger.error("Error sending alert via %s: %s", channel_name, e)
+                with self._stats_lock:
+                    self._stats['by_channel'][channel_name]['failed'] += 1
+        
+        # Update overall statistics
+        with self._stats_lock:
+            if success_count > 0:
+                self._stats['total_sent'] += 1
+                self._stats['by_severity'][alert.severity] += 1
+            else:
+                self._stats['total_failed'] += 1
+        
+        success = success_count > 0
+        if success:
+            self.logger.info(
+                "Alert %s sent successfully via %d/%d channels",
+                alert.alert_id, success_count, total_channels
+            )
+        else:
+            self.logger.error(
+                "Failed to send alert %s via any channel",
+                alert.alert_id
+            )
+        
+        return success
+    
+    def configure_channels(self, config: Dict[str, Any]) -> None:
+        """Configure notification channels."""
+        for channel_name, channel_config in config.items():
+            if channel_name not in self.channels:
+                self.logger.warning("Unknown channel in configuration: %s", channel_name)
+                continue
+            
+            channel = self.channels[channel_name]
+            
+            # Validate configuration
+            if not channel.validate_config(channel_config):
+                self.logger.error("Invalid configuration for channel %s", channel_name)
+                continue
+            
+            # Enable/disable channel
+            if channel_config.get('enabled', False):
+                self.channel_configs[channel_name] = channel_config
+                self.logger.info("Channel %s configured and enabled", channel_name)
+            else:
+                if channel_name in self.channel_configs:
+                    del self.channel_configs[channel_name]
+                self.logger.info("Channel %s disabled", channel_name)
+    
+    def add_custom_channel(self, name: str, channel: NotificationChannel) -> None:
+        """Add custom notification channel."""
+        self.channels[name] = channel
+        with self._stats_lock:
+            self._stats['by_channel'][name] = {'sent': 0, 'failed': 0}
+        self.logger.info("Custom channel %s added", name)
+    
+    def remove_channel(self, name: str) -> bool:
+        """Remove notification channel."""
+        if name in self.channels:
+            del self.channels[name]
+            if name in self.channel_configs:
+                del self.channel_configs[name]
+            with self._stats_lock:
+                if name in self._stats['by_channel']:
+                    del self._stats['by_channel'][name]
+            self.logger.info("Channel %s removed", name)
+            return True
+        return False
+    
+    def get_available_channels(self) -> List[str]:
+        """Get list of available channels."""
+        return list(self.channels.keys())
+    
+    def get_configured_channels(self) -> List[str]:
+        """Get list of configured (enabled) channels."""
+        return list(self.channel_configs.keys())
+    
+    def test_channel(self, channel_name: str) -> bool:
+        """Test a notification channel with a sample alert."""
+        if channel_name not in self.channels:
+            self.logger.error("Channel %s not found", channel_name)
+            return False
+        
+        if channel_name not in self.channel_configs:
+            self.logger.error("Channel %s not configured", channel_name)
+            return False
+        
+        # Create test alert
+        test_alert = SecurityAlert(
+            alert_id="test-alert",
+            timestamp=datetime.now(),
+            severity="LOW",
+            attack_type="Test",
+            source_ip="192.168.1.100",
+            destination_ip="10.0.0.1",
+            confidence_score=0.5,
+            description="This is a test alert from the notification service.",
+            recommended_action="No action required - this is a test."
+        )
+        
+        channel = self.channels[channel_name]
+        channel_config = self.channel_configs[channel_name]
+        
+        try:
+            success = channel.send(test_alert, channel_config)
+            if success:
+                self.logger.info("Test alert sent successfully via %s", channel_name)
+            else:
+                self.logger.error("Test alert failed via %s", channel_name)
+            return success
+        except Exception as e:
+            self.logger.error("Error testing channel %s: %s", channel_name, e)
+            return False
+    
+    def get_statistics(self) -> Dict[str, Any]:
+        """Get notification statistics."""
+        with self._stats_lock:
+            return {
+                'total_sent': self._stats['total_sent'],
+                'total_failed': self._stats['total_failed'],
+                'by_channel': dict(self._stats['by_channel']),
+                'by_severity': dict(self._stats['by_severity']),
+                'configured_channels': len(self.channel_configs),
+                'queue_size': self.notification_queue.qsize()
+            }
+    
+    def reset_statistics(self) -> None:
+        """Reset notification statistics."""
+        with self._stats_lock:
+            self._stats = {
+                'total_sent': 0,
+                'total_failed': 0,
+                'by_channel': {channel: {'sent': 0, 'failed': 0} for channel in self.channels},
+                'by_severity': {'LOW': 0, 'MEDIUM': 0, 'HIGH': 0, 'CRITICAL': 0}
+            }
+        self.logger.info("Notification statistics reset")
+    
+    def shutdown(self) -> None:
+        """Shutdown notification service."""
+        self.running = False
+        
+        # Wait for queue to empty
+        self.notification_queue.join()
+        
+        # Wait for worker thread to finish
+        if self.worker_thread and self.worker_thread.is_alive():
+            self.worker_thread.join(timeout=5.0)
+        
+        self.logger.info("NotificationService shutdown complete")
+    
+    def __del__(self):
+        """Cleanup on destruction."""
+        if hasattr(self, 'running') and self.running:
+            self.shutdown()
