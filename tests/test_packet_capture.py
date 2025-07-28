@@ -338,4 +338,255 @@ class TestScapyPacketCapture:
             self.capture_service._packet_handler(packet)
         
         # Queue should still be at max size
+        assert self.capture_service.packet_queue.qsize() == self.config['queue_size']
+    
+    @patch('src.services.packet_capture.pika')
+    def test_setup_message_queue_success(self, mock_pika):
+        """Test successful RabbitMQ setup."""
+        config = self.config.copy()
+        config['use_message_queue'] = True
+        config['rabbitmq'] = {
+            'host': 'localhost',
+            'port': 5672,
+            'username': 'test',
+            'password': 'test',
+            'exchange': 'test_exchange',
+            'queue': 'test_queue'
+        }
         
+        service = ScapyPacketCapture(config)
+        
+        # Mock RabbitMQ components
+        mock_connection = Mock()
+        mock_channel = Mock()
+        mock_pika.BlockingConnection.return_value = mock_connection
+        mock_connection.channel.return_value = mock_channel
+        
+        service._setup_message_queue()
+        
+        # Verify RabbitMQ setup calls
+        mock_pika.BlockingConnection.assert_called_once()
+        mock_connection.channel.assert_called_once()
+        mock_channel.exchange_declare.assert_called_once()
+        mock_channel.queue_declare.assert_called_once()
+        mock_channel.queue_bind.assert_called_once()
+    
+    @patch('src.services.packet_capture.pika')
+    def test_setup_message_queue_failure(self, mock_pika):
+        """Test RabbitMQ setup failure."""
+        config = self.config.copy()
+        config['use_message_queue'] = True
+        
+        service = ScapyPacketCapture(config)
+        
+        # Mock connection failure
+        mock_pika.BlockingConnection.side_effect = Exception("Connection failed")
+        
+        service._setup_message_queue()
+        
+        # Should disable message queue on failure
+        assert service.use_message_queue is False
+    
+    @patch('src.services.packet_capture.sniff')
+    def test_start_capture(self, mock_sniff):
+        """Test starting packet capture."""
+        interface = "eth0"
+        
+        self.capture_service.start_capture(interface)
+        
+        assert self.capture_service.is_capturing is True
+        assert self.capture_service.capture_thread is not None
+        
+        # Give thread time to start
+        time.sleep(0.1)
+        
+        # Stop capture to clean up
+        self.capture_service.stop_capture()
+    
+    def test_start_capture_already_running(self):
+        """Test starting capture when already running."""
+        self.capture_service.is_capturing = True
+        
+        with patch('src.services.packet_capture.sniff'):
+            self.capture_service.start_capture("eth0")
+        
+        # Should not create new thread
+        assert self.capture_service.capture_thread is None
+    
+    @patch('src.services.packet_capture.sniff')
+    def test_stop_capture(self, mock_sniff):
+        """Test stopping packet capture."""
+        # Start capture first
+        self.capture_service.start_capture("eth0")
+        time.sleep(0.1)  # Let thread start
+        
+        # Stop capture
+        self.capture_service.stop_capture()
+        
+        assert self.capture_service.is_capturing is False
+    
+    def test_stop_capture_not_running(self):
+        """Test stopping capture when not running."""
+        # Should not raise exception
+        self.capture_service.stop_capture()
+        assert self.capture_service.is_capturing is False
+    
+    def test_get_packets(self):
+        """Test getting all packets from queue."""
+        # Add some mock packets to queue
+        for i in range(5):
+            mock_record = NetworkTrafficRecord(
+                timestamp=datetime.now(),
+                source_ip=f"192.168.1.{i}",
+                destination_ip="10.0.0.1",
+                source_port=12345,
+                destination_port=80,
+                protocol="tcp",
+                packet_size=1500,
+                duration=0.0,
+                flags=[],
+                features={}
+            )
+            self.capture_service.packet_queue.put_nowait(mock_record)
+        
+        packets = self.capture_service.get_packets()
+        
+        assert len(packets) == 5
+        assert all(isinstance(p, NetworkTrafficRecord) for p in packets)
+        assert self.capture_service.packet_queue.empty()
+    
+    def test_get_packets_batch(self):
+        """Test getting batch of packets."""
+        # Add more packets than batch size
+        for i in range(100):
+            mock_record = NetworkTrafficRecord(
+                timestamp=datetime.now(),
+                source_ip=f"192.168.1.{i % 255}",
+                destination_ip="10.0.0.1",
+                source_port=12345,
+                destination_port=80,
+                protocol="tcp",
+                packet_size=1500,
+                duration=0.0,
+                flags=[],
+                features={}
+            )
+            self.capture_service.packet_queue.put_nowait(mock_record)
+        
+        # Get batch
+        packets = self.capture_service.get_packets_batch(30)
+        
+        assert len(packets) == 30
+        assert self.capture_service.packet_queue.qsize() == 70
+    
+    def test_get_packets_batch_default_size(self):
+        """Test getting batch with default size."""
+        # Add packets
+        for i in range(100):
+            mock_record = NetworkTrafficRecord(
+                timestamp=datetime.now(),
+                source_ip=f"192.168.1.{i % 255}",
+                destination_ip="10.0.0.1",
+                source_port=12345,
+                destination_port=80,
+                protocol="tcp",
+                packet_size=1500,
+                duration=0.0,
+                flags=[],
+                features={}
+            )
+            self.capture_service.packet_queue.put_nowait(mock_record)
+        
+        # Get batch with default size
+        packets = self.capture_service.get_packets_batch()
+        
+        assert len(packets) == self.config['batch_size']  # 50
+    
+    def test_set_packet_callback(self):
+        """Test setting packet callback."""
+        callback = Mock()
+        self.capture_service.set_packet_callback(callback)
+        
+        assert self.capture_service.packet_callback == callback
+    
+    def test_get_capture_stats(self):
+        """Test getting capture statistics."""
+        stats = self.capture_service.get_capture_stats()
+        
+        expected_keys = [
+            'is_capturing', 'queue_size', 'queue_max_size',
+            'use_message_queue', 'supported_protocols', 'ipv6_support'
+        ]
+        
+        for key in expected_keys:
+            assert key in stats
+        
+        assert stats['is_capturing'] is False
+        assert stats['queue_size'] == 0
+        assert stats['queue_max_size'] == 1000
+        assert stats['use_message_queue'] is False
+        assert stats['supported_protocols'] == ['tcp', 'udp', 'icmp']
+        assert stats['ipv6_support'] is True
+
+
+class TestPacketCaptureIntegration:
+    """Integration tests for packet capture service."""
+    
+    def test_end_to_end_packet_processing(self):
+        """Test end-to-end packet processing workflow."""
+        config = {
+            'queue_size': 100,
+            'batch_size': 10,
+            'ipv6_support': True,
+            'use_message_queue': False
+        }
+        
+        service = ScapyPacketCapture(config)
+        
+        # Create mock packets
+        tcp_packet = Mock(spec=Packet)
+        ip_layer = Mock()
+        ip_layer.src = "192.168.1.100"
+        ip_layer.dst = "10.0.0.1"
+        ip_layer.proto = 6
+        ip_layer.ihl = 5
+        
+        tcp_layer = Mock()
+        tcp_layer.sport = 12345
+        tcp_layer.dport = 80
+        tcp_layer.flags = 0x18
+        tcp_layer.window = 65535
+        tcp_layer.urgptr = 0
+        
+        tcp_packet.haslayer.side_effect = lambda layer: layer in [IP, TCP]
+        tcp_packet.__getitem__.side_effect = lambda layer: {
+            IP: ip_layer, TCP: tcp_layer
+        }.get(layer)
+        tcp_packet.__len__ = Mock(return_value=1500)
+        
+        # Process packet
+        with patch('src.services.packet_capture.datetime') as mock_datetime:
+            mock_datetime.now.return_value = datetime(2023, 1, 1, 12, 0, 0)
+            service._packet_handler(tcp_packet)
+        
+        # Verify packet was processed
+        assert service.packet_queue.qsize() == 1
+        
+        # Get processed packet
+        packets = service.get_packets()
+        assert len(packets) == 1
+        
+        packet = packets[0]
+        assert packet.source_ip == "192.168.1.100"
+        assert packet.destination_ip == "10.0.0.1"
+        assert packet.protocol == "tcp"
+        assert packet.packet_size == 1500
+        
+        # Verify features were extracted
+        assert 'packet_length' in packet.features
+        assert 'tcp_window_size' in packet.features
+        assert packet.features['packet_length'] == 1500.0
+
+
+if __name__ == "__main__":
+    pytest.main([__file__])
