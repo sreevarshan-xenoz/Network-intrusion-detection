@@ -216,4 +216,226 @@ data_logger = get_logger('nids.data')
 model_logger = get_logger('nids.model')
 service_logger = get_logger('nids.service')
 api_logger = get_logger('nids.api')
+utils_logger = get_logger('nids.utils') 
+   
+    def debug(self, message: str, *args, **kwargs) -> None:
+        """Log debug message."""
+        self.logger.debug(message, *args, **kwargs)
+        if self.structured_logging and hasattr(self, 'struct_logger'):
+            self.struct_logger.debug(message, **kwargs)
+    
+    def info(self, message: str, *args, **kwargs) -> None:
+        """Log info message."""
+        self.logger.info(message, *args, **kwargs)
+        if self.structured_logging and hasattr(self, 'struct_logger'):
+            self.struct_logger.info(message, **kwargs)
+    
+    def warning(self, message: str, *args, **kwargs) -> None:
+        """Log warning message."""
+        self.logger.warning(message, *args, **kwargs)
+        if self.structured_logging and hasattr(self, 'struct_logger'):
+            self.struct_logger.warning(message, **kwargs)
+    
+    def error(self, message: str, *args, **kwargs) -> None:
+        """Log error message."""
+        self.logger.error(message, *args, **kwargs)
+        if self.structured_logging and hasattr(self, 'struct_logger'):
+            self.struct_logger.error(message, **kwargs)
+    
+    def critical(self, message: str, *args, **kwargs) -> None:
+        """Log critical message."""
+        self.logger.critical(message, *args, **kwargs)
+        if self.structured_logging and hasattr(self, 'struct_logger'):
+            self.struct_logger.critical(message, **kwargs)
+    
+    def exception(self, message: str, *args, **kwargs) -> None:
+        """Log exception with traceback."""
+        self.logger.exception(message, *args, **kwargs)
+        if self.structured_logging and hasattr(self, 'struct_logger'):
+            self.struct_logger.exception(message, **kwargs)
+    
+    @contextmanager
+    def log_context(self, **context):
+        """Context manager for adding context to logs."""
+        if self.structured_logging and hasattr(self, 'struct_logger'):
+            bound_logger = self.struct_logger.bind(**context)
+            old_struct_logger = self.struct_logger
+            self.struct_logger = bound_logger
+            try:
+                yield self
+            finally:
+                self.struct_logger = old_struct_logger
+        else:
+            yield self
+    
+    def log_api_request(self, method: str, endpoint: str, status_code: int, 
+                       duration: float, user_id: Optional[str] = None):
+        """Log API request with structured data."""
+        context = {
+            'event_type': 'api_request',
+            'method': method,
+            'endpoint': endpoint,
+            'status_code': status_code,
+            'duration_ms': duration * 1000,
+            'user_id': user_id
+        }
+        
+        message = f"{method} {endpoint} - {status_code} ({duration:.3f}s)"
+        
+        if status_code >= 400:
+            self.error(message, **context)
+        else:
+            self.info(message, **context)
+    
+    def log_prediction(self, model_version: str, prediction_type: str, 
+                      confidence: float, duration: float, source_ip: str):
+        """Log prediction with structured data."""
+        context = {
+            'event_type': 'prediction',
+            'model_version': model_version,
+            'prediction_type': prediction_type,
+            'confidence': confidence,
+            'duration_ms': duration * 1000,
+            'source_ip': source_ip
+        }
+        
+        message = f"Prediction: {prediction_type} (confidence: {confidence:.3f})"
+        self.info(message, **context)
+    
+    def log_threat_detection(self, attack_type: str, severity: str, 
+                           source_ip: str, confidence: float):
+        """Log threat detection with structured data."""
+        context = {
+            'event_type': 'threat_detection',
+            'attack_type': attack_type,
+            'severity': severity,
+            'source_ip': source_ip,
+            'confidence': confidence
+        }
+        
+        message = f"THREAT DETECTED: {attack_type} from {source_ip} (severity: {severity})"
+        
+        if severity in ['HIGH', 'CRITICAL']:
+            self.critical(message, **context)
+        else:
+            self.warning(message, **context)
+    
+    def log_model_performance(self, model_version: str, model_type: str, 
+                            metrics: Dict[str, float]):
+        """Log model performance metrics."""
+        context = {
+            'event_type': 'model_performance',
+            'model_version': model_version,
+            'model_type': model_type,
+            **metrics
+        }
+        
+        message = f"Model performance: {model_type} v{model_version} - Accuracy: {metrics.get('accuracy', 0):.3f}"
+        self.info(message, **context)
+    
+    def log_system_health(self, component: str, status: str, 
+                         metrics: Optional[Dict[str, Any]] = None):
+        """Log system health status."""
+        context = {
+            'event_type': 'system_health',
+            'component': component,
+            'status': status
+        }
+        
+        if metrics:
+            context.update(metrics)
+        
+        message = f"System health: {component} - {status}"
+        
+        if status == 'healthy':
+            self.info(message, **context)
+        elif status == 'degraded':
+            self.warning(message, **context)
+        else:
+            self.error(message, **context)
+
+
+class AuditLogger:
+    """Specialized logger for security audit events."""
+    
+    def __init__(self):
+        self.logger = get_logger('nids.audit')
+    
+    def log_authentication(self, user_id: str, success: bool, ip_address: str):
+        """Log authentication attempt."""
+        context = {
+            'event_type': 'authentication',
+            'user_id': user_id,
+            'success': success,
+            'ip_address': ip_address
+        }
+        
+        message = f"Authentication {'successful' if success else 'failed'} for user {user_id} from {ip_address}"
+        
+        if success:
+            self.logger.info(message, **context)
+        else:
+            self.logger.warning(message, **context)
+    
+    def log_authorization(self, user_id: str, resource: str, action: str, 
+                         granted: bool):
+        """Log authorization decision."""
+        context = {
+            'event_type': 'authorization',
+            'user_id': user_id,
+            'resource': resource,
+            'action': action,
+            'granted': granted
+        }
+        
+        message = f"Authorization {'granted' if granted else 'denied'} for user {user_id} on {resource}:{action}"
+        
+        if granted:
+            self.logger.info(message, **context)
+        else:
+            self.logger.warning(message, **context)
+    
+    def log_data_access(self, user_id: str, data_type: str, operation: str):
+        """Log data access event."""
+        context = {
+            'event_type': 'data_access',
+            'user_id': user_id,
+            'data_type': data_type,
+            'operation': operation
+        }
+        
+        message = f"Data access: {user_id} performed {operation} on {data_type}"
+        self.logger.info(message, **context)
+
+
+def get_logger(name: str, log_level: Optional[str] = None) -> NIDSLogger:
+    """Get logger instance."""
+    return NIDSLogger(name, log_level)
+
+
+def setup_logging():
+    """Set up global logging configuration."""
+    # Configure root logger
+    root_logger = logging.getLogger()
+    root_logger.setLevel(logging.WARNING)
+    
+    # Suppress noisy third-party loggers
+    logging.getLogger('urllib3').setLevel(logging.WARNING)
+    logging.getLogger('requests').setLevel(logging.WARNING)
+    logging.getLogger('tensorflow').setLevel(logging.ERROR)
+    logging.getLogger('matplotlib').setLevel(logging.WARNING)
+    
+    # Create logs directory
+    os.makedirs('logs', exist_ok=True)
+
+
+# Initialize logging on import
+setup_logging()
+
+# Create default loggers for different components
+data_logger = get_logger('nids.data')
+model_logger = get_logger('nids.model')
+service_logger = get_logger('nids.service')
+api_logger = get_logger('nids.api')
 utils_logger = get_logger('nids.utils')
+audit_logger = AuditLogger()

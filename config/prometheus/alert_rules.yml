@@ -1,0 +1,150 @@
+groups:
+  - name: nids_api_alerts
+    rules:
+      - alert: HighAPIErrorRate
+        expr: rate(nids_api_requests_total{status_code=~"5.."}[5m]) > 0.1
+        for: 2m
+        labels:
+          severity: critical
+          component: api
+        annotations:
+          summary: "High API error rate detected"
+          description: "API error rate is {{ $value }} errors per second for the last 5 minutes"
+
+      - alert: HighAPILatency
+        expr: histogram_quantile(0.95, rate(nids_api_request_duration_seconds_bucket[5m])) > 1.0
+        for: 5m
+        labels:
+          severity: warning
+          component: api
+        annotations:
+          summary: "High API latency detected"
+          description: "95th percentile API latency is {{ $value }}s"
+
+      - alert: APIServiceDown
+        expr: up{job="nids-api"} == 0
+        for: 1m
+        labels:
+          severity: critical
+          component: api
+        annotations:
+          summary: "API service is down"
+          description: "NIDS API service has been down for more than 1 minute"
+
+  - name: nids_security_alerts
+    rules:
+      - alert: HighThreatDetectionRate
+        expr: rate(nids_threats_detected_total[5m]) > 10
+        for: 2m
+        labels:
+          severity: critical
+          component: security
+        annotations:
+          summary: "High threat detection rate"
+          description: "Threat detection rate is {{ $value }} threats per second, indicating possible attack"
+
+      - alert: CriticalThreatDetected
+        expr: increase(nids_threats_detected_total{severity="CRITICAL"}[1m]) > 0
+        for: 0m
+        labels:
+          severity: critical
+          component: security
+        annotations:
+          summary: "Critical threat detected"
+          description: "Critical severity threat detected: {{ $labels.attack_type }}"
+
+      - alert: ModelAccuracyDrop
+        expr: nids_model_accuracy < 0.85
+        for: 5m
+        labels:
+          severity: warning
+          component: ml
+        annotations:
+          summary: "Model accuracy dropped"
+          description: "Model {{ $labels.model_version }} accuracy is {{ $value }}, below 85% threshold"
+
+  - name: nids_system_alerts
+    rules:
+      - alert: HighMemoryUsage
+        expr: nids_system_memory_usage_bytes / (1024^3) > 6
+        for: 5m
+        labels:
+          severity: warning
+          component: system
+        annotations:
+          summary: "High memory usage"
+          description: "System memory usage is {{ $value }}GB, above 6GB threshold"
+
+      - alert: HighCPUUsage
+        expr: nids_system_cpu_usage_percent > 80
+        for: 5m
+        labels:
+          severity: warning
+          component: system
+        annotations:
+          summary: "High CPU usage"
+          description: "System CPU usage is {{ $value }}%, above 80% threshold"
+
+      - alert: DatabaseConnectionFailure
+        expr: up{job="mongodb"} == 0 or up{job="redis"} == 0
+        for: 2m
+        labels:
+          severity: critical
+          component: database
+        annotations:
+          summary: "Database connection failure"
+          description: "Database service {{ $labels.job }} is unreachable"
+
+  - name: nids_performance_alerts
+    rules:
+      - alert: HighPredictionLatency
+        expr: histogram_quantile(0.95, rate(nids_prediction_duration_seconds_bucket[5m])) > 0.5
+        for: 5m
+        labels:
+          severity: warning
+          component: ml
+        annotations:
+          summary: "High prediction latency"
+          description: "95th percentile prediction latency is {{ $value }}s, above 500ms threshold"
+
+      - alert: LowCacheHitRate
+        expr: rate(nids_cache_hits_total[5m]) / (rate(nids_cache_hits_total[5m]) + rate(nids_cache_misses_total[5m])) < 0.7
+        for: 10m
+        labels:
+          severity: warning
+          component: cache
+        annotations:
+          summary: "Low cache hit rate"
+          description: "Cache hit rate is {{ $value }}, below 70% threshold"
+
+      - alert: HighAlertRate
+        expr: rate(nids_alerts_generated_total[5m]) > 5
+        for: 3m
+        labels:
+          severity: warning
+          component: alerting
+        annotations:
+          summary: "High alert generation rate"
+          description: "Alert generation rate is {{ $value }} alerts per second"
+
+  - name: nids_data_alerts
+    rules:
+      - alert: DataProcessingFailure
+        expr: increase(nids_data_processing_errors_total[5m]) > 10
+        for: 2m
+        labels:
+          severity: warning
+          component: data
+        annotations:
+          summary: "Data processing failures detected"
+          description: "{{ $value }} data processing errors in the last 5 minutes"
+
+      - alert: PacketDropRate
+        expr: rate(nids_packets_dropped_total[5m]) / rate(nids_packets_captured_total[5m]) > 0.1
+        for: 5m
+        labels:
+          severity: warning
+          component: capture
+        annotations:
+          summary: "High packet drop rate"
+          description: "Packet drop rate is {{ $value }}, above 10% threshold"
