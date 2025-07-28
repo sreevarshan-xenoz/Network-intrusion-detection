@@ -3444,3 +3444,85 @@
 2025-07-28 11:02:03,962 - src.services.report_generator - INFO - Generating model performance report for: RandomForest
 2025-07-28 11:02:03,963 - src.services.report_generator - INFO - Model performance report saved to: C:\Users\theja\AppData\Local\Temp\tmpfuooyxbf\model_perf_RandomForest_20250728_110203.json
 2025-07-28 11:02:03,964 - src.services.report_generator - INFO - Model performance report generated: model_perf_RandomForest_20250728_110203
+2025-07-28 11:07:21,818 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:07:21,822 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:07:21,825 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:07:21,853 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:07:21,874 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:07:22,323 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:07:22,671 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:07:22,674 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:07:22,691 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:07:22,706 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:07:22,762 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:07:22,776 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:07:22,819 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:07:22,831 - src.services.feature_analyzer - INFO - Starting interpretability analysis for model: TestRF
+2025-07-28 11:07:22,872 - src.services.feature_analyzer - INFO - Intrinsic feature importance analysis completed
+2025-07-28 11:07:23,009 - src.services.feature_analyzer - INFO - SHAP analysis completed
+2025-07-28 11:07:23,330 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:07:23,344 - src.services.feature_analyzer - INFO - Starting interpretability analysis for model: TestRF
+2025-07-28 11:07:23,344 - src.services.feature_analyzer - INFO - Sampled 100 instances for analysis
+2025-07-28 11:07:23,345 - src.services.feature_analyzer - WARNING - Intrinsic analysis failed: list index out of range
+2025-07-28 11:08:35,289 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:08:35,292 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:08:35,295 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:08:35,317 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:08:35,338 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:08:35,804 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:08:36,149 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:08:36,152 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:08:36,169 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:08:36,185 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:08:36,242 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:08:36,257 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:08:36,299 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:08:36,312 - src.services.feature_analyzer - INFO - Starting interpretability analysis for model: TestRF
+2025-07-28 11:08:36,352 - src.services.feature_analyzer - INFO - Intrinsic feature importance analysis completed
+2025-07-28 11:08:36,352 - src.services.feature_analyzer - INFO - Model interpretability analysis completed for TestRF
+2025-07-28 11:08:36,356 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:08:36,368 - src.services.feature_analyzer - INFO - Starting interpretability analysis for model: TestRF
+2025-07-28 11:08:36,368 - src.services.feature_analyzer - INFO - Sampled 100 instances for analysis
+2025-07-28 11:08:36,371 - src.services.feature_analyzer - WARNING - Intrinsic analysis failed: list index out of range
+2025-07-28 11:08:36,692 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:08:36,695 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:08:36,696 - src.services.feature_analyzer - INFO - Interpretability report saved to: C:\Users\theja\AppData\Local\Temp\tmpll24gbx1\test_report.md
+2025-07-28 11:08:36,708 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:08:36,711 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:08:36,715 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:08:36,717 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:08:36,718 - src.services.feature_analyzer - INFO - Starting interpretability analysis for model: FailModel
+2025-07-28 11:09:02,121 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:09:02,158 - src.services.feature_analyzer - INFO - Starting interpretability analysis for model: TestRF
+2025-07-28 11:09:02,159 - src.services.feature_analyzer - INFO - Sampled 100 instances for analysis
+2025-07-28 11:09:02,281 - src.services.feature_analyzer - INFO - Intrinsic feature importance analysis completed
+2025-07-28 11:09:02,281 - src.services.feature_analyzer - INFO - Model interpretability analysis completed for TestRF
+2025-07-28 11:09:11,256 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:09:11,258 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:09:11,261 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:09:11,283 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:09:11,303 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:09:11,670 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:09:12,001 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:09:12,004 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:09:12,020 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:09:12,035 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:09:12,163 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:09:12,178 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:09:12,220 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:09:12,235 - src.services.feature_analyzer - INFO - Starting interpretability analysis for model: TestRF
+2025-07-28 11:09:12,276 - src.services.feature_analyzer - INFO - Intrinsic feature importance analysis completed
+2025-07-28 11:09:12,277 - src.services.feature_analyzer - INFO - Model interpretability analysis completed for TestRF
+2025-07-28 11:09:12,279 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:09:12,315 - src.services.feature_analyzer - INFO - Starting interpretability analysis for model: TestRF
+2025-07-28 11:09:12,315 - src.services.feature_analyzer - INFO - Sampled 100 instances for analysis
+2025-07-28 11:09:12,356 - src.services.feature_analyzer - INFO - Intrinsic feature importance analysis completed
+2025-07-28 11:09:12,357 - src.services.feature_analyzer - INFO - Model interpretability analysis completed for TestRF
+2025-07-28 11:09:12,360 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:09:12,363 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:09:12,364 - src.services.feature_analyzer - INFO - Interpretability report saved to: C:\Users\theja\AppData\Local\Temp\tmpggnqmfzo\test_report.md
+2025-07-28 11:09:12,367 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:09:12,369 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:09:12,373 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:09:12,376 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:09:12,377 - src.services.feature_analyzer - INFO - Starting interpretability analysis for model: FailModel
