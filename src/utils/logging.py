@@ -1,23 +1,106 @@
 """
-Logging utilities for the NIDS system.
+Comprehensive logging utilities for the NIDS system with structured logging and monitoring integration.
 """
 import logging
 import logging.handlers
 import os
 import sys
-from typing import Optional
+import json
+import time
+import traceback
+from datetime import datetime
+from typing import Optional, Dict, Any, Union
+from contextlib import contextmanager
+import structlog
 from .config import config
 
 
+class JSONFormatter(logging.Formatter):
+    """JSON formatter for structured logging."""
+    
+    def format(self, record: logging.LogRecord) -> str:
+        """Format log record as JSON."""
+        log_entry = {
+            'timestamp': datetime.utcnow().isoformat(),
+            'level': record.levelname,
+            'logger': record.name,
+            'message': record.getMessage(),
+            'module': record.module,
+            'function': record.funcName,
+            'line': record.lineno,
+            'thread': record.thread,
+            'process': record.process
+        }
+        
+        # Add exception info if present
+        if record.exc_info:
+            log_entry['exception'] = {
+                'type': record.exc_info[0].__name__,
+                'message': str(record.exc_info[1]),
+                'traceback': traceback.format_exception(*record.exc_info)
+            }
+        
+        # Add extra fields
+        for key, value in record.__dict__.items():
+            if key not in ['name', 'msg', 'args', 'levelname', 'levelno', 'pathname',
+                          'filename', 'module', 'lineno', 'funcName', 'created',
+                          'msecs', 'relativeCreated', 'thread', 'threadName',
+                          'processName', 'process', 'getMessage', 'exc_info',
+                          'exc_text', 'stack_info']:
+                log_entry[key] = value
+        
+        return json.dumps(log_entry, default=str)
+
+
+class SecurityFilter(logging.Filter):
+    """Filter to remove sensitive information from logs."""
+    
+    SENSITIVE_PATTERNS = [
+        'password', 'token', 'key', 'secret', 'auth', 'credential'
+    ]
+    
+    def filter(self, record: logging.LogRecord) -> bool:
+        """Filter sensitive information from log records."""
+        message = record.getMessage().lower()
+        
+        # Check for sensitive patterns
+        for pattern in self.SENSITIVE_PATTERNS:
+            if pattern in message:
+                record.msg = "[REDACTED - Sensitive information removed]"
+                record.args = ()
+                break
+        
+        return True
+
+
+class PerformanceFilter(logging.Filter):
+    """Filter to add performance metrics to log records."""
+    
+    def filter(self, record: logging.LogRecord) -> bool:
+        """Add performance context to log records."""
+        import psutil
+        
+        # Add system metrics
+        record.memory_percent = psutil.virtual_memory().percent
+        record.cpu_percent = psutil.cpu_percent()
+        
+        return True
+
+
 class NIDSLogger:
-    """Custom logger for NIDS system."""
+    """Enhanced logger for NIDS system with structured logging and monitoring."""
     
     def __init__(self, name: str, log_level: Optional[str] = None):
         """Initialize logger."""
         self.name = name
         self.logger = logging.getLogger(name)
         self.log_level = log_level or config.get('logging.level', 'INFO')
+        self.structured_logging = config.get('logging.structured', False)
         self._setup_logger()
+        
+        # Initialize structured logger if enabled
+        if self.structured_logging:
+            self._setup_structured_logger()
     
     def _setup_logger(self) -> None:
         """Set up logger configuration."""
@@ -28,14 +111,22 @@ class NIDSLogger:
         self.logger.setLevel(getattr(logging, self.log_level.upper()))
         
         # Create formatter
-        formatter = logging.Formatter(
-            config.get('logging.format', 
-                      '%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-        )
+        if self.structured_logging:
+            formatter = JSONFormatter()
+        else:
+            formatter = logging.Formatter(
+                config.get('logging.format', 
+                          '%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+            )
         
         # Console handler
         console_handler = logging.StreamHandler(sys.stdout)
         console_handler.setFormatter(formatter)
+        console_handler.addFilter(SecurityFilter())
+        
+        if config.get('logging.performance_metrics', False):
+            console_handler.addFilter(PerformanceFilter())
+        
         self.logger.addHandler(console_handler)
         
         # File handler
@@ -46,10 +137,49 @@ class NIDSLogger:
                 log_file, maxBytes=10*1024*1024, backupCount=5
             )
             file_handler.setFormatter(formatter)
+            file_handler.addFilter(SecurityFilter())
+            
+            if config.get('logging.performance_metrics', False):
+                file_handler.addFilter(PerformanceFilter())
+            
             self.logger.addHandler(file_handler)
+        
+        # Error file handler for errors and above
+        error_log_file = config.get('logging.error_file', 'logs/nids-errors.log')
+        if error_log_file:
+            os.makedirs(os.path.dirname(error_log_file), exist_ok=True)
+            error_handler = logging.handlers.RotatingFileHandler(
+                error_log_file, maxBytes=10*1024*1024, backupCount=5
+            )
+            error_handler.setLevel(logging.ERROR)
+            error_handler.setFormatter(formatter)
+            error_handler.addFilter(SecurityFilter())
+            self.logger.addHandler(error_handler)
         
         # Prevent propagation to root logger
         self.logger.propagate = False
+    
+    def _setup_structured_logger(self) -> None:
+        """Set up structured logging with structlog."""
+        structlog.configure(
+            processors=[
+                structlog.stdlib.filter_by_level,
+                structlog.stdlib.add_logger_name,
+                structlog.stdlib.add_log_level,
+                structlog.stdlib.PositionalArgumentsFormatter(),
+                structlog.processors.TimeStamper(fmt="iso"),
+                structlog.processors.StackInfoRenderer(),
+                structlog.processors.format_exc_info,
+                structlog.processors.UnicodeDecoder(),
+                structlog.processors.JSONRenderer()
+            ],
+            context_class=dict,
+            logger_factory=structlog.stdlib.LoggerFactory(),
+            wrapper_class=structlog.stdlib.BoundLogger,
+            cache_logger_on_first_use=True,
+        )
+        
+        self.struct_logger = structlog.get_logger(self.name)
     
     def debug(self, message: str, *args, **kwargs) -> None:
         """Log debug message."""
