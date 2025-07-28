@@ -851,3 +851,377 @@ class TestAlertingIntegration:
 
 if __name__ == "__main__":
     pytest.main([__file__, "-v"])
+
+
+class TestPerformanceIntegration:
+    """Performance tests for the Network Intrusion Detection System."""
+    
+    @pytest.fixture
+    def large_sample_data(self):
+        """Create larger dataset for performance testing."""
+        np.random.seed(42)
+        n_samples = 1000
+        n_features = 20
+        
+        # Generate synthetic network traffic data
+        X = np.random.randn(n_samples, n_features)
+        y = np.random.choice(['normal', 'attack'], n_samples, p=[0.7, 0.3])
+        
+        return X, y
+    
+    @pytest.fixture
+    def trained_model(self, large_sample_data):
+        """Create a trained model for performance testing."""
+        X, y = large_sample_data
+        
+        with patch('src.models.trainer.config') as mock_config:
+            mock_config.get.side_effect = lambda key, default=None: {
+                'model.algorithms': ['random_forest'],
+                'model.test_size': 0.2,
+                'model.random_state': 42,
+                'model.cross_validation_folds': 3
+            }.get(key, default)
+            
+            trainer = ModelTrainer()
+            trainer.train_models(X, y)
+            
+        return trainer.models['random_forest']
+    
+    def test_real_time_prediction_latency(self, trained_model, large_sample_data):
+        """Test real-time prediction latency meets <100ms requirement."""
+        X, y = large_sample_data
+        
+        # Test single prediction latency
+        single_sample = X[:1]
+        
+        # Warm up the model
+        for _ in range(10):
+            trained_model.predict(single_sample)
+        
+        # Measure prediction latency
+        latencies = []
+        for _ in range(100):
+            start_time = time.time()
+            prediction = trained_model.predict(single_sample)
+            end_time = time.time()
+            
+            latency_ms = (end_time - start_time) * 1000
+            latencies.append(latency_ms)
+            
+            assert len(prediction) == 1
+        
+        # Calculate statistics
+        avg_latency = np.mean(latencies)
+        p95_latency = np.percentile(latencies, 95)
+        p99_latency = np.percentile(latencies, 99)
+        
+        print(f"\nPrediction Latency Statistics:")
+        print(f"Average: {avg_latency:.2f}ms")
+        print(f"95th percentile: {p95_latency:.2f}ms")
+        print(f"99th percentile: {p99_latency:.2f}ms")
+        
+        # Assert requirement: <100ms for real-time detection
+        assert avg_latency < 100, f"Average latency {avg_latency:.2f}ms exceeds 100ms requirement"
+        assert p95_latency < 100, f"95th percentile latency {p95_latency:.2f}ms exceeds 100ms requirement"
+    
+    def test_batch_prediction_throughput(self, trained_model, large_sample_data):
+        """Test batch prediction throughput under load."""
+        X, y = large_sample_data
+        
+        batch_sizes = [1, 10, 50, 100, 500]
+        throughput_results = {}
+        
+        for batch_size in batch_sizes:
+            batch_data = X[:batch_size]
+            
+            # Warm up
+            for _ in range(5):
+                trained_model.predict(batch_data)
+            
+            # Measure throughput
+            start_time = time.time()
+            num_batches = 10
+            
+            for _ in range(num_batches):
+                predictions = trained_model.predict(batch_data)
+                assert len(predictions) == batch_size
+            
+            end_time = time.time()
+            
+            total_predictions = num_batches * batch_size
+            total_time = end_time - start_time
+            throughput = total_predictions / total_time
+            
+            throughput_results[batch_size] = throughput
+            
+            print(f"\nBatch size {batch_size}: {throughput:.2f} predictions/second")
+        
+        # Assert minimum throughput requirements
+        assert throughput_results[1] > 100, "Single prediction throughput too low"
+        assert throughput_results[100] > 1000, "Batch prediction throughput too low"
+    
+    def test_memory_usage_optimization(self, trained_model, large_sample_data):
+        """Test memory usage during prediction."""
+        import psutil
+        import gc
+        
+        X, y = large_sample_data
+        
+        # Get baseline memory usage
+        gc.collect()
+        process = psutil.Process()
+        baseline_memory = process.memory_info().rss / 1024 / 1024  # MB
+        
+        # Test memory usage with increasing batch sizes
+        batch_sizes = [100, 500, 1000]
+        memory_usage = {}
+        
+        for batch_size in batch_sizes:
+            batch_data = X[:batch_size]
+            
+            # Force garbage collection
+            gc.collect()
+            
+            # Measure memory before prediction
+            memory_before = process.memory_info().rss / 1024 / 1024
+            
+            # Make predictions
+            predictions = trained_model.predict(batch_data)
+            
+            # Measure memory after prediction
+            memory_after = process.memory_info().rss / 1024 / 1024
+            
+            memory_increase = memory_after - memory_before
+            memory_usage[batch_size] = memory_increase
+            
+            print(f"\nBatch size {batch_size}: Memory increase {memory_increase:.2f}MB")
+            
+            assert len(predictions) == batch_size
+        
+        # Assert memory usage is reasonable (should not grow linearly with batch size)
+        # Memory increase should be sub-linear due to efficient batch processing
+        memory_per_sample_100 = memory_usage[100] / 100
+        memory_per_sample_1000 = memory_usage[1000] / 1000
+        
+        assert memory_per_sample_1000 < memory_per_sample_100, "Memory usage not optimized for larger batches"
+    
+    def test_concurrent_api_requests(self, trained_model):
+        """Test system performance under concurrent API requests."""
+        import threading
+        import queue
+        from concurrent.futures import ThreadPoolExecutor, as_completed
+        
+        # Create mock inference service
+        inference_service = InferenceService()
+        inference_service.set_dependencies(
+            Mock(get_current_model=Mock(return_value=trained_model)),
+            Mock(extract_features=Mock(return_value=np.random.randn(1, 20)))
+        )
+        
+        # Create test requests
+        def make_prediction_request():
+            packet_request = NetworkPacketRequest(
+                source_ip="192.168.1.100",
+                destination_ip="10.0.0.1",
+                source_port=12345,
+                destination_port=80,
+                protocol="tcp",
+                packet_size=1024,
+                duration=0.5,
+                flags=["SYN"]
+            )
+            
+            mock_user = {"user_id": "test_user", "permissions": ["predict"]}
+            
+            start_time = time.time()
+            try:
+                result = asyncio.run(inference_service.predict_single(packet_request, mock_user))
+                end_time = time.time()
+                return {
+                    'success': True,
+                    'latency': (end_time - start_time) * 1000,
+                    'result': result
+                }
+            except Exception as e:
+                end_time = time.time()
+                return {
+                    'success': False,
+                    'latency': (end_time - start_time) * 1000,
+                    'error': str(e)
+                }
+        
+        # Test with different concurrency levels
+        concurrency_levels = [1, 5, 10, 20]
+        
+        for concurrency in concurrency_levels:
+            print(f"\nTesting with {concurrency} concurrent requests...")
+            
+            # Execute concurrent requests
+            with ThreadPoolExecutor(max_workers=concurrency) as executor:
+                futures = [executor.submit(make_prediction_request) for _ in range(concurrency * 5)]
+                
+                results = []
+                for future in as_completed(futures):
+                    results.append(future.result())
+            
+            # Analyze results
+            successful_requests = [r for r in results if r['success']]
+            failed_requests = [r for r in results if not r['success']]
+            
+            success_rate = len(successful_requests) / len(results)
+            avg_latency = np.mean([r['latency'] for r in successful_requests]) if successful_requests else 0
+            
+            print(f"Success rate: {success_rate:.2%}")
+            print(f"Average latency: {avg_latency:.2f}ms")
+            print(f"Failed requests: {len(failed_requests)}")
+            
+            # Assert performance requirements
+            assert success_rate > 0.95, f"Success rate {success_rate:.2%} too low for {concurrency} concurrent requests"
+            if successful_requests:
+                assert avg_latency < 200, f"Average latency {avg_latency:.2f}ms too high under load"
+    
+    def test_stress_test_high_traffic_load(self, trained_model):
+        """Test system behavior under high traffic loads."""
+        # Simulate high traffic scenario
+        num_requests = 1000
+        batch_size = 50
+        
+        # Create synthetic traffic data
+        np.random.seed(42)
+        traffic_data = np.random.randn(num_requests, 20)
+        
+        # Measure processing time for high volume
+        start_time = time.time()
+        
+        processed_count = 0
+        for i in range(0, num_requests, batch_size):
+            batch = traffic_data[i:i+batch_size]
+            predictions = trained_model.predict(batch)
+            processed_count += len(predictions)
+        
+        end_time = time.time()
+        
+        total_time = end_time - start_time
+        throughput = processed_count / total_time
+        
+        print(f"\nStress Test Results:")
+        print(f"Processed {processed_count} requests in {total_time:.2f}s")
+        print(f"Throughput: {throughput:.2f} requests/second")
+        
+        # Assert minimum throughput under stress
+        assert throughput > 500, f"Throughput {throughput:.2f} req/s too low under stress"
+        assert processed_count == num_requests, "Not all requests were processed"
+    
+    def test_resource_usage_monitoring(self, trained_model, large_sample_data):
+        """Test resource usage monitoring and optimization."""
+        import psutil
+        import gc
+        
+        X, y = large_sample_data
+        
+        # Monitor CPU and memory usage during extended operation
+        process = psutil.Process()
+        
+        # Baseline measurements
+        gc.collect()
+        baseline_memory = process.memory_info().rss / 1024 / 1024
+        baseline_cpu = process.cpu_percent()
+        
+        print(f"\nBaseline - Memory: {baseline_memory:.2f}MB, CPU: {baseline_cpu:.1f}%")
+        
+        # Simulate extended operation
+        num_iterations = 100
+        batch_size = 100
+        
+        memory_samples = []
+        cpu_samples = []
+        
+        for i in range(num_iterations):
+            # Make predictions
+            batch_data = X[:batch_size]
+            predictions = trained_model.predict(batch_data)
+            
+            # Sample resource usage every 10 iterations
+            if i % 10 == 0:
+                memory_usage = process.memory_info().rss / 1024 / 1024
+                cpu_usage = process.cpu_percent()
+                
+                memory_samples.append(memory_usage)
+                cpu_samples.append(cpu_usage)
+        
+        # Analyze resource usage
+        avg_memory = np.mean(memory_samples)
+        max_memory = np.max(memory_samples)
+        avg_cpu = np.mean(cpu_samples)
+        max_cpu = np.max(cpu_samples)
+        
+        print(f"Average Memory: {avg_memory:.2f}MB (Max: {max_memory:.2f}MB)")
+        print(f"Average CPU: {avg_cpu:.1f}% (Max: {max_cpu:.1f}%)")
+        
+        # Assert resource usage is within acceptable limits
+        memory_increase = max_memory - baseline_memory
+        assert memory_increase < 500, f"Memory increase {memory_increase:.2f}MB too high"
+        assert max_cpu < 80, f"CPU usage {max_cpu:.1f}% too high"
+    
+    def test_model_loading_performance(self, temp_dir):
+        """Test model loading and initialization performance."""
+        # Create a test model and save it
+        np.random.seed(42)
+        X = np.random.randn(100, 10)
+        y = np.random.choice(['normal', 'attack'], 100)
+        
+        with patch('src.models.trainer.config') as mock_config:
+            mock_config.get.side_effect = lambda key, default=None: {
+                'model.algorithms': ['random_forest'],
+                'model.test_size': 0.2,
+                'model.random_state': 42,
+                'model.cross_validation_folds': 3
+            }.get(key, default)
+            
+            trainer = ModelTrainer()
+            trainer.train_models(X, y)
+        
+        # Save model to registry
+        from src.models.interfaces import ModelMetadata
+        from datetime import datetime
+        
+        registry = ModelRegistry(registry_path=temp_dir)
+        metadata = ModelMetadata(
+            model_id="",
+            model_type='random_forest',
+            version='1.0.0',
+            training_date=datetime.now(),
+            performance_metrics={'accuracy': 0.9},
+            feature_names=list(range(X.shape[1])),
+            hyperparameters={}
+        )
+        model_id = registry.register_model(trainer.models['random_forest'], metadata)
+        
+        # Test model loading performance
+        loading_times = []
+        
+        for _ in range(10):
+            start_time = time.time()
+            loaded_model, loaded_metadata = registry.get_model(model_id)
+            end_time = time.time()
+            
+            loading_time = (end_time - start_time) * 1000
+            loading_times.append(loading_time)
+            
+            assert loaded_model is not None
+            assert loaded_metadata is not None
+        
+        avg_loading_time = np.mean(loading_times)
+        max_loading_time = np.max(loading_times)
+        
+        print(f"\nModel Loading Performance:")
+        print(f"Average loading time: {avg_loading_time:.2f}ms")
+        print(f"Maximum loading time: {max_loading_time:.2f}ms")
+        
+        # Assert model loading is fast enough for production
+        assert avg_loading_time < 1000, f"Average model loading time {avg_loading_time:.2f}ms too slow"
+        assert max_loading_time < 2000, f"Maximum model loading time {max_loading_time:.2f}ms too slow"
+
+
+if __name__ == "__main__":
+    pytest.main([__file__, "-v"])

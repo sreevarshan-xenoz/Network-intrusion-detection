@@ -4628,3 +4628,39 @@
 2025-07-28 11:34:58,793 - nids.data.cicids - INFO - Successfully loaded 10 records with 11 columns
 2025-07-28 11:34:58,795 - src.models.trainer - INFO - Starting model training process
 2025-07-28 11:34:58,797 - src.models.trainer - INFO - Training random_forest model
+2025-07-28 11:34:58,797 - src.models.trainer - INFO - Starting hyperparameter tuning for random_forest
+2025-07-28 11:35:09,186 - src.models.trainer - INFO - Hyperparameter tuning completed for random_forest in 10.39s
+2025-07-28 11:35:09,186 - src.models.trainer - INFO - Best parameters: {'max_depth': 10, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 100}
+2025-07-28 11:35:09,186 - src.models.trainer - INFO - Best cross-validation score: 0.6000
+2025-07-28 11:35:09,268 - src.models.trainer - INFO - Performing cross-validation for random_forest
+2025-07-28 11:35:10,308 - src.models.trainer - INFO - Cross-validation results for random_forest: {'cv_accuracy_mean': np.float64(0.7777777777777777), 'cv_accuracy_std': np.float64(0.15713484026367724), 'cv_precision_macro_mean': np.float64(0.5555555555555555), 'cv_precision_macro_std': np.float64(0.31426968052735443), 'cv_recall_macro_mean': np.float64(0.6666666666666666), 'cv_recall_macro_std': np.float64(0.23570226039551584), 'cv_f1_macro_mean': np.float64(0.6), 'cv_f1_macro_std': np.float64(0.282842712474619)}
+2025-07-28 11:35:10,308 - src.models.trainer - INFO - Successfully trained random_forest model in 11.51s
+2025-07-28 11:35:10,308 - src.models.trainer - INFO - Model training completed. Trained 1 models.
+2025-07-28 11:35:10,309 - src.models.evaluator - INFO - Evaluating model: random_forest
+2025-07-28 11:35:10,331 - src.models.evaluator - WARNING - Could not calculate Average Precision: pos_label=1 is not a valid label. It should be one of ['benign', 'ddos']
+2025-07-28 11:35:10,337 - src.models.evaluator - WARNING - Could not calculate ROC analysis: y_true takes value in {'benign', 'ddos'} and pos_label is not specified: either make y_true take value in {0, 1} or {-1, 1} or pass pos_label explicitly.
+2025-07-28 11:35:10,337 - src.models.evaluator - WARNING - Could not calculate PR analysis: y_true takes value in {'benign', 'ddos'} and pos_label is not specified: either make y_true take value in {0, 1} or {-1, 1} or pass pos_label explicitly.
+2025-07-28 11:35:10,341 - src.models.evaluator - INFO - Evaluation completed for random_forest
+2025-07-28 11:35:10,342 - src.models.evaluator - INFO -   Accuracy: 1.0000
+2025-07-28 11:35:10,342 - src.models.evaluator - INFO -   F1-Score: 1.0000
+2025-07-28 11:35:10,342 - src.models.evaluator - INFO -   Inference time: 0.0070s
+2025-07-28 11:36:55,469 - src.models.trainer - INFO - Starting model training process
+2025-07-28 11:36:55,471 - src.models.trainer - INFO - Training random_forest model
+2025-07-28 11:36:55,472 - src.models.trainer - INFO - Starting hyperparameter tuning for random_forest
+2025-07-28 11:37:11,108 - src.models.trainer - INFO - Hyperparameter tuning completed for random_forest in 15.64s
+2025-07-28 11:37:11,109 - src.models.trainer - INFO - Best parameters: {'max_depth': 20, 'min_samples_leaf': 1, 'min_samples_split': 5, 'n_estimators': 100}
+2025-07-28 11:37:11,110 - src.models.trainer - INFO - Best cross-validation score: 0.4373
+2025-07-28 11:37:11,379 - src.models.trainer - INFO - Performing cross-validation for random_forest
+2025-07-28 11:37:13,820 - src.models.trainer - INFO - Cross-validation results for random_forest: {'cv_accuracy_mean': np.float64(0.7087334440971342), 'cv_accuracy_std': np.float64(0.009365432948046312), 'cv_precision_macro_mean': np.float64(0.481997210191264), 'cv_precision_macro_std': np.float64(0.08808329249824227), 'cv_recall_macro_mean': np.float64(0.49352803228621295), 'cv_recall_macro_std': np.float64(0.0038855006494190637), 'cv_f1_macro_mean': np.float64(0.4261583171044005), 'cv_f1_macro_std': np.float64(0.008321059605633207)}
+2025-07-28 11:37:13,822 - src.models.trainer - INFO - Successfully trained random_forest model in 18.35s
+2025-07-28 11:37:13,823 - src.models.trainer - INFO - Model training completed. Trained 1 models.
+2025-07-28 11:37:27,678 - src.models.trainer - INFO - Starting model training process
+2025-07-28 11:37:27,679 - src.models.trainer - INFO - Training random_forest model
+2025-07-28 11:37:27,680 - src.models.trainer - INFO - Starting hyperparameter tuning for random_forest
+2025-07-28 11:37:43,378 - src.models.trainer - INFO - Hyperparameter tuning completed for random_forest in 15.70s
+2025-07-28 11:37:43,378 - src.models.trainer - INFO - Best parameters: {'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 10, 'n_estimators': 100}
+2025-07-28 11:37:43,379 - src.models.trainer - INFO - Best cross-validation score: 0.4289
+2025-07-28 11:37:43,671 - src.models.trainer - INFO - Performing cross-validation for random_forest
+2025-07-28 11:37:46,269 - src.models.trainer - INFO - Cross-validation results for random_forest: {'cv_accuracy_mean': np.float64(0.713745975425455), 'cv_accuracy_std': np.float64(0.0038124415350229745), 'cv_precision_macro_mean': np.float64(0.4145983912369215), 'cv_precision_macro_std': np.float64(0.07897257200759039), 'cv_recall_macro_mean': np.float64(0.49303737638161715), 'cv_recall_macro_std': np.float64(0.0032674441837042753), 'cv_f1_macro_mean': np.float64(0.4183773029213033), 'cv_f1_macro_std': np.float64(0.0062346396272587755)}
+2025-07-28 11:37:46,269 - src.models.trainer - INFO - Successfully trained random_forest model in 18.59s
+2025-07-28 11:37:46,269 - src.models.trainer - INFO - Model training completed. Trained 1 models.
