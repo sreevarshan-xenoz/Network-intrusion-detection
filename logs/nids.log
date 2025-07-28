@@ -3598,3 +3598,81 @@
 2025-07-28 11:14:32,607 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: reports
 2025-07-28 11:14:32,607 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
 2025-07-28 11:14:32,615 - src.services.dashboard - INFO - ThreatDashboard initialized
+2025-07-28 11:15:16,309 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: reports
+2025-07-28 11:15:16,310 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:15:16,321 - src.services.dashboard - INFO - ThreatDashboard initialized
+2025-07-28 11:15:16,344 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: reports
+2025-07-28 11:15:16,345 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:15:16,354 - src.services.dashboard - INFO - ThreatDashboard initialized
+2025-07-28 11:15:29,042 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: reports
+2025-07-28 11:15:29,043 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:15:29,053 - src.services.dashboard - INFO - ThreatDashboard initialized
+2025-07-28 11:15:29,057 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: reports
+2025-07-28 11:15:29,058 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:15:29,065 - src.services.dashboard - INFO - ThreatDashboard initialized
+2025-07-28 11:15:29,071 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: reports
+2025-07-28 11:15:29,071 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:15:29,079 - src.services.dashboard - INFO - ThreatDashboard initialized
+2025-07-28 11:15:29,089 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: reports
+2025-07-28 11:15:29,090 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:15:29,098 - src.services.dashboard - INFO - ThreatDashboard initialized
+2025-07-28 11:15:29,108 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: reports
+2025-07-28 11:15:29,109 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:15:29,117 - src.services.dashboard - INFO - ThreatDashboard initialized
+2025-07-28 11:15:29,127 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: reports
+2025-07-28 11:15:29,127 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:15:29,138 - src.services.dashboard - INFO - ThreatDashboard initialized
+2025-07-28 11:15:29,158 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: reports
+2025-07-28 11:15:29,159 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:15:29,167 - src.services.dashboard - INFO - ThreatDashboard initialized
+2025-07-28 11:15:29,185 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: reports
+2025-07-28 11:15:29,186 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:15:29,194 - src.services.dashboard - INFO - ThreatDashboard initialized
+2025-07-28 11:15:29,212 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: reports
+2025-07-28 11:15:29,213 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:15:29,221 - src.services.dashboard - INFO - ThreatDashboard initialized
+2025-07-28 11:15:29,239 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: reports
+2025-07-28 11:15:29,240 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:15:29,249 - src.services.dashboard - INFO - ThreatDashboard initialized
+2025-07-28 11:15:29,269 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: reports
+2025-07-28 11:15:29,270 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:15:29,278 - src.services.dashboard - INFO - ThreatDashboard initialized
+2025-07-28 11:15:29,296 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: reports
+2025-07-28 11:15:29,296 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:15:29,307 - src.services.dashboard - INFO - ThreatDashboard initialized
+2025-07-28 11:15:29,339 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: reports
+2025-07-28 11:15:29,340 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:15:29,351 - src.services.dashboard - INFO - ThreatDashboard initialized
+2025-07-28 11:15:29,361 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: reports
+2025-07-28 11:15:29,362 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:15:29,374 - src.services.dashboard - INFO - ThreatDashboard initialized
+2025-07-28 11:15:29,381 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: reports
+2025-07-28 11:15:29,382 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:15:29,393 - src.services.dashboard - INFO - ThreatDashboard initialized
+2025-07-28 11:15:29,400 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: reports
+2025-07-28 11:15:29,402 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:15:29,412 - src.services.dashboard - INFO - ThreatDashboard initialized
+2025-07-28 11:15:29,413 - src.services.dashboard - ERROR - Failed to retrieve alerts: unable to open database file
+2025-07-28 11:15:29,413 - src.services.dashboard - ERROR - Failed to retrieve predictions: unable to open database file
+2025-07-28 11:15:29,414 - src.services.dashboard - ERROR - Failed to retrieve model performance: unable to open database file
+2025-07-28 11:15:29,420 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: reports
+2025-07-28 11:15:29,421 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:15:29,436 - src.services.dashboard - INFO - ThreatDashboard initialized
+2025-07-28 11:15:29,437 - src.services.dashboard - ERROR - Failed to store alert: unable to open database file
+2025-07-28 11:15:29,442 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: reports
+2025-07-28 11:15:29,442 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:15:29,452 - src.services.dashboard - INFO - ThreatDashboard initialized
+2025-07-28 11:15:29,453 - src.services.dashboard - ERROR - Failed to store prediction: unable to open database file
+2025-07-28 11:15:29,457 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: reports
+2025-07-28 11:15:29,459 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:15:29,467 - src.services.dashboard - INFO - ThreatDashboard initialized
+2025-07-28 11:15:29,468 - src.services.dashboard - ERROR - Failed to store model performance: unable to open database file
+2025-07-28 11:15:29,472 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: reports
+2025-07-28 11:15:29,473 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:15:29,481 - src.services.dashboard - INFO - ThreatDashboard initialized
+2025-07-28 11:15:29,488 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: reports
+2025-07-28 11:15:29,489 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:15:29,497 - src.services.dashboard - INFO - ThreatDashboard initialized
+2025-07-28 11:15:29,523 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: reports
+2025-07-28 11:15:29,524 - src.services.feature_analyzer - INFO - FeatureAnalyzer initialized with methods: ['SHAP', 'LIME', 'Intrinsic']
+2025-07-28 11:15:29,532 - src.services.dashboard - INFO - ThreatDashboard initialized
