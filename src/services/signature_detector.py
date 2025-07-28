@@ -269,11 +269,17 @@ class SignatureDetector:
             if packet.protocol.lower() != 'udp':
                 return False
         
+        # Check for threat intelligence matches first
+        if packet.source_ip in self.malicious_ips or packet.destination_ip in self.malicious_ips:
+            return True
+        
         # Check port patterns
-        port_match = re.search(r':(\d+)\s*->', pattern)
+        port_match = re.search(r':(\d+)', pattern)
         if port_match:
             target_port = int(port_match.group(1))
-            if packet.source_port != target_port and packet.destination_port != target_port:
+            if packet.source_port == target_port or packet.destination_port == target_port:
+                return True
+            else:
                 return False
         
         # Check content patterns
@@ -284,8 +290,10 @@ class SignatureDetector:
             if content.lower() in str(packet.features).lower():
                 return True
         
-        # Check for threat intelligence matches
-        if packet.source_ip in self.malicious_ips or packet.destination_ip in self.malicious_ips:
+        # If no specific conditions matched but protocol is correct, return True
+        if 'alert tcp' in pattern.lower() and packet.protocol.lower() == 'tcp':
+            return True
+        elif 'alert udp' in pattern.lower() and packet.protocol.lower() == 'udp':
             return True
         
         return False
