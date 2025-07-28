@@ -52,7 +52,7 @@ class TestScapyPacketCapture:
     def create_mock_tcp_packet(self):
         """Create a mock TCP packet for testing."""
         # Create mock packet with TCP layer
-        packet = Mock(spec=Packet)
+        packet = Mock()
         
         # Mock IP layer
         ip_layer = Mock()
@@ -78,10 +78,10 @@ class TestScapyPacketCapture:
             ICMP: False
         }.get(layer, False)
         
-        packet.__getitem__.side_effect = lambda layer: {
+        packet.__getitem__ = Mock(side_effect=lambda layer: {
             IP: ip_layer,
             TCP: tcp_layer
-        }.get(layer)
+        }.get(layer))
         
         packet.__len__ = Mock(return_value=1500)
         
@@ -89,7 +89,7 @@ class TestScapyPacketCapture:
     
     def create_mock_udp_packet(self):
         """Create a mock UDP packet for testing."""
-        packet = Mock(spec=Packet)
+        packet = Mock()
         
         # Mock IP layer
         ip_layer = Mock()
@@ -113,10 +113,10 @@ class TestScapyPacketCapture:
             ICMP: False
         }.get(layer, False)
         
-        packet.__getitem__.side_effect = lambda layer: {
+        packet.__getitem__ = Mock(side_effect=lambda layer: {
             IP: ip_layer,
             UDP: udp_layer
-        }.get(layer)
+        }.get(layer))
         
         packet.__len__ = Mock(return_value=64)
         
@@ -124,7 +124,7 @@ class TestScapyPacketCapture:
     
     def create_mock_ipv6_packet(self):
         """Create a mock IPv6 packet for testing."""
-        packet = Mock(spec=Packet)
+        packet = Mock()
         
         # Mock IPv6 layer
         ipv6_layer = Mock()
@@ -149,10 +149,10 @@ class TestScapyPacketCapture:
             ICMP: False
         }.get(layer, False)
         
-        packet.__getitem__.side_effect = lambda layer: {
+        packet.__getitem__ = Mock(side_effect=lambda layer: {
             IPv6: ipv6_layer,
             TCP: tcp_layer
-        }.get(layer)
+        }.get(layer))
         
         packet.__len__ = Mock(return_value=1200)
         
@@ -392,6 +392,9 @@ class TestScapyPacketCapture:
         """Test starting packet capture."""
         interface = "eth0"
         
+        # Mock sniff to not actually run
+        mock_sniff.return_value = None
+        
         self.capture_service.start_capture(interface)
         
         assert self.capture_service.is_capturing is True
@@ -559,9 +562,9 @@ class TestPacketCaptureIntegration:
         tcp_layer.urgptr = 0
         
         tcp_packet.haslayer.side_effect = lambda layer: layer in [IP, TCP]
-        tcp_packet.__getitem__.side_effect = lambda layer: {
+        tcp_packet.__getitem__ = Mock(side_effect=lambda layer: {
             IP: ip_layer, TCP: tcp_layer
-        }.get(layer)
+        }.get(layer))
         tcp_packet.__len__ = Mock(return_value=1500)
         
         # Process packet

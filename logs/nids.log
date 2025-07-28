@@ -3227,3 +3227,14 @@
 2025-07-27 09:29:29,767 - src.models.registry - INFO - Metadata saved to: C:\Users\theja\AppData\Local\Temp\tmp1e9on5y0\test_registry\metadata\random_forest_1.0.0_20250727_092929_7747553f_metadata.json
 2025-07-27 09:29:29,776 - src.models.registry - INFO - Model registered successfully with ID: random_forest_1.0.0_20250727_092929_7747553f
 2025-07-27 09:29:29,784 - src.models.registry - INFO - Model registry initialized at: C:\Users\theja\AppData\Local\Temp\tmp1e9on5y0\test_registry
+2025-07-28 10:28:04,538 - src.services.packet_capture - INFO - RabbitMQ connection established
+2025-07-28 10:28:04,541 - src.services.packet_capture - ERROR - Failed to setup RabbitMQ: Connection failed
+2025-07-28 10:28:04,543 - src.services.packet_capture - INFO - Starting packet capture on interface eth0
+2025-07-28 10:28:04,544 - src.services.packet_capture - INFO - Using filter: (tcp or udp or icmp) and ip6
+2025-07-28 10:28:04,544 - src.services.packet_capture - INFO - Packet capture started successfully
+2025-07-28 10:28:04,555 - src.services.packet_capture - WARNING - Packet capture is already running
+2025-07-28 10:28:04,558 - src.services.packet_capture - INFO - Starting packet capture on interface eth0
+2025-07-28 10:28:04,558 - src.services.packet_capture - INFO - Using filter: (tcp or udp or icmp) and ip6
+2025-07-28 10:28:04,559 - src.services.packet_capture - INFO - Packet capture started successfully
+2025-07-28 10:28:04,660 - src.services.packet_capture - WARNING - Packet capture is not running
+2025-07-28 10:28:04,663 - src.services.packet_capture - WARNING - Packet capture is not running
