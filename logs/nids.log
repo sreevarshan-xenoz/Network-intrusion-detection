@@ -3313,3 +3313,134 @@
 2025-07-28 10:39:57,276 - src.services.signature_detector - INFO - Updated 2 hashes indicators
 2025-07-28 10:39:57,278 - src.services.signature_detector - INFO - Detection statistics reset
 2025-07-28 10:39:57,280 - src.services.signature_detector - ERROR - Error parsing custom pattern: Expecting value: line 1 column 1 (char 0)
+2025-07-28 11:01:42,966 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: C:\Users\theja\AppData\Local\Temp\tmpoggi80pb
+2025-07-28 11:01:42,970 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: C:\Users\theja\AppData\Local\Temp\tmpsh1dr76y
+2025-07-28 11:01:42,970 - src.services.report_generator - INFO - Generating threat report for 4 alerts
+2025-07-28 11:01:42,971 - src.services.report_generator - INFO - Threat report saved to: C:\Users\theja\AppData\Local\Temp\tmpsh1dr76y\threat_report_20250728_110142.json
+2025-07-28 11:01:42,972 - src.services.report_generator - INFO - Threat report generated: threat_report_20250728_110142
+2025-07-28 11:01:42,975 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: C:\Users\theja\AppData\Local\Temp\tmpszy2kou0
+2025-07-28 11:01:42,976 - src.services.report_generator - INFO - Generating threat report for 4 alerts
+2025-07-28 11:01:42,977 - src.services.report_generator - INFO - Threat report saved to: C:\Users\theja\AppData\Local\Temp\tmpszy2kou0\threat_report_20250728_110142.json
+2025-07-28 11:01:42,977 - src.services.report_generator - INFO - Threat report generated: threat_report_20250728_110142
+2025-07-28 11:01:42,979 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: C:\Users\theja\AppData\Local\Temp\tmpxnesfq_c
+2025-07-28 11:01:42,980 - src.services.report_generator - INFO - Generating threat report for 4 alerts
+2025-07-28 11:01:42,981 - src.services.report_generator - INFO - Threat report saved to: C:\Users\theja\AppData\Local\Temp\tmpxnesfq_c\threat_report_20250728_110142.json
+2025-07-28 11:01:42,981 - src.services.report_generator - INFO - Threat report generated: threat_report_20250728_110142
+2025-07-28 11:01:42,984 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: C:\Users\theja\AppData\Local\Temp\tmpfg4qqmce
+2025-07-28 11:01:42,985 - src.services.report_generator - INFO - Generating threat report for 4 alerts
+2025-07-28 11:01:42,986 - src.services.report_generator - INFO - Threat report saved to: C:\Users\theja\AppData\Local\Temp\tmpfg4qqmce\threat_report_20250728_110142.json
+2025-07-28 11:01:42,986 - src.services.report_generator - INFO - Threat report generated: threat_report_20250728_110142
+2025-07-28 11:01:42,988 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: C:\Users\theja\AppData\Local\Temp\tmpa04rsk2w
+2025-07-28 11:01:42,989 - src.services.report_generator - INFO - Generating threat report for 4 alerts
+2025-07-28 11:01:44,050 - src.services.report_generator - INFO - Threat visualizations saved to: C:\Users\theja\AppData\Local\Temp\tmpa04rsk2w\threat_report_20250728_110142
+2025-07-28 11:01:44,051 - src.services.report_generator - INFO - Threat report saved to: C:\Users\theja\AppData\Local\Temp\tmpa04rsk2w\threat_report_20250728_110142.json
+2025-07-28 11:01:44,051 - src.services.report_generator - INFO - Threat report generated: threat_report_20250728_110142
+2025-07-28 11:01:44,066 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: C:\Users\theja\AppData\Local\Temp\tmpk8ladkhz
+2025-07-28 11:01:44,067 - src.services.report_generator - INFO - Generating model performance report for: RandomForest
+2025-07-28 11:01:44,068 - src.services.report_generator - INFO - Model performance report saved to: C:\Users\theja\AppData\Local\Temp\tmpk8ladkhz\model_perf_RandomForest_20250728_110144.json
+2025-07-28 11:01:44,069 - src.services.report_generator - INFO - Model performance report generated: model_perf_RandomForest_20250728_110144
+2025-07-28 11:01:44,071 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: C:\Users\theja\AppData\Local\Temp\tmpsgwndas8
+2025-07-28 11:01:44,072 - src.services.report_generator - INFO - Generating model performance report for: FailedModel
+2025-07-28 11:01:44,075 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: C:\Users\theja\AppData\Local\Temp\tmpd1k8vvac
+2025-07-28 11:01:44,076 - src.services.report_generator - INFO - Generating model performance report for: RandomForest
+2025-07-28 11:01:44,566 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: C:\Users\theja\AppData\Local\Temp\tmpanbzde6p
+2025-07-28 11:01:44,567 - src.services.report_generator - INFO - Generating threat report for 4 alerts
+2025-07-28 11:01:44,568 - src.services.report_generator - INFO - Threat report saved to: C:\Users\theja\AppData\Local\Temp\tmpanbzde6p\threat_report_20250728_110144.json
+2025-07-28 11:01:44,568 - src.services.report_generator - INFO - Threat report generated: threat_report_20250728_110144
+2025-07-28 11:01:44,579 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: C:\Users\theja\AppData\Local\Temp\tmpddc3722d
+2025-07-28 11:01:44,580 - src.services.report_generator - INFO - Generating model performance report for: RandomForest
+2025-07-28 11:01:44,580 - src.services.report_generator - INFO - Model performance report saved to: C:\Users\theja\AppData\Local\Temp\tmpddc3722d\model_perf_RandomForest_20250728_110144.json
+2025-07-28 11:01:44,582 - src.services.report_generator - INFO - Model performance report generated: model_perf_RandomForest_20250728_110144
+2025-07-28 11:01:44,592 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: C:\Users\theja\AppData\Local\Temp\tmpcfleuuh0
+2025-07-28 11:01:44,593 - src.services.report_generator - WARNING - Report file not found: C:\Users\theja\AppData\Local\Temp\tmpcfleuuh0\nonexistent_report.json
+2025-07-28 11:01:44,593 - src.services.report_generator - WARNING - Report file not found: C:\Users\theja\AppData\Local\Temp\tmpcfleuuh0\nonexistent_report.json
+2025-07-28 11:01:44,596 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: C:\Users\theja\AppData\Local\Temp\tmpahxx_v73
+2025-07-28 11:01:44,597 - src.services.report_generator - INFO - Generating threat report for 4 alerts
+2025-07-28 11:01:44,598 - src.services.report_generator - INFO - Threat report saved to: C:\Users\theja\AppData\Local\Temp\tmpahxx_v73\threat_report_20250728_110144.json
+2025-07-28 11:01:44,598 - src.services.report_generator - INFO - Threat report generated: threat_report_20250728_110144
+2025-07-28 11:01:44,598 - src.services.report_generator - INFO - Generating model performance report for: RandomForest
+2025-07-28 11:01:44,599 - src.services.report_generator - INFO - Model performance report saved to: C:\Users\theja\AppData\Local\Temp\tmpahxx_v73\model_perf_RandomForest_20250728_110144.json
+2025-07-28 11:01:44,599 - src.services.report_generator - INFO - Model performance report generated: model_perf_RandomForest_20250728_110144
+2025-07-28 11:01:44,602 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: C:\Users\theja\AppData\Local\Temp\tmp6jz6d_at
+2025-07-28 11:01:44,604 - src.services.report_generator - INFO - Generating threat report for 4 alerts
+2025-07-28 11:01:44,604 - src.services.report_generator - INFO - Threat report saved to: C:\Users\theja\AppData\Local\Temp\tmp6jz6d_at\threat_report_20250728_110144.json
+2025-07-28 11:01:44,605 - src.services.report_generator - INFO - Threat report generated: threat_report_20250728_110144
+2025-07-28 11:01:44,605 - src.services.report_generator - INFO - Generating model performance report for: RandomForest
+2025-07-28 11:01:44,606 - src.services.report_generator - INFO - Model performance report saved to: C:\Users\theja\AppData\Local\Temp\tmp6jz6d_at\model_perf_RandomForest_20250728_110144.json
+2025-07-28 11:01:44,606 - src.services.report_generator - INFO - Model performance report generated: model_perf_RandomForest_20250728_110144
+2025-07-28 11:01:44,609 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: C:\Users\theja\AppData\Local\Temp\tmp6kgburyh
+2025-07-28 11:01:44,611 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: C:\Users\theja\AppData\Local\Temp\tmp7bt8lova
+2025-07-28 11:01:44,612 - src.services.report_generator - INFO - Generating threat report for 4 alerts
+2025-07-28 11:01:44,613 - src.services.report_generator - INFO - Threat report saved to: C:\Users\theja\AppData\Local\Temp\tmp7bt8lova\threat_report_20250728_110144.json
+2025-07-28 11:01:44,613 - src.services.report_generator - INFO - Threat report generated: threat_report_20250728_110144
+2025-07-28 11:01:44,624 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: C:\Users\theja\AppData\Local\Temp\tmpac0gtkiq
+2025-07-28 11:01:44,625 - src.services.report_generator - INFO - Generating model performance report for: RandomForest
+2025-07-28 11:01:44,626 - src.services.report_generator - INFO - Model performance report saved to: C:\Users\theja\AppData\Local\Temp\tmpac0gtkiq\model_perf_RandomForest_20250728_110144.json
+2025-07-28 11:01:44,626 - src.services.report_generator - INFO - Model performance report generated: model_perf_RandomForest_20250728_110144
+2025-07-28 11:02:03,776 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: C:\Users\theja\AppData\Local\Temp\tmpv1yon8n9
+2025-07-28 11:02:03,779 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: C:\Users\theja\AppData\Local\Temp\tmpzz0xh4st
+2025-07-28 11:02:03,780 - src.services.report_generator - INFO - Generating threat report for 4 alerts
+2025-07-28 11:02:03,781 - src.services.report_generator - INFO - Threat report saved to: C:\Users\theja\AppData\Local\Temp\tmpzz0xh4st\threat_report_20250728_110203.json
+2025-07-28 11:02:03,782 - src.services.report_generator - INFO - Threat report generated: threat_report_20250728_110203
+2025-07-28 11:02:03,784 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: C:\Users\theja\AppData\Local\Temp\tmp12uf0b9h
+2025-07-28 11:02:03,785 - src.services.report_generator - INFO - Generating threat report for 4 alerts
+2025-07-28 11:02:03,786 - src.services.report_generator - INFO - Threat report saved to: C:\Users\theja\AppData\Local\Temp\tmp12uf0b9h\threat_report_20250728_110203.json
+2025-07-28 11:02:03,786 - src.services.report_generator - INFO - Threat report generated: threat_report_20250728_110203
+2025-07-28 11:02:03,789 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: C:\Users\theja\AppData\Local\Temp\tmpak_fhe4h
+2025-07-28 11:02:03,789 - src.services.report_generator - INFO - Generating threat report for 4 alerts
+2025-07-28 11:02:03,790 - src.services.report_generator - INFO - Threat report saved to: C:\Users\theja\AppData\Local\Temp\tmpak_fhe4h\threat_report_20250728_110203.json
+2025-07-28 11:02:03,790 - src.services.report_generator - INFO - Threat report generated: threat_report_20250728_110203
+2025-07-28 11:02:03,793 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: C:\Users\theja\AppData\Local\Temp\tmpjnbbay37
+2025-07-28 11:02:03,794 - src.services.report_generator - INFO - Generating threat report for 4 alerts
+2025-07-28 11:02:03,795 - src.services.report_generator - INFO - Threat report saved to: C:\Users\theja\AppData\Local\Temp\tmpjnbbay37\threat_report_20250728_110203.json
+2025-07-28 11:02:03,795 - src.services.report_generator - INFO - Threat report generated: threat_report_20250728_110203
+2025-07-28 11:02:03,798 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: C:\Users\theja\AppData\Local\Temp\tmpfhzjgy4s
+2025-07-28 11:02:03,798 - src.services.report_generator - INFO - Generating threat report for 4 alerts
+2025-07-28 11:02:03,853 - src.services.report_generator - INFO - Threat visualizations saved to: C:\Users\theja\AppData\Local\Temp\tmpfhzjgy4s\threat_report_20250728_110203
+2025-07-28 11:02:03,854 - src.services.report_generator - INFO - Threat report saved to: C:\Users\theja\AppData\Local\Temp\tmpfhzjgy4s\threat_report_20250728_110203.json
+2025-07-28 11:02:03,854 - src.services.report_generator - INFO - Threat report generated: threat_report_20250728_110203
+2025-07-28 11:02:03,858 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: C:\Users\theja\AppData\Local\Temp\tmpf29w89iq
+2025-07-28 11:02:03,859 - src.services.report_generator - INFO - Generating model performance report for: RandomForest
+2025-07-28 11:02:03,859 - src.services.report_generator - INFO - Model performance report saved to: C:\Users\theja\AppData\Local\Temp\tmpf29w89iq\model_perf_RandomForest_20250728_110203.json
+2025-07-28 11:02:03,860 - src.services.report_generator - INFO - Model performance report generated: model_perf_RandomForest_20250728_110203
+2025-07-28 11:02:03,863 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: C:\Users\theja\AppData\Local\Temp\tmp7z19zyoe
+2025-07-28 11:02:03,863 - src.services.report_generator - INFO - Generating model performance report for: FailedModel
+2025-07-28 11:02:03,866 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: C:\Users\theja\AppData\Local\Temp\tmprakux68j
+2025-07-28 11:02:03,867 - src.services.report_generator - INFO - Generating model performance report for: RandomForest
+2025-07-28 11:02:03,900 - src.services.report_generator - INFO - Model performance visualizations saved to: C:\Users\theja\AppData\Local\Temp\tmprakux68j\model_perf_RandomForest_20250728_110203
+2025-07-28 11:02:03,902 - src.services.report_generator - INFO - Model performance report saved to: C:\Users\theja\AppData\Local\Temp\tmprakux68j\model_perf_RandomForest_20250728_110203.json
+2025-07-28 11:02:03,902 - src.services.report_generator - INFO - Model performance report generated: model_perf_RandomForest_20250728_110203
+2025-07-28 11:02:03,905 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: C:\Users\theja\AppData\Local\Temp\tmp61mdjcei
+2025-07-28 11:02:03,906 - src.services.report_generator - INFO - Generating threat report for 4 alerts
+2025-07-28 11:02:03,907 - src.services.report_generator - INFO - Threat report saved to: C:\Users\theja\AppData\Local\Temp\tmp61mdjcei\threat_report_20250728_110203.json
+2025-07-28 11:02:03,907 - src.services.report_generator - INFO - Threat report generated: threat_report_20250728_110203
+2025-07-28 11:02:03,918 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: C:\Users\theja\AppData\Local\Temp\tmpv6vrcam9
+2025-07-28 11:02:03,920 - src.services.report_generator - INFO - Generating model performance report for: RandomForest
+2025-07-28 11:02:03,920 - src.services.report_generator - INFO - Model performance report saved to: C:\Users\theja\AppData\Local\Temp\tmpv6vrcam9\model_perf_RandomForest_20250728_110203.json
+2025-07-28 11:02:03,921 - src.services.report_generator - INFO - Model performance report generated: model_perf_RandomForest_20250728_110203
+2025-07-28 11:02:03,931 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: C:\Users\theja\AppData\Local\Temp\tmpedy2n7pm
+2025-07-28 11:02:03,932 - src.services.report_generator - WARNING - Report file not found: C:\Users\theja\AppData\Local\Temp\tmpedy2n7pm\nonexistent_report.json
+2025-07-28 11:02:03,932 - src.services.report_generator - WARNING - Report file not found: C:\Users\theja\AppData\Local\Temp\tmpedy2n7pm\nonexistent_report.json
+2025-07-28 11:02:03,934 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: C:\Users\theja\AppData\Local\Temp\tmpxhnspuxv
+2025-07-28 11:02:03,935 - src.services.report_generator - INFO - Generating threat report for 4 alerts
+2025-07-28 11:02:03,936 - src.services.report_generator - INFO - Threat report saved to: C:\Users\theja\AppData\Local\Temp\tmpxhnspuxv\threat_report_20250728_110203.json
+2025-07-28 11:02:03,936 - src.services.report_generator - INFO - Threat report generated: threat_report_20250728_110203
+2025-07-28 11:02:03,936 - src.services.report_generator - INFO - Generating model performance report for: RandomForest
+2025-07-28 11:02:03,937 - src.services.report_generator - INFO - Model performance report saved to: C:\Users\theja\AppData\Local\Temp\tmpxhnspuxv\model_perf_RandomForest_20250728_110203.json
+2025-07-28 11:02:03,937 - src.services.report_generator - INFO - Model performance report generated: model_perf_RandomForest_20250728_110203
+2025-07-28 11:02:03,940 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: C:\Users\theja\AppData\Local\Temp\tmphdxo7vx7
+2025-07-28 11:02:03,941 - src.services.report_generator - INFO - Generating threat report for 4 alerts
+2025-07-28 11:02:03,942 - src.services.report_generator - INFO - Threat report saved to: C:\Users\theja\AppData\Local\Temp\tmphdxo7vx7\threat_report_20250728_110203.json
+2025-07-28 11:02:03,942 - src.services.report_generator - INFO - Threat report generated: threat_report_20250728_110203
+2025-07-28 11:02:03,943 - src.services.report_generator - INFO - Generating model performance report for: RandomForest
+2025-07-28 11:02:03,943 - src.services.report_generator - INFO - Model performance report saved to: C:\Users\theja\AppData\Local\Temp\tmphdxo7vx7\model_perf_RandomForest_20250728_110203.json
+2025-07-28 11:02:03,943 - src.services.report_generator - INFO - Model performance report generated: model_perf_RandomForest_20250728_110203
+2025-07-28 11:02:03,946 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: C:\Users\theja\AppData\Local\Temp\tmpoul75tlf
+2025-07-28 11:02:03,949 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: C:\Users\theja\AppData\Local\Temp\tmp33rwy51d
+2025-07-28 11:02:03,949 - src.services.report_generator - INFO - Generating threat report for 4 alerts
+2025-07-28 11:02:03,950 - src.services.report_generator - INFO - Threat report saved to: C:\Users\theja\AppData\Local\Temp\tmp33rwy51d\threat_report_20250728_110203.json
+2025-07-28 11:02:03,951 - src.services.report_generator - INFO - Threat report generated: threat_report_20250728_110203
+2025-07-28 11:02:03,961 - src.services.report_generator - INFO - ReportGenerator initialized with reports directory: C:\Users\theja\AppData\Local\Temp\tmpfuooyxbf
+2025-07-28 11:02:03,962 - src.services.report_generator - INFO - Generating model performance report for: RandomForest
+2025-07-28 11:02:03,963 - src.services.report_generator - INFO - Model performance report saved to: C:\Users\theja\AppData\Local\Temp\tmpfuooyxbf\model_perf_RandomForest_20250728_110203.json
+2025-07-28 11:02:03,964 - src.services.report_generator - INFO - Model performance report generated: model_perf_RandomForest_20250728_110203
