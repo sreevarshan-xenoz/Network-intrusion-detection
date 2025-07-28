@@ -392,16 +392,23 @@ class TestScapyPacketCapture:
         """Test starting packet capture."""
         interface = "eth0"
         
-        # Mock sniff to not actually run
-        mock_sniff.return_value = None
+        # Mock sniff to simulate blocking behavior
+        def mock_sniff_func(*args, **kwargs):
+            # Simulate sniff blocking until stop_filter returns True
+            stop_filter = kwargs.get('stop_filter')
+            while not stop_filter(None):
+                time.sleep(0.01)
+        
+        mock_sniff.side_effect = mock_sniff_func
         
         self.capture_service.start_capture(interface)
         
-        assert self.capture_service.is_capturing is True
-        assert self.capture_service.capture_thread is not None
-        
         # Give thread time to start
         time.sleep(0.1)
+        
+        assert self.capture_service.is_capturing is True
+        assert self.capture_service.capture_thread is not None
+        assert self.capture_service.capture_thread.is_alive()
         
         # Stop capture to clean up
         self.capture_service.stop_capture()

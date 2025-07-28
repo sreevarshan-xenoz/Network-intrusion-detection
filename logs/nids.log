@@ -3238,3 +3238,60 @@
 2025-07-28 10:28:04,559 - src.services.packet_capture - INFO - Packet capture started successfully
 2025-07-28 10:28:04,660 - src.services.packet_capture - WARNING - Packet capture is not running
 2025-07-28 10:28:04,663 - src.services.packet_capture - WARNING - Packet capture is not running
+2025-07-28 10:29:13,684 - src.services.packet_capture - ERROR - Error extracting features: unsupported operand type(s) for *: 'Mock' and 'int'
+2025-07-28 10:29:13,706 - src.services.packet_capture - INFO - RabbitMQ connection established
+2025-07-28 10:29:13,710 - src.services.packet_capture - ERROR - Failed to setup RabbitMQ: Connection failed
+2025-07-28 10:29:13,712 - src.services.packet_capture - INFO - Starting packet capture on interface eth0
+2025-07-28 10:29:13,712 - src.services.packet_capture - INFO - Using filter: (tcp or udp or icmp) and ip6
+2025-07-28 10:29:13,713 - src.services.packet_capture - INFO - Packet capture started successfully
+2025-07-28 10:29:13,851 - src.services.packet_capture - WARNING - Packet capture is already running
+2025-07-28 10:29:13,853 - src.services.packet_capture - INFO - Starting packet capture on interface eth0
+2025-07-28 10:29:13,853 - src.services.packet_capture - INFO - Using filter: (tcp or udp or icmp) and ip6
+2025-07-28 10:29:13,854 - src.services.packet_capture - INFO - Packet capture started successfully
+2025-07-28 10:29:13,954 - src.services.packet_capture - WARNING - Packet capture is not running
+2025-07-28 10:29:13,956 - src.services.packet_capture - WARNING - Packet capture is not running
+2025-07-28 10:29:34,337 - src.services.packet_capture - INFO - Starting packet capture on interface eth0
+2025-07-28 10:29:34,337 - src.services.packet_capture - INFO - Using filter: (tcp or udp or icmp) and ip6
+2025-07-28 10:29:34,338 - src.services.packet_capture - INFO - Packet capture started successfully
+2025-07-28 10:29:34,439 - src.services.packet_capture - INFO - Stopping packet capture
+2025-07-28 10:29:34,442 - src.services.packet_capture - INFO - Packet capture stopped
+2025-07-28 10:29:41,811 - src.services.packet_capture - ERROR - Error extracting features: unsupported operand type(s) for *: 'Mock' and 'int'
+2025-07-28 10:29:41,835 - src.services.packet_capture - INFO - RabbitMQ connection established
+2025-07-28 10:29:41,838 - src.services.packet_capture - ERROR - Failed to setup RabbitMQ: Connection failed
+2025-07-28 10:29:41,840 - src.services.packet_capture - INFO - Starting packet capture on interface eth0
+2025-07-28 10:29:41,840 - src.services.packet_capture - INFO - Using filter: (tcp or udp or icmp) and ip6
+2025-07-28 10:29:41,840 - src.services.packet_capture - INFO - Packet capture started successfully
+2025-07-28 10:29:41,943 - src.services.packet_capture - INFO - Stopping packet capture
+2025-07-28 10:29:41,944 - src.services.packet_capture - INFO - Packet capture stopped
+2025-07-28 10:29:41,946 - src.services.packet_capture - WARNING - Packet capture is already running
+2025-07-28 10:29:41,949 - src.services.packet_capture - INFO - Starting packet capture on interface eth0
+2025-07-28 10:29:41,949 - src.services.packet_capture - INFO - Using filter: (tcp or udp or icmp) and ip6
+2025-07-28 10:29:41,950 - src.services.packet_capture - INFO - Packet capture started successfully
+2025-07-28 10:29:42,050 - src.services.packet_capture - WARNING - Packet capture is not running
+2025-07-28 10:29:42,052 - src.services.packet_capture - WARNING - Packet capture is not running
+2025-07-28 10:33:10,515 - src.services.stream_processor - WARNING - Packet buffer overflow, dropping oldest packet
+2025-07-28 10:33:10,525 - src.services.stream_processor - ERROR - Error processing packet batch: Inference error
+2025-07-28 10:33:10,528 - src.services.stream_processor - INFO - Starting stream processing on interface eth0
+2025-07-28 10:33:10,529 - src.services.stream_processor - INFO - Stream processing started successfully
+2025-07-28 10:33:10,531 - src.services.stream_processor - WARNING - Stream processing is already running
+2025-07-28 10:33:10,533 - src.services.stream_processor - INFO - Starting stream processing on interface eth0
+2025-07-28 10:33:10,534 - src.services.stream_processor - INFO - Stream processing started successfully
+2025-07-28 10:33:10,534 - src.services.stream_processor - INFO - Stopping stream processing
+2025-07-28 10:33:10,534 - src.services.stream_processor - INFO - Processing 5 remaining packets
+2025-07-28 10:33:10,535 - src.services.stream_processor - INFO - Stream processing stopped
+2025-07-28 10:33:10,537 - src.services.stream_processor - WARNING - Stream processing is not running
+2025-07-28 10:33:10,542 - src.services.stream_processor - INFO - Processing statistics reset
+2025-07-28 10:33:10,545 - src.services.stream_processor - INFO - Flushed 5 packets from buffer
+2025-07-28 10:33:40,990 - src.services.stream_processor - WARNING - Packet buffer overflow, dropping oldest packet
+2025-07-28 10:33:40,999 - src.services.stream_processor - ERROR - Error processing packet batch: Inference error
+2025-07-28 10:33:41,001 - src.services.stream_processor - INFO - Starting stream processing on interface eth0
+2025-07-28 10:33:41,002 - src.services.stream_processor - INFO - Stream processing started successfully
+2025-07-28 10:33:41,004 - src.services.stream_processor - WARNING - Stream processing is already running
+2025-07-28 10:33:41,007 - src.services.stream_processor - INFO - Starting stream processing on interface eth0
+2025-07-28 10:33:41,008 - src.services.stream_processor - INFO - Stream processing started successfully
+2025-07-28 10:33:41,008 - src.services.stream_processor - INFO - Stopping stream processing
+2025-07-28 10:33:41,008 - src.services.stream_processor - INFO - Processing 5 remaining packets
+2025-07-28 10:33:41,009 - src.services.stream_processor - INFO - Stream processing stopped
+2025-07-28 10:33:41,011 - src.services.stream_processor - WARNING - Stream processing is not running
+2025-07-28 10:33:41,016 - src.services.stream_processor - INFO - Processing statistics reset
+2025-07-28 10:33:41,018 - src.services.stream_processor - INFO - Flushed 5 packets from buffer
