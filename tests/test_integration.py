@@ -81,19 +81,19 @@ class TestDataPipelineIntegration:
     @pytest.fixture
     def sample_cicids_data(self, temp_dir):
         """Create sample CICIDS dataset for testing."""
-        # Create minimal CICIDS format data
+        # Create larger CICIDS format data for proper train/test split
         data = {
-            'Flow Duration': [1000, 2000, 3000],
-            'Total Fwd Packets': [10, 20, 30],
-            'Total Backward Packets': [5, 10, 15],
-            'Total Length of Fwd Packets': [500, 1000, 1500],
-            'Total Length of Bwd Packets': [250, 500, 750],
-            'Fwd Packet Length Max': [100, 200, 300],
-            'Fwd Packet Length Min': [50, 100, 150],
-            'Fwd Packet Length Mean': [75, 150, 225],
-            'Fwd Packet Length Std': [25, 50, 75],
-            'Bwd Packet Length Max': [80, 160, 240],
-            'Label': ['BENIGN', 'BENIGN', 'DDoS']
+            'Flow Duration': [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000],
+            'Total Fwd Packets': [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
+            'Total Backward Packets': [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],
+            'Total Length of Fwd Packets': [500, 1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500, 5000],
+            'Total Length of Bwd Packets': [250, 500, 750, 1000, 1250, 1500, 1750, 2000, 2250, 2500],
+            'Fwd Packet Length Max': [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],
+            'Fwd Packet Length Min': [50, 100, 150, 200, 250, 300, 350, 400, 450, 500],
+            'Fwd Packet Length Mean': [75, 150, 225, 300, 375, 450, 525, 600, 675, 750],
+            'Fwd Packet Length Std': [25, 50, 75, 100, 125, 150, 175, 200, 225, 250],
+            'Bwd Packet Length Max': [80, 160, 240, 320, 400, 480, 560, 640, 720, 800],
+            'Label': ['BENIGN', 'BENIGN', 'BENIGN', 'BENIGN', 'BENIGN', 'DDoS', 'DDoS', 'DDoS', 'DDoS', 'DDoS']
         }
         
         df = pd.DataFrame(data)
@@ -152,30 +152,38 @@ class TestDataPipelineIntegration:
         
         # Step 4: Evaluate model
         evaluator = ModelEvaluator()
-        results = evaluator.evaluate_model(
+        results = evaluator.evaluate_single_model(
             trainer.models['random_forest'], 
+            'random_forest',
             X_balanced, 
             y_balanced
         )
         
         assert 'accuracy' in results
-        assert 'precision' in results
-        assert 'recall' in results
-        assert 'f1_score' in results
+        assert 'classification_report' in results
+        assert 'confusion_matrix' in results
+        assert results['accuracy'] > 0
         
         # Step 5: Save model to registry
-        registry = ModelRegistry(base_path=temp_dir)
-        model_id = registry.save_model(
-            trainer.models['random_forest'],
-            'random_forest',
-            results,
-            {'dataset': 'nsl_kdd_test'}
+        from src.models.interfaces import ModelMetadata
+        from datetime import datetime
+        
+        registry = ModelRegistry(registry_path=temp_dir)
+        metadata = ModelMetadata(
+            model_id="",  # Will be generated
+            model_type='random_forest',
+            version='1.0.0',
+            training_date=datetime.now(),
+            performance_metrics=results,
+            feature_names=list(range(X_balanced.shape[1])),  # Simple feature names
+            hyperparameters={'dataset': 'nsl_kdd_test'}
         )
+        model_id = registry.register_model(trainer.models['random_forest'], metadata)
         
         assert model_id is not None
         
         # Step 6: Load model and make prediction
-        loaded_model = registry.load_model(model_id)
+        loaded_model, loaded_metadata = registry.get_model(model_id)
         assert loaded_model is not None
         
         # Make a prediction
@@ -218,9 +226,10 @@ class TestDataPipelineIntegration:
         
         # Step 4: Evaluate
         evaluator = ModelEvaluator()
-        results = evaluator.evaluate_model(trainer.models['random_forest'], X, y)
+        results = evaluator.evaluate_single_model(trainer.models['random_forest'], 'random_forest', X, y)
         
         assert 'accuracy' in results
+        assert results['accuracy'] > 0
     
     def test_pipeline_error_handling(self, temp_dir):
         """Test error handling throughout the pipeline."""
@@ -434,14 +443,16 @@ class TestModelTrainingIntegration:
         # Step 2: Evaluate models
         evaluator = ModelEvaluator()
         
-        rf_results = evaluator.evaluate_model(trainer.models['random_forest'], X, y)
-        xgb_results = evaluator.evaluate_model(trainer.models['xgboost'], X, y)
+        rf_results = evaluator.evaluate_single_model(trainer.models['random_forest'], 'random_forest', X, y)
+        xgb_results = evaluator.evaluate_single_model(trainer.models['xgboost'], 'xgboost', X, y)
         
         assert 'accuracy' in rf_results
         assert 'accuracy' in xgb_results
         
         # Step 3: Compare models and select best
-        best_model_name = 'random_forest' if rf_results['f1_score'] > xgb_results['f1_score'] else 'xgboost'
+        rf_f1 = rf_results.get('f1_score', rf_results.get('classification_report', {}).get('macro avg', {}).get('f1-score', 0))
+        xgb_f1 = xgb_results.get('f1_score', xgb_results.get('classification_report', {}).get('macro avg', {}).get('f1-score', 0))
+        best_model_name = 'random_forest' if rf_f1 > xgb_f1 else 'xgboost'
         best_model = trainer.models[best_model_name]
         
         # Step 4: Save best model
@@ -477,13 +488,20 @@ class TestModelTrainingIntegration:
             trainer = ModelTrainer()
             trainer.train_models(X[:50], y[:50])
         
-        registry = ModelRegistry(base_path=temp_dir)
-        initial_model_id = registry.save_model(
-            trainer.models['random_forest'],
-            'random_forest',
-            {'accuracy': 0.8},
-            {'version': '1.0'}
+        from src.models.interfaces import ModelMetadata
+        from datetime import datetime
+        
+        registry = ModelRegistry(registry_path=temp_dir)
+        initial_metadata = ModelMetadata(
+            model_id="",
+            model_type='random_forest',
+            version='1.0.0',
+            training_date=datetime.now(),
+            performance_metrics={'accuracy': 0.8},
+            feature_names=list(range(X.shape[1])),
+            hyperparameters={'version': '1.0'}
         )
+        initial_model_id = registry.register_model(trainer.models['random_forest'], initial_metadata)
         
         # Retrain with additional data
         with patch('src.models.trainer.config') as mock_config:
@@ -496,19 +514,25 @@ class TestModelTrainingIntegration:
             
             trainer.train_models(X, y)
         
-        retrained_model_id = registry.save_model(
-            trainer.models['random_forest'],
-            'random_forest',
-            {'accuracy': 0.85},
-            {'version': '2.0'}
+        retrained_metadata = ModelMetadata(
+            model_id="",
+            model_type='random_forest',
+            version='2.0.0',
+            training_date=datetime.now(),
+            performance_metrics={'accuracy': 0.85},
+            feature_names=list(range(X.shape[1])),
+            hyperparameters={'version': '2.0'}
         )
+        retrained_model_id = registry.register_model(trainer.models['random_forest'], retrained_metadata)
         
         # Verify both models exist
-        initial_model = registry.load_model(initial_model_id)
-        retrained_model = registry.load_model(retrained_model_id)
+        initial_model, initial_metadata_loaded = registry.get_model(initial_model_id)
+        retrained_model, retrained_metadata_loaded = registry.get_model(retrained_model_id)
         
         assert initial_model is not None
         assert retrained_model is not None
+        assert initial_metadata_loaded is not None
+        assert retrained_metadata_loaded is not None
         assert initial_model_id != retrained_model_id
     
     def test_cross_validation_workflow(self, sample_training_data):
