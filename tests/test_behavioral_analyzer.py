@@ -231,9 +231,12 @@ class TestBehavioralAnalyzer(unittest.TestCase):
     
     def test_detect_statistical_anomalies(self):
         """Test statistical anomaly detection."""
-        # Create baseline with normal values
-        normal_features = {'packet_size': 1000.0, 'duration': 0.5}
+        # Create baseline with normal values (with some variation)
         for i in range(60):
+            normal_features = {
+                'packet_size': 1000.0 + (i % 10) * 10,  # Add some variation
+                'duration': 0.5 + (i % 5) * 0.01
+            }
             self.analyzer._update_behavior_profile(
                 "192.168.1.100", "ip", normal_features, datetime.now()
             )
