@@ -1,0 +1,73 @@
+# Production override for docker-compose
+version: '3.8'
+
+services:
+  api:
+    build:
+      target: production
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 2G
+        reservations:
+          cpus: '0.5'
+          memory: 1G
+    environment:
+      - ENVIRONMENT=production
+      - LOG_LEVEL=INFO
+    restart: always
+
+  dashboard:
+    build:
+      target: production
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 1G
+        reservations:
+          cpus: '0.25'
+          memory: 512M
+    restart: always
+
+  redis:
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+        reservations:
+          cpus: '0.25'
+          memory: 256M
+
+  mongodb:
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 1G
+        reservations:
+          cpus: '0.5'
+          memory: 512M
+
+  prometheus:
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 1G
+        reservations:
+          cpus: '0.25'
+          memory: 512M
+
+  grafana:
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+        reservations:
+          cpus: '0.25'
+          memory: 256M
