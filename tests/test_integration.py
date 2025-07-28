@@ -58,11 +58,18 @@ class TestDataPipelineIntegration:
     @pytest.fixture
     def sample_nsl_kdd_data(self, temp_dir):
         """Create sample NSL-KDD dataset for testing."""
-        # Create minimal NSL-KDD format data
+        # Create larger NSL-KDD format data for proper train/test split
         data = [
             "0,tcp,http,SF,215,45076,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,1,0.00,0.00,0.00,0.00,1.00,0.00,0.00,0,0,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,normal.",
             "0,tcp,http,SF,162,4528,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,2,2,0.00,0.00,0.00,0.00,1.00,0.00,0.00,1,1,1.00,0.00,1.00,0.00,0.00,0.00,0.00,0.00,normal.",
-            "0,tcp,http,SF,236,1228,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,1,0.00,0.00,0.00,0.00,1.00,0.00,0.00,2,2,1.00,0.00,0.50,0.00,0.00,0.00,0.00,0.00,neptune."
+            "0,tcp,http,SF,236,1228,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,1,0.00,0.00,0.00,0.00,1.00,0.00,0.00,2,2,1.00,0.00,0.50,0.00,0.00,0.00,0.00,0.00,normal.",
+            "0,tcp,http,SF,300,2000,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,3,3,0.00,0.00,0.00,0.00,1.00,0.00,0.00,3,3,1.00,0.00,0.33,0.00,0.00,0.00,0.00,0.00,normal.",
+            "0,tcp,http,SF,400,3000,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,4,4,0.00,0.00,0.00,0.00,1.00,0.00,0.00,4,4,1.00,0.00,0.25,0.00,0.00,0.00,0.00,0.00,normal.",
+            "0,tcp,http,SF,500,4000,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,5,5,0.00,0.00,0.00,0.00,1.00,0.00,0.00,5,5,1.00,0.00,0.20,0.00,0.00,0.00,0.00,0.00,neptune.",
+            "0,tcp,http,SF,600,5000,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,6,6,0.00,0.00,0.00,0.00,1.00,0.00,0.00,6,6,1.00,0.00,0.17,0.00,0.00,0.00,0.00,0.00,neptune.",
+            "0,tcp,http,SF,700,6000,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,7,7,0.00,0.00,0.00,0.00,1.00,0.00,0.00,7,7,1.00,0.00,0.14,0.00,0.00,0.00,0.00,0.00,neptune.",
+            "0,tcp,http,SF,800,7000,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,8,8,0.00,0.00,0.00,0.00,1.00,0.00,0.00,8,8,1.00,0.00,0.13,0.00,0.00,0.00,0.00,0.00,neptune.",
+            "0,tcp,http,SF,900,8000,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,9,9,0.00,0.00,0.00,0.00,1.00,0.00,0.00,9,9,1.00,0.00,0.11,0.00,0.00,0.00,0.00,0.00,neptune."
         ]
         
         file_path = os.path.join(temp_dir, "test_nsl_kdd.csv")
@@ -128,8 +135,17 @@ class TestDataPipelineIntegration:
         assert len(y_balanced) == X_balanced.shape[0]
         
         # Step 3: Train model
-        trainer = ModelTrainer()
-        trainer.train_models(X_balanced, y_balanced, model_types=['random_forest'])
+        # Mock config to only train random forest for testing
+        with patch('src.models.trainer.config') as mock_config:
+            mock_config.get.side_effect = lambda key, default=None: {
+                'model.algorithms': ['random_forest'],
+                'model.test_size': 0.2,
+                'model.random_state': 42,
+                'model.cross_validation_folds': 3
+            }.get(key, default)
+            
+            trainer = ModelTrainer()
+            trainer.train_models(X_balanced, y_balanced)
         
         assert 'random_forest' in trainer.models
         assert trainer.models['random_forest'] is not None
@@ -187,8 +203,16 @@ class TestDataPipelineIntegration:
             pytest.skip("No numeric features available for testing")
         
         # Step 3: Train simple model
-        trainer = ModelTrainer()
-        trainer.train_models(X, y, model_types=['random_forest'])
+        with patch('src.models.trainer.config') as mock_config:
+            mock_config.get.side_effect = lambda key, default=None: {
+                'model.algorithms': ['random_forest'],
+                'model.test_size': 0.2,
+                'model.random_state': 42,
+                'model.cross_validation_folds': 3
+            }.get(key, default)
+            
+            trainer = ModelTrainer()
+            trainer.train_models(X, y)
         
         assert 'random_forest' in trainer.models
         
@@ -393,8 +417,16 @@ class TestModelTrainingIntegration:
         X, y = sample_training_data
         
         # Step 1: Train multiple models
-        trainer = ModelTrainer()
-        trainer.train_models(X, y, model_types=['random_forest', 'xgboost'])
+        with patch('src.models.trainer.config') as mock_config:
+            mock_config.get.side_effect = lambda key, default=None: {
+                'model.algorithms': ['random_forest', 'xgboost'],
+                'model.test_size': 0.2,
+                'model.random_state': 42,
+                'model.cross_validation_folds': 3
+            }.get(key, default)
+            
+            trainer = ModelTrainer()
+            trainer.train_models(X, y)
         
         assert 'random_forest' in trainer.models
         assert 'xgboost' in trainer.models
@@ -434,8 +466,16 @@ class TestModelTrainingIntegration:
         X, y = sample_training_data
         
         # Initial training
-        trainer = ModelTrainer()
-        trainer.train_models(X[:50], y[:50], model_types=['random_forest'])
+        with patch('src.models.trainer.config') as mock_config:
+            mock_config.get.side_effect = lambda key, default=None: {
+                'model.algorithms': ['random_forest'],
+                'model.test_size': 0.2,
+                'model.random_state': 42,
+                'model.cross_validation_folds': 3
+            }.get(key, default)
+            
+            trainer = ModelTrainer()
+            trainer.train_models(X[:50], y[:50])
         
         registry = ModelRegistry(base_path=temp_dir)
         initial_model_id = registry.save_model(
@@ -446,7 +486,15 @@ class TestModelTrainingIntegration:
         )
         
         # Retrain with additional data
-        trainer.train_models(X, y, model_types=['random_forest'])
+        with patch('src.models.trainer.config') as mock_config:
+            mock_config.get.side_effect = lambda key, default=None: {
+                'model.algorithms': ['random_forest'],
+                'model.test_size': 0.2,
+                'model.random_state': 42,
+                'model.cross_validation_folds': 3
+            }.get(key, default)
+            
+            trainer.train_models(X, y)
         
         retrained_model_id = registry.save_model(
             trainer.models['random_forest'],
@@ -467,10 +515,18 @@ class TestModelTrainingIntegration:
         """Test cross-validation during training."""
         X, y = sample_training_data
         
-        trainer = ModelTrainer()
-        
-        # Train with cross-validation
-        trainer.train_models(X, y, model_types=['random_forest'], use_cross_validation=True)
+        with patch('src.models.trainer.config') as mock_config:
+            mock_config.get.side_effect = lambda key, default=None: {
+                'model.algorithms': ['random_forest'],
+                'model.test_size': 0.2,
+                'model.random_state': 42,
+                'model.cross_validation_folds': 3
+            }.get(key, default)
+            
+            trainer = ModelTrainer()
+            
+            # Train with cross-validation
+            trainer.train_models(X, y)
         
         # Check that cross-validation results are stored
         assert 'random_forest' in trainer.training_results
