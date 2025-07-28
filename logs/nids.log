@@ -23131,3 +23131,62 @@
 2025-07-28 13:51:00,530 - src.services.behavioral_analyzer - WARNING - Behavioral anomaly detected: Machine learning anomaly detected (score: 0.003)
 2025-07-28 13:51:00,530 - src.services.behavioral_analyzer - WARNING - Behavioral anomaly detected: Machine learning anomaly detected (score: 0.019)
 2025-07-28 13:51:00,530 - src.services.behavioral_analyzer - WARNING - Behavioral anomaly detected: Machine learning anomaly detected (score: 0.044)
+2025-07-28 13:59:26,348 - src.services.attack_correlator - INFO - Attack correlation database initialized
+2025-07-28 13:59:26,362 - src.services.attack_correlator - INFO - Attack correlator initialized with database: C:\Users\theja\AppData\Local\Temp\tmprhsup146.db
+2025-07-28 13:59:26,648 - src.services.attack_correlator - INFO - Attack correlation database initialized
+2025-07-28 13:59:26,661 - src.services.attack_correlator - INFO - Attack correlator initialized with database: C:\Users\theja\AppData\Local\Temp\tmpgppela9i.db
+2025-07-28 13:59:26,710 - src.services.attack_correlator - INFO - Attack correlation database initialized
+2025-07-28 13:59:26,724 - src.services.attack_correlator - INFO - Attack correlator initialized with database: C:\Users\theja\AppData\Local\Temp\tmppqdldojk.db
+2025-07-28 13:59:26,773 - src.services.attack_correlator - INFO - Attack correlation database initialized
+2025-07-28 13:59:26,785 - src.services.attack_correlator - INFO - Attack correlator initialized with database: C:\Users\theja\AppData\Local\Temp\tmp6lxav04s.db
+2025-07-28 13:59:26,848 - src.services.attack_correlator - INFO - Attack correlation database initialized
+2025-07-28 13:59:26,860 - src.services.attack_correlator - INFO - Attack correlator initialized with database: C:\Users\theja\AppData\Local\Temp\tmpzitn35_p.db
+2025-07-28 13:59:26,921 - src.services.attack_correlator - INFO - Attack correlation database initialized
+2025-07-28 13:59:26,934 - src.services.attack_correlator - INFO - Attack correlator initialized with database: C:\Users\theja\AppData\Local\Temp\tmppkvr_m7y.db
+2025-07-28 13:59:26,950 - src.services.attack_correlator - INFO - Attack sequence created: 435a140c-8d51-450a-901d-843973419a62
+2025-07-28 13:59:26,996 - src.services.attack_correlator - INFO - Attack correlation database initialized
+2025-07-28 13:59:27,009 - src.services.attack_correlator - INFO - Attack correlator initialized with database: C:\Users\theja\AppData\Local\Temp\tmpb6itszrc.db
+2025-07-28 13:59:27,057 - src.services.attack_correlator - INFO - Attack correlation database initialized
+2025-07-28 13:59:27,070 - src.services.attack_correlator - INFO - Attack correlator initialized with database: C:\Users\theja\AppData\Local\Temp\tmpumub4cmq.db
+2025-07-28 13:59:27,150 - src.services.attack_correlator - INFO - Attack correlation database initialized
+2025-07-28 13:59:27,163 - src.services.attack_correlator - INFO - Attack correlator initialized with database: C:\Users\theja\AppData\Local\Temp\tmpqo3rkkzn.db
+2025-07-28 13:59:27,213 - src.services.attack_correlator - INFO - Attack correlation database initialized
+2025-07-28 13:59:27,226 - src.services.attack_correlator - INFO - Attack correlator initialized with database: C:\Users\theja\AppData\Local\Temp\tmpb3muxb38.db
+2025-07-28 13:59:27,282 - src.services.attack_correlator - INFO - Attack correlation database initialized
+2025-07-28 13:59:27,295 - src.services.attack_correlator - INFO - Attack correlator initialized with database: C:\Users\theja\AppData\Local\Temp\tmp1rl5s1be.db
+2025-07-28 13:59:27,345 - src.services.attack_correlator - INFO - Attack correlation database initialized
+2025-07-28 13:59:27,359 - src.services.attack_correlator - INFO - Attack correlator initialized with database: C:\Users\theja\AppData\Local\Temp\tmpxavrttcn.db
+2025-07-28 13:59:27,407 - src.services.attack_correlator - INFO - Attack correlation database initialized
+2025-07-28 13:59:27,418 - src.services.attack_correlator - INFO - Attack correlator initialized with database: C:\Users\theja\AppData\Local\Temp\tmpwv9oenni.db
+2025-07-28 13:59:27,465 - src.services.attack_correlator - INFO - Attack correlation database initialized
+2025-07-28 13:59:27,478 - src.services.attack_correlator - INFO - Attack correlator initialized with database: C:\Users\theja\AppData\Local\Temp\tmpgfx64kmd.db
+2025-07-28 13:59:27,526 - src.services.attack_correlator - INFO - Attack correlation database initialized
+2025-07-28 13:59:27,539 - src.services.attack_correlator - INFO - Attack correlator initialized with database: C:\Users\theja\AppData\Local\Temp\tmpkbiwqm5q.db
+2025-07-28 13:59:27,595 - src.services.attack_correlator - INFO - Attack correlation database initialized
+2025-07-28 13:59:27,608 - src.services.attack_correlator - INFO - Attack correlator initialized with database: C:\Users\theja\AppData\Local\Temp\tmp79ap4gnj.db
+2025-07-28 13:59:27,644 - src.services.attack_correlator - INFO - Attack correlation database initialized
+2025-07-28 13:59:27,656 - src.services.attack_correlator - INFO - Attack correlator initialized with database: C:\Users\theja\AppData\Local\Temp\tmpamtdcctx.db
+2025-07-28 13:59:27,716 - src.services.attack_correlator - INFO - Attack correlation database initialized
+2025-07-28 13:59:27,728 - src.services.attack_correlator - INFO - Attack correlator initialized with database: C:\Users\theja\AppData\Local\Temp\tmp1hog3ot0.db
+2025-07-28 13:59:27,780 - src.services.attack_correlator - INFO - Attack correlation database initialized
+2025-07-28 13:59:27,792 - src.services.attack_correlator - INFO - Attack correlator initialized with database: C:\Users\theja\AppData\Local\Temp\tmp_havi8d5.db
+2025-07-28 13:59:27,846 - src.services.attack_correlator - INFO - Attack correlation database initialized
+2025-07-28 13:59:27,859 - src.services.attack_correlator - INFO - Attack correlator initialized with database: C:\Users\theja\AppData\Local\Temp\tmpcgv8prdk.db
+2025-07-28 13:59:27,883 - src.services.attack_correlator - INFO - Attack sequence created: abf87732-c559-463e-a6e8-9b22fa898f42
+2025-07-28 13:59:27,890 - src.services.attack_correlator - INFO - Attack sequence updated: abf87732-c559-463e-a6e8-9b22fa898f42
+2025-07-28 13:59:27,892 - src.services.attack_correlator - ERROR - Failed to update threat context: '>' not supported between instances of 'AttackSeverity' and 'AttackSeverity'
+2025-07-28 13:59:27,904 - src.services.attack_correlator - INFO - Attack sequence updated: abf87732-c559-463e-a6e8-9b22fa898f42
+2025-07-28 13:59:27,910 - src.services.attack_correlator - INFO - Attack sequence updated: abf87732-c559-463e-a6e8-9b22fa898f42
+2025-07-28 13:59:27,912 - src.services.attack_correlator - ERROR - Failed to update threat context: '>' not supported between instances of 'AttackSeverity' and 'AttackSeverity'
+2025-07-28 14:00:19,409 - src.services.attack_correlator - INFO - Attack correlation database initialized
+2025-07-28 14:00:19,422 - src.services.attack_correlator - INFO - Attack correlator initialized with database: C:\Users\theja\AppData\Local\Temp\tmp3z1sewwm.db
+2025-07-28 14:00:29,134 - src.services.attack_correlator - INFO - Attack correlation database initialized
+2025-07-28 14:00:29,148 - src.services.attack_correlator - INFO - Attack correlator initialized with database: C:\Users\theja\AppData\Local\Temp\tmpq7h_kw3s.db
+2025-07-28 14:00:55,141 - src.services.attack_correlator - INFO - Attack correlation database initialized
+2025-07-28 14:00:55,155 - src.services.attack_correlator - INFO - Attack correlator initialized with database: C:\Users\theja\AppData\Local\Temp\tmpdoe6gq7i.db
+2025-07-28 14:01:04,960 - src.services.attack_correlator - INFO - Attack correlation database initialized
+2025-07-28 14:01:04,974 - src.services.attack_correlator - INFO - Attack correlator initialized with database: C:\Users\theja\AppData\Local\Temp\tmpw8vrqcfu.db
+2025-07-28 14:01:04,999 - src.services.attack_correlator - INFO - Attack sequence created: d17135ca-e0ca-4312-848c-d6d7ac935b0b
+2025-07-28 14:01:05,006 - src.services.attack_correlator - INFO - Attack sequence updated: d17135ca-e0ca-4312-848c-d6d7ac935b0b
+2025-07-28 14:01:05,020 - src.services.attack_correlator - INFO - Attack sequence updated: d17135ca-e0ca-4312-848c-d6d7ac935b0b
+2025-07-28 14:01:05,027 - src.services.attack_correlator - INFO - Attack sequence updated: d17135ca-e0ca-4312-848c-d6d7ac935b0b
